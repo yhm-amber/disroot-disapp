@@ -1,0 +1,28 @@
+body {
+     background-color: #123456;
+}
+
+#all-links {
+    position: relative;
+    width: 600;
+    top: 25%;
+    left: 25%;
+     }
+
+.img-link {
+     height: 200px;
+     width: 200px;
+}
+
+.link {
+    color: #fff;
+    font-family: "Monospace";
+    font-size: 1.3em;
+    text-decoration:none;
+    margin: 40px;
+}
+
+.link-text {
+    padding: 20px;
+    padding-top: 2%;
+}

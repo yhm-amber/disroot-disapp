@@ -1,0 +1,63 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="1"
+        android:title="@string/action_share"
+        android:icon="@drawable/ic_share_white_24dp"
+        app:showAsAction="always" />
+
+    <group
+        android:orderInCategory="101"
+        android:showAsAction="always">
+        <item
+            android:icon="@drawable/ic_home"
+            android:id="@+id/action_home"
+            android:title="@string/action_home"/>
+        <item
+            android:id="@+id/action_mail"
+            android:title="@string/action_mail" />
+        <item
+            android:id="@+id/action_cloud"
+            android:title="@string/action_cloud" />
+        <item
+            android:id="@+id/action_diaspora"
+            android:title="@string/action_diaspora" />
+        <item
+            android:id="@+id/action_forum"
+            android:title="@string/action_forum" />
+        <item
+            android:id="@+id/action_chat"
+            android:title="@string/action_chat" />
+        <item
+            android:id="@+id/action_pad"
+            android:title="@string/action_pad" />
+        <item
+            android:id="@+id/action_calc"
+            android:title="@string/action_calc" />
+        <item
+            android:id="@+id/action_bin"
+            android:title="@string/action_bin" />
+        <item
+            android:id="@+id/action_upload"
+            android:title="@string/action_upload" />
+        <item
+            android:id="@+id/action_searx"
+            android:title="@string/action_searx" />
+        <item
+            android:id="@+id/action_poll"
+            android:title="@string/action_poll" />
+        <item
+            android:id="@+id/action_board"
+            android:title="@string/action_board" />
+        <item
+            android:id="@+id/action_user"
+            android:title="@string/action_user" />
+        <item
+            android:id="@+id/action_about"
+            android:title="@string/action_about" />
+    </group>
+</menu>

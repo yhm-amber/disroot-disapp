@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Disroot App</string>
+    <string name="action_home">Home</string>
+    <string name="action_mail">Mail</string>
+    <string name="action_cloud">Cloud</string>
+    <string name="action_diaspora">Diaspora*</string>
+    <string name="action_forum">Forum</string>
+    <string name="action_chat">Chat</string>
+    <string name="action_pad">Etherpad</string>
+    <string name="action_calc">EtherCalc</string>
+    <string name="action_bin">Zerobin</string>
+    <string name="action_upload">Upload</string>
+    <string name="action_searx">Searx</string>
+    <string name="action_poll">Poll</string>
+    <string name="action_board">Board</string>
+    <string name="action_user">Password</string>
+
+    <string name="action_about">About</string>
+    <string name="action_share">Share</string>
+
+    <string name="action_options">Actions</string>
+    <string name="activity_main_share_info">share link info</string>
+    <string name="activity_main_manteiners">%s\n\nDeveloper: Massimiliano\n\ncontact us:\n<EMAIL mailto="contact@disroot.org">contact@disroot.org</EMAIL></string>
+    <string name="view_loading_description">Loading...</string>
+    <string name="global_ok">ok</string>
+
+    </resources>
