@@ -20,7 +20,7 @@
 
     <string name="action_options">Actions</string>
     <string name="activity_main_share_info">share link info</string>
-    <string name="activity_main_manteiners">%s\n\nDeveloper: Massimiliano\n\ncontact us:\n<EMAIL mailto="contact@disroot.org">contact@disroot.org</EMAIL></string>
+    <string name="activity_main_manteiners">%s\n\nDeveloper: Massimiliano\n\ncontact us:\n<EMAIL mailto="contact@disroot.org">support@disroot.org</EMAIL></string>
     <string name="view_loading_description">Loading...</string>
     <string name="global_ok">ok</string>
 
