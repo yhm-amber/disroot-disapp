@@ -18,45 +18,59 @@
             android:id="@+id/action_home"
             android:title="@string/action_home"/>
         <item
+            android:icon="@drawable/ic_mail"
             android:id="@+id/action_mail"
             android:title="@string/action_mail" />
         <item
+            android:icon="@drawable/ic_cloud"
             android:id="@+id/action_cloud"
             android:title="@string/action_cloud" />
         <item
+            android:icon="@drawable/ic_diaspora"
             android:id="@+id/action_diaspora"
             android:title="@string/action_diaspora" />
         <item
+            android:icon="@drawable/ic_forum"
             android:id="@+id/action_forum"
             android:title="@string/action_forum" />
         <item
+            android:icon="@drawable/ic_chat"
             android:id="@+id/action_chat"
             android:title="@string/action_chat" />
         <item
+            android:icon="@drawable/ic_pad"
             android:id="@+id/action_pad"
             android:title="@string/action_pad" />
         <item
+            android:icon="@drawable/ic_calc"
             android:id="@+id/action_calc"
             android:title="@string/action_calc" />
         <item
+            android:icon="@drawable/ic_bin"
             android:id="@+id/action_bin"
             android:title="@string/action_bin" />
         <item
+            android:icon="@drawable/ic_upload"
             android:id="@+id/action_upload"
             android:title="@string/action_upload" />
         <item
+            android:icon="@drawable/ic_searx"
             android:id="@+id/action_searx"
             android:title="@string/action_searx" />
         <item
+            android:icon="@drawable/ic_poll"
             android:id="@+id/action_poll"
             android:title="@string/action_poll" />
         <item
+            android:icon="@drawable/ic_board"
             android:id="@+id/action_board"
             android:title="@string/action_board" />
         <item
+            android:icon="@drawable/ic_user"
             android:id="@+id/action_user"
             android:title="@string/action_user" />
         <item
+            android:icon="@drawable/ic_about"
             android:id="@+id/action_about"
             android:title="@string/action_about" />
     </group>

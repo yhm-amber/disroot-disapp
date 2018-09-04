@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         setupWebView(savedInstanceState, frameLayoutContainer, viewLoading);
         // enables the activity icon as a 'home' button. required if "android:targetSdkVersion" > 14
         //getActionBar().setHomeButtonEnabled(true);
+
     }
 
     @Override
@@ -155,10 +156,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 webView.loadUrl(Constants.URL_DisApp_FORUM);
                 return true;
             case R.id.action_chat:
-                Intent xmpp = new Intent(Intent.ACTION_MAIN);
-                PackageManager conversations = getPackageManager();
-                xmpp = conversations.getLaunchIntentForPackage("eu.siacs.conversations");
-                xmpp.addCategory(Intent.CATEGORY_LAUNCHER);
+                String Conversations = "eu.siacs.conversations";
+                Intent xmpp = getPackageManager().getLaunchIntentForPackage(Conversations);
+                if(xmpp == null) {
+                    xmpp = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
+                }
                 startActivity(xmpp);
                 return true;
             case R.id.action_pad:

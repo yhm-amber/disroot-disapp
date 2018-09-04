@@ -12,7 +12,7 @@
 
     <style name="Widget.MyApp.ActionBar" parent="Widget.AppCompat.ActionBar">
         <item name="theme">@style/ThemeOverlay.MyApp.ActionBar</item>
-        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Dark</item> <!--change theme for actionbar poupmenu-->
     </style>
 
     <style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
