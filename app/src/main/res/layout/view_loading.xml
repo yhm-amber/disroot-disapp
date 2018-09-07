@@ -3,13 +3,18 @@
     android:id="@+id/linearlayout_view_loading_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:gravity="top"
+    android:orientation="vertical"
+    android:visibility="gone">
 
     <ProgressBar
         android:id="@+id/progressbar_loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/bg_primary_blue_dark"/>
 
     <TextView
         android:id="@+id/textview_loading_description"
@@ -20,4 +25,5 @@
         android:text="@string/view_loading_description"
         android:textColor="?android:attr/textColorPrimary"
         android:visibility="gone" />
+
 </LinearLayout>

@@ -21,6 +21,65 @@
 
         <include layout="@layout/view_loading"/>
 
+
+        <RelativeLayout
+            android:id="@+id/dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#203140"
+            android:visibility="visible"
+            android:gravity="center_horizontal"
+            >
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/MailBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:text="@string/action_mail"
+                android:layout_marginTop="50dp"
+                android:drawableTop="@drawable/ic_mail"
+                />
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/PadBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:text="@string/action_pad"
+                android:layout_marginTop="50dp"
+                android:drawableTop="@drawable/ic_pad"
+                android:layout_toRightOf="@+id/DiasporaBtn"/>
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/DiasporaBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:text="@string/action_diaspora"
+                android:layout_marginTop="50dp"
+                android:drawableTop="@drawable/ic_diaspora"
+                android:layout_toRightOf="@+id/MailBtn"/>
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/AboudBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:text="@string/action_about"
+                android:layout_marginTop="50dp"
+                android:drawableTop="@drawable/ic_about"
+                android:layout_toRightOf="@+id/PadBtn"/>
+
+        </RelativeLayout>
+
     </FrameLayout>
 
 </LinearLayout>
