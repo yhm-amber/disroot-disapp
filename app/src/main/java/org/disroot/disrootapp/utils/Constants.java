@@ -21,4 +21,5 @@ public class Constants {
     public static final String URL_DisApp_POLL = "https://poll.disroot.org";
     public static final String URL_DisApp_BOARD = "https://board.disroot.org";
     public static final String URL_DisApp_USER = "https://user.disroot.org";
+    public static final String URL_DisApp_STATE = "https://state.disroot.org";
 }

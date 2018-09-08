@@ -17,10 +17,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.TranslateAnimation;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,20 +47,19 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setupToolbar();
         FrameLayout frameLayoutContainer = (FrameLayout) findViewById(R.id.framelayout_container);
         ViewGroup viewLoading = (ViewGroup) findViewById(R.id.linearlayout_view_loading_container);
         setupWebView(savedInstanceState, frameLayoutContainer, viewLoading);
         // enables the activity icon as a 'home' button. required if "android:targetSdkVersion" > 14
         //getActionBar().setHomeButtonEnabled(true);
-        final RelativeLayout dashboard = (RelativeLayout)findViewById(R.id.dashboard);
 
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
 
         //Set buttons
         // Locate the button in activity_main.xml
-        button = (Button) findViewById(R.id.MailBtn);
-
+        button = (Button) findViewById(R.id.MailBtn);//MailBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
 
             @Override
@@ -70,7 +71,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         // Capture button clicks
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-
                 // Start NewActivity.class
                 String k9 = "com.fsck.k9";
                 Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
@@ -81,13 +81,31 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
 
         });
-        // Locate the button in activity_main.xml
-        button = (Button) findViewById(R.id.DiasporaBtn);
-        // Capture button clicks
+
+        button = (Button) findViewById(R.id.CloudBtn);//CloudBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View v) {
+                showCloudInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                String nc = "com.nextcloud.client";
+                Intent cloud = getPackageManager().getLaunchIntentForPackage(nc);
+                if(cloud == null) {
+                    cloud = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+nc));
+                }
+                startActivity(cloud);
+            }
 
-                // Start NewActivity.class
+        });
+
+        button = (Button) findViewById(R.id.DiasporaBtn);//DiasporaBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
                 String Diaspora = "com.github.dfa.diaspora_android";
                 Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
                 if(pod == null) {
@@ -98,32 +116,139 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        // Locate the button in activity_main.xml
-        button = (Button) findViewById(R.id.PadBtn);
-        // Capture button clicks
+        button = (Button) findViewById(R.id.ForumBtn);//ForumBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-
-                // Start NewActivity.class
-                webView.loadUrl(Constants.URL_DisApp_PAD);
+                webView.loadUrl(Constants.URL_DisApp_FORUM);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
             }
 
         });
 
-        // Locate the button in activity_main.xml
-        button = (Button) findViewById(R.id.AboudBtn);
-        // Capture button clicks
+        button = (Button) findViewById(R.id.ChatBtn);//ChatBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                String Conversations = "eu.siacs.conversations";
+                Intent xmpp = getPackageManager().getLaunchIntentForPackage(Conversations);
+                if(xmpp == null) {
+                    xmpp = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
+                }
+                startActivity(xmpp);
+            }
 
-                // Start NewActivity.class
+        });
+
+        button = (Button) findViewById(R.id.PadBtn);//PadBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                String Padland = "com.mikifus.padland";
+                Intent pad = getPackageManager().getLaunchIntentForPackage(Padland);
+                if(pad == null) {
+                    pad = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Padland));
+                }
+                startActivity(pad);
+            }
+
+        });
+
+        button = (Button) findViewById(R.id.CalcBtn);//CalcBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                webView.loadUrl(Constants.URL_DisApp_CALC);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+
+        });
+
+        button = (Button) findViewById(R.id.BinBtn);//BinBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                webView.loadUrl(Constants.URL_DisApp_BIN);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+
+        });
+
+        button = (Button) findViewById(R.id.UploadBtn);//UploadBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                webView.loadUrl(Constants.URL_DisApp_UPLOAD);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+
+        });
+
+        button = (Button) findViewById(R.id.SearxBtn);//SearxBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                webView.loadUrl(Constants.URL_DisApp_SEARX);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+
+        });
+
+        button = (Button) findViewById(R.id.PollsBtn);//PollsBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                webView.loadUrl(Constants.URL_DisApp_POLL);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+
+        });
+
+        button = (Button) findViewById(R.id.BoardBtn);//BoardBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                webView.loadUrl(Constants.URL_DisApp_BOARD);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+
+        });
+
+        button = (Button) findViewById(R.id.UserBtn);//UserBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                webView.loadUrl(Constants.URL_DisApp_USER);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+
+        });
+
+        button = (Button) findViewById(R.id.StateBtn);//UserBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                webView.loadUrl(Constants.URL_DisApp_STATE);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+
+        });
+
+        button = (Button) findViewById(R.id.AboudBtn);//AboutBtn
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
                 Intent goAbout = new Intent(MainActivity.this, AboutActivity.class);
                 MainActivity.this.startActivity(goAbout);
             }
 
         });
+    }
+
+    private void showCloudInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.MailInfoTitle);
+        //builder.setMessage(getString(R.string.activity_main_manteiners, DeviceProvider.getAppVersion(this)));
+        builder.setMessage(getString(R.string.MailInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
     }
 
     @Override
@@ -201,16 +326,36 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        RelativeLayout dashboard = (RelativeLayout)findViewById(R.id.dashboard);
+        ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        TranslateAnimation animateup = new TranslateAnimation(0,0,-2*dashboard.getHeight(),0);
+        TranslateAnimation animatedown = new TranslateAnimation(0,0,0,-dashboard.getHeight());
         switch (item.getItemId()) {
             case R.id.action_share:
                 shareCurrentPage();
                 return true;
             case R.id.action_home:
-                webView.loadUrl(null);
-                webView.setVisibility(View.GONE);
-                dashboard.setVisibility(View.VISIBLE);
+                if(webView.getVisibility()==View.VISIBLE){
+                    //animation
+                    animateup.setDuration(500);
+                    animateup.setFillAfter(false);
+                    dashboard.startAnimation(animateup);
+                    dashboard.setVisibility(View.VISIBLE);
+                    webView.setVisibility(View.GONE);
+                    return true;
+                }
+
+                if (webView.getVisibility()==View.GONE && webView.getUrl()!=null){
+                    //animation
+                    animatedown.setDuration(500);
+                    animatedown.setFillAfter(false);
+                    dashboard.startAnimation(animatedown);
+                    dashboard.setVisibility(View.GONE);
+                    webView.setVisibility(View.VISIBLE);
                 return true;
+                }
+                else
+                    return true;
+                /**
             case R.id.action_mail:
                 String k9 = "com.fsck.k9";
                 Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
@@ -237,8 +382,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 return true;
             case R.id.action_forum:
                 webView.loadUrl(Constants.URL_DisApp_FORUM);
-                webView.setVisibility(View.VISIBLE);
+                animatedown.setDuration(500);
+                animatedown.setFillAfter(true);
+                dashboard.startAnimation(animatedown);
                 dashboard.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
                 return true;
             case R.id.action_chat:
                 String Conversations = "eu.siacs.conversations";
@@ -250,28 +398,43 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 return true;
             case R.id.action_pad:
                 webView.loadUrl(Constants.URL_DisApp_PAD);
-                webView.setVisibility(View.VISIBLE);
+                animatedown.setDuration(500);
+                animatedown.setFillAfter(true);
+                dashboard.startAnimation(animatedown);
                 dashboard.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
                 return true;
             case R.id.action_calc:
                 webView.loadUrl(Constants.URL_DisApp_CALC);
-                webView.setVisibility(View.VISIBLE);
+                animatedown.setDuration(500);
+                animatedown.setFillAfter(true);
+                dashboard.startAnimation(animatedown);
                 dashboard.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
                 return true;
             case R.id.action_bin:
                 webView.loadUrl(Constants.URL_DisApp_BIN);
-                webView.setVisibility(View.VISIBLE);
+                animatedown.setDuration(500);
+                animatedown.setFillAfter(true);
+                dashboard.startAnimation(animatedown);
                 dashboard.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
                 return true;
             case R.id.action_upload:
                 webView.loadUrl(Constants.URL_DisApp_UPLOAD);
-                webView.setVisibility(View.VISIBLE);
+                animatedown.setDuration(500);
+                animatedown.setFillAfter(true);
+                dashboard.startAnimation(animatedown);
                 dashboard.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
                 return true;
             case R.id.action_searx:
                 webView.loadUrl(Constants.URL_DisApp_SEARX);
-                webView.setVisibility(View.VISIBLE);
+                animatedown.setDuration(500);
+                animatedown.setFillAfter(true);
+                dashboard.startAnimation(animatedown);
                 dashboard.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
                 return true;
             case R.id.action_poll:
                 webView.loadUrl(Constants.URL_DisApp_POLL);
@@ -280,14 +443,21 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 return true;
             case R.id.action_board:
                 webView.loadUrl(Constants.URL_DisApp_BOARD);
-                webView.setVisibility(View.VISIBLE);
+                animatedown.setDuration(500);
+                animatedown.setFillAfter(true);
+                dashboard.startAnimation(animatedown);
                 dashboard.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
                 return true;
             case R.id.action_user:
                 webView.loadUrl(Constants.URL_DisApp_USER);
-                webView.setVisibility(View.VISIBLE);
+                animatedown.setDuration(500);
+                animatedown.setFillAfter(true);
+                dashboard.startAnimation(animatedown);
                 dashboard.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
                 return true;
+                 **/
             case R.id.action_about:
                 Intent goAbout = new Intent(MainActivity.this, AboutActivity.class);
                 MainActivity.this.startActivity(goAbout);
@@ -296,15 +466,15 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    public void setupToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        ((TextView) toolbar.findViewById(R.id.textview_toolbar_title)).setText(R.string.app_name);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null)
-            actionBar.setTitle("");
-    }
+/**
+*    public void setupToolbar() {
+ *       Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+  *      ((TextView) toolbar.findViewById(R.id.textview_toolbar_title)).setText(R.string.app_name);
+   *     setSupportActionBar(toolbar);
+    *    ActionBar actionBar = getSupportActionBar();
+     *   if (actionBar != null)
+      *      actionBar.setTitle("");
+    }*/
     private void setupWebView(Bundle savedInstanceState, FrameLayout customViewContainer, ViewGroup viewLoading) {
         disWebChromeClient = new DisWebChromeClient(this, webView, customViewContainer);
         webView = (WebView) findViewById(R.id.webView_content);
@@ -312,7 +482,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         webView.setWebChromeClient(disWebChromeClient);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);//solves taiga board \o/
-        webView.setVerticalScrollBarEnabled(false);
+        webView.setVerticalScrollBarEnabled(true);
         webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setSaveFormData(true);

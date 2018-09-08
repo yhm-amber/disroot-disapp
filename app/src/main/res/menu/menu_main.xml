@@ -4,6 +4,11 @@
     tools:context=".MainActivity">
 
     <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/action_home"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/action_share"
         android:orderInCategory="1"
         android:title="@string/action_share"
@@ -12,11 +17,8 @@
 
     <group
         android:orderInCategory="101"
-        android:showAsAction="always">
-        <item
-            android:icon="@drawable/ic_home"
-            android:id="@+id/action_home"
-            android:title="@string/action_home"/>
+        app:showAsAction="never">
+        <!--
         <item
             android:icon="@drawable/ic_mail"
             android:id="@+id/action_mail"
@@ -69,6 +71,7 @@
             android:icon="@drawable/ic_user"
             android:id="@+id/action_user"
             android:title="@string/action_user" />
+            -->
         <item
             android:icon="@drawable/ic_about"
             android:id="@+id/action_about"

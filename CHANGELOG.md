@@ -12,4 +12,7 @@
 * Non disroor.org domains open in external browser
 * Fixed blank page on board.disroot.org
 * Long press on mail icon shows info
-*
+* Home button animates dashboard
+* Pad icon redirects to Padland
+* Added link to disroot's state
+* Fixed Blank loading of Taiga board

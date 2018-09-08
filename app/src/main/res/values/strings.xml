@@ -14,6 +14,7 @@
     <string name="action_poll">Poll</string>
     <string name="action_board">Board</string>
     <string name="action_user">Password</string>
+    <string name="action_state">State</string>
 
     <string name="action_about">About</string>
     <string name="action_share">Share</string>

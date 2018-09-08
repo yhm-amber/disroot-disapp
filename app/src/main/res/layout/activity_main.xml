@@ -17,69 +17,197 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="invisible" />
-
-
         <include layout="@layout/view_loading"/>
 
-
-        <RelativeLayout
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/dashboard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:stackFromBottom="true"
+            android:transcriptMode="alwaysScroll"
+            android:visibility="visible">
+        <RelativeLayout
+            android:id="@+id/dashLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="#203140"
-            android:visibility="visible"
-            android:gravity="center_horizontal"
-            >
+            android:gravity="center_horizontal">
+
+
+
+                <ImageButton
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:src="@drawable/logo" />
+
 
             <Button
-                style="?android:attr/borderlessButtonStyle"
                 android:id="@+id/MailBtn"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
                 android:textColor="#ffffff"
-                android:layout_weight="1"
                 android:text="@string/action_mail"
-                android:layout_marginTop="50dp"
-                android:drawableTop="@drawable/ic_mail"
-                />
+                android:drawableTop="@drawable/ic_mail"/>
 
             <Button
+                android:id="@+id/CloudBtn"
                 style="?android:attr/borderlessButtonStyle"
-                android:id="@+id/PadBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:layout_weight="1"
-                android:text="@string/action_pad"
-                android:layout_marginTop="50dp"
-                android:drawableTop="@drawable/ic_pad"
-                android:layout_toRightOf="@+id/DiasporaBtn"/>
+                android:layout_toRightOf="@id/MailBtn"
+                android:layout_below="@id/logo"
+                android:drawableTop="@drawable/ic_cloud"
+                android:text="@string/action_cloud"
+                android:textColor="#ffffff" />
 
             <Button
-                style="?android:attr/borderlessButtonStyle"
                 android:id="@+id/DiasporaBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:layout_weight="1"
-                android:text="@string/action_diaspora"
-                android:layout_marginTop="50dp"
-                android:drawableTop="@drawable/ic_diaspora"
-                android:layout_toRightOf="@+id/MailBtn"/>
-            <Button
                 style="?android:attr/borderlessButtonStyle"
-                android:id="@+id/AboudBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:layout_weight="1"
-                android:text="@string/action_about"
-                android:layout_marginTop="50dp"
+                android:layout_below="@+id/logo"
+                android:layout_toRightOf="@+id/CloudBtn"
+                android:drawableTop="@drawable/ic_diaspora"
+                android:text="@string/action_diaspora"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/ForumBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:layout_toRightOf="@+id/DiasporaBtn"
+                android:drawableTop="@drawable/ic_forum"
+                android:text="@string/action_forum"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/ChatBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MailBtn"
+                android:drawableTop="@drawable/ic_chat"
+                android:text="@string/action_chat"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/PadBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CloudBtn"
+                android:layout_toRightOf="@+id/ChatBtn"
+                android:drawableTop="@drawable/ic_pad"
+                android:text="@string/action_pad"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/CalcBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DiasporaBtn"
+                android:layout_toRightOf="@+id/PadBtn"
+                android:drawableTop="@drawable/ic_calc"
+                android:text="@string/action_calc"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/BinBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ForumBtn"
+                android:layout_toRightOf="@+id/CalcBtn"
+                android:drawableTop="@drawable/ic_bin"
+                android:text="@string/action_bin"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/UploadBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ChatBtn"
+                android:drawableTop="@drawable/ic_upload"
+                android:text="@string/action_upload"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/SearxBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/PadBtn"
+                android:layout_toRightOf="@+id/UploadBtn"
+                android:drawableTop="@drawable/ic_searx"
+                android:text="@string/action_searx"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/PollsBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CalcBtn"
+                android:layout_toRightOf="@+id/SearxBtn"
+                android:drawableTop="@drawable/ic_poll"
+                android:text="@string/action_poll"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/BoardBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/BinBtn"
+                android:layout_toRightOf="@+id/PollsBtn"
+                android:drawableTop="@drawable/ic_board"
+                android:text="@string/action_board"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/UserBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/UploadBtn"
+                android:drawableTop="@drawable/ic_poll"
+                android:text="@string/action_user"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/StateBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SearxBtn"
+                android:layout_toRightOf="@+id/UserBtn"
+                android:drawableTop="@drawable/ic_state"
+                android:text="@string/action_state"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/AboudBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/BoardBtn"
+                android:layout_toRightOf="@+id/StateBtn"
                 android:drawableTop="@drawable/ic_about"
-                android:layout_toRightOf="@+id/PadBtn"/>
-
+                android:text="@string/action_about"
+                android:textColor="#ffffff" />
         </RelativeLayout>
-
+        </ScrollView>
     </FrameLayout>
-
 </LinearLayout>
