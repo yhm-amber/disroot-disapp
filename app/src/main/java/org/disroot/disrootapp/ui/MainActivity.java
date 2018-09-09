@@ -2,6 +2,7 @@ package org.disroot.disrootapp.ui;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -296,7 +297,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         //first start
         if (firstStart.getBoolean("firstrun", true)) {
             // Do first run stuff here then set 'firstrun' as false
-            showWelcome();
+            Intent welcome = new Intent(MainActivity.this, WelcomeActivity.class);
+            MainActivity.this.startActivity(welcome);
             // using the following line to edit/commit prefs
             firstStart.edit().putBoolean("firstrun", false).apply();
         }
@@ -538,19 +540,21 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     private void showMailInfo() {
+        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.MailInfoTitle);
         //builder.setMessage(getString(R.string.activity_main_manteiners, DeviceProvider.getAppVersion(this)));
         builder.setMessage(getString(R.string.MailInfo));
         builder.setPositiveButton(R.string.global_ok, null);
-        builder.show();
-    }
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_K9HELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
 
-    private void showWelcome() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.WelcomeTitle);
-        builder.setMessage(getString(R.string.WelcomeInfo));
-        builder.setPositiveButton(R.string.global_ok, null);
+            }
+        });
         builder.show();
     }
 

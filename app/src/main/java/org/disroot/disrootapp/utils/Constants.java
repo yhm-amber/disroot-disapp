@@ -23,4 +23,5 @@ public class Constants {
     public static final String URL_DisApp_USER = "https://user.disroot.org";
     public static final String URL_DisApp_STATE = "https://state.disroot.org";
     public static final String URL_DisApp_HOWTO = "https://howto.disroot.org";
+    public static final String URL_DisApp_K9HELP = "https://howto.disroot.org/en/email/email-clients/mobile/androidk9";
 }

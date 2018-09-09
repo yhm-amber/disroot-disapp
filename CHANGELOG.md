@@ -20,3 +20,4 @@
 * Added exit button
 * Tapping on a disroot domain from external app (such as browser or chat app) opens Disroot app
 * Added reload button
+* Welcome activity added
