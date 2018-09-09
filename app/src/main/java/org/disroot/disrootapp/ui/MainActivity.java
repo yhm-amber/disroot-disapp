@@ -129,11 +129,20 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 String Conversations = "eu.siacs.conversations";
-                Intent xmpp = getPackageManager().getLaunchIntentForPackage(Conversations);
-                if(xmpp == null) {
-                    xmpp = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
+                Intent xmpp1 = getPackageManager().getLaunchIntentForPackage(Conversations);
+                String PixArt = "de.pixart.messenger";
+                Intent xmpp2 = getPackageManager().getLaunchIntentForPackage(PixArt);
+                if((xmpp1 == null)&&(xmpp2 == null)) {
+                    xmpp1 = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
                 }
-                startActivity(xmpp);
+                if((xmpp1 == null)&&(xmpp2 != null)) {
+                    startActivity(xmpp2);
+                }
+                //need to change to give user choise
+                if((xmpp1 != null)&&(xmpp2 != null)) {
+                    startActivity(xmpp2);
+                }
+                startActivity(xmpp1);
             }
 
         });
