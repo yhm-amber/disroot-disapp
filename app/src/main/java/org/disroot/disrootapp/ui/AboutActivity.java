@@ -1,4 +1,4 @@
-package org.disroot.disrootapp;
+package org.disroot.disrootapp.ui;
 
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;

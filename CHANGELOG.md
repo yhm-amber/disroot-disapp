@@ -16,3 +16,7 @@
 * Pad icon redirects to Padland
 * Added link to disroot's state
 * Fixed Blank loading of Taiga board
+* Added link to how to
+* Added exit button
+* Tapping on a disroot domain from external app (such as browser or chat app) opens Disroot app
+* Added reload button

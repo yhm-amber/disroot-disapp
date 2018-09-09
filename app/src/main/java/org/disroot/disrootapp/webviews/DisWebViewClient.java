@@ -31,7 +31,7 @@ public class DisWebViewClient extends WebViewClient {
 Context context;
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        if(url.startsWith("https")&&url.contains("disroot")&&!url.contains("pod")) {
+        if(url.startsWith("https")&&url.contains("disroot")) {
             view.loadUrl(url);
             return super.shouldOverrideUrlLoading(view, url);
         }
