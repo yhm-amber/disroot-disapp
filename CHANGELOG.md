@@ -22,3 +22,4 @@
 * Added reload button
 * Welcome activity added
 * if Pix-art is installed  then it will be launched as chat app
+* You can upload files from archive and from camera
