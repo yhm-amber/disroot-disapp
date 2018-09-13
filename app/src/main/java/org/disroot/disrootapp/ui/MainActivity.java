@@ -17,6 +17,7 @@ import android.os.Environment;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -674,7 +675,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setPositiveButton(R.string.global_ok, null);
         builder.show();
     }
-    
+
     private void showAboutInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.AboutTitle);
@@ -965,13 +966,22 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         webView.setOnLongClickListener(this);
        // webView.setVisibility(View.GONE);;
 
-
-
         //Make download possible
         webView.setDownloadListener(new DownloadListener() {
+
+            @RequiresApi(api = Build.VERSION_CODES.M)//required for version
             public void onDownloadStart(String url, String userAgent,
                                         String contentDisposition, String mimetype,
                                         long contentLength) {
+                //open dialog for permissions
+                if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    Log.e("Permission error","You have permission");
+                } else {
+
+                    Log.e("Permission error","You have asked for permission");
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                }
                 final String filename= URLUtil.guessFileName(url, contentDisposition, mimetype);
                 DownloadManager.Request request = new DownloadManager.Request(
                         Uri.parse(url));
