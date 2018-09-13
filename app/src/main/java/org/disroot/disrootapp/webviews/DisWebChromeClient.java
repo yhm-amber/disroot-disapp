@@ -18,7 +18,6 @@ public class DisWebChromeClient extends WebChromeClient {
     private final WebView webView;
     private final FrameLayout frameLayoutContainer;
     private final Context context;
-    private ViewGroup viewLoading;
     private View viewCustom;
     private CustomViewCallback customViewCallback;
 
@@ -41,17 +40,7 @@ public class DisWebChromeClient extends WebChromeClient {
         }
     }
 
-    @Override
-    public View getVideoLoadingProgressView() {
-        if (viewLoading == null) {
-            LayoutInflater inflater = LayoutInflater.from(context);
-            viewLoading = (ViewGroup) inflater.inflate(R.layout.view_loading, null);
-            viewLoading.findViewById(R.id.textview_loading_description).setVisibility(View.VISIBLE);
-        }
-        return viewLoading;
-    }
-
-    @Override
+       @Override
     public void onHideCustomView() {
         super.onHideCustomView();
         if (viewCustom != null) {

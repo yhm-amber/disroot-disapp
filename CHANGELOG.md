@@ -21,4 +21,11 @@
 * Tapping on a disroot domain from external app (such as browser or chat app) opens Disroot app
 * Added reload button
 * Welcome activity added
+
+## 0.0.3
 * if Pix-art is installed  then it will be launched as chat app
+* Download is possible
+* Upload is possible
+* Added about page
+* Added linkt to fdroid
+* First time tapping on icons shows ontime info

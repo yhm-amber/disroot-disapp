@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_reload" />
-                            <entry key="sourceFile" value="$PROJECT_DIR$/../DisIcons/reload.svg" />
+                            <entry key="outputName" value="ic_f_droid" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/../DisIcons/F-Droid_Logo_4_backup_backup.svg" />
                           </map>
                         </option>
                       </PersistentState>

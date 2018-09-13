@@ -1,12 +1,24 @@
 package org.disroot.disrootapp.ui;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
+import android.app.DownloadManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Parcelable;
+import android.preference.PreferenceManager;
+import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -17,9 +29,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
+import android.webkit.DownloadListener;
+import android.webkit.GeolocationPermissions;
+import android.webkit.URLUtil;
+import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -29,7 +50,15 @@ import org.disroot.disrootapp.utils.Constants;
 import org.disroot.disrootapp.webviews.DisWebChromeClient;
 import org.disroot.disrootapp.webviews.DisWebViewClient;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
 
@@ -38,6 +67,23 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private DisWebChromeClient disWebChromeClient;
     Button button;
     SharedPreferences firstStart = null;//first start
+    private static final int INPUT_FILE_REQUEST_CODE = 1;//file upload
+    private static final int FILECHOOSER_RESULTCODE = 1;
+    String loadUrl;
+    private WebSettings webSettings;
+    private ValueCallback<Uri> mUploadMessage;
+    private Uri mCapturedImageURI = null;
+    private ValueCallback<Uri[]> mFilePathCallback;
+    private String mCameraPhotoPath;
+    ValueCallback<Uri[]> chooserPathUri;
+    private ProgressBar progressBar;
+
+    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
+
+    WebView chooserWV;
+    WebChromeClient.FileChooserParams chooserParams;
+
+    public static final String CONTENT_HASHTAG = "content://org.disroot.disrootapp.ui.mainactivity/";
 
 
 
@@ -47,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         setContentView(R.layout.activity_main);
         FrameLayout frameLayoutContainer = (FrameLayout) findViewById(R.id.framelayout_container);
         ViewGroup viewLoading = (ViewGroup) findViewById(R.id.linearlayout_view_loading_container);
-        setupWebView(savedInstanceState, frameLayoutContainer, viewLoading);
+        setupWebView(savedInstanceState, frameLayoutContainer);
         firstStart = getSharedPreferences("org.disroot.disrootap", MODE_PRIVATE);//fisrt start
         // enables the activity icon as a 'home' button. required if "android:targetSdkVersion" > 14
         //getActionBar().setHomeButtonEnabled(true);
@@ -56,6 +102,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         setSupportActionBar(toolbar);
         final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
 
+
+        progressBar = (ProgressBar)findViewById(R.id.progressbarLoading);
         //Set buttons
         // Locate the button in activity_main.xml
         button = (Button) findViewById(R.id.MailBtn);//MailBtn
@@ -67,18 +115,22 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 return true;
             }
         });
+
         // Capture button clicks
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 // Start NewActivity.class
                 String k9 = "com.fsck.k9";
                 Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
-                if(mail == null) {
+                if(mail == null&&(firstStart.getBoolean("firsttap", false))) {
                     mail = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+k9));
+                }//first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
                 }
-                startActivity(mail);
+                else startActivity(mail);
             }
-
         });
 
         button = (Button) findViewById(R.id.CloudBtn);//CloudBtn
@@ -96,8 +148,12 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 Intent cloud = getPackageManager().getLaunchIntentForPackage(nc);
                 if(cloud == null) {
                     cloud = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+nc));
+                }//first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
                 }
-                startActivity(cloud);
+                else startActivity(cloud);
             }
 
         });
@@ -109,8 +165,12 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
                 if(pod == null) {
                     pod = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Diaspora));
+                }//first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
                 }
-                startActivity(pod);
+                else startActivity(pod);
             }
 
         });
@@ -118,6 +178,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.ForumBtn);//ForumBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_FORUM);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -142,6 +209,12 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 if((xmpp1 != null)&&(xmpp2 != null)) {
                     startActivity(xmpp2);
                 }
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                }
+                else
                 startActivity(xmpp1);
             }
 
@@ -155,7 +228,12 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 if(pad == null) {
                     pad = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Padland));
                 }
-                startActivity(pad);
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                }
+                else startActivity(pad);
             }
 
         });
@@ -163,6 +241,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.CalcBtn);//CalcBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_CALC);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -173,6 +258,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.BinBtn);//BinBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_BIN);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -183,6 +275,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.UploadBtn);//UploadBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_UPLOAD);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -193,6 +292,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.SearxBtn);//SearxBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_SEARX);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -203,6 +309,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.PollsBtn);//PollsBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_POLL);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -213,6 +326,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.BoardBtn);//BoardBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_BOARD);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -223,6 +343,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.UserBtn);//UserBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_USER);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -233,6 +360,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.StateBtn);//UserBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_STATE);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -243,6 +377,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button = (Button) findViewById(R.id.HowtoBtn);//AboutBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                else
                 webView.loadUrl(Constants.URL_DisApp_HOWTO);
                 webView.setVisibility(View.VISIBLE);
                 dashboard.setVisibility(View.GONE);
@@ -254,10 +395,24 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent goAbout = new Intent(MainActivity.this, AboutActivity.class);
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                }
+                else
                 MainActivity.this.startActivity(goAbout);
             }
 
         });
+    }
+
+    private void showFirstTap() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.FirstTitle);
+        builder.setMessage(getString(R.string.FirstInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
     }
 
     private void showCloudInfo() {
@@ -524,10 +679,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
       *      actionBar.setTitle("");
     }*/
     @SuppressLint("SetJavaScriptEnabled")
-    private void setupWebView(Bundle savedInstanceState, FrameLayout customViewContainer, ViewGroup viewLoading) {
+    private void setupWebView(Bundle savedInstanceState, FrameLayout customViewContainer) {
         disWebChromeClient = new DisWebChromeClient(this, webView, customViewContainer);
+        progressBar = (ProgressBar)findViewById(R.id.progressbarLoading);
         webView = (WebView) findViewById(R.id.webView_content);
-        webView.setWebViewClient(new DisWebViewClient(savedInstanceState, viewLoading));
+        webView.setWebViewClient(new DisWebViewClient(savedInstanceState));
         webView.setWebChromeClient(disWebChromeClient);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);//solves taiga board \o/
@@ -535,11 +691,380 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setSaveFormData(true);
+        webView.getSettings().setAllowFileAccess(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
        // webView.loadUrl(Constants.URL_DisApp_MAIN_PAGE);
         webView.setOnLongClickListener(this);
        // webView.setVisibility(View.GONE);;
+
+
+
+        //Make download possible
+        webView.setDownloadListener(new DownloadListener() {
+            public void onDownloadStart(String url, String userAgent,
+                                        String contentDisposition, String mimetype,
+                                        long contentLength) {
+                final String filename= URLUtil.guessFileName(url, contentDisposition, mimetype);
+                DownloadManager.Request request = new DownloadManager.Request(
+                        Uri.parse(url));
+                request.allowScanningByMediaScanner();
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
+                DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                dm.enqueue(request);
+
+            }
+        });
+
+        //check permissions
+        if (Build.VERSION.SDK_INT >= 19) {
+            webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        }
+        else if(Build.VERSION.SDK_INT >=11 && Build.VERSION.SDK_INT < 19) {
+            webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
+        webView.setWebChromeClient(new ChromeClient());
+        webView.loadUrl(loadUrl); //change with your website
+
+        this.webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                progressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                progressBar.setVisibility(View.VISIBLE);
+            }
+
+            @SuppressWarnings("deprecation")
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return handleUrl(url);
+            }
+
+            @TargetApi(Build.VERSION_CODES.N)
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                final Uri uri = request.getUrl();
+                return handleUrl(request.getUrl().toString());
+            }
+        });
     }
 
+    public boolean handleUrl(String url){
+
+        if (url.startsWith("geo:") || url.startsWith("mailto:") || url.startsWith("tel:") || url.startsWith("sms:")|| url.startsWith("xmpp:")) {
+            Intent searchAddress = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(searchAddress);
+        }else
+            webView.loadUrl(url);
+        return true;
+    }
+
+    private  boolean checkAndRequestPermissions() {
+        int permissionCamera = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        int permissionStorage = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        if (permissionStorage != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+        if (permissionCamera != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CAMERA);
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]),REQUEST_ID_MULTIPLE_PERMISSIONS);
+            Log.e(TAG, "Returned falseeeee-------");
+            return false;
+        }
+        Log.d(TAG, "Permission returned trueeeee-------");
+        return true;
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        Log.d(TAG, "Permission callback called-------");
+        switch (requestCode) {
+            case REQUEST_ID_MULTIPLE_PERMISSIONS: {
+
+                Map<String, Integer> perms = new HashMap<>();
+                // Initialize the map with both permissions
+                perms.put(Manifest.permission.CAMERA, PackageManager.PERMISSION_GRANTED);
+                perms.put(Manifest.permission.WRITE_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
+                // Fill with actual results from user
+                if (grantResults.length > 0) {
+                    for (int i = 0; i < permissions.length; i++)
+                        perms.put(permissions[i], grantResults[i]);
+                    // Check for both permissions
+                    if (perms.get(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
+                            && perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        Log.d(TAG, "camera & Storage permission granted");
+                        Toast.makeText(this, "Permissions granted! Try now.", Toast.LENGTH_SHORT).show();
+                        //chromClt.openChooser(chooserWV, chooserPathUri, chooserParams);
+                        // process the normal flow
+                        //else any one or both the permissions are not granted
+                    } else {
+                        Log.d(TAG, "Some permissions are not granted ask again ");
+                        //permission is denied (this is the first time, when "never ask again" is not checked) so ask again explaining the usage of permission
+                        // shouldShowRequestPermissionRationale will return true
+                        //show the dialog or snackbar saying its necessary and try again otherwise proceed with setup.
+                        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA) || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                            showDialogOK("Camera and Storage Permission required for this app",
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            switch (which) {
+                                                case DialogInterface.BUTTON_POSITIVE:
+                                                    checkAndRequestPermissions();
+                                                    break;
+                                                case DialogInterface.BUTTON_NEGATIVE:
+                                                    // proceed with logic by disabling the related features or quit the app.
+                                                    break;
+                                            }
+                                        }
+                                    });
+                        }
+                        //permission is denied (and never ask again is  checked)
+                        //shouldShowRequestPermissionRationale will return false
+                        else {
+                            Toast.makeText(this, "Go to settings and enable permissions", Toast.LENGTH_LONG).show();
+                            //                            //proceed with logic by disabling the related features or quit the app.
+                        }
+                    }
+                }
+                break;
+            }
+        }
+
+    }
+
+    private void showDialogOK(String message, DialogInterface.OnClickListener okListener) {
+        new AlertDialog.Builder(this)
+                .setMessage(message)
+                .setPositiveButton("OK", okListener)
+                .setNegativeButton("Cancel", okListener)
+                .create()
+                .show();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (requestCode != INPUT_FILE_REQUEST_CODE || mFilePathCallback == null) {
+                super.onActivityResult(requestCode, resultCode, data);
+                return;
+            }
+            Uri[] results = null;
+            // Check that the response is a good one
+            if (resultCode == MainActivity.RESULT_OK) {
+                if (data == null) {
+                    // If there is not data, then we may have taken a photo
+                    if (mCameraPhotoPath != null) {
+                        results = new Uri[]{Uri.parse(mCameraPhotoPath)};
+                    }
+                } else {
+                    String dataString = data.getDataString();
+                    if (dataString != null) {
+                        results = new Uri[]{Uri.parse(dataString)};
+                    }else {
+                        if (Build.VERSION.SDK_INT >= 16) {
+                            if (data.getClipData() != null) {
+                                final int numSelectedFiles = data.getClipData().getItemCount();
+
+                                results = new Uri[numSelectedFiles];
+
+                                for (int i = 0; i < numSelectedFiles; i++) {
+                                    results[i] = data.getClipData().getItemAt(i).getUri();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            mFilePathCallback.onReceiveValue(results);
+            mFilePathCallback = null;
+        } else if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
+            if (requestCode != FILECHOOSER_RESULTCODE || mUploadMessage == null) {
+                super.onActivityResult(requestCode, resultCode, data);
+                return;
+            }
+            if (requestCode == FILECHOOSER_RESULTCODE) {
+                if (null == this.mUploadMessage) {
+                    return;
+                }
+                Uri result = null;
+                try {
+                    if (resultCode != RESULT_OK) {
+                        result = null;
+                    } else {
+                        // retrieve from the private variable if the intent is null
+                        result = data == null ? mCapturedImageURI : data.getData();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "activity :" + e,
+                            Toast.LENGTH_LONG).show();
+                }
+                mUploadMessage.onReceiveValue(result);
+                mUploadMessage = null;
+            }
+        }
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                Log.e("Permission error","You have permission");
+            } else {
+
+                Log.e("Permission error","You have asked for permission");
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            }
+        }
+        else { //you dont need to worry about these stuff below api level 23
+            Log.e("Permission error","You already have the permission");
+        }
+        return;
+    }
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        File imageFile = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+        return imageFile;
+    }
+
+    public class ChromeClient extends WebChromeClient {
+
+        public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+            // callback.invoke(String origin, boolean allow, boolean remember);
+            Log.e(TAG, "onGeolocationPermissionsShowPrompt: " );
+            callback.invoke(origin, true, false);
+        }
+
+        // For Android 5.0
+        public boolean onShowFileChooser(WebView view, ValueCallback<Uri[]> filePath, WebChromeClient.FileChooserParams fileChooserParams) {
+
+            chooserWV = view;
+            chooserPathUri = filePath;
+            chooserParams = fileChooserParams;
+
+            if(checkAndRequestPermissions()){
+                openChooser(chooserWV, chooserPathUri, chooserParams);
+
+                return true;
+            }else {
+                return false;
+            }
+
+        }
+
+
+        public void openChooser(WebView view, ValueCallback<Uri[]> filePath, WebChromeClient.FileChooserParams fileChooserParams){
+
+            // Double check that we don't have any existing callbacks
+            if (mFilePathCallback != null) {
+                mFilePathCallback.onReceiveValue(null);
+            }
+            mFilePathCallback = filePath;
+            Intent takePictureIntent;
+
+            takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                // Create the File where the photo should go
+                File photoFile = null;
+                try {
+                    photoFile = createImageFile();
+                    takePictureIntent.putExtra("PhotoPath", mCameraPhotoPath);
+                } catch (IOException ex) {
+                    // Error occurred while creating the File
+                    Log.e(TAG, "Unable to create Image File", ex);
+                }
+                // Continue only if the File was successfully created
+                if (photoFile != null) {
+                    mCameraPhotoPath = "file:" + photoFile.getAbsolutePath();
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
+                } else {
+                    takePictureIntent = null;
+                }
+            }
+            Intent contentSelectionIntent = new Intent(Intent.ACTION_GET_CONTENT);
+            contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE);
+            if (Build.VERSION.SDK_INT >= 18) {
+                contentSelectionIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            }
+            contentSelectionIntent.setType("*/*");
+            Intent[] intentArray;
+            if (takePictureIntent != null) {
+                intentArray = new Intent[]{takePictureIntent};
+            } else {
+                intentArray = new Intent[0];
+            }
+            Intent chooserIntent = new Intent(Intent.ACTION_CHOOSER);
+            chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent);
+            chooserIntent.putExtra(Intent.EXTRA_TITLE, "Image Chooser");
+            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray);
+            startActivityForResult(chooserIntent, INPUT_FILE_REQUEST_CODE);
+        }
+
+        // openFileChooser for Android 3.0+
+        public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType) {
+
+            mUploadMessage = uploadMsg;
+            // Create AndroidExampleFolder at sdcard
+            // Create AndroidExampleFolder at sdcard
+            File imageStorageDir = new File(Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_PICTURES)
+                    , "AndroidExampleFolder");
+            if (!imageStorageDir.exists()) {
+                // Create AndroidExampleFolder at sdcard
+                imageStorageDir.mkdirs();
+            }
+            // Create camera captured image file path and name
+            File file = new File(
+                    imageStorageDir + File.separator + "IMG_"
+                            + String.valueOf(System.currentTimeMillis())
+                            + ".jpg");
+            mCapturedImageURI = Uri.fromFile(file);
+            // Camera capture image intent
+            final Intent captureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+            captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, mCapturedImageURI);
+            Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+            i.addCategory(Intent.CATEGORY_OPENABLE);
+            i.setType("image/*");
+            // Create file chooser intent
+            Intent chooserIntent = Intent.createChooser(i, "Image Chooser");
+            // Set camera intent to file chooser
+            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Parcelable[]{captureIntent});
+            // On select image call onActivityResult method of activity
+
+            chooserIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            startActivityForResult(chooserIntent, FILECHOOSER_RESULTCODE);
+        }
+
+        // openFileChooser for Android < 3.0
+        public void openFileChooser(ValueCallback<Uri> uploadMsg) {
+            openFileChooser(uploadMsg, "");
+        }
+
+        //openFileChooser for other Android versions
+        public void openFileChooser(ValueCallback<Uri> uploadMsg,
+                                    String acceptType,
+                                    String capture) {
+            openFileChooser(uploadMsg, acceptType);
+        }
+
+    }
+
+
+    //
     public void shareCurrentPage() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setAction(Intent.ACTION_SEND);

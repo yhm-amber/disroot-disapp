@@ -1,5 +1,8 @@
 package org.disroot.disrootapp.ui;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,9 +20,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.webview.BuildConfig;
 import com.example.webview.R;
+
+import org.disroot.disrootapp.utils.Constants;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -84,8 +92,11 @@ public class AboutActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_home) {
+            Intent goHome = new Intent(AboutActivity.this, MainActivity.class);
+            AboutActivity.this.startActivity(goHome);
             return true;
         }
 
@@ -116,13 +127,121 @@ public class AboutActivity extends AppCompatActivity {
             fragment.setArguments(args);
             return fragment;
         }
-
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_about, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            View rootView = null;
+            switch (getArguments().getInt(ARG_SECTION_NUMBER)){
+
+                case 1:
+                    rootView = inflater.inflate(R.layout.fragment_about_help, container, false);
+                    //Buttons
+
+
+                    final Button ContributeBtn = (Button) rootView.findViewById(R.id.ContributeBtn);//ContributeBtn
+                    ContributeBtn.setOnClickListener(new View.OnClickListener()
+                    {
+                        public void onClick(View arg0) {
+                            Uri uri = Uri.parse(String.valueOf(Constants.URL_SOURCE));
+                            Intent code = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(code);
+                        }
+                    });
+
+                    final Button TranslateBtn = (Button) rootView.findViewById(R.id.TranslateBtn);//TranslateBtn
+                    TranslateBtn.setOnClickListener(new View.OnClickListener()
+                    {
+                        public void onClick(View arg0) {
+                            Uri uri = Uri.parse(String.valueOf(Constants.URL_TRANSLATE));
+                            Intent translate = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(translate);
+                        }
+                    });
+
+                    final Button FeedbackBtn1 = (Button) rootView.findViewById(R.id.FeedbackBtn1);//FeedbackBtn1
+                    FeedbackBtn1.setOnClickListener(new View.OnClickListener()
+                    {
+                        public void onClick(View arg0) {
+                            Uri uri = Uri.parse(String.valueOf(Constants.URL_BUGS));
+                            Intent feedback1 = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(feedback1);
+                        }
+                    });
+
+                    final Button FeedbackBtn2 = (Button) rootView.findViewById(R.id.FeedbackBtn2);//FeedbackBtn2
+                    FeedbackBtn2.setOnClickListener(new View.OnClickListener()
+                    {
+                        public void onClick(View arg0) {
+                            Uri uri = Uri.parse(String.valueOf(Constants.URL_XMPP));
+                            Intent feedback2 = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(feedback2);
+                        }
+                    });
+                    break;
+                case 2:
+                    rootView = inflater.inflate(R.layout.fragment_about_about, container, false);
+                    final ImageButton fDroidBtn = (ImageButton) rootView.findViewById(R.id.fDroidBtn);//fDroidBtn
+                    fDroidBtn.setOnClickListener(new View.OnClickListener()
+                    {
+                        public void onClick(View arg0) {
+                            Uri uri = Uri.parse(String.valueOf(Constants.URL_FDROID));
+                            Intent fDroid = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(fDroid);
+                        }
+                    });
+                    final ImageButton homeBtn = (ImageButton) rootView.findViewById(R.id.homeBtn);//DisrootBtn
+                    homeBtn.setOnClickListener(new View.OnClickListener()
+                    {
+                        public void onClick(View arg0) {
+                            Uri uri = Uri.parse(String.valueOf(Constants.URL_DISROOT));
+                            Intent home = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(home);
+                        }
+                    });
+                    final TextView PackageName=(TextView)rootView.findViewById(R.id.PackageName);
+                    PackageName.setText("ID: " + BuildConfig.APPLICATION_ID);
+
+                    final TextView AppVersion=(TextView)rootView.findViewById(R.id.AppVersion);
+                    AppVersion.setText("Version: " + BuildConfig.VERSION_NAME + "(" + BuildConfig.VERSION_CODE + ")");
+
+                    final TextView AndroidVersion=(TextView)rootView.findViewById(R.id.AndroidVersion);
+                    AndroidVersion.setText("Android version: " + Build.VERSION.RELEASE);
+
+                    final TextView Device=(TextView)rootView.findViewById(R.id.Device);
+                    Device.setText("Device name: " + Build.MANUFACTURER + Build.MODEL);
+                    break;
+                case 3:
+                    rootView = inflater.inflate(R.layout.fragment_about_license, container, false);
+                    //Buttons
+                    final Button licenseBtn = (Button) rootView.findViewById(R.id.license_button);//LicenseBtn
+                    licenseBtn.setOnClickListener(new View.OnClickListener()
+                    {
+                        public void onClick(View arg0) {
+                            Uri uri = Uri.parse(String.valueOf(Constants.URL_LICENSE));
+                            Intent license = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(license);
+                        }
+                    });
+                    final TextView disrootBtn = (TextView) rootView.findViewById(R.id.disrootUrl);//DisrootBtn
+                    disrootBtn.setOnClickListener(new View.OnClickListener()
+                    {
+                        public void onClick(View arg0) {
+                            Uri uri = Uri.parse(String.valueOf(Constants.URL_DISROOT));
+                            Intent disroot = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(disroot);
+                        }
+                    });
+                    final TextView dioBtn = (TextView) rootView.findViewById(R.id.dioBtn);//DisrootBtn
+                    disrootBtn.setOnClickListener(new View.OnClickListener()
+                    {
+                        public void onClick(View arg0) {
+                            Uri uri = Uri.parse(String.valueOf(Constants.URL_DIO));
+                            Intent dio = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(dio);
+                        }
+                    });
+                    break;
+            }
             return rootView;
         }
     }

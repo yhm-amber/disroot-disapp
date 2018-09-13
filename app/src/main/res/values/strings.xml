@@ -22,6 +22,7 @@
     <string name="action_share">Share</string>
     <string name="action_reload">Reload</string>
 
+
     <string name="action_options">Actions</string>
     <string name="activity_main_share_info">share link info</string>
     <string name="activity_main_manteiners">%s\n\nDeveloper: Massimiliano\n\ncontact us:\n<EMAIL mailto="contact@disroot.org">support@disroot.org</EMAIL></string>
@@ -35,14 +36,50 @@
     <string name="CloudInfoTitle">Nextcloud settings.</string>
     <string name="CloudInfo">Information about cloud.\nLike Nextcloud settings etc...\nAnd other stuff like:\nA button to how to page.</string>
     <string name="WelcomeTitle">Welcome</string>
-    <string name="WelcomeInfo">Welcome\nThis window is temporary\nMust create content for this window\nI may need some helpe here :-p</string>
+    <string name="WelcomeInfo">Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.\nThis app is like your swiss knife to the Disroot platform, made by the community for the community.\nIf you don\'t have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:\nEtherpad, Ethercalc, Private bin, Upload, Poll, Searx and Diaspora (requires a Diaspora only account)\n\nThe app may require you to install additional apps, and not all apps can be found on the Play store, So we recommend you to install F-droid market on your device. If you haven\'t you can download it by tapping on the F-droid icon.\n</string>
 
-    <string name="tab_text_1">Help</string>
-    <string name="tab_text_2">About</string>
-    <string name="tab_text_3">License</string>
+
+    <string name="help">Help</string>
+    <string name="license">License</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="licenseTitle">License</string>
+    <string name="license_button">GNU LGPLv3.0 License</string>
 
+    <string translatable="false" name="licenseText">Copyright © 2007 Free Software Foundation, Inc.\n
+        This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, version 3 of the License only.\n\n
+        This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+    </string>
 
-
+    <string name="maintainersTitle">Maintainers</string>
+    <string name="maintainersText">This app is currently being developed and maintained by\n\n</string>
+    <string name="disrootUrl"><a href = "https://disroot.org">https://disroot.org</a></string>
+    <string name="disroot"> * Disroot community (Disroot):</string>
+    <string name="contributorsTitle">Contributors</string>
+    <string name="contributors"><b>Massimiliano:</b>\n  Current developer of the Disroot app</string>
+    <string name="fDroid">F-Droid</string>
+    <string name="thirdparty">Third-Party Libraries</string>
+    <string name="thirdpartyText">None yet</string>
+    <string name="misc">Miscellaneous</string>
+    <string name="miscDio">We used Diolinx as our starting base to create this app. Go check it out, it\'s free software as well!</string>
+    <string name="miscDioBtn">Tell me more</string>
+    <string name="AppSection">Application</string>
+    <string name="AppVersion">App Version: %1$s</string>
+    <string name="Device">Device:</string>
+    <string name="Contribute">Contribute</string>
+    <string name="ContributeText">Disroot app is developed free as in Freedom and follows the ideas of the Disroot Foundation. If you want to contribute, go ahead! Currently we are a very small team, so we greatly appreciate any kind of help!</string>
+    <string name="ContributeBtn">Get the source</string>
+    <string name="Translate">Translate</string>
+    <string name="TranslateText">The app is not available in your language? You can change that! Why don\\\'t you help us by translating it?</string>
+    <string name="TranslateBtn">Let me translate</string>
+    <string name="Feedback">Give Feedback!</string>
+    <string name="FeedbackText">Disroot app is still in development, so if you have suggestions or any kind of feedback, please let us know!</string>
+    <string name="FeedbackBtn1">Report Bugs</string>
+    <string name="FeedbackBtn2">Chat with us</string>
+    <string name="SpreadTheWord">Spread the word!</string>
+    <string name="SpreadTheWordTxt">Tell your friends and family about Disroot! Why don\'t you blog about your experiences? We\'d love to hear from you!</string>
+    <string name="SpreadTheWordBtn">Share the app</string>
+    <string name="DisrootWeb">Disroot web</string>
+    <string name="FirstTitle">I almost forgot</string>
+    <string name="FirstInfo">You can do a long press on each icon to show you extra information...</string>
 </resources>
+

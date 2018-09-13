@@ -21,12 +21,10 @@ import static android.support.v4.content.ContextCompat.startActivity;
 public class DisWebViewClient extends WebViewClient {
 
     private final Bundle savedInstanceState;
-    private final ViewGroup viewLoading;
     private boolean isViewLoadingNotStarted = true;
 
-    public DisWebViewClient(Bundle savedInstanceState, ViewGroup viewLoading) {
+    public DisWebViewClient(Bundle savedInstanceState) {
         this.savedInstanceState = savedInstanceState;
-        this.viewLoading = viewLoading;
     }
 Context context;
     @Override
@@ -41,25 +39,5 @@ Context context;
             return true;
         }
     }
-
-
-
-    @Override
-    public void onPageStarted(WebView view, String url, Bitmap favicon) {
-        super.onPageStarted(view, url, favicon);
-        if (isViewLoadingNotStarted) {
-            viewLoading.setVisibility(View.VISIBLE);
-            isViewLoadingNotStarted = false;
-        }
-    }
-
-    @Override
-    public void onPageFinished(WebView view, String url) {
-        super.onPageFinished(view, url);
-        if (!isViewLoadingNotStarted) {
-            viewLoading.setVisibility(View.INVISIBLE);
-            isViewLoadingNotStarted = true;
-        }
-        view.setVisibility(View.VISIBLE);
-    }
 }
+

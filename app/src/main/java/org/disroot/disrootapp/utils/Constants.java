@@ -24,4 +24,14 @@ public class Constants {
     public static final String URL_DisApp_STATE = "https://state.disroot.org";
     public static final String URL_DisApp_HOWTO = "https://howto.disroot.org";
     public static final String URL_DisApp_K9HELP = "https://howto.disroot.org/en/email/email-clients/mobile/androidk9";
+    public static final String URL_LICENSE = "https://www.gnu.org/licenses/lgpl-3.0.en.html";
+    public static final String URL_DISROOT = "https://disroot.org";
+    public static final String URL_FDROID = "https://f-droid.org/FDroid.apk";
+    public static final String URL_DIO = "https://github.com/renancunha33/DiolinuxApp";
+    public static final String URL_TRANSLATE = "https://git.fosscommunity.in/disroot/disapp";
+    public static final String URL_SOURCE = "https://git.fosscommunity.in/disroot/disapp";
+    public static final String URL_BUGS = "https://git.fosscommunity.in/disroot/disapp/issues";
+    public static final String URL_XMPP = "xmpp:disroot@chat.disroot.org?join";
+
+
 }

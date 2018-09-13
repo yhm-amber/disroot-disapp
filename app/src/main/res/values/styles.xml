@@ -9,6 +9,7 @@
         <item name="windowActionModeOverlay">true</item>
         <item name="toolbarStyle">@style/Widget.MyApp.ActionBar</item>
         <item name="android:textAllCaps">false</item>
+        <item name="cardViewStyle">@style/CardView</item>
     </style>
 
     <style name="Widget.MyApp.ActionBar" parent="Widget.AppCompat.ActionBar">
@@ -24,5 +25,8 @@
     <style name="DisTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="DisTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Customize your theme here. -->
+        <item name="cardViewStyle">@style/CardView</item></style>
 
 </resources>
