@@ -969,7 +969,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         //Make download possible
         webView.setDownloadListener(new DownloadListener() {
 
-            @RequiresApi(api = Build.VERSION_CODES.M)//required for version
+            @TargetApi(Build.VERSION_CODES.M)
             public void onDownloadStart(String url, String userAgent,
                                         String contentDisposition, String mimetype,
                                         long contentLength) {
