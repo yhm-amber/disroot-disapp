@@ -58,7 +58,7 @@
     <string name="contributors"><b>Massimiliano:</b>\n  Current developer of the Disroot app</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Third-Party Libraries</string>
-    <string name="thirdpartyText">None yet</string>
+    <string name="thirdpartyText">ckCangelog</string>
     <string name="misc">Miscellaneous</string>
     <string name="miscDio">We used Diolinx as our starting base to create this app. Go check it out, it\'s free software as well!</string>
     <string name="miscDioBtn">Tell me more</string>
@@ -81,5 +81,34 @@
     <string name="DisrootWeb">Disroot web</string>
     <string name="FirstTitle">I almost forgot</string>
     <string name="FirstInfo">You can do a long press on each icon to show you extra information...</string>
+    <string name="DiasporaTitle">Diaspora settings</string>
+    <string name="DiasporaInfo">Needs info...</string>
+    <string name="PadInfo">Pad Needs info...</string>
+    <string name="PadTitle">Etherpad info</string>
+    <string name="ChatTitle">XMPP settings</string>
+    <string name="ChatInfo">Jabber ID : Your full Disroot email address\\nPassword : Your Disroot password</string>
+    <string name="CalcInfo">EtherCalc needs Info</string>
+    <string name="CalcTitle">Ethercalc Info</string>
+    <string name="BinTitle">PrivateBin Info</string>
+    <string name="BinInfo">PrivateBin needs info...</string>
+    <string name="UploadTitle">Upload Info</string>
+    <string name="UploadInfo">Upload needs Info</string>
+    <string name="SearxTitle">Searx Info</string>
+    <string name="SearxInfo">Anonymous multi search engine platform aggregating the results of other search engines while not storing information about its users.</string>
+    <string name="PollsTitle">Polls Info</string>
+    <string name="PollsInfo">Framadate is an online service for planning an appointment or making a decision quickly and easily. No registration is required.</string>
+    <string name="BoardTitle">Project board Info</string>
+    <string name="BoardInfo">Taiga is a project management tool, developed for programmers, designers and startups working with agile methodology in mind. It can however be applied to virtually any project or group, even outside of IT realm.</string>
+    <string name="UserTitle">User Self Service Center - Info</string>
+    <string name="UserInfo">Needs Info</string>
+    <string name="StateTitle">State Info</string>
+    <string name="StateInfo">Page to see the current stare of Disroot services</string>
+    <string name="state_help">State on xmpp</string>
+    <string name="HowToTitle">How to Info</string>
+    <string name="HowToInfo">This site is dedicated to Howtos and tutorials to help you find your way around the various Disroot services.</string>
+    <string name="AboutTitle">About Info</string>
+    <string name="AboutInfo">This is the about page of this app</string>
+    <string name="ForumTitle">Forum Info</string>
+    <string name="ForumInfo">Discourse is a fully open-source modern approach to discussion forums. It offers everything your community, group or collective needs to create their communication platform.</string>
 </resources>
 

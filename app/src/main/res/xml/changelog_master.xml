@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelog>
+    <release version="0.0.3" versioncode="3" >
+        <change>If Pix-art is installed  then it will be launched as chat app</change>
+        <change>Download is possible</change>
+        <change>You can upload files from archive and from camera</change>
+        <change>Added about page</change>
+        <change>Added link to fdroid</change>
+        <change>First time tapping on icons shows ontime info</change>
+        <change>Every icon shows info on long press</change>
+        <change>added ckChangelog</change>
+    </release>
+    <release version="0.0.2" versioncode="2" >
+        <change>Non disroot.org domains open in external browser</change>
+        <change>Fixed blank page on board.disroot.org</change>
+        <change>Long press on mail icon shows info</change>
+        <change>Home button animates dashboard</change>
+        <change>Pad icon redirects to Padland</change>
+        <change>Added link to disroot's stat</change>
+        <change>Fixed Blank loading of Taiga board</change>
+        <change>Added link to how to</change>
+        <change>Added exit button</change>
+        <change>Tapping on a disroot domain from external app (such as browser or chat app) opens Disroot app</change>
+        <change>Added reload button</change>
+        <change>Welcome activity added</change>
+    </release>
+    <release version="0.0.1" versioncode="1">
+        <change>Created project starting from Diolinux</change>
+        <change>if you now click on a link outside the disroot domain it opens in a external browser.</change>
+        <change>menu background changed to dark</change>
+        <change>Added all icons</change>
+    </release>
+</changelog>

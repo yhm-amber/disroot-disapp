@@ -7,13 +7,7 @@ public class Constants {
     public static final long SPLASH_SCREEN_DURATION = 3000;
     public static final long SPLASH_SCREEN_INTERVAL = 1000;
 
-    public static final String URL_DisApp_MAIN_PAGE = "file:///android_asset/index.html";
-    public static final String URL_DisApp_MAIL = "https://mail.disroot.org";
-    public static final String URL_DisApp_CLOUD = "https://cloud.disroot.org";
-    public static final String URL_DisApp_DIASPORA = "https://pod.disroot.org/";
     public static final String URL_DisApp_FORUM = "https://forum.disroot.org/";
-    public static final String URL_DisApp_CHAT = "https://chat.disroot.org";
-    public static final String URL_DisApp_PAD = "https://pad.disroot.org";
     public static final String URL_DisApp_CALC = "https://calc.disroot.org";
     public static final String URL_DisApp_BIN = "https://bin.disroot.org";
     public static final String URL_DisApp_UPLOAD = "https://upload.disroot.org";
@@ -24,6 +18,9 @@ public class Constants {
     public static final String URL_DisApp_STATE = "https://state.disroot.org";
     public static final String URL_DisApp_HOWTO = "https://howto.disroot.org";
     public static final String URL_DisApp_K9HELP = "https://howto.disroot.org/en/email/email-clients/mobile/androidk9";
+    public static final String URL_DisApp_XMPPHELP = "https://howto.disroot.org/en/xmpp/mobile/android";
+    public static final String URL_DisApp_SEARXHELP = "https://disroot.org/en/services/search";
+    public static final String URL_DisApp_STATEXMPP = "xmpp:state@chat.disroot.org?join";
     public static final String URL_LICENSE = "https://www.gnu.org/licenses/lgpl-3.0.en.html";
     public static final String URL_DISROOT = "https://disroot.org";
     public static final String URL_FDROID = "https://f-droid.org/FDroid.apk";
@@ -32,6 +29,4 @@ public class Constants {
     public static final String URL_SOURCE = "https://git.fosscommunity.in/disroot/disapp";
     public static final String URL_BUGS = "https://git.fosscommunity.in/disroot/disapp/issues";
     public static final String URL_XMPP = "xmpp:disroot@chat.disroot.org?join";
-
-
 }

@@ -60,6 +60,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import de.cketti.library.changelog.ChangeLog;
+
 public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -104,6 +106,12 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
 
         progressBar = (ProgressBar)findViewById(R.id.progressbarLoading);
+
+        //ckCangelog library
+        ChangeLog cl = new ChangeLog(this);
+        if (cl.isFirstRun()) {
+            cl.getLogDialog().show();
+        }
         //Set buttons
         // Locate the button in activity_main.xml
         button = (Button) findViewById(R.id.MailBtn);//MailBtn
@@ -135,7 +143,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         button = (Button) findViewById(R.id.CloudBtn);//CloudBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
-
             @Override
             public boolean onLongClick(View v) {
                 showCloudInfo();
@@ -159,6 +166,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.DiasporaBtn);//DiasporaBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showDiaInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 String Diaspora = "com.github.dfa.diaspora_android";
@@ -176,6 +190,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.ForumBtn);//ForumBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showForumInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -193,6 +214,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.ChatBtn);//ChatBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showChatInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 String Conversations = "eu.siacs.conversations";
@@ -221,6 +249,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.PadBtn);//PadBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showPadInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 String Padland = "com.mikifus.padland";
@@ -239,6 +274,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.CalcBtn);//CalcBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showCalcInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -256,6 +298,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.BinBtn);//BinBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showBinInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -273,6 +322,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.UploadBtn);//UploadBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showUploadInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -290,6 +346,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.SearxBtn);//SearxBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showSearxInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -307,6 +370,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.PollsBtn);//PollsBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showPollsInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -324,6 +394,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.BoardBtn);//BoardBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showBoardInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -341,6 +418,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.UserBtn);//UserBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showUserInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -357,7 +441,14 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.StateBtn);//UserBtn
+        button = (Button) findViewById(R.id.StateBtn);//StateBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showStateInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -374,7 +465,14 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.HowtoBtn);//AboutBtn
+        button = (Button) findViewById(R.id.HowtoBtn);//HowToBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showHowToInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //first time tap check
@@ -392,6 +490,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
 
         button = (Button) findViewById(R.id.AboudBtn);//AboutBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showAboutInfo();
+                return true;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 Intent goAbout = new Intent(MainActivity.this, AboutActivity.class);
@@ -407,6 +512,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
     }
 
+    //Dialog windows
     private void showFirstTap() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.FirstTitle);
@@ -415,11 +521,172 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.show();
     }
 
+    @Override
+    public boolean onLongClick(View view) {
+        Toast.makeText(view.getContext(), R.string.activity_main_share_info, Toast.LENGTH_LONG).show();
+        return false;
+    }
+    //Mail Info
+    private void showMailInfo() {
+        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.MailInfoTitle);
+        builder.setMessage(getString(R.string.MailInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_K9HELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
+        builder.show();
+    }
+    //Cloud Info
     private void showCloudInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.CloudInfoTitle);
-        //builder.setMessage(getString(R.string.activity_main_manteiners, DeviceProvider.getAppVersion(this)));
         builder.setMessage(getString(R.string.CloudInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+    //Diaspora info
+    private void showDiaInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.DiasporaTitle);
+        builder.setMessage(getString(R.string.DiasporaInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
+    private void showPadInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.PadTitle);
+        builder.setMessage(getString(R.string.PadInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
+    private void showChatInfo() {
+        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.ChatTitle);
+        builder.setMessage(getString(R.string.ChatInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_XMPPHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
+        builder.show();
+    }
+
+    private void showCalcInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.CalcTitle);
+        builder.setMessage(getString(R.string.CalcInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
+    private void showBinInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.BinTitle);
+        builder.setMessage(getString(R.string.BinInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
+    private void showUploadInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.UploadTitle);
+        builder.setMessage(getString(R.string.UploadInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
+    private void showSearxInfo() {
+        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.SearxTitle);
+        builder.setMessage(getString(R.string.SearxInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_SEARXHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
+        builder.show();
+    }
+
+    private void showPollsInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.PollsTitle);
+        builder.setMessage(getString(R.string.PollsInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
+    private void showBoardInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.BoardTitle);
+        builder.setMessage(getString(R.string.BoardInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
+    private void showUserInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.UserTitle);
+        builder.setMessage(getString(R.string.UserInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
+    private void showStateInfo() {
+        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.StateTitle);
+        builder.setMessage(getString(R.string.StateInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.state_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Uri uri = Uri.parse(String.valueOf(Constants.URL_DisApp_STATEXMPP));
+                Intent xmpp = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                startActivity(xmpp);
+            }
+        });
+        builder.show();
+    }
+
+    private void showHowToInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.HowToTitle);
+        builder.setMessage(getString(R.string.HowToInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+    
+    private void showAboutInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.AboutTitle);
+        builder.setMessage(getString(R.string.AboutInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
+    private void showForumInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.ForumTitle);
+        builder.setMessage(getString(R.string.ForumInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.show();
     }
@@ -963,7 +1230,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }else {
                 return false;
             }
-
         }
 
 
@@ -1060,9 +1326,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                                     String capture) {
             openFileChooser(uploadMsg, acceptType);
         }
-
     }
-
 
     //
     public void shareCurrentPage() {
@@ -1071,30 +1335,5 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         intent.putExtra(Intent.EXTRA_TEXT, webView.getUrl());
         intent.setType("text/plain");
         startActivity(intent);
-    }
-
-    private void showMailInfo() {
-        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.MailInfoTitle);
-        //builder.setMessage(getString(R.string.activity_main_manteiners, DeviceProvider.getAppVersion(this)));
-        builder.setMessage(getString(R.string.MailInfo));
-        builder.setPositiveButton(R.string.global_ok, null);
-        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                webView.loadUrl(Constants.URL_DisApp_K9HELP);
-                webView.setVisibility(View.VISIBLE);
-                dashboard.setVisibility(View.GONE);
-
-            }
-        });
-        builder.show();
-    }
-
-    @Override
-    public boolean onLongClick(View view) {
-        Toast.makeText(view.getContext(), R.string.activity_main_share_info, Toast.LENGTH_LONG).show();
-        return false;
     }
 }
