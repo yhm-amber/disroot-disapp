@@ -31,6 +31,10 @@
 * You can upload files from archive and from camera
 * Added about page
 * Added linkt to fdroid
+<<<<<<< HEAD
 * First time tapping on icons shows ontime info
 
 
+=======
+* First time tapping on icons shows ontime info
+>>>>>>> 91a4c3a84eee7be9fadba5b0be8cce8671040fa8
