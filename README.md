@@ -1,12 +1,12 @@
-<h1>Disroot app </h1>
+#Disroot app
 
-This app is a webapp for the site siroot.org.
+This app is a webapp for the site Diroot.org.
 
-<i>Link to source:<br />
+*Link to source:*
 ...
-<br/>
-Link to APK:<br/>
-...</i>
+
+*Link to APK:*
+...
 
 Licence GPLv3 (see licence on source above)
 
@@ -14,5 +14,4 @@ Requiriments:
 Android 4.1 or +
 4 MB free on Smartphone
 
-<h3>Developed by Massimiliano:</h3>
-
+###Developed by Massimiliano:

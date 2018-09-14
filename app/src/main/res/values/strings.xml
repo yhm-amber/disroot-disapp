@@ -69,7 +69,7 @@
     <string name="ContributeText">Disroot app is developed free as in Freedom and follows the ideas of the Disroot Foundation. If you want to contribute, go ahead! Currently we are a very small team, so we greatly appreciate any kind of help!</string>
     <string name="ContributeBtn">Get the source</string>
     <string name="Translate">Translate</string>
-    <string name="TranslateText">The app is not available in your language? You can change that! Why don\\\'t you help us by translating it?</string>
+    <string name="TranslateText">The app is not available in your language? You can change that! Why don\'t you help us by translating it?</string>
     <string name="TranslateBtn">Let me translate</string>
     <string name="Feedback">Give Feedback!</string>
     <string name="FeedbackText">Disroot app is still in development, so if you have suggestions or any kind of feedback, please let us know!</string>
@@ -111,4 +111,3 @@
     <string name="ForumTitle">Forum Info</string>
     <string name="ForumInfo">Discourse is a fully open-source modern approach to discussion forums. It offers everything your community, group or collective needs to create their communication platform.</string>
 </resources>
-
