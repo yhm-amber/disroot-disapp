@@ -70,8 +70,11 @@ public class AboutActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Uri uri = Uri.parse(String.valueOf(Constants.URL_SUPPORT));
+                Intent support = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                startActivity(support);
+               // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                 //       .setAction("Action", null).show();
             }
         });
 
@@ -204,7 +207,7 @@ public class AboutActivity extends AppCompatActivity {
                     final TextView AppVersion=(TextView)rootView.findViewById(R.id.AppVersion);
                     AppVersion.setText("Version: " + BuildConfig.VERSION_NAME + "(" + BuildConfig.VERSION_CODE + ")");
 
-                    final TextView AndroidVersion=(TextView)rootView.findViewById(R.id.AndroidVersion);
+                    final TextView AndroidVersion= rootView.findViewById(R.id.AndroidVersion);
                     AndroidVersion.setText("Android version: " + Build.VERSION.RELEASE);
 
                     final TextView Device=(TextView)rootView.findViewById(R.id.Device);

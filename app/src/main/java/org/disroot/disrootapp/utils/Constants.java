@@ -29,4 +29,5 @@ public class Constants {
     public static final String URL_SOURCE = "https://git.fosscommunity.in/disroot/disapp";
     public static final String URL_BUGS = "https://git.fosscommunity.in/disroot/disapp/issues";
     public static final String URL_XMPP = "xmpp:disroot@chat.disroot.org?join";
+    public static final String URL_SUPPORT = "mailto:support@disroot.org";
 }
