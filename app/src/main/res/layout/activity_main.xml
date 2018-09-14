@@ -13,9 +13,12 @@
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="10dp"
+        android:progressBackgroundTint="#ffffff"
+        android:progressTint="@color/bg_primary_blue_dark"
         android:visibility="gone"
-        android:indeterminate="true"
-        android:indeterminateTintMode="add"/>
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="1"/>
     <FrameLayout
         android:id="@+id/framelayout_container"
         android:layout_width="match_parent"

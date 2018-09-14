@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
@@ -80,6 +81,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private String mCameraPhotoPath;
     ValueCallback<Uri[]> chooserPathUri;
     private ProgressBar progressBar;
+    private int progressStatus = 0;
+    private Handler handler = new Handler();
 
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
 
@@ -95,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FrameLayout frameLayoutContainer = (FrameLayout) findViewById(R.id.framelayout_container);
-        ViewGroup viewLoading = (ViewGroup) findViewById(R.id.linearlayout_view_loading_container);
+        //ViewGroup viewLoading = (ViewGroup) findViewById(R.id.linearlayout_view_loading_container);
         setupWebView(savedInstanceState, frameLayoutContainer);
         firstStart = getSharedPreferences("org.disroot.disrootap", MODE_PRIVATE);//fisrt start
         // enables the activity icon as a 'home' button. required if "android:targetSdkVersion" > 14
@@ -105,8 +108,29 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         setSupportActionBar(toolbar);
         final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
 
-
+        //progressbarLoading
         progressBar = (ProgressBar)findViewById(R.id.progressbarLoading);
+        // Start long running operation in a background thread
+        new Thread(new Runnable() {
+            public void run() {
+                while (progressStatus < 100) {
+                    progressStatus += 1;
+                    // Update the progress bar and display the
+                    //current value in the text view
+                    handler.post(new Runnable() {
+                        public void run() {
+                            progressBar.setProgress(progressStatus);
+                        }
+                    });
+                    try {
+                        // Sleep for 200 milliseconds.
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
 
         //ckCangelog library
         ChangeLog cl = new ChangeLog(this);

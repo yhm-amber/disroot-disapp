@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="0.0.4" versioncode="3" >
+        <change>Fixed Download issue when tryng to download a file for the first time</change>
+        <change>Changed layout of the about activity</change>
+        <change>Floating mail icon makes you send mail to Disroot</change>
+        <change>Corrected some typos</change>
+        <change>ProgressBar shows actual progress</change>
+        <change></change>
+        <change></change>
+    </release>
     <release version="0.0.3" versioncode="3" >
         <change>If Pix-art is installed  then it will be launched as chat app</change>
         <change>Download is possible</change>
