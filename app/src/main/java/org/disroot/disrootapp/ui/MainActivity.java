@@ -98,14 +98,15 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FrameLayout frameLayoutContainer = (FrameLayout) findViewById(R.id.framelayout_container);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         //ViewGroup viewLoading = (ViewGroup) findViewById(R.id.linearlayout_view_loading_container);
         setupWebView(savedInstanceState, frameLayoutContainer);
         firstStart = getSharedPreferences("org.disroot.disrootap", MODE_PRIVATE);//fisrt start
         // enables the activity icon as a 'home' button. required if "android:targetSdkVersion" > 14
         //getActionBar().setHomeButtonEnabled(true);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
         final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
 
         //progressbarLoading
