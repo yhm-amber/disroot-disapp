@@ -86,7 +86,7 @@
     <string name="PadInfo">Pad Needs info...</string>
     <string name="PadTitle">Etherpad info</string>
     <string name="ChatTitle">XMPP settings</string>
-    <string name="ChatInfo">Jabber ID : Your full Disroot email address\\nPassword : Your Disroot password</string>
+    <string name="ChatInfo">Jabber ID : Your full Disroot email address\nPassword : Your Disroot password</string>
     <string name="CalcInfo">EtherCalc needs Info</string>
     <string name="CalcTitle">Ethercalc Info</string>
     <string name="BinTitle">PrivateBin Info</string>

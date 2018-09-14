@@ -8,10 +8,12 @@ This app is a webapp for the site Diroot.org.
 *Link to APK:*
 ...
 
-Licence GPLv3 (see licence on source above)
+Licence GPLv3-only (see licence on source above)
 
 Requiriments:
 Android 4.1 or +
 4 MB free on Smartphone
 
-###Developed by Massimiliano:
+###Developed by:
+
+* Massimiliano:
