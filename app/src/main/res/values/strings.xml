@@ -26,8 +26,8 @@
     <string name="action_options">Actions</string>
     <string name="activity_main_share_info">share link info</string>
     <string name="activity_main_manteiners">%s\n\nDeveloper: Massimiliano\n\ncontact us:\n<EMAIL mailto="contact@disroot.org">support@disroot.org</EMAIL></string>
-    <string name="view_loading_description">Loading...</string>
-    <string name="global_ok">ok</string>
+    <string name="view_loading_description">Loading…</string>
+    <string name="global_ok">OK</string>
     <string name="more_help">Need more help?</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="title_activity_tap">TapActivity</string>
@@ -81,7 +81,7 @@
     <string name="SpreadTheWordBtn">Share the app</string>
     <string name="DisrootWeb">Disroot web</string>
     <string name="FirstTitle">I almost forgot</string>
-    <string name="FirstInfo">You can do a long press on each icon to show you extra information...</string>
+    <string name="FirstInfo">You can do a long press on each icon to show you extra information…</string>
     <string name="DiasporaTitle">Diaspora settings</string>
     <string name="DiasporaInfo">Needs info...</string>
     <string name="PadInfo">Pad Needs info...</string>
@@ -111,7 +111,8 @@
     <string name="AboutInfo">This is the about page of this app</string>
     <string name="ForumTitle">Forum Info</string>
     <string name="ForumInfo">Discourse is a fully open-source modern approach to discussion forums. It offers everything your community, group or collective needs to create their communication platform.</string>
-    <string name="LogoTitle">Did you just really try the long press on the logo?</string>
-    <string name="LogoInfo">What you want to know? It\'s just a logo.\nNow stop being so courious ;-)</string>
+    <string name="LogoTitle">Did you really just try the long press on the logo?</string>
+    <string name="LogoInfo">Why? It\'s just a logo.\nDon\'t be too courious ;-)</string>
     <string name="LogoBtn">Disroot rules \\o/</string>
+    <string name="logo">Logo</string>
 </resources>

@@ -5,9 +5,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="155dp"
+        android:layout_height="350dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/logodisroot" />
+        android:background="@drawable/logodisroot"
+        android:contentDescription="@string/logo" />
 </RelativeLayout>
