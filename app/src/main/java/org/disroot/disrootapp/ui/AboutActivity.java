@@ -1,11 +1,12 @@
 package org.disroot.disrootapp.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -24,34 +25,19 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.webview.BuildConfig;
-import com.example.webview.R;
-
+import org.disroot.disrootapp.R;
 import org.disroot.disrootapp.utils.Constants;
 
+import static org.disroot.disrootapp.BuildConfig.*;
+
 public class AboutActivity extends AppCompatActivity {
-
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -62,18 +48,29 @@ public class AboutActivity extends AppCompatActivity {
         });
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        /*
+      The {@link android.support.v4.view.PagerAdapter} that will provide
+      fragments for each of the sections. We use a
+      {@link FragmentPagerAdapter} derivative, which will keep every
+      loaded fragment in memory. If this becomes too memory intensive, it
+      may be best to switch to a
+      {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     */
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        /*
+      The {@link ViewPager} that will host the section contents.
+     */
+        ViewPager mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,10 +134,13 @@ public class AboutActivity extends AppCompatActivity {
             fragment.setArguments(args);
             return fragment;
         }
+        @SuppressLint("SetTextI18n")
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+        public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = null;
+            assert getArguments() != null;
+            View rootView;
+            rootView = null;
             switch (getArguments().getInt(ARG_SECTION_NUMBER)){
 
                 case 1:
@@ -148,7 +148,7 @@ public class AboutActivity extends AppCompatActivity {
                     //Buttons
 
 
-                    final Button ContributeBtn = (Button) rootView.findViewById(R.id.ContributeBtn);//ContributeBtn
+                    final Button ContributeBtn = rootView.findViewById(R.id.ContributeBtn);//ContributeBtn
                     ContributeBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
@@ -158,7 +158,7 @@ public class AboutActivity extends AppCompatActivity {
                         }
                     });
 
-                    final Button TranslateBtn = (Button) rootView.findViewById(R.id.TranslateBtn);//TranslateBtn
+                    final Button TranslateBtn = rootView.findViewById(R.id.TranslateBtn);//TranslateBtn
                     TranslateBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
@@ -168,7 +168,8 @@ public class AboutActivity extends AppCompatActivity {
                         }
                     });
 
-                    final Button FeedbackBtn1 = (Button) rootView.findViewById(R.id.FeedbackBtn1);//FeedbackBtn1
+                    final Button FeedbackBtn1;//FeedbackBtn1
+                    FeedbackBtn1 = rootView.findViewById(R.id.FeedbackBtn1);
                     FeedbackBtn1.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
@@ -178,7 +179,7 @@ public class AboutActivity extends AppCompatActivity {
                         }
                     });
 
-                    final Button FeedbackBtn2 = (Button) rootView.findViewById(R.id.FeedbackBtn2);//FeedbackBtn2
+                    final Button FeedbackBtn2 = rootView.findViewById(R.id.FeedbackBtn2);//FeedbackBtn2
                     FeedbackBtn2.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
@@ -190,7 +191,7 @@ public class AboutActivity extends AppCompatActivity {
                     break;
                 case 2:
                     rootView = inflater.inflate(R.layout.fragment_about_about, container, false);
-                    final ImageButton fDroidBtn = (ImageButton) rootView.findViewById(R.id.fDroidBtn);//fDroidBtn
+                    final ImageButton fDroidBtn = rootView.findViewById(R.id.fDroidBtn);//fDroidBtn
                     fDroidBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
@@ -199,7 +200,8 @@ public class AboutActivity extends AppCompatActivity {
                             startActivity(fDroid);
                         }
                     });
-                    final ImageButton homeBtn = (ImageButton) rootView.findViewById(R.id.homeBtn);//DisrootBtn
+                    final ImageButton homeBtn;//DisrootBtn
+                    homeBtn = rootView.findViewById(R.id.homeBtn);
                     homeBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
@@ -208,22 +210,24 @@ public class AboutActivity extends AppCompatActivity {
                             startActivity(home);
                         }
                     });
-                    final TextView PackageName=(TextView)rootView.findViewById(R.id.PackageName);
-                    PackageName.setText("ID: " + BuildConfig.APPLICATION_ID);
+                    final TextView PackageName= rootView.findViewById(R.id.PackageName);
+                    PackageName.setText("ID: " + APPLICATION_ID);
 
-                    final TextView AppVersion=(TextView)rootView.findViewById(R.id.AppVersion);
-                    AppVersion.setText("Version: " + BuildConfig.VERSION_NAME + "(" + BuildConfig.VERSION_CODE + ")");
+                    final TextView AppVersion= rootView.findViewById(R.id.AppVersion);
+                    AppVersion.setText("Version: " + VERSION_NAME + "(" + VERSION_CODE + ")");
 
                     final TextView AndroidVersion= rootView.findViewById(R.id.AndroidVersion);
                     AndroidVersion.setText("Android version: " + Build.VERSION.RELEASE);
 
-                    final TextView Device=(TextView)rootView.findViewById(R.id.Device);
+                    final TextView Device;
+                    Device = rootView.findViewById(R.id.Device);
                     Device.setText("Device name: " + Build.MANUFACTURER + Build.MODEL);
                     break;
                 case 3:
                     rootView = inflater.inflate(R.layout.fragment_about_license, container, false);
                     //Buttons
-                    final Button licenseBtn = (Button) rootView.findViewById(R.id.license_button);//LicenseBtn
+                    final Button licenseBtn;//LicenseBtn
+                    licenseBtn = rootView.findViewById(R.id.license_button);
                     licenseBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
@@ -232,7 +236,8 @@ public class AboutActivity extends AppCompatActivity {
                             startActivity(license);
                         }
                     });
-                    final TextView disrootBtn = (TextView) rootView.findViewById(R.id.disrootUrl);//DisrootBtn
+                    final TextView disrootBtn;//DisrootBtn
+                    disrootBtn = rootView.findViewById(R.id.disrootUrl);
                     disrootBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
@@ -241,8 +246,9 @@ public class AboutActivity extends AppCompatActivity {
                             startActivity(disroot);
                         }
                     });
-                    final TextView dioBtn = (TextView) rootView.findViewById(R.id.dioBtn);//DisrootBtn
-                    disrootBtn.setOnClickListener(new View.OnClickListener()
+                    final TextView dioBtn;//DiotBtn
+                    dioBtn = rootView.findViewById(R.id.dioBtn);
+                    dioBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
                             Uri uri = Uri.parse(String.valueOf(Constants.URL_DIO));
@@ -262,8 +268,11 @@ public class AboutActivity extends AppCompatActivity {
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        final FragmentManager fm;
+
+        SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+            this.fm = fm;
         }
 
         @Override

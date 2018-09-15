@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.webview.R;
+
+import org.disroot.disrootapp.R;
 import org.disroot.disrootapp.utils.Constants;
 
 public class SplashScreenActivity extends AppCompatActivity {

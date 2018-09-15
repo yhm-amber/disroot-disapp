@@ -5,16 +5,14 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.webview.R;
+import org.disroot.disrootapp.R;
 
 import org.disroot.disrootapp.utils.Constants;
 
 public class WelcomeActivity extends AppCompatActivity {
     ImageButton imageButton;
-    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

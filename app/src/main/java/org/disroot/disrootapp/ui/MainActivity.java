@@ -10,14 +10,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Parcelable;
-import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -29,28 +30,25 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.webkit.DownloadListener;
 import android.webkit.GeolocationPermissions;
 import android.webkit.URLUtil;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.example.webview.R;
 
+import org.disroot.disrootapp.R;
 import org.disroot.disrootapp.utils.Constants;
 import org.disroot.disrootapp.webviews.DisWebChromeClient;
-import org.disroot.disrootapp.webviews.DisWebViewClient;
 
 import java.io.File;
 import java.io.IOException;
@@ -64,6 +62,7 @@ import java.util.Map;
 
 import de.cketti.library.changelog.ChangeLog;
 
+@SuppressWarnings("ALL")
 public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -74,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private static final int INPUT_FILE_REQUEST_CODE = 1;//file upload
     private static final int FILECHOOSER_RESULTCODE = 1;
     String loadUrl;
-    private WebSettings webSettings;
     private ValueCallback<Uri> mUploadMessage;
     private Uri mCapturedImageURI = null;
     private ValueCallback<Uri[]> mFilePathCallback;
@@ -97,8 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FrameLayout frameLayoutContainer = (FrameLayout) findViewById(R.id.framelayout_container);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        FrameLayout frameLayoutContainer = findViewById(R.id.framelayout_container);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //ViewGroup viewLoading = (ViewGroup) findViewById(R.id.linearlayout_view_loading_container);
         setupWebView(savedInstanceState, frameLayoutContainer);
@@ -107,10 +105,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         //getActionBar().setHomeButtonEnabled(true);
 
 
-        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        final ScrollView dashboard = findViewById(R.id.dashboard);
 
         //progressbarLoading
-        progressBar = (ProgressBar)findViewById(R.id.progressbarLoading);
+        progressBar = findViewById(R.id.progressbarLoading);
         // Start long running operation in a background thread
         new Thread(new Runnable() {
             public void run() {
@@ -140,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         }
         //Set buttons
         // Locate the button in activity_main.xml
-        button = (Button) findViewById(R.id.MailBtn);//MailBtn
+        button = findViewById(R.id.MailBtn);//MailBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
 
             @Override
@@ -167,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
         });
 
-        button = (Button) findViewById(R.id.CloudBtn);//CloudBtn
+        button = findViewById(R.id.CloudBtn);//CloudBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -191,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.DiasporaBtn);//DiasporaBtn
+        button = findViewById(R.id.DiasporaBtn);//DiasporaBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -215,7 +213,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.ForumBtn);//ForumBtn
+        button = findViewById(R.id.ForumBtn);//ForumBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -239,7 +237,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.ChatBtn);//ChatBtn
+        button = findViewById(R.id.ChatBtn);//ChatBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -256,7 +254,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 if((xmpp1 == null)&&(xmpp2 == null)) {
                     xmpp1 = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
                 }
-                if((xmpp1 == null)&&(xmpp2 != null)) {
+                /* if((xmpp1 == null)&&(xmpp2 != null)) { */
+                if(xmpp1 == null) {
                     startActivity(xmpp2);
                 }
                 //need to change to give user choise
@@ -274,7 +273,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.PadBtn);//PadBtn
+        button = findViewById(R.id.PadBtn);//PadBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -299,7 +298,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.CalcBtn);//CalcBtn
+        button = findViewById(R.id.CalcBtn);//CalcBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -323,7 +322,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.BinBtn);//BinBtn
+        button = findViewById(R.id.BinBtn);//BinBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -347,7 +346,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.UploadBtn);//UploadBtn
+        button = findViewById(R.id.UploadBtn);//UploadBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -371,7 +370,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.SearxBtn);//SearxBtn
+        button = findViewById(R.id.SearxBtn);//SearxBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -395,7 +394,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.PollsBtn);//PollsBtn
+        button = findViewById(R.id.PollsBtn);//PollsBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -419,7 +418,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.BoardBtn);//BoardBtn
+        button = findViewById(R.id.BoardBtn);//BoardBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -443,7 +442,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.UserBtn);//UserBtn
+        button = findViewById(R.id.UserBtn);//UserBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -467,7 +466,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.StateBtn);//StateBtn
+        button = findViewById(R.id.StateBtn);//StateBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -491,7 +490,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.HowtoBtn);//HowToBtn
+        button = findViewById(R.id.HowtoBtn);//HowToBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -515,7 +514,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
-        button = (Button) findViewById(R.id.AboudBtn);//AboutBtn
+        button = findViewById(R.id.AboudBtn);//AboutBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -536,6 +535,15 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
 
         });
+
+        ImageButton imageButton = findViewById(R.id.logo);//LogoBtn
+        imageButton.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showLogoInfo();
+                return true;
+            }
+        });
     }
 
     //Dialog windows
@@ -554,7 +562,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
     //Mail Info
     private void showMailInfo() {
-        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.MailInfoTitle);
         builder.setMessage(getString(R.string.MailInfo));
@@ -595,7 +603,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     private void showChatInfo() {
-        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.ChatTitle);
         builder.setMessage(getString(R.string.ChatInfo));
@@ -636,7 +644,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     private void showSearxInfo() {
-        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.SearxTitle);
         builder.setMessage(getString(R.string.SearxInfo));
@@ -677,7 +685,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     private void showStateInfo() {
-        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.StateTitle);
         builder.setMessage(getString(R.string.StateInfo));
@@ -717,6 +724,44 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.show();
     }
 
+    private void showLogoInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.LogoTitle);
+        builder.setMessage(getString(R.string.LogoInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.LogoBtn, new DialogInterface.OnClickListener()
+         {
+
+            @Override
+
+
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+
+            });
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener(new View.OnClickListener()
+        {int Counter = 0;
+            @Override
+            public void onClick(View v)
+            {
+                if (Counter < 10)
+                    Counter++;
+                //first time tap check
+                if ((Counter == 10 )){
+                    Intent goTap = new Intent(MainActivity.this, wsdfhjxc.taponium.MainActivity.class);
+                    MainActivity.this.startActivity(goTap);
+                    dialog.dismiss();
+                }
+            }
+        });
+        Button pbutton = dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+        pbutton.setTextColor(Color.BLACK);
+    }
+
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -742,7 +787,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         webView.resumeTimers();
         webView.onResume();
         //inetnt filter get url from external
-        final ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         Uri url = getIntent().getData();
         if (url != null) {
             Log.d("TAG", "URL Foud");
@@ -811,7 +856,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        ScrollView dashboard = (ScrollView)findViewById(R.id.dashboard);
+        ScrollView dashboard = findViewById(R.id.dashboard);
         TranslateAnimation animateup = new TranslateAnimation(0,0,-2*dashboard.getHeight(),0);
         TranslateAnimation animatedown = new TranslateAnimation(0,0,0,-dashboard.getHeight());
         switch (item.getItemId()) {
@@ -854,110 +899,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 finish();
                 return false;
             }
-
-            /**
-        case R.id.action_mail:
-            String k9 = "com.fsck.k9";
-            Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
-            if(mail == null) {
-                mail = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+k9));
-            }
-            startActivity(mail);
-            return true;
-        case R.id.action_cloud:
-            String nc = "com.nextcloud.client";
-            Intent cloud = getPackageManager().getLaunchIntentForPackage(nc);
-            if(cloud == null) {
-                cloud = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+nc));
-            }
-            startActivity(cloud);
-            return true;
-        case R.id.action_diaspora:
-            String Diaspora = "com.github.dfa.diaspora_android";
-            Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
-            if(pod == null) {
-                pod = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Diaspora));
-            }
-            startActivity(pod);
-            return true;
-        case R.id.action_forum:
-            webView.loadUrl(Constants.URL_DisApp_FORUM);
-            animatedown.setDuration(500);
-            animatedown.setFillAfter(true);
-            dashboard.startAnimation(animatedown);
-            dashboard.setVisibility(View.GONE);
-            webView.setVisibility(View.VISIBLE);
-            return true;
-        case R.id.action_chat:
-            String Conversations = "eu.siacs.conversations";
-            Intent xmpp = getPackageManager().getLaunchIntentForPackage(Conversations);
-            if(xmpp == null) {
-                xmpp = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
-            }
-            startActivity(xmpp);
-            return true;
-        case R.id.action_pad:
-            webView.loadUrl(Constants.URL_DisApp_PAD);
-            animatedown.setDuration(500);
-            animatedown.setFillAfter(true);
-            dashboard.startAnimation(animatedown);
-            dashboard.setVisibility(View.GONE);
-            webView.setVisibility(View.VISIBLE);
-            return true;
-        case R.id.action_calc:
-            webView.loadUrl(Constants.URL_DisApp_CALC);
-            animatedown.setDuration(500);
-            animatedown.setFillAfter(true);
-            dashboard.startAnimation(animatedown);
-            dashboard.setVisibility(View.GONE);
-            webView.setVisibility(View.VISIBLE);
-            return true;
-        case R.id.action_bin:
-            webView.loadUrl(Constants.URL_DisApp_BIN);
-            animatedown.setDuration(500);
-            animatedown.setFillAfter(true);
-            dashboard.startAnimation(animatedown);
-            dashboard.setVisibility(View.GONE);
-            webView.setVisibility(View.VISIBLE);
-            return true;
-        case R.id.action_upload:
-            webView.loadUrl(Constants.URL_DisApp_UPLOAD);
-            animatedown.setDuration(500);
-            animatedown.setFillAfter(true);
-            dashboard.startAnimation(animatedown);
-            dashboard.setVisibility(View.GONE);
-            webView.setVisibility(View.VISIBLE);
-            return true;
-        case R.id.action_searx:
-            webView.loadUrl(Constants.URL_DisApp_SEARX);
-            animatedown.setDuration(500);
-            animatedown.setFillAfter(true);
-            dashboard.startAnimation(animatedown);
-            dashboard.setVisibility(View.GONE);
-            webView.setVisibility(View.VISIBLE);
-            return true;
-        case R.id.action_poll:
-            webView.loadUrl(Constants.URL_DisApp_POLL);
-            webView.setVisibility(View.VISIBLE);
-            dashboard.setVisibility(View.GONE);
-            return true;
-        case R.id.action_board:
-            webView.loadUrl(Constants.URL_DisApp_BOARD);
-            animatedown.setDuration(500);
-            animatedown.setFillAfter(true);
-            dashboard.startAnimation(animatedown);
-            dashboard.setVisibility(View.GONE);
-            webView.setVisibility(View.VISIBLE);
-            return true;
-        case R.id.action_user:
-            webView.loadUrl(Constants.URL_DisApp_USER);
-            animatedown.setDuration(500);
-            animatedown.setFillAfter(true);
-            dashboard.startAnimation(animatedown);
-            dashboard.setVisibility(View.GONE);
-            webView.setVisibility(View.VISIBLE);
-            return true;
-             **/
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -973,10 +914,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }*/
     @SuppressLint("SetJavaScriptEnabled")
     private void setupWebView(Bundle savedInstanceState, FrameLayout customViewContainer) {
-        disWebChromeClient = new DisWebChromeClient(this, webView, customViewContainer);
-        progressBar = (ProgressBar)findViewById(R.id.progressbarLoading);
-        webView = (WebView) findViewById(R.id.webView_content);
-        webView.setWebViewClient(new DisWebViewClient(savedInstanceState));
+        disWebChromeClient = new DisWebChromeClient(webView, customViewContainer);
+        progressBar = findViewById(R.id.progressbarLoading);
+        webView = findViewById(R.id.webView_content);
         webView.setWebChromeClient(disWebChromeClient);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);//solves taiga board \o/
@@ -1014,6 +954,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
                 DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                assert dm != null;
                 dm.enqueue(request);
 
             }
@@ -1023,9 +964,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         if (Build.VERSION.SDK_INT >= 19) {
             webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         }
-        else if(Build.VERSION.SDK_INT >=11 && Build.VERSION.SDK_INT < 19) {
-            webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        }
+        else webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         webView.setWebChromeClient(new ChromeClient());
         webView.loadUrl(loadUrl); //change with your website
 
@@ -1041,19 +980,20 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 super.onPageStarted(view, url, favicon);
                 progressBar.setVisibility(View.VISIBLE);
             }
-
-            @SuppressWarnings("deprecation")
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                return handleUrl(url);
+                if(url.startsWith("https")&&url.contains("disroot")) {
+                    view.loadUrl(url);
+                    return super.shouldOverrideUrlLoading(view, url);
+                }
+                else {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    view.getContext().startActivity(intent);
+                    return true;
+                }
             }
 
-            @TargetApi(Build.VERSION_CODES.N)
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                final Uri uri = request.getUrl();
-                return handleUrl(request.getUrl().toString());
-            }
+
         });
     }
 
@@ -1088,7 +1028,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         Log.d(TAG, "Permission callback called-------");
         switch (requestCode) {
             case REQUEST_ID_MULTIPLE_PERMISSIONS: {
@@ -1115,8 +1055,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         // shouldShowRequestPermissionRationale will return true
                         //show the dialog or snackbar saying its necessary and try again otherwise proceed with setup.
                         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA) || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                            showDialogOK("Camera and Storage Permission required for this app",
-                                    new DialogInterface.OnClickListener() {
+                            showDialogOK(new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             switch (which) {
@@ -1144,9 +1083,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     }
 
-    private void showDialogOK(String message, DialogInterface.OnClickListener okListener) {
+    private void showDialogOK(DialogInterface.OnClickListener okListener) {
         new AlertDialog.Builder(this)
-                .setMessage(message)
+                .setMessage("Camera and Storage Permission required for this app")
                 .setPositiveButton("OK", okListener)
                 .setNegativeButton("Cancel", okListener)
                 .create()
@@ -1173,15 +1112,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     if (dataString != null) {
                         results = new Uri[]{Uri.parse(dataString)};
                     }else {
-                        if (Build.VERSION.SDK_INT >= 16) {
-                            if (data.getClipData() != null) {
-                                final int numSelectedFiles = data.getClipData().getItemCount();
+                        if (data.getClipData() != null) {
+                            final int numSelectedFiles = data.getClipData().getItemCount();
 
-                                results = new Uri[numSelectedFiles];
+                            results = new Uri[numSelectedFiles];
 
-                                for (int i = 0; i < numSelectedFiles; i++) {
-                                    results[i] = data.getClipData().getItemAt(i).getUri();
-                                }
+                            for (int i = 0; i < numSelectedFiles; i++) {
+                                results[i] = data.getClipData().getItemAt(i).getUri();
                             }
                         }
                     }
@@ -1194,25 +1131,20 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 super.onActivityResult(requestCode, resultCode, data);
                 return;
             }
-            if (requestCode == FILECHOOSER_RESULTCODE) {
-                if (null == this.mUploadMessage) {
-                    return;
+            Uri result = null;
+            try {
+                if (resultCode != RESULT_OK) {
+                    result = null;
+                } else {
+                    // retrieve from the private variable if the intent is null
+                    result = data == null ? mCapturedImageURI : data.getData();
                 }
-                Uri result = null;
-                try {
-                    if (resultCode != RESULT_OK) {
-                        result = null;
-                    } else {
-                        // retrieve from the private variable if the intent is null
-                        result = data == null ? mCapturedImageURI : data.getData();
-                    }
-                } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), "activity :" + e,
-                            Toast.LENGTH_LONG).show();
-                }
-                mUploadMessage.onReceiveValue(result);
-                mUploadMessage = null;
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), "activity :" + e,
+                        Toast.LENGTH_LONG).show();
             }
+            mUploadMessage.onReceiveValue(result);
+            mUploadMessage = null;
         }
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -1227,22 +1159,21 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         else { //you dont need to worry about these stuff below api level 23
             Log.e("Permission error","You already have the permission");
         }
-        return;
     }
 
     private File createImageFile() throws IOException {
         // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        @SuppressLint("SimpleDateFormat") String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        File imageFile = File.createTempFile(
+        return File.createTempFile(
                 imageFileName,  /* prefix */
                 ".jpg",         /* suffix */
                 storageDir      /* directory */
         );
-        return imageFile;
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     public class ChromeClient extends WebChromeClient {
 
         public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
@@ -1259,7 +1190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             chooserParams = fileChooserParams;
 
             if(checkAndRequestPermissions()){
-                openChooser(chooserWV, chooserPathUri, chooserParams);
+                openChooser(chooserPathUri);
 
                 return true;
             }else {
@@ -1268,7 +1199,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         }
 
 
-        public void openChooser(WebView view, ValueCallback<Uri[]> filePath, WebChromeClient.FileChooserParams fileChooserParams){
+        void openChooser(ValueCallback<Uri[]> filePath){
 
             // Double check that we don't have any existing callbacks
             if (mFilePathCallback != null) {
@@ -1315,7 +1246,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             startActivityForResult(chooserIntent, INPUT_FILE_REQUEST_CODE);
         }
 
-        // openFileChooser for Android 3.0+
+        /* openFileChooser for Android 3.0+ */
+        @SuppressWarnings("ResultOfMethodCallIgnored")
+        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
         public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType) {
 
             mUploadMessage = uploadMsg;
@@ -1326,7 +1260,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     , "AndroidExampleFolder");
             if (!imageStorageDir.exists()) {
                 // Create AndroidExampleFolder at sdcard
-                imageStorageDir.mkdirs();
+                boolean mkdirs = imageStorageDir.mkdirs();
             }
             // Create camera captured image file path and name
             File file = new File(
@@ -1351,11 +1285,14 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         }
 
         // openFileChooser for Android < 3.0
+        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
         public void openFileChooser(ValueCallback<Uri> uploadMsg) {
             openFileChooser(uploadMsg, "");
         }
 
         //openFileChooser for other Android versions
+        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
         public void openFileChooser(ValueCallback<Uri> uploadMsg,
                                     String acceptType,
                                     String capture) {

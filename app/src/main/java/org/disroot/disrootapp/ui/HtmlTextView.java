@@ -26,8 +26,6 @@ import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.util.Patterns;
 
-import org.disroot.disrootapp.ui.MainActivity;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -58,11 +56,6 @@ public class HtmlTextView extends AppCompatTextView {
      * Linkify, format markdown and escape the displayed message.
      */
     private void init() {
-        formatHtmlAndCustomTags();
-    }
-
-    public void setTextFormatted(String text) {
-        setText(text);
         formatHtmlAndCustomTags();
     }
 

@@ -7,7 +7,7 @@
         <change>Corrected some typos</change>
         <change>ProgressBar shows actual progress</change>
         <change>Added go bak arrow on the about activity</change>
-        <change></change>
+        <change>Added third party libraries in the about activity</change>
     </release>
     <release version="0.0.3" versioncode="3" >
         <change>If Pix-art is installed  then it will be launched as chat app</change>

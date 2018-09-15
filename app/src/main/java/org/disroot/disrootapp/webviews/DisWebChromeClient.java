@@ -1,14 +1,10 @@
 package org.disroot.disrootapp.webviews;
 
-import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 
-import com.example.webview.R;
 
 /**
  * Created by jackson on 02/11/15.
@@ -17,12 +13,10 @@ public class DisWebChromeClient extends WebChromeClient {
 
     private final WebView webView;
     private final FrameLayout frameLayoutContainer;
-    private final Context context;
     private View viewCustom;
     private CustomViewCallback customViewCallback;
 
-    public DisWebChromeClient(Context context, WebView webView, FrameLayout frameLayoutContainer) {
-        this.context = context;
+    public DisWebChromeClient(WebView webView, FrameLayout frameLayoutContainer) {
         this.webView = webView;
         this.frameLayoutContainer = frameLayoutContainer;
     }
