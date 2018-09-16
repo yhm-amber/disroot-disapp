@@ -84,12 +84,12 @@
     <string name="FirstInfo">You can do a long press on each icon to show you extra information…</string>
     <string name="DiasporaTitle">Diaspora* Settings</string>
     <string name="DiasporaInfo">Distribuited and descentralized social network. Post, share, like, create communities.\n\nUsername: your_diaspora_username@pod.disroot.org\nPassword: your_diaspora_password</string>
-    <string name="PadInfo">EtherPad Info</string>
-    <string name="PadTitle">With Etherpad write articles, press releases, to-do lists, etc. together with friends, fellow students or colleagues, all working on the same document at the same time.\nNo registration is required.</string>
+    <string name="PadInfo">With Etherpad write articles, press releases, to-do lists, etc. together with friends, fellow students or colleagues, all working on the same document at the same time.\nNo registration is required.</string>
+    <string name="PadTitle">EtherPad Info</string>
     <string name="ChatTitle">XMPP Settings\n</string>
     <string name="ChatInfo">Conversations is a free, standard and open-source decentralized and federated instant messaging application for chatting with contacts or within groups.\n\nJabber ID : Your full Disroot email address\nPassword : Your Disroot password</string>
-    <string name="CalcInfo">EtherCalc Info</string>
-    <string name="CalcTitle">With EtherCalc work together on inventories, survey forms, list management, brainstorming sessions and more!</string>
+    <string name="CalcInfo">With EtherCalc work together on inventories, survey forms, list management, brainstorming sessions and more!</string>
+    <string name="CalcTitle">EtherCalc Info</string>
     <string name="BinTitle">PrivateBin Info</string>
     <string name="BinInfo">PrivateBin is an open-source online pastebin and discussion board. Data is encrypted/decrypted in the browser so that the server has zero knowledge of hosted data. Just paste a text, click “Send”, set expiration (and other features) and share the URL.\nNo registration is required.</string>
     <string name="UploadTitle">Upload (powered by Lufi) Info</string>
