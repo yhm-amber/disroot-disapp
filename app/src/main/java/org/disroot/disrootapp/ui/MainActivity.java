@@ -24,12 +24,17 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.webkit.DownloadListener;
 import android.webkit.GeolocationPermissions;
@@ -43,6 +48,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -549,6 +555,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     //Dialog windows
     private void showFirstTap() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.FirstTitle);
         builder.setMessage(getString(R.string.FirstInfo));
         builder.setPositiveButton(R.string.global_ok, null);
@@ -564,6 +571,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private void showMailInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.MailInfoTitle);
         builder.setMessage(getString(R.string.MailInfo));
         builder.setPositiveButton(R.string.global_ok, null);
@@ -579,32 +587,63 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
     //Cloud Info
     private void showCloudInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.CloudInfoTitle);
         builder.setMessage(getString(R.string.CloudInfo));
         builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_CLOUDHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
         builder.show();
     }
     //Diaspora info
     private void showDiaInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.DiasporaTitle);
         builder.setMessage(getString(R.string.DiasporaInfo));
         builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_DIAHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
         builder.show();
     }
 
-    private void showPadInfo() {
+    private void showForumInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.PadTitle);
-        builder.setMessage(getString(R.string.PadInfo));
+        builder.setCancelable(false);
+        builder.setTitle(R.string.ForumTitle);
+        builder.setMessage(getString(R.string.ForumInfo));
         builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_FORUMHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
         builder.show();
     }
 
     private void showChatInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.ChatTitle);
         builder.setMessage(getString(R.string.ChatInfo));
         builder.setPositiveButton(R.string.global_ok, null);
@@ -619,37 +658,86 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.show();
     }
 
-    private void showCalcInfo() {
+    private void showPadInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.PadTitle);
+        builder.setMessage(getString(R.string.PadInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_PADHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
+        builder.show();
+    }
+
+    private void showCalcInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.CalcTitle);
         builder.setMessage(getString(R.string.CalcInfo));
         builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_CALCHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
         builder.show();
     }
 
     private void showBinInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.BinTitle);
         builder.setMessage(getString(R.string.BinInfo));
         builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_BINHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
         builder.show();
     }
 
     private void showUploadInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.UploadTitle);
         builder.setMessage(getString(R.string.UploadInfo));
         builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_UPLOADHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
         builder.show();
     }
 
     private void showSearxInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.SearxTitle);
         builder.setMessage(getString(R.string.SearxInfo));
         builder.setPositiveButton(R.string.global_ok, null);
-        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_SEARXHELP);
@@ -661,23 +749,44 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     private void showPollsInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.PollsTitle);
         builder.setMessage(getString(R.string.PollsInfo));
         builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_POLLHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
         builder.show();
     }
 
     private void showBoardInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.BoardTitle);
         builder.setMessage(getString(R.string.BoardInfo));
         builder.setPositiveButton(R.string.global_ok, null);
+        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_BOARDHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
         builder.show();
     }
 
     private void showUserInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.UserTitle);
         builder.setMessage(getString(R.string.UserInfo));
         builder.setPositiveButton(R.string.global_ok, null);
@@ -686,9 +795,86 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     private void showStateInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.StateTitle);
-        builder.setMessage(getString(R.string.StateInfo));
-        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setCancelable(false)
+                .setTitle(R.string.StateTitle);
+                //.setMessage(getString(R.string.StateInfo));
+        LayoutInflater inflater = getLayoutInflater();
+        View view = inflater.inflate(R.layout.state_dialog, (ViewGroup) findViewById(R.id.StateView));
+        //xmppBtn
+        Button xmppBtn = view.findViewById(R.id.xmppBtn);
+        xmppBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Uri uri = Uri.parse(String.valueOf(Constants.URL_DisApp_STATEXMPP));
+                Intent xmpp = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                startActivity(xmpp);
+            }
+
+        });
+        //MatrixBtn
+        Button matrixBtn = view.findViewById(R.id.matrixBtn);
+        matrixBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Uri uri = Uri.parse(String.valueOf(Constants.URL_DisApp_STATEMATRIX));
+                Intent matrix = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                startActivity(matrix);
+            }
+
+        });
+        //SocialBtn
+        Button SocialBtn = view.findViewById(R.id.SocialBtn);
+        SocialBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Uri uri = Uri.parse(String.valueOf(Constants.URL_DisApp_STATESOCIAL));
+                Intent social = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                startActivity(social);
+            }
+
+        });
+        //newsBtn
+        Button NewsBtn = view.findViewById(R.id.NewsBtn);
+        NewsBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Uri uri = Uri.parse(String.valueOf(Constants.URL_DisApp_STATENEWS));
+                Intent news = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                startActivity(news);
+            }
+
+        });
+        //rssBtn
+        Button RssBtn = view.findViewById(R.id.RssBtn);
+        RssBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Uri uri = Uri.parse(String.valueOf(Constants.URL_DisApp_STATERSS));
+                Intent rss = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                startActivity(rss);
+            }
+
+        });
+        builder.setView(view)
+                .setPositiveButton(R.string.global_ok, null)
+                .show();
+
+
+       /*
+        final SpannableString s;
+        s = new SpannableString(getString(R.string.StateInfo));
+        final TextView tx1=new TextView(MainActivity.this);
+        tx1.setText(s);
+        tx1.setAutoLinkMask(RESULT_OK);
+        tx1.setMovementMethod(LinkMovementMethod.getInstance());
+
+        Linkify.addLinks(s, Linkify.WEB_URLS);
+        builder.setTitle(R.string.StateTitle)
+                .setCancelable(false)
+                .setPositiveButton(R.string.global_ok, null);
+                //.setNegativeButton("Decline", new DialogInterface.OnClickListener() {
+                  //  public void onClick(DialogInterface dialog, int id) {
+                  //      finish();
+                  //  }
+               // });
+        builder.setView(tx1);
+        builder.show();*/
+       /* builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.state_help, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -697,11 +883,12 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 startActivity(xmpp);
             }
         });
-        builder.show();
+        builder.show();*/
     }
 
     private void showHowToInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.HowToTitle);
         builder.setMessage(getString(R.string.HowToInfo));
         builder.setPositiveButton(R.string.global_ok, null);
@@ -710,22 +897,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     private void showAboutInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.AboutTitle);
         builder.setMessage(getString(R.string.AboutInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.show();
     }
 
-    private void showForumInfo() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.ForumTitle);
-        builder.setMessage(getString(R.string.ForumInfo));
-        builder.setPositiveButton(R.string.global_ok, null);
-        builder.show();
-    }
-
     private void showLogoInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
         builder.setTitle(R.string.LogoTitle);
         builder.setMessage(getString(R.string.LogoInfo));
         builder.setPositiveButton(R.string.global_ok, null);
