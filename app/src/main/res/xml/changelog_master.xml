@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="0.0.5" versioncode="5" >
+        <change>User choice of chat client whit remember option</change>
+        <change>All content of dialog box is added, ready for review</change>
+    </release>
     <release version="0.0.4" versioncode="4" >
-        <change>Fixed Download issue when tryng to download a file for the first time</change>
+        <change>Fixed Download issue when trying to download a file for the first time</change>
         <change>Changed layout of the about activity</change>
         <change>Floating mail icon makes you send mail to Disroot</change>
         <change>Corrected some typos</change>
@@ -15,8 +19,8 @@
         <change>Download is possible</change>
         <change>You can upload files from archive and from camera</change>
         <change>Added about page</change>
-        <change>Added link to fdroid</change>
-        <change>First time tapping on icons shows ontime info</change>
+        <change>Added link to F-Droid</change>
+        <change>First time tapping on icons shows onetime info</change>
         <change>Every icon shows info on long press</change>
         <change>added ckChangelog</change>
     </release>
@@ -30,7 +34,7 @@
         <change>Fixed Blank loading of Taiga board</change>
         <change>Added link to how to</change>
         <change>Added exit button</change>
-        <change>Tapping on a disroot domain from external app (such as browser or chat app) opens Disroot app</change>
+        <change>Tapping on a Disroot domain from external app (such as browser or chat app) opens Disroot app</change>
         <change>Added reload button</change>
         <change>Welcome activity added</change>
     </release>

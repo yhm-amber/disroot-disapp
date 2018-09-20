@@ -24,9 +24,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -44,11 +41,12 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -76,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private DisWebChromeClient disWebChromeClient;
     Button button;
     SharedPreferences firstStart = null;//first start
+    SharedPreferences check = null;
     private static final int INPUT_FILE_REQUEST_CODE = 1;//file upload
     private static final int FILECHOOSER_RESULTCODE = 1;
     String loadUrl;
@@ -107,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         //ViewGroup viewLoading = (ViewGroup) findViewById(R.id.linearlayout_view_loading_container);
         setupWebView(savedInstanceState, frameLayoutContainer);
         firstStart = getSharedPreferences("org.disroot.disrootap", MODE_PRIVATE);//fisrt start
+        check = getSharedPreferences("org.disroot.disrootapp", MODE_PRIVATE);
         // enables the activity icon as a 'home' button. required if "android:targetSdkVersion" > 14
         //getActionBar().setHomeButtonEnabled(true);
 
@@ -261,13 +261,23 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     xmpp1 = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
                 }
                 /* if((xmpp1 == null)&&(xmpp2 != null)) { */
-                if(xmpp1 == null) {
+                if((xmpp1 == null)&&(xmpp2 != null)) {//if(xmpp1 == null) {
                     startActivity(xmpp2);
                 }
-                //need to change to give user choise
+                //need to change to give user choise  || check.getBoolean("checkPix",false)
                 if((xmpp1 != null)&&(xmpp2 != null)) {
-                    startActivity(xmpp2);
-                }
+                    if(check.getBoolean("checkConv", true)) {
+                        startActivity(xmpp1);
+                        return;
+                    }
+                    if(check.getBoolean("checkPix", true)) {
+                        startActivity(xmpp2);
+                        return;
+                    }
+                    else
+                        showChoose();
+                    return;
+                    }
                 //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
@@ -553,6 +563,54 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     //Dialog windows
+    private void showChoose() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        //builder.setCancelable(false);
+        builder.setTitle(R.string.ChooseChatTitle)
+                .setMessage(R.string.ChooseChat);
+        //LayoutInflater inflater = getLayoutInflater();
+        View view = View.inflate(this, R.layout.check_remember, null);
+        final CheckBox checkChat = (CheckBox) view.findViewById(R.id.checkChat);
+        checkChat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+            }
+        });
+        builder.setPositiveButton(R.string.Conversations, new DialogInterface.OnClickListener() {
+            String Conversations = "eu.siacs.conversations";
+            Intent xmpp1 = getPackageManager().getLaunchIntentForPackage(Conversations);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (((CheckBox) checkChat).isChecked()) {
+                         check.edit().putBoolean("checkConv", true).apply();
+                         startActivity(xmpp1);
+                         return;
+                }
+                else
+                    startActivity(xmpp1);
+                return;
+            }
+        });
+        builder.setNegativeButton(R.string.PixArt, new DialogInterface.OnClickListener() {
+            String PixArt = "de.pixart.messenger";
+            Intent xmpp2 = getPackageManager().getLaunchIntentForPackage(PixArt);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (((CheckBox) checkChat).isChecked()) {
+                    check.edit().putBoolean("checkPix", true).apply();
+                    startActivity(xmpp2);
+                    return;
+                }
+                else
+                    startActivity(xmpp2);
+                return;
+            }
+        });
+        builder.setView(view);
+        builder.show();
+    }
+
     private void showFirstTap() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
@@ -567,6 +625,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         Toast.makeText(view.getContext(), R.string.activity_main_share_info, Toast.LENGTH_LONG).show();
         return false;
     }
+
     //Mail Info
     private void showMailInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
@@ -640,12 +699,46 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.show();
     }
 
+    private void showForget() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.ForgetTitle);
+        if(check.getBoolean("checkConv", true)|| check.getBoolean("checkPix",true)) {
+            View view = View.inflate(this, R.layout.check_forget, null);
+            final CheckBox forgetChat = (CheckBox) view.findViewById(R.id.forgetChat);
+            forgetChat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    check.edit().putBoolean("checkConv", false).apply();
+                    check.edit().putBoolean("checkPix", false).apply();
+                }
+            });
+            builder.setView(view);
+        }
+        builder.setPositiveButton(R.string.global_ok, null);
+        builder.show();
+    }
+
     private void showChatInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.ChatTitle);
         builder.setMessage(getString(R.string.ChatInfo));
+        // ||check.getBoolean("checkPix", true)==true
+        if(check.getBoolean("checkConv", true)|| check.getBoolean("checkPix",true)) {
+            View view = View.inflate(this, R.layout.check_forget, null);
+            final CheckBox forgetChat = (CheckBox) view.findViewById(R.id.forgetChat);
+            forgetChat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    check.edit().putBoolean("checkConv", false).apply();
+                    check.edit().putBoolean("checkPix", false).apply();
+                }
+            });
+            builder.setView(view);
+        }
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -665,7 +758,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setTitle(R.string.PadTitle);
         builder.setMessage(getString(R.string.PadInfo));
         builder.setPositiveButton(R.string.global_ok, null);
-        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_PADHELP);
@@ -683,7 +776,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setTitle(R.string.CalcTitle);
         builder.setMessage(getString(R.string.CalcInfo));
         builder.setPositiveButton(R.string.global_ok, null);
-        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_CALCHELP);
@@ -719,7 +812,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setTitle(R.string.UploadTitle);
         builder.setMessage(getString(R.string.UploadInfo));
         builder.setPositiveButton(R.string.global_ok, null);
-        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_UPLOADHELP);
@@ -786,10 +879,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     private void showUserInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setCancelable(false);
-        builder.setTitle(R.string.UserTitle);
-        builder.setMessage(getString(R.string.UserInfo));
-        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setCancelable(false)
+               .setTitle(R.string.UserTitle)
+               .setMessage(getString(R.string.UserInfo))
+               .setPositiveButton(R.string.global_ok, null);
         builder.show();
     }
 
@@ -1006,11 +1099,25 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         return super.onKeyDown(keyCode, event);
     }
 
+    public boolean onPrepareOptionsMenu(Menu menu)
+    {
+        MenuItem register = menu.findItem(R.id.action_forget);
+        if(check.getBoolean("checkConv", true)||check.getBoolean("checkPix", true)) {
+            register.setVisible(true);
+        }
+        else
+        {
+            register.setVisible(false);
+        }
+        return true;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
+
 
         // To show icons in the actionbar's overflow menu:
         // http://stackoverflow.com/questions/18374183/how-to-show-icons-in-overflow-menu-in-actionbar
@@ -1066,6 +1173,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 }
                 else
                     return true;
+            case R.id.action_forget: {
+                if(check.getBoolean("checkConv", true)||check.getBoolean("checkPix", true)) {
+                    setVisible(true);
+                    showForget();
+
+                }
+            }
             case R.id.action_reload: {
                 String url = webView.getUrl();
                 webView.loadUrl(url);

@@ -41,8 +41,8 @@ public class Constants {
     public static final String URL_DisApp_FORUMHELP = "https://howto.disroot.org/forum";
     public static final String URL_DisApp_PADHELP = "https://disroot.org/services/pads";
     public static final String URL_DisApp_CALCHELP = "https://disroot.org/services/pads";
-    public static final String URL_DisApp_BINHELP = "https://howto.disroot.org/pads_and_bins";
-    public static final String URL_DisApp_UPLOADHELP = "https://disroot.org/services/upload";
+    public static final String URL_DisApp_BINHELP = "https://howto.disroot.org/en/pads_and_bins/privatebin";
+    public static final String URL_DisApp_UPLOADHELP = "https://howto.disroot.org/en/lufi";
     public static final String URL_DisApp_POLLHELP = "https://howto.disroot.org/polls";
     public static final String URL_DisApp_BOARDHELP = "https://disroot.org/services/project-board";
 }
