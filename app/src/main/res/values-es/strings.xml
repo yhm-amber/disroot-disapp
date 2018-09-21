@@ -25,20 +25,20 @@
 
     <string name="action_options">Acciones</string>
     <string name="activity_main_share_info">Compartir info</string>
-    <string name="activity_main_manteiners">%s\n\Desarrollador: Massimiliano\n\n contact us:\n<EMAIL mailto="contact@disroot.org">support@disroot.org</EMAIL></string>
+    <string name="activity_main_manteiners">%s\n\Desarrollador: Massimiliano\n\n Contacto:\n<EMAIL mailto="contact@disroot.org">support@disroot.org</EMAIL></string>
     <string name="view_loading_description">Cargando…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">¿Necesitas más ayuda?</string>
+    <string name="tell_more">Más info</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="title_activity_tap">TapActivity</string>
 
     <string name="MailInfoTitle">Configuración de Correo:</string>
     <string name="MailInfo">IMAP: disroot.org\nSSL Puerto: 993\nAutenticación: Contraseña normal\nSMTP: disroot.org\nSTARTTLS Puerto: 587\nAuthentication: Contraseña normal\nPOP: disroot.org\nSSL Puerto: 995\nAutenticación: Contraseña normal</string>
     <string name="CloudInfoTitle">Configuración de Nextcloud:</string>
-    <string name="CloudInfo">Sincroniza y comparte tus archivos, calendarios, contactos y más.\nUsuario: tu_usuario@disroot.org\nContraseña:tu_contraseña_de_Disroot.</string>
+    <string name="CloudInfo">Sincroniza y comparte tus archivos, calendarios, contactos y más de manera segura.\n\nUsuario:\n tu_usuario@disroot.org\n\nContraseña:\ntu_contraseña_de_Disroot.</string>
     <string name="WelcomeTitle">Bienvenid@</string>
-    <string name="WelcomeInfo">Disroot es una plataforma que provee servicios en línea basados en los principios de libertad, privacidad, federación y descentralización.\nEsta aplicación es como la navaja suiza de la plataforma, hecha por la comunidad, para la comunidad.\nSi no tienes una cuenta de Disroot, igual puedes usarla para acceder a todos los servicios de Disroot que no requieran de una:\nEtherpad, Ethercalc, Private bin, Upload, Encuentas, Searx y Diaspora* (requiere tener cuenta solo de Diaspora*)\nLa aplicación podría solicitarte la instalación de otras adicionales, y no todas pueden encontrarse en la Tienda de Aplicaciones. Nosotros recomendamos instalar la tienda F-Droid. Si no la tienes, puedes descargarla tocando el logo de F-Droid.\n</string>
-
+    <string name="WelcomeInfo">Disroot es una plataforma que provee servicios en línea basados en los principios de libertad, privacidad, federación y descentralización.\nEsta aplicación es como la navaja suiza de la plataforma, hecha por la comunidad, para la comunidad.\nSi no tienes una cuenta de Disroot, igual puedes usarla para acceder a todos los servicios de Disroot que no requieran de una:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Encuentas\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requiere tener cuenta solo de Diaspora*)\n\nLa aplicación podría solicitarte la instalación de otras adicionales, y no todas pueden encontrarse en la Tienda de Aplicaciones. Nosotros recomendamos instalar la tienda F-Droid (una tienda de aplicaciones libres y de código abierto) ya que no todas ellas pueden ser encontradas en la tienda de Google y F-Droid está más orientada a la privacidad (sin rastreo o necesidad de una cuenta). Puedes descargarla tocando el logo de F-Droid.\n</string>
 
     <string name="help">Ayuda</string>
     <string name="license">Licencia</string>
@@ -53,10 +53,10 @@
 
     <string name="maintainersTitle">Mantenimiento</string>
     <string name="maintainersText">Actualmente, esta aplicación está siendo desarrollada y mantenida por\n\n</string>
-    <string name="disrootUrl"><a href = "https://disroot.org">https://disroot.org</a></string>
+    <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Comunidad de Disroot (Disroot):</string>
     <string name="contributorsTitle">Colaboradores</string>
-    <string name="contributors"><b>Massimiliano:</b>\n  Actual desarrollador de la App de Disroot</string>
+    <string name="contributors"><b> &#8226; Muppeth:</b>\n Admin de Disroot\n\n<b> &#8226; Antilopa:</b>\n Admin de Disroot\n\n<b> &#8226; Massimiliano:</b>\n Desarrollador actual de la aplicación\n\n<b> &#8226; Fede:</b>\n Colaborador de contenidos\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librerías de Terceros</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -83,21 +83,21 @@
     <string name="FirstTitle">Casi lo olvido...</string>
     <string name="FirstInfo">Haciendo una presión larga sobre el ícono de cada aplicación, puedes ver información extra sobre ella.</string>
     <string name="DiasporaTitle">Configuración de Diaspora*</string>
-    <string name="DiasporaInfo">Red social distribuida y descentralizada. Publica, comparte, crea comunidades.\nUsuario: tu_usuario_de_Diaspora@pod.disroot.org\nContraseña: tu_contraseña_de_diaspora</string>
-    <string name="PadInfo">EtherPad</string>
+    <string name="DiasporaInfo">Red social distribuida y descentralizada. Publica, comparte, crea comunidades.\n\nUsuario:\n tu_usuario_de_Diaspora@pod.disroot.org\n\nContraseña:\ntu_contraseña_de_diaspora</string>
     <string name="PadTitle">Etherpad:\nEscribe artículos, anuncios de prensa, listas de pendientes, etc., junto a amigos, compañeros de estudios o colegas, todos trabajando en el mismo documento al mismo tiempo.</string>
+    <string name="PadInfo">EtherPad</string>
     <string name="ChatTitle">Configuración de XMPP\n</string>
-    <string name="ChatInfo">Mensajería instantánea descentralizada y federada.\nID de Jabber: tu_correo@disroot.org\nContraseña: tu_contraseña_de_Disroot</string>
-    <string name="CalcInfo">EtherCalc</string>
-    <string name="CalcTitle">EtherCalc: Trabaja colaborativemente en inventarios, formularios de encuestas, gestión de listas, sesiones de lluvia de ideas y más.</string>
+    <string name="ChatInfo">Mensajería instantánea descentralizada y federada.\n\nID de Jabber:\ntu_correo@disroot.org\n\nContraseña:\ntu_contraseña_de_Disroot</string>
+    <string name="CalcInfo">EtherCalc: Trabaja colaborativemente en inventarios, formularios de encuestas, gestión de listas, sesiones de lluvia de ideas y más.\nNo requiere registrarse.</string>
+    <string name="CalcTitle">EtherCalc</string>
     <string name="BinTitle">PrivateBin</string>
-    <string name="BinInfo">Pastebin de código abierto en línea y tablero de discusión. La información es cifrada/descifrada en el navegador, de esa manera el servidor tiene cero conocimiento de los archivos alojados. Solo pega un texto, haz click en “Enviar”, establece la fecha de vencimiento (entre otras funcionalidades) y comparte la dirección URL.</string>
+    <string name="BinInfo">Pastebin de código abierto en línea y tablero de discusión. La información es cifrada/descifrada en el navegador, de esa manera el servidor tiene cero conocimiento de los archivos alojados. Solo pega un texto, haz click en “Enviar”, establece la fecha de vencimiento (entre otras funcionalidades) y comparte la dirección URL.\nNo requiere registrarse.</string>
     <string name="UploadTitle">Subida (Impulsado por Lufi)</string>
-    <string name="UploadInfo">Upload es un software de hospedaje de archivos. Almacena temporalmente archivos así puedes compartirlos con otros utilizando un link. Para proteger la privacidad, todos los archivos son cifrados en el navegador mismo.</string>
+    <string name="UploadInfo">Upload es un software de hospedaje de archivos. Almacena temporalmente archivos así puedes compartirlos con otros utilizando un link. Para proteger la privacidad, todos los archivos son cifrados en el navegador mismo.\nNo requiere registrarse.</string>
     <string name="SearxTitle">Búsqueda</string>
-    <string name="SearxInfo"> Searx es un motor metabuscador, que agrupa los resultados de otros motores de búsqueda sin almacenar información sobre sus usuarios.</string>
+    <string name="SearxInfo"> Searx es un motor metabuscador, que agrupa los resultados de otros motores de búsqueda sin almacenar información sobre sus usuarios.\nNo requiere registrarse.</string>
     <string name="PollsTitle">Encuestas</string>
-    <string name="PollsInfo">Framadate es un servicio en línea para planificar un encuentro o tomar decisiones colectivas de manera sencilla y rápida. No es necesario registrarse.</string>
+    <string name="PollsInfo">Framadate es un servicio en línea para planificar un encuentro o tomar decisiones colectivas de manera sencilla y rápida. No requiere registrarse.</string>
     <string name="BoardTitle">Tablero de Gestión de Proyecto</string>
     <string name="BoardInfo">Taiga es una herramienta de gestión de proyecto, desarrollada para programadores, diseñadores y startups cuyo funcionamiento pretende ser metodológicamente ágil. Crea un proyecto, invita a los miembros de tu grupo, planeen tareas y ponganlas en el tablero. Resuelve quién será responsable de las tareas, sigue los progresos, comenta, decide y ve tu proyecto crecer.</string>
     <string name="UserTitle">Autoservicio de Contraseña</string>
@@ -115,4 +115,17 @@
     <string name="LogoInfo">¿Por qué? Es solo un logo.\nNo seas tan curioso... ;-)</string>
     <string name="LogoBtn">Disroot rules \\o//</string>
     <string name="logo">Logo</string>
+    <string name="xmppBtn"> \ \ &#8226; Estado de XMPP</string>
+    <string name="matrixBtn"> \ \ &#8226; Estado de Matrix</string>
+    <string name="SocialBtn"> \ \ &#8226; Esatdo de Hubzilla / Diaspora* / Mastodon</string>
+    <string name="NewsBtn"> \ \ &#8226; Actualizaciones de Estados por correo</string>
+    <string name="RssBtn"> \ \ &#8226; Feed RSS de los Esatdos</string>
+    <string name="ChooseChatTitle">¡Tienes dos clientes de chat instalado!</string>
+    <string name="ChooseChat">Por favor, selecciona el cliente que desees utilizar para Disroot</string>
+    <string name="Remember">Recordar mi elección</string>
+    <string name="Conversations">Conversations</string>
+    <string name="PixArt">Pix-Art Messenger</string>
+    <string name="Forget">Olvidar mi elección</string>
+    <string name="ForgetTitle">Olvidar cliente de chat</string>
+
 </resources>
