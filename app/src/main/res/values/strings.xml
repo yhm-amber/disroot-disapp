@@ -25,7 +25,6 @@
 
     <string name="action_options">Actions</string>
     <string name="activity_main_share_info">share link info</string>
-    <string name="activity_main_manteiners">%s\n\nDeveloper: Massimiliano\n\ncontact us:\n<EMAIL mailto="support@disroot.org">support@disroot.org</EMAIL></string>
     <string name="view_loading_description">Loading…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">Need more help?</string>
@@ -56,7 +55,7 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Community (Disroot):</string>
     <string name="contributorsTitle">Contributors</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot admin\n\n<b> &#8226; antilopa:</b>\n Disroot admin\n\n<b> &#8226; Massimiliano:</b>\n Current developer of the Disroot app\n\n<b> &#8226; Fede:</b>\n Content contributor\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot admin\n\n<b> &#8226; antilopa:</b>\n Disroot admin\n\n<b> &#8226; Massimiliano:</b>\n Developer\n\n<b> &#8226; Fede:</b>\n Content contributor\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Third-Party Libraries</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -122,10 +121,10 @@
     <string name="RssBtn"> \ \ &#8226; State RSS feed</string>
     <string name="ChooseChatTitle">You have two XMPP clients installed!</string>
     <string name="ChooseChat">Please choose the client you want to use for Disroot</string>
-    <string name="Remember">Remember my choise</string>
+    <string name="Remember">Remember my choice</string>
     <string name="Conversations">Conversations</string>
     <string name="PixArt">Pix-Art Messenger</string>
-    <string name="Forget">Forget my choise</string>
+    <string name="Forget">Forget my choice</string>
     <string name="ForgetTitle">Forget chat client!</string>
 
 </resources>
