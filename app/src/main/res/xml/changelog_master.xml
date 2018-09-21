@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="0.9.1" versioncode="6" >
+        <change>Spanish translation added</change>
+        <change>Changed some minor content strings</change>
+    </release>
     <release version="0.0.5" versioncode="5" >
         <change>User choice of chat client whit remember option</change>
         <change>All content of dialog box is added, ready for review</change>
