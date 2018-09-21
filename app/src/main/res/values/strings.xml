@@ -24,7 +24,7 @@
 
 
     <string name="action_options">Actions</string>
-    <string name="activity_main_share_info">share link info</string>
+    <string name="activity_main_share_info">Share link info</string>
     <string name="activity_main_manteiners">%s\n\nDeveloper: Massimiliano\n\ncontact us:\n<EMAIL mailto="support@disroot.org">support@disroot.org</EMAIL></string>
     <string name="view_loading_description">Loading…</string>
     <string name="global_ok">OK</string>
@@ -38,7 +38,7 @@
     <string name="CloudInfoTitle">Nextcloud Settings</string>
     <string name="CloudInfo">Keep your data synchronized and safe. With Nextcloud you can share your files, calendars, contacts and more.\n\nUsername:\n your_username@disroot.org\n\nPassword:\n your_disroot_password.</string>
     <string name="WelcomeTitle">Welcome</string>
-    <string name="WelcomeInfo">Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.\nThis app is like your Swiss Army knife to the Disroot platform, made by the community for the community.\nIf you don\'t have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requires a Diaspora only account)\n\nThe app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google\'s Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it by tapping on the F-droid icon.\n</string>
+    <string name="WelcomeInfo">Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.\nThis app is like your Swiss Army knife to the Disroot platform, made by the community for the community.\nIf you don\'t have a Disroot account you can still use this  app to access all the Disroot services that do not require one:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requires a Diaspora only account)\n\nThe app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google\'s Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it by tapping on the F-droid icon.\n</string>
 
     <string name="help">Help</string>
     <string name="license">License</string>
@@ -122,10 +122,10 @@
     <string name="RssBtn"> \ \ &#8226; State RSS feed</string>
     <string name="ChooseChatTitle">You have two XMPP clients installed!</string>
     <string name="ChooseChat">Please choose the client you want to use for Disroot</string>
-    <string name="Remember">Remember my choise</string>
+    <string name="Remember">Remember my choice</string>
     <string name="Conversations">Conversations</string>
     <string name="PixArt">Pix-Art Messenger</string>
-    <string name="Forget">Forget my choise</string>
+    <string name="Forget">Forget my choice</string>
     <string name="ForgetTitle">Forget chat client!</string>
 
 </resources>
