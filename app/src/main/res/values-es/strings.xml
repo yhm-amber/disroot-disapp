@@ -28,6 +28,7 @@
     <string name="view_loading_description">Cargando…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">¿Necesitas más ayuda?</string>
+    <string name="tell_more">Tell me more</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="title_activity_tap">TapActivity</string>
 
@@ -44,11 +45,11 @@
     <string name="action_settings">Configuraciones</string>
     <string name="licenseTitle">Licencia</string>
     <string name="license_button">GNU LGPLv3.0 License</string>
-
+    <!--Non translatable
     <string translatable="false" name="licenseText">Copyright © 2007 Free Software Foundation, Inc.\n
         Este programa es software libre: puedes redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General Reducida de GNU publicada por la Free Software Foundation, versión 3 de la Licencia solamente.\n\n
         Este programa se distribuye esperando que sea útil, pero SIN GARANTÍA; ni siquiera la garantía implícita de comercialización y adecuación para un fin particular. Para más información ver la GNU Lesser General Public License.
-    </string>
+    </string>-->
 
     <string name="maintainersTitle">Mantenimiento</string>
     <string name="maintainersText">Actualmente, esta aplicación está siendo desarrollada y mantenida por\n\n</string>
@@ -79,7 +80,7 @@
     <string name="SpreadTheWordTxt">Comenta a tus amigos y familia sobre Disroot. O por qué no escribir en un blog sobre tu experiencia. Nos encantaría conocerla.</string>
     <string name="SpreadTheWordBtn">Compartir la aplicación</string>
     <string name="DisrootWeb">Sitio de Disroot</string>
-    <string name="FirstTitle">Casi lo olvido...</string>
+    <string name="FirstTitle">Casi lo olvido…</string>
     <string name="FirstInfo">Haciendo una presión larga sobre el ícono de cada aplicación, puedes ver información extra sobre ella.</string>
     <string name="DiasporaTitle">Configuración de Diaspora*</string>
     <string name="DiasporaInfo">Red social distribuida y descentralizada. Publica, comparte, crea comunidades.\nUsuario: tu_usuario_de_Diaspora@pod.disroot.org\nContraseña: tu_contraseña_de_diaspora</string>
@@ -114,4 +115,17 @@
     <string name="LogoInfo">¿Por qué? Es solo un logo.\nNo seas tan curioso... ;-)</string>
     <string name="LogoBtn">Disroot rules \\o//</string>
     <string name="logo">Logo</string>
+    <string name="xmppBtn"> \ \ &#8226; State on xmpp</string>
+    <string name="matrixBtn"> \ \ &#8226; State on Matrix</string>
+    <string name="SocialBtn"> \ \ &#8226; State on hubzilla/diaspora/mastodon</string>
+    <string name="NewsBtn"> \ \ &#8226; State updates via email</string>
+    <string name="RssBtn"> \ \ &#8226; State RSS feed</string>
+    <string name="ChooseChatTitle">You have two XMPP clients installed!</string>
+    <string name="ChooseChat">Please choose the client you want to use for Disroot</string>
+    <string name="Remember">Remember my choice</string>
+    <string name="Conversations">Conversations</string>
+    <string name="PixArt">Pix-Art Messenger</string>
+    <string name="Forget">Forget my choice</string>
+    <string name="ForgetTitle">Forget chat client!</string>
+
 </resources>
