@@ -199,6 +199,7 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxWidth="24dp"
                 android:drawableTop="@drawable/ic_poll"
                 android:text="@string/action_user"
                 android:textColor="#ffffff" />
@@ -208,6 +209,7 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxWidth="24dp"
                 android:drawableTop="@drawable/ic_state"
                 android:text="@string/action_state"
                 android:textColor="#ffffff" />
@@ -217,6 +219,7 @@
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxWidth="24dp"
                     android:drawableTop="@drawable/ic_howto"
                     android:text="@string/action_howto"
                     android:textColor="#ffffff" />
@@ -226,6 +229,7 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxWidth="24dp"
                 android:drawableTop="@drawable/ic_about"
                 android:text="@string/action_about"
                 android:textColor="#ffffff" />

@@ -5,6 +5,7 @@
         <change></change>
     </release>
     <release version="0.9.1" versioncode="6" >
+        <change>French translation added</change>
         <change>Spanish translation added</change>
         <change>Changed some minor content strings</change>
     </release>

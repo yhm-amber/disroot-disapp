@@ -102,7 +102,7 @@
     <string name="UserTitle">User Password Management Help</string>
     <string name="UserInfo">Use our User Self Service Center to manage your user and password data</string>
     <string name="StateTitle">State Info</string>
-    <string name="StateInfo">Page to see the current stare of Disroot services. Here you can see if any service has a problem, if there are any performance issues, as well as get to know when we schedule maintenance in which time some services might be unavailable.\n\n<b>Alternative ways to get State updates:</b></string>
+    <string name="StateInfo">Page to see the current state of Disroot services. Here you can see if any service has a problem, if there are any performance issues, as well as get to know when we schedule maintenance in which time some services might be unavailable.\n\n<b>Alternative ways to get State updates:</b></string>
     <string name="state_help">State on XMPP</string>
     <string name="HowToTitle">How to Info</string>
     <string name="HowToInfo">Our page with howtos and tutorials to help you find your way around the various Disroot services.</string>
