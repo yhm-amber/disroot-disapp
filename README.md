@@ -17,6 +17,11 @@ If you don't have a Disroot account you can still use this  app to access all th
 
 The app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google's Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it [here](https://f-droid.org/FDroid.apk).
 
+####Supported languages:
+* English
+* Spanish
+* French
+
 ---
 ### Licensing
 Licence GPLv3-only (see licence on source above)
