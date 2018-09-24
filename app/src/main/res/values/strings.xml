@@ -33,7 +33,7 @@
     <string name="title_activity_tap">TapActivity</string>
 
     <string name="MailInfoTitle">Mail Settings</string>
-    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal Password\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal Password\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal Password</string>
+    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal\nPassword\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal\nPassword\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal\nPassword</string>
     <string name="CloudInfoTitle">Nextcloud Settings</string>
     <string name="CloudInfo">Keep your data synchronized and safe. With Nextcloud you can share your files, calendars, contacts and more.\n\nHost:\n https://cloud.disroot.org\n\nUsername:\n your_disroot_username@disroot.org\n\nPassword:\n your_disroot_password.</string>
     <string name="WelcomeTitle">Welcome</string>
