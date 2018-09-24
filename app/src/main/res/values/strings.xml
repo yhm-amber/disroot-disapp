@@ -24,13 +24,12 @@
 
 
     <string name="action_options">Actions</string>
-    <string name="activity_main_share_info">share link info</string>
+    <string name="activity_main_share_info">Share link info</string>
     <string name="view_loading_description">Loading…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">Need more help?</string>
     <string name="tell_more">Tell me more</string>
     <string name="title_activity_about">AboutActivity</string>
-    <string name="title_activity_tap">TapActivity</string>
 
     <string name="MailInfoTitle">Mail Settings</string>
     <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal\nPassword\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal\nPassword\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal\nPassword</string>
@@ -94,7 +93,7 @@
     <string name="UploadTitle">Upload (powered by Lufi) Info</string>
     <string name="UploadInfo">Upload is a file hosting software that temporarily stores encrypted files so you can share them with others using a link. All files are encrypted before they leave your computer meaning server has zero knowledge of hosted data.\nNo registration is required.</string>
     <string name="SearxTitle">Searx Info</string>
-    <string name="SearxInfo"> Searx is an anonymous multi search engine platform, aggregating the results of other search engines while not storing information about its users.  No tracking, profiling, no data mining by big corporations. \nNo registration is required.</string>
+    <string name="SearxInfo">Searx is an anonymous multi search engine platform, aggregating the results of other search engines while not storing information about its users.  No tracking, profiling, no data mining by big corporations. \nNo registration is required.</string>
     <string name="PollsTitle">Polls Help</string>
     <string name="PollsInfo">Framadate is an online service for planning an appointment or making a decision quickly and easily.\nNo registration is required.</string>
     <string name="BoardTitle">Project Management Board Info</string>

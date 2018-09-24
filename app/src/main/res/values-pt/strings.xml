@@ -30,7 +30,6 @@
     <string name="more_help">Need more help?</string>
     <string name="tell_more">Tell me more</string>
     <string name="title_activity_about">AboutActivity</string>
-    <string name="title_activity_tap">TapActivity</string>
 
     <string name="MailInfoTitle">Mail Settings</string>
     <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal Password\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal Password\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal Password</string>

@@ -30,7 +30,6 @@
     <string name="more_help">Besoin d\'aide?</string>
     <string name="tell_more">Dites m\'en davantage</string>
     <string name="title_activity_about">AboutActivity</string>
-    <string name="title_activity_tap">TapActivity</string>
 
     <string name="MailInfoTitle">Paramètres e-mail</string>
     <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal\nMot de passe\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal\nMot de passe\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal\nMot de passe</string>
@@ -117,7 +116,7 @@
     <string name="xmppBtn"> \ \ &#8226; Etat des services sur xmpp</string>
     <string name="matrixBtn"> \ \ &#8226; Etat des services sur Matrix</string>
     <string name="SocialBtn"> \ \ &#8226; Etat des services sur hubzilla/diaspora/mastodon</string>
-    <string name="NewsBtn"> \ \ &#8226; Info sur l'état des services par email</string>
+    <string name="NewsBtn"> \ \ &#8226; Info sur l\'état des services par email</string>
     <string name="RssBtn"> \ \ &#8226; Etat des services par flux RSS</string>
     <string name="ChooseChatTitle">Vous avez deux clients XMPP installés !</string>
     <string name="ChooseChat">Veuillez choisir le client que vous souhaitez utiliser pour Disroot</string>
