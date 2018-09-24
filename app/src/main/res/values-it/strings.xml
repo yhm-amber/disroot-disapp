@@ -32,11 +32,11 @@
     <string name="title_activity_about">A proposito</string>
 
     <string name="MailInfoTitle">Impostazioni Mail</string>
-    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\Autenticazione: Password Normale\n\nSMTP: disroot.org\nSTARTTLS Port 587\Autenticazione: Password Normale\n\nPOP: disroot.org\nSSL Port 995\Autenticazione: Password Normale</string>
+    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAutenticazione: Password Normale\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAutenticazione: Password Normale\n\nPOP: disroot.org\nSSL Port 995\nAutenticazione: Password Normale</string>
     <string name="CloudInfoTitle">Impostazioni Nextcloud</string>
-    <string name="CloudInfo">Tieni i tuoi dati sincronizzati e al sicuro. Con Nextcloud puoi condividere file, calendari, contatti e altro ancora.\n\nHost:\n https://cloud.disroot.org\n\nnnome utente:\n il_tuo_nome_utente_disroot@disroot.org\n\nPassword:\n la_tua_password_disroot.</string>
+    <string name="CloudInfo">Tieni i tuoi dati sincronizzati e al sicuro. Con Nextcloud puoi condividere file, calendari, contatti e altro ancora.\n\nHost:\n https://cloud.disroot.org\n\nnnome utente:\n il_tuo_nome_utente_disroot@disroot.org\n\nPassword:\n la_tua_password_disroot</string>
     <string name="WelcomeTitle">Benvenuto</string>
-    <string name="WelcomeInfo">Disroot è una piattaforma che fornisce servizi online basati su principi di libertà, privacy, federazione e decentralizzazione.\nQuesta applicazione è come il tuo coltellino svizzero per la piattaforma Disroot, fatta dalla comunità per la comunità.\nSe non hai un account Disroot puoi comunque utilizzare questa app per accedere a tutti i servizi Disroot che non richiedono un account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (richiede un conto solo per Diaspora)\n\nL'applicazione potrebbe richiedere l'installazione di applicazioni aggiuntive. Si consiglia vivamente di installare F-Droid - una app sotre gratuita e open source - in quanto non tutte le applicazioni possono essere trovate su Google Play Store e F-Droid è più orientato alla privacy (nessun tracking, nessun account necessario) è possibile scaricarlo toccando l'icona F-Droid.\n</string>
+    <string name="WelcomeInfo">Disroot è una piattaforma che fornisce servizi online basati su principi di libertà, privacy, federazione e decentralizzazione.\nQuesta applicazione è come il tuo coltellino svizzero per la piattaforma Disroot, fatta dalla comunità per la comunità.\nSe non hai un account Disroot puoi comunque utilizzare questa app per accedere a tutti i servizi Disroot che non richiedono un account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (richiede un conto solo per Diaspora)\n\nLa app potrebbe richiedere l\'installazione di applicazioni aggiuntive. Si consiglia vivamente di installare F-Droid - una app sotre gratuita e open source - in quanto non tutte le applicazioni possono essere trovate su Google Play Store e F-Droid è più orientato alla privacy (nessun tracking, nessun account necessario) è possibile scaricarlo toccando l\'icona F-Droid.\n</string>
 
     <string name="help">Aiuto</string>
     <string name="license">Licenza</string>
@@ -89,7 +89,7 @@
     <string name="CalcInfo">Con EtherCalc puoi lavorare insieme su inventari, moduli di indagine, gestione degli elenchi, sessioni di brainstorming e molto altro ancora!\nNon è richiesta alcuna registrazione.</string>
     <string name="CalcTitle">Info EtherCalc</string>
     <string name="BinTitle">Aiuto PrivateBin</string>
-    <string name="BinInfo">PrivateBin è un pastebin online open-source e un forum di discussione. I dati sono criptati/decodificati nel browser in modo che il server non abbia alcuna conoscenza dei dati ospitati. Basta incollare un testo, fare clic su "Invia", impostare la scadenza (e altre caratteristiche) e condividere l'URL.\nNon è richiesta alcuna registrazione.</string>
+    <string name="BinInfo">PrivateBin è un pastebin online open-source e un forum di discussione. I dati sono criptati/decodificati nel browser in modo che il server non abbia alcuna conoscenza dei dati ospitati. Basta incollare un testo, fare clic su “Invia”, impostare la scadenza (e altre caratteristiche) e condividere l\'URL.\nNon è richiesta alcuna registrazione.</string>
     <string name="UploadTitle">Info Upload (powered by Lufi)</string>
     <string name="UploadInfo">Upload è un software di file hosting che memorizza temporaneamente i file crittografati in modo da poterli condividere con altri utilizzando un link. Tutti i file vengono crittografati prima di lasciare il computer, il che significa che il server non ha conoscenza dei dati ospitati.\nNon è richiesta alcuna registrazione.</string>
     <string name="SearxTitle">Info Searx</string>
@@ -125,5 +125,6 @@
     <string name="PixArt">Pix-Art Messenger</string>
     <string name="Forget">Dimentica la mia scelta</string>
     <string name="ForgetTitle">Dimentica il client di chat!</string>
+    <string name="title_activity_tap">TapActivity</string>
 
 </resources>

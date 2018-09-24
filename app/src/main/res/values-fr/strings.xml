@@ -125,5 +125,6 @@
     <string name="PixArt">Pix-Art Messenger</string>
     <string name="Forget">Oublier mon choix</string>
     <string name="ForgetTitle">Oublier le client de chat !</string>
+    <string name="title_activity_tap">TapActivity</string>
 
 </resources>
