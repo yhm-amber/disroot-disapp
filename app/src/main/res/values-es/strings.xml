@@ -111,13 +111,13 @@
     <string name="ForumTitle">Foro: crea tu plataforma de comunicaciones</string>
     <string name="ForumInfo">Discourse es una aproximación a los foros de discusión moderna y de código abierto. Ofrece todo lo que tu comunidad, grupo o colectivo necesita para crear su propia plataforma de comunicación, tanto pública como privada.</string>
     <string name="LogoTitle">¿En serio intentaste una presión larga en el logo?</string>
-    <string name="LogoInfo">¿Por qué? Es solo un logo.\nNo seas tan curioso... ;-)</string>
+    <string name="LogoInfo">¿Por qué? Es solo un logo.\nNo seas tan curioso… ;-)</string>
     <string name="LogoBtn">Disroot rules \\o//</string>
     <string name="logo">Logo</string>
     <string name="xmppBtn"> \ \ &#8226; State on xmpp</string>
     <string name="matrixBtn"> \ \ &#8226; State on Matrix</string>
     <string name="SocialBtn"> \ \ &#8226; State on hubzilla/diaspora/mastodon</string>
-    <string name="NewsBtn"> \ \ &#8226; State updates via email</string>
+    <string name="NewsBtn"> \ \ &#8226; State updates vía email</string>
     <string name="RssBtn"> \ \ &#8226; State RSS feed</string>
     <string name="ChooseChatTitle">You have two XMPP clients installed!</string>
     <string name="ChooseChat">Please choose the client you want to use for Disroot</string>
