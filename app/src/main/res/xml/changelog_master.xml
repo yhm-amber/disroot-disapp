@@ -2,7 +2,9 @@
 <changelog>
     <release version="0.9.2" versioncode="7" >
         <change>Fixed first time asking xmpp client</change>
-        <change></change>
+        <change>Italian translation added</change>
+        <change>fixed Spanish typos</change>
+        <change>fixed French typos</change>
     </release>
     <release version="0.9.1" versioncode="6" >
         <change>French translation added</change>
