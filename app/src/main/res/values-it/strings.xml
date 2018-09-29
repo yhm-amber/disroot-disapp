@@ -17,7 +17,7 @@
     <string name="action_state">Stato</string>
     <string name="action_howto">Manuali</string>
 
-    <string name="action_about">A proposito</string>
+    <string name="action_about">Info</string>
     <string name="action_exit">Esci</string>
     <string name="action_share">Condividi</string>
     <string name="action_reload">Ricarica</string>
@@ -29,7 +29,7 @@
     <string name="global_ok">OK</string>
     <string name="more_help">Bisogno di più aiuto?</string>
     <string name="tell_more">Dimmi di più</string>
-    <string name="title_activity_about">A proposito</string>
+    <string name="title_activity_about">Info</string>
 
     <string name="MailInfoTitle">Impostazioni Mail</string>
     <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAutenticazione: Password Normale\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAutenticazione: Password Normale\n\nPOP: disroot.org\nSSL Port 995\nAutenticazione: Password Normale</string>
@@ -105,8 +105,8 @@
     <string name="state_help">Stato su XMPP</string>
     <string name="HowToTitle">Info su manuali</string>
     <string name="HowToInfo">La nostra pagina con manuali e tutorial per aiutarti a orientarti nei vari servizi Disroot.</string>
-    <string name="AboutTitle">Info a proposito</string>
-    <string name="AboutInfo">Questa è la pagina a proposito di questa app</string>
+    <string name="AboutTitle">Info</string>
+    <string name="AboutInfo">Questa è la pagina Info di questa app</string>
     <string name="ForumTitle">Aiuto Forum</string>
     <string name="ForumInfo">Discourse è un approccio moderno e completamente open-source ai forum di discussione. Offre tutto ciò di cui la vostra comunità, gruppo o collettivo ha bisogno per creare la loro piattaforma di comunicazione.</string>
     <string name="LogoTitle">Hai davvero provato la pressione lunga sul logo?</string>

@@ -21,6 +21,7 @@ The app may require you to install additional apps. We highly recommend you inst
 * English
 * Spanish
 * French
+* Italian
 
 ---
 ### Licensing

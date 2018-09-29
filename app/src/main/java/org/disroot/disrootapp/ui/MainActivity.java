@@ -109,7 +109,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         // enables the activity icon as a 'home' button. required if "android:targetSdkVersion" > 14
         //getActionBar().setHomeButtonEnabled(true);
 
-
         final ScrollView dashboard = findViewById(R.id.dashboard);
 
         //progressbarLoading
@@ -141,6 +140,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         if (cl.isFirstRun()) {
             cl.getLogDialog().show();
         }
+
+        //set booleans for checking Chat preference
+        if (firstStart.getBoolean("firsttap", true)){
+            check.edit().putBoolean("checkConv",false).apply();
+            check.edit().putBoolean("checkPix",false).apply();
+        }
+
         //Set buttons
         // Locate the button in activity_main.xml
         button = findViewById(R.id.MailBtn);//MailBtn
@@ -1098,7 +1104,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         }
         return super.onKeyDown(keyCode, event);
     }
-
+    @Override
     public boolean onPrepareOptionsMenu(Menu menu)
     {
         MenuItem register = menu.findItem(R.id.action_forget);
@@ -1168,13 +1174,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 }
                 else
                     return true;
-            case R.id.action_forget: {
-                if(check.getBoolean("checkConv", true)||check.getBoolean("checkPix", true)) {
-                    setVisible(true);
-                    showForget();
+            case R.id.action_forget:
+                showForget();
 
-                }
-            }
             case R.id.action_reload: {
                 String url = webView.getUrl();
                 webView.loadUrl(url);
