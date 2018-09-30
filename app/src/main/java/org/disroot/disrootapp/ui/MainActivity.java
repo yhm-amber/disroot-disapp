@@ -151,21 +151,17 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         // Locate the button in activity_main.xml
         button = findViewById(R.id.MailBtn);//MailBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
-
             @Override
             public boolean onLongClick(View v) {
                 showMailInfo();
                 return true;
             }
         });
-
-        // Capture button clicks
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                // Start NewActivity.class
                 String k9 = "com.fsck.k9";
                 Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
-                if(mail == null&&(firstStart.getBoolean("firsttap", false))) {
+                if(mail == null) {
                     mail = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+k9));
                 }//first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
@@ -174,7 +170,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 }
                 else startActivity(mail);
             }
+
         });
+
 
         button = findViewById(R.id.CloudBtn);//CloudBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
