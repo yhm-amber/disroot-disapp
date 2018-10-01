@@ -34,7 +34,7 @@
     <string name="MailInfoTitle">Configuración de Correo:</string>
     <string name="MailInfo">IMAP: disroot.org\nSSL Puerto: 993\nAutenticación: Contraseña normal\nSMTP: disroot.org\nSTARTTLS Puerto: 587\nAuthentication: Contraseña normal\nPOP: disroot.org\nSSL Puerto: 995\nAutenticación: Contraseña normal</string>
     <string name="CloudInfoTitle">Configuración de Nextcloud:</string>
-    <string name="CloudInfo">Sincroniza y comparte tus archivos, calendarios, contactos y más.\n\nHost:\n https://cloud.disroot.org\n\nUsuario: tu_usuario_de_disroot@disroot.org\nContraseña:tu_contraseña_de_Disroot.</string>
+    <string name="CloudInfo">Sincroniza y comparte tus archivos, calendarios, contactos y más.\n\nHost:\n https://cloud.disroot.org\n\nUsuario: tu_usuario_de_disroot\nContraseña:tu_contraseña_de_Disroot.</string>
     <string name="WelcomeTitle">Bienvenid@</string>
     <string name="WelcomeInfo">Disroot es una plataforma que provee servicios en línea basados en los principios de libertad, privacidad, federación y descentralización.\nEsta aplicación es como la navaja suiza de la plataforma, hecha por la comunidad, para la comunidad.\nSi no tienes una cuenta de Disroot, igual puedes usarla para acceder a todos los servicios de Disroot que no requieran de una:\nEtherpad, Ethercalc, Private bin, Upload, Encuentas, Searx y Diaspora* (requiere tener cuenta solo de Diaspora*)\nLa aplicación podría solicitarte la instalación de otras adicionales, y no todas pueden encontrarse en la Tienda de Aplicaciones. Nosotros recomendamos instalar la tienda F-Droid. Si no la tienes, puedes descargarla tocando el logo de F-Droid.\n</string>
 
