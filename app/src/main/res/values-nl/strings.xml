@@ -82,7 +82,7 @@
     <string name="FirstInfo">Je kan op elk pictogram lang drukken om jou extra informatie te tonen…</string>
     <string name="DiasporaTitle">Diaspora* Instellingen</string>
     <string name="DiasporaInfo">Gedistribueerd en gedecentraliseerd sociaal netwerk. Plaatsen, delen, liken, gemeenschappen creëren.\n\nGebruikersnaam:\n jou_diaspora_gebruikersnaam@pod.disroot.org\n\nWachtwoord:\n jou_diaspora_wachtwoord</string>
-    <string name="PadInfo">Met Etherpad schrijf artikelen, persberichten, to-do lijsten, etc. samen met vrienden, medestudenten of collega's, die allemaal op hetzelfde moment aan hetzelfde document werken.\nEr is geen registratie vereist.</string>
+    <string name="PadInfo">Met Etherpad schrijf artikelen, persberichten, to-do lijsten, etc. samen met vrienden, medestudenten of collega\'s, die allemaal op hetzelfde moment aan hetzelfde document werken.\nEr is geen registratie vereist.</string>
     <string name="PadTitle">EtherPad Info</string>
     <string name="ChatTitle">XMPP Instellingen\n</string>
     <string name="ChatInfo">Conversations is een gratis, standaard en open-source gedecentraliseerde en gefedereerde instant messaging applicatie voor chatten met contacten of binnen groepen.
