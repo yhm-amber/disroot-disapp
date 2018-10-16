@@ -54,7 +54,7 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * La communauté Disroot (Disroot):</string>
     <string name="contributorsTitle">Contributeurs</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Administrateur Disroot\n\n<b> &#8226; antilopa:</b>\n Administrateur Disroot\n\n<b> &#8226; Massimiliano:</b>\n Développeur actuel de l\'application Disroot\n\n<b> &#8226; Fede, Meaz:</b>\n Contributeurs de contenu\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Administrateur Disroot\n\n<b> &#8226; antilopa:</b>\n Administrateur Disroot\n\n<b> &#8226; Massimiliano:</b>\n Développeur actuel de l\'application Disroot\n\n<b> &#8226; Fede, Meaz, maryjane:</b>\n Contributeurs de contenu\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librairies tierces</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Licence d\'utilisation Apache 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>Licence d\'utilisation GNU General Public v3.0</string>

@@ -54,12 +54,12 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Gemeenschap (Disroot):</string>
     <string name="contributorsTitle">Bijdragers</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot administrator\n\n<b> &#8226; antilopa:</b>\n Disroot administrator\n\n<b> &#8226; Massimiliano:</b>\n Ontwikkelaar\n\n<b> &#8226; Fede:</b>\n Inhoud bijdrager\n\n<b> &#8226; Meaz:</b>\n Inhoud bijdrager\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot administrator\n\n<b> &#8226; antilopa:</b>\n Disroot administrator\n\n<b> &#8226; Massimiliano:</b>\n Ontwikkelaar\n\n<b> &#8226; Fede:</b>\n Inhoud bijdrager\n\n<b> &#8226; Meaz:</b>\n Inhoud bijdrager\n\n<b> &#8226; maryjane:</b>\n Inhoud bijdrager\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Third-Party Libraries</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache Licentie 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
     <string name="misc">Diversen</string>
-    <string name="miscDio"We hebben Diolinx als uitgangspunt gebruikt om deze app te maken. Ga eens kijken, het is ook vrije software!</string>
+    <string name="miscDio">We hebben Diolinx als uitgangspunt gebruikt om deze app te maken. Ga eens kijken, het is ook vrije software!</string>
     <string name="miscDioBtn">Vertel me meer</string>
     <string name="AppSection">Applicatie</string>
     <string name="AppVersion">App Versie: %1$s</string>

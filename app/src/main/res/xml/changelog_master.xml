@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+  <release version="0.9.4" versioncode="8" >
+      <changelog>Added Portuguese translation</changelog>
+  </release>
   <release version="0.9.3" versioncode="8" >
       <changelog>Fixed chatroom redirection</changelog>
       <changelog>Added Dutch translation</changelog>

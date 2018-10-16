@@ -16,6 +16,8 @@ The app may require you to install additional apps. We highly recommend you inst
 * Spanish
 * French
 * Italian
+* Dutch
+* Portuguese
 
 <b>Support the project:</b>
  ✋ Join discussion on <a href="xmpp:disroot@chat.disroot.org">xmpp:disroot@chat.disroot.org</a>
