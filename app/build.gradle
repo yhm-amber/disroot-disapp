@@ -6,8 +6,8 @@ android {
         applicationId "org.disroot.disrootapp"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 8
-        versionName "0.9.3"
+        versionCode 9
+        versionName "0.9.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
