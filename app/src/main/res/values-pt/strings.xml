@@ -23,39 +23,38 @@
     <string name="action_reload">Recarregar</string>
 
 
-    <string name="action_options">Acções</string>
-    <string name="activity_main_share_info">Partilhar informação do link</string>
-    <string name="activity_main_manteiners">%s\n\nDeveloper: Massimiliano\n\ncontacta-nos:\n<EMAIL mailto="support@disroot.org">support@disroot.org</EMAIL></string>
-    <string name="view_loading_description">A carregar…</string>
+    <string name="action_options">Actions</string>
+    <string name="activity_main_share_info">share link info</string>
+    <string name="view_loading_description">Loading…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">Precisa de mais ajuda?</string>
     <string name="tell_more">Contem-me mais</string>
     <string name="title_activity_about">AboutActivity</string>
-    <string name="title_activity_tap">TapActivity</string>
 
-    <string name="MailInfoTitle">Configuração de email</string>
-    <string name="MailInfo">IMAP: disroot.org\nSSL Porta 993\nAutenticação: Password Normal\n\nSMTP: disroot.org\nSTARTTLS Porta 587\nAutenticação: Password Normal\n\nPOP: disroot.org\nSSL Porta 995\nAutenticação: Password Normal</string>
-    <string name="CloudInfoTitle">Configuração do Nextcloud</string>
-    <string name="CloudInfo">Mantenha os seus dados sincronizados e seguros. Com o Nextcloud você pode partilhar os seus ficheiros, calendários, contactos e mais.\nServidor: \nhttps://cloud.disroot.org\nNome de utilizador:\n o_seu_nome_de_utilizador@disroot.org\n\nPassword:\n a_sua_password_disroot.</string>
-    <string name="WelcomeTitle">Bem-vindo</string>
-    <string name="WelcomeInfo">O Disroot é uma platforma que providencia serviços online baseados nos principios de freedom, privacidade, federação and decentralização.\nEsta aplicação é como o seu canivete Suiço para a plataforma Disroot, feito pela comunidade para a comunidade.\nSe não tem uma conta disroot pode usar esta aplicação na mesma para aceder a todos os serviços do Disroot que não precisam de uma conta de utilizador:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requer uma conta de utilizador especifica para o Diaspora)\n\nA Aplicação pode requerer que instale aplicações adicionais. Recomendamos-lhe vivamente que instale o F-Droid - uma loja de aplicações livre e open-source pois nem todas as aplicações podem ser encontradas na Play Store da Google e o F-Droid é mais orientado para a privacidade (sem tracking, sem precisar de conta de utilizador) pode descarrega-lo carregando no ícone do F-droid.\n</string>
-    <string name="help">Ajuda</string>
-    <string name="license">Licença</string>
-    <string name="action_settings">Definições</string>
-    <string name="licenseTitle">Licença</string>
-    <string name="license_button">Licença GNU LGPLv3.0</string>
+    <string name="MailInfoTitle">Mail Settings</string>
+    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal Password\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal Password\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal Password</string>
+    <string name="CloudInfoTitle">Nextcloud Settings</string>
+    <string name="CloudInfo">Keep your data synchronized and safe. With Nextcloud you can share your files, calendars, contacts and more.\n\nHost:\n https://cloud.disroot.org\n\nUsername:\n your_disroot_username\n\nPassword:\n your_disroot_password.</string>
+    <string name="WelcomeTitle">Welcome</string>
+    <string name="WelcomeInfo">Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.\nThis app is like your Swiss Army knife to the Disroot platform, made by the community for the community.\nIf you don\'t have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requires a Diaspora only account)\n\nThe app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google\'s Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it by tapping on the F-droid icon.\n</string>
 
+    <string name="help">Help</string>
+    <string name="license">License</string>
+    <string name="action_settings">Settings</string>
+    <string name="licenseTitle">License</string>
+    <string name="license_button">GNU LGPLv3.0 License</string>
+    <!--Non translatable
     <string translatable="false" name="licenseText">Copyright © 2007 Free Software Foundation, Inc.\n
         This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, version 3 of the License only.\n\n
         This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
-    </string>
+    </string>-->
 
     <string name="maintainersTitle">Equipa</string>
     <string name="maintainersText">Esta aplicação é desenvolvida e mantida por\n\n</string>
     <string name="disrootUrl">https://disroot.org</string>
-    <string name="disroot"> * Comunidade Disroot (Disroot):</string>
-    <string name="contributorsTitle">Contribuidores</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Administrador do Disroot\n\n<b> &#8226; antilopa:</b>\n Administrador do Disroot\n\n<b> &#8226; Massimiliano:</b>\n Desenvolvedor actual da Disroot app\n\n<b> &#8226; Fede:</b>\n Content contribudor de conteúdos\n\n<b> &#8226; Meaz:</b>\n Content contribudor de conteúdos\n\n</string>
+    <string name="disroot"> * Disroot Community (Disroot):</string>
+    <string name="contributorsTitle">Contributors</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot admin\n\n<b> &#8226; antilopa:</b>\n Disroot admin\n\n<b> &#8226; Massimiliano:</b>\n Current developer of the Disroot app\n\n<b> &#8226; Fede:</b>\n Content contributor\n\n<b> &#8226; Meaz:</b>\n Content contributor\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Bibliotecas de Terceiros</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -124,7 +123,8 @@
     <string name="Remember">Lembrar a minha escolha</string>
     <string name="Conversations">Conversations</string>
     <string name="PixArt">Pix-Art Messenger</string>
-    <string name="Forget">Esquecer a minha escolha</string>
-    <string name="ForgetTitle">Esquecer esse cliente!</string>
+    <string name="Forget">Forget my choise</string>
+    <string name="ForgetTitle">Forget chat client!</string>
+    <string name="title_activity_tap">TapActivity</string>
 
 </resources>

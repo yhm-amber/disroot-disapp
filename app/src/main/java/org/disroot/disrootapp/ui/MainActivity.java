@@ -1,7 +1,6 @@
 package org.disroot.disrootapp.ui;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
@@ -110,7 +109,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         // enables the activity icon as a 'home' button. required if "android:targetSdkVersion" > 14
         //getActionBar().setHomeButtonEnabled(true);
 
-
         final ScrollView dashboard = findViewById(R.id.dashboard);
 
         //progressbarLoading
@@ -142,25 +140,28 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         if (cl.isFirstRun()) {
             cl.getLogDialog().show();
         }
+
+        //set booleans for checking Chat preference
+        if (firstStart.getBoolean("firsttap", true)){
+            check.edit().putBoolean("checkConv",false).apply();
+            check.edit().putBoolean("checkPix",false).apply();
+        }
+
         //Set buttons
         // Locate the button in activity_main.xml
         button = findViewById(R.id.MailBtn);//MailBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
-
             @Override
             public boolean onLongClick(View v) {
                 showMailInfo();
                 return true;
             }
         });
-
-        // Capture button clicks
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                // Start NewActivity.class
                 String k9 = "com.fsck.k9";
                 Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
-                if(mail == null&&(firstStart.getBoolean("firsttap", false))) {
+                if(mail == null) {
                     mail = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+k9));
                 }//first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
@@ -169,7 +170,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 }
                 else startActivity(mail);
             }
+
         });
+
 
         button = findViewById(R.id.CloudBtn);//CloudBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
@@ -257,6 +260,12 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 Intent xmpp1 = getPackageManager().getLaunchIntentForPackage(Conversations);
                 String PixArt = "de.pixart.messenger";
                 Intent xmpp2 = getPackageManager().getLaunchIntentForPackage(PixArt);
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
                 if((xmpp1 == null)&&(xmpp2 == null)) {
                     xmpp1 = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
                 }
@@ -266,11 +275,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 }
                 //need to change to give user choise  || check.getBoolean("checkPix",false)
                 if((xmpp1 != null)&&(xmpp2 != null)) {
-                    if(check.getBoolean("checkConv", true)) {
+                    if(check.getBoolean("checkConv", Boolean.parseBoolean(null))||check.getBoolean("checkConv", false)) {
                         startActivity(xmpp1);
                         return;
                     }
-                    if(check.getBoolean("checkPix", true)) {
+                    if(check.getBoolean("checkPix", Boolean.parseBoolean(null))||check.getBoolean("checkPix", false)) {
                         startActivity(xmpp2);
                         return;
                     }
@@ -278,11 +287,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         showChoose();
                     return;
                     }
-                //first time tap check
-                if (firstStart.getBoolean("firsttap", true)){
-                    showFirstTap();
-                    firstStart.edit().putBoolean("firsttap", false).apply();
-                }
                 else
                 startActivity(xmpp1);
             }
@@ -1098,7 +1102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         }
         return super.onKeyDown(keyCode, event);
     }
-
+    @Override
     public boolean onPrepareOptionsMenu(Menu menu)
     {
         MenuItem register = menu.findItem(R.id.action_forget);
@@ -1122,21 +1126,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         // To show icons in the actionbar's overflow menu:
         // http://stackoverflow.com/questions/18374183/how-to-show-icons-in-overflow-menu-in-actionbar
         //if(featureId == Window.FEATURE_ACTION_BAR && menu != null){
-        if(menu.getClass().getSimpleName().equals("MenuBuilder")){
-            try{
-                @SuppressLint("PrivateApi") Method m = menu.getClass().getDeclaredMethod(
-                        "setOptionalIconsVisible", Boolean.TYPE);
-                m.setAccessible(true);
-                m.invoke(menu, true);
-            }
-            catch(NoSuchMethodException e){
-                Log.e(TAG, "onMenuOpened", e);
-            }
-            catch(Exception e){
-                throw new RuntimeException(e);
-            }
+        if(menu.getClass().getSimpleName().equals("MenuBuilder")) try {
+            Method m = menu.getClass().getDeclaredMethod(
+                    "setOptionalIconsVisible", Boolean.TYPE);
+            m.setAccessible(true);
+            m.invoke(menu, true);
+        } catch (NoSuchMethodException e) {
+            Log.e(TAG, "onMenuOpened", e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        //}
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -1173,13 +1172,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 }
                 else
                     return true;
-            case R.id.action_forget: {
-                if(check.getBoolean("checkConv", true)||check.getBoolean("checkPix", true)) {
-                    setVisible(true);
-                    showForget();
+            case R.id.action_forget:
+                showForget();
 
-                }
-            }
             case R.id.action_reload: {
                 String url = webView.getUrl();
                 webView.loadUrl(url);
@@ -1198,16 +1193,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 return super.onOptionsItemSelected(item);
         }
     }
-/**
-*    public void setupToolbar() {
- *       Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-  *      ((TextView) toolbar.findViewById(R.id.textview_toolbar_title)).setText(R.string.app_name);
-   *     setSupportActionBar(toolbar);
-    *    ActionBar actionBar = getSupportActionBar();
-     *   if (actionBar != null)
-      *      actionBar.setTitle("");
-    }*/
-    @SuppressLint("SetJavaScriptEnabled")
+
     private void setupWebView(Bundle savedInstanceState, FrameLayout customViewContainer) {
         disWebChromeClient = new DisWebChromeClient(webView, customViewContainer);
         progressBar = findViewById(R.id.progressbarLoading);
@@ -1458,7 +1444,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     private File createImageFile() throws IOException {
         // Create an image file name
-        @SuppressLint("SimpleDateFormat") String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         return File.createTempFile(

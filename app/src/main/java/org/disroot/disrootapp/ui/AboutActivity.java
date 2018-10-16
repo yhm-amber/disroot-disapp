@@ -1,6 +1,6 @@
 package org.disroot.disrootapp.ui;
 
-import android.annotation.SuppressLint;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -134,7 +134,7 @@ public class AboutActivity extends AppCompatActivity {
             fragment.setArguments(args);
             return fragment;
         }
-        @SuppressLint("SetTextI18n")
+
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {

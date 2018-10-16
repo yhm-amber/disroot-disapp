@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+  <release version="0.9.3" versioncode="8" >
+      <changelog>Fixed chatroom redirection</changelog>
+      <changelog>Added Dutch translation</changelog>
+  </release>
+    <release version="0.9.2" versioncode="7" >
+        <changelog>Fixed cloud tip</changelog>
+        <change>Fixed app crash on tapping mail icon</change>
+        <change>Fixed first time asking xmpp client</change>
+        <change>Italian translation added</change>
+        <change>fixed Spanish typos</change>
+        <change>fixed French typos</change>
+    </release>
+    <release version="0.9.1" versioncode="6" >
+        <change>French translation added</change>
+        <change>Spanish translation added</change>
+        <change>Changed some minor content strings</change>
+    </release>
     <release version="0.0.5" versioncode="5" >
         <change>User choice of chat client whit remember option</change>
         <change>All content of dialog box is added, ready for review</change>

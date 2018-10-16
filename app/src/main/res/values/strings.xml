@@ -24,19 +24,17 @@
 
 
     <string name="action_options">Actions</string>
-    <string name="activity_main_share_info">share link info</string>
-    <string name="activity_main_manteiners">%s\n\nDeveloper: Massimiliano\n\ncontact us:\n<EMAIL mailto="support@disroot.org">support@disroot.org</EMAIL></string>
+    <string name="activity_main_share_info">Share link info</string>
     <string name="view_loading_description">Loading…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">Need more help?</string>
     <string name="tell_more">Tell me more</string>
     <string name="title_activity_about">AboutActivity</string>
-    <string name="title_activity_tap">TapActivity</string>
 
     <string name="MailInfoTitle">Mail Settings</string>
-    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal Password\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal Password\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal Password</string>
+    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal\nPassword\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal\nPassword\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal\nPassword</string>
     <string name="CloudInfoTitle">Nextcloud Settings</string>
-    <string name="CloudInfo">Keep your data synchronized and safe. With Nextcloud you can share your files, calendars, contacts and more.\n\nUsername:\n your_username@disroot.org\n\nPassword:\n your_disroot_password.</string>
+    <string name="CloudInfo">Keep your data synchronized and safe. With Nextcloud you can share your files, calendars, contacts and more.\n\nHost:\n https://cloud.disroot.org\n\nUsername:\n your_disroot_username\n\nPassword:\n your_disroot_password.</string>
     <string name="WelcomeTitle">Welcome</string>
     <string name="WelcomeInfo">Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.\nThis app is like your Swiss Army knife to the Disroot platform, made by the community for the community.\nIf you don\'t have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requires a Diaspora only account)\n\nThe app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google\'s Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it by tapping on the F-droid icon.\n</string>
 
@@ -56,7 +54,7 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Community (Disroot):</string>
     <string name="contributorsTitle">Contributors</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot admin\n\n<b> &#8226; antilopa:</b>\n Disroot admin\n\n<b> &#8226; Massimiliano:</b>\n Current developer of the Disroot app\n\n<b> &#8226; Fede:</b>\n Content contributor\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot admin\n\n<b> &#8226; antilopa:</b>\n Disroot admin\n\n<b> &#8226; Massimiliano:</b>\n Developer\n\n<b> &#8226; Fede:</b>\n Content contributor\n\n<b> &#8226; Meaz:</b>\n Content contributor\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Third-Party Libraries</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -95,7 +93,7 @@
     <string name="UploadTitle">Upload (powered by Lufi) Info</string>
     <string name="UploadInfo">Upload is a file hosting software that temporarily stores encrypted files so you can share them with others using a link. All files are encrypted before they leave your computer meaning server has zero knowledge of hosted data.\nNo registration is required.</string>
     <string name="SearxTitle">Searx Info</string>
-    <string name="SearxInfo"> Searx is an anonymous multi search engine platform, aggregating the results of other search engines while not storing information about its users.  No tracking, profiling, no data mining by big corporations. \nNo registration is required.</string>
+    <string name="SearxInfo">Searx is an anonymous multi search engine platform, aggregating the results of other search engines while not storing information about its users.  No tracking, profiling, no data mining by big corporations. \nNo registration is required.</string>
     <string name="PollsTitle">Polls Help</string>
     <string name="PollsInfo">Framadate is an online service for planning an appointment or making a decision quickly and easily.\nNo registration is required.</string>
     <string name="BoardTitle">Project Management Board Info</string>
@@ -103,7 +101,7 @@
     <string name="UserTitle">User Password Management Help</string>
     <string name="UserInfo">Use our User Self Service Center to manage your user and password data</string>
     <string name="StateTitle">State Info</string>
-    <string name="StateInfo">Page to see the current stare of Disroot services. Here you can see if any service has a problem, if there are any performance issues, as well as get to know when we schedule maintenance in which time some services might be unavailable.\n\n<b>Alternative ways to get State updates:</b></string>
+    <string name="StateInfo">Page to see the current state of Disroot services. Here you can see if any service has a problem, if there are any performance issues, as well as get to know when we schedule maintenance in which time some services might be unavailable.\n\n<b>Alternative ways to get State updates:</b></string>
     <string name="state_help">State on XMPP</string>
     <string name="HowToTitle">How to Info</string>
     <string name="HowToInfo">Our page with howtos and tutorials to help you find your way around the various Disroot services.</string>
@@ -122,10 +120,11 @@
     <string name="RssBtn"> \ \ &#8226; State RSS feed</string>
     <string name="ChooseChatTitle">You have two XMPP clients installed!</string>
     <string name="ChooseChat">Please choose the client you want to use for Disroot</string>
-    <string name="Remember">Remember my choise</string>
+    <string name="Remember">Remember my choice</string>
     <string name="Conversations">Conversations</string>
     <string name="PixArt">Pix-Art Messenger</string>
-    <string name="Forget">Forget my choise</string>
+    <string name="Forget">Forget my choice</string>
     <string name="ForgetTitle">Forget chat client!</string>
+    <string name="title_activity_tap">TapActivity</string>
 
 </resources>

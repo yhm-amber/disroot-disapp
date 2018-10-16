@@ -1,0 +1,131 @@
+<resources>
+    <string name="app_name">Disroot App</string>
+    <string name="action_home">Home</string>
+    <string name="action_mail">Mail</string>
+    <string name="action_cloud">Cloud</string>
+    <string name="action_diaspora">Diaspora*</string>
+    <string name="action_forum">Forum</string>
+    <string name="action_chat">Chat</string>
+    <string name="action_pad">Etherpad</string>
+    <string name="action_calc">EtherCalc</string>
+    <string name="action_bin">Private bin</string>
+    <string name="action_upload">Upload</string>
+    <string name="action_searx">Searx</string>
+    <string name="action_poll">Poll</string>
+    <string name="action_board">Bord</string>
+    <string name="action_user">Wachtwoord</string>
+    <string name="action_state">Status</string>
+    <string name="action_howto">How to</string>
+
+    <string name="action_about">Over</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_share">Delen</string>
+    <string name="action_reload">Herladen</string>
+
+
+    <string name="action_options">Acties</string>
+    <string name="activity_main_share_info">Deel link info</string>
+    <string name="view_loading_description">Laden…</string>
+    <string name="global_ok">OK</string>
+    <string name="more_help">Meer hulp nodig?</string>
+    <string name="tell_more">Vertel me meer</string>
+    <string name="title_activity_about">AboutActivity</string>
+
+    <string name="MailInfoTitle">Mail Instellingen</string>
+    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthenticatie: Normal\nWachtwoord\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthenticatie: Normal\nWachtwoord\n\nPOP: disroot.org\nSSL Port 995\nAuthenticatie: Normal\nWachtwoord</string>
+    <string name="CloudInfoTitle">Nextcloud Instellingen</string>
+    <string name="CloudInfo">Houd uw gegevens gesynchroniseerd en veilig. Met Nextcloud kunt u uw bestanden, kalenders, contactpersonen en meer delen.\n\nHost:\n https://cloud.disroot.org\n\nGebruikersnaam:\n uw_disroot_gebruikersnaam\n\nWachtwoord:\n uw_disroot_wachtwoord.</string>
+    <string name="WelcomeTitle">Welkom</string>
+    <string name="WelcomeInfo">Disroot is een platform dat online diensten aanbiedt op basis van de principes van vrijheid, privacy, federatie en decentralisatie.\n Deze app is als een Zwitsers mes voor het Disroot platform, gemaakt door de gemeenschap voor de gemeenschap.\nAls je geen Disroot account hebt kun je deze app nog steeds gebruiken om toegang te krijgen tot alle Disroot diensten dat geen account vereist:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (vereist een Diaspora elleen account)\n\nDe app kan vereisen dat u extra apps installeert. We raden u ten zeerste aan om F-Droid - een gratis en open source app marktplaats te installeren, omdat niet alle apps te vinden zijn in de Play Store van Google en F-Droid meer privacy georiënteerd is (geen tracking, geen account nodig), u kunt het downloaden door op het F-droid icoontje te tikken.\n</string>
+
+    <string name="help">Help</string>
+    <string name="license">Licentie</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="licenseTitle">Licentie</string>
+    <string name="license_button">GNU LGPLv3.0 Licentie</string>
+
+    <string translatable="false" name="licenseText">Copyright © 2007 Free Software Foundation, Inc.\n
+        This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, version 3 of the License only.\n\n
+        This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+    </string>
+
+    <string name="maintainersTitle">Onderhouders</string>
+    <string name="maintainersText">Deze app wordt momenteel ontwikkeld en onderhouden door\n\n</string>
+    <string name="disrootUrl">https://disroot.org</string>
+    <string name="disroot"> * Disroot Gemeenschap (Disroot):</string>
+    <string name="contributorsTitle">Bijdragers</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot administrator\n\n<b> &#8226; antilopa:</b>\n Disroot administrator\n\n<b> &#8226; Massimiliano:</b>\n Ontwikkelaar\n\n<b> &#8226; Fede:</b>\n Inhoud bijdrager\n\n<b> &#8226; Meaz:</b>\n Inhoud bijdrager\n\n</string>
+    <string name="fDroid">F-Droid</string>
+    <string name="thirdparty">Third-Party Libraries</string>
+    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache Licentie 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
+    <string name="misc">Diversen</string>
+    <string name="miscDio"We hebben Diolinx als uitgangspunt gebruikt om deze app te maken. Ga eens kijken, het is ook vrije software!</string>
+    <string name="miscDioBtn">Vertel me meer</string>
+    <string name="AppSection">Applicatie</string>
+    <string name="AppVersion">App Versie: %1$s</string>
+    <string name="Device">Toestel:</string>
+    <string name="Contribute">Draag bij</string>
+    <string name="ContributeText">Disroot app is vrij ontwikkeld zoals in Vrijheid en volgt de ideeën van de Disroot Stichting. Als je een bijdrage wilt leveren, ga je gang! Momenteel zijn we een heel klein team, dus we stellen elke vorm van hulp zeer op prijs!</string>
+    <string name="ContributeBtn">Krijg de broncode</string>
+    <string name="Translate">Vertaal</string>
+    <string name="TranslateText">Is de app niet beschikbaar in uw taal? Dat kan je veranderen! Waarom help je ons niet door het te vertalen?</string>
+    <string name="TranslateBtn">Laat me vertalen</string>
+    <string name="Feedback">Geef Feedback!</string>
+    <string name="FeedbackText">Disroot app is nog in ontwikkeling, dus als je suggesties of feedback hebt, laat het ons weten!</string>
+    <string name="FeedbackBtn1">Meld bugs</string>
+    <string name="FeedbackBtn2">Chat met ons</string>
+    <string name="SpreadTheWord">Spreid het woord!</string>
+    <string name="SpreadTheWordTxt">Vertel je vrienden en familie over Disroot! Waarom blogt je niet over jou ervaringen? We horen graag van je!</string>
+    <string name="SpreadTheWordBtn">Deel de app</string>
+    <string name="DisrootWeb">Disroot web</string>
+    <string name="FirstTitle">Ik vergat bijna</string>
+    <string name="FirstInfo">Je kan op elk pictogram lang drukken om jou extra informatie te tonen…</string>
+    <string name="DiasporaTitle">Diaspora* Instellingen</string>
+    <string name="DiasporaInfo">Gedistribueerd en gedecentraliseerd sociaal netwerk. Plaatsen, delen, liken, gemeenschappen creëren.\n\nGebruikersnaam:\n jou_diaspora_gebruikersnaam@pod.disroot.org\n\nWachtwoord:\n jou_diaspora_wachtwoord</string>
+    <string name="PadInfo">Met Etherpad schrijf artikelen, persberichten, to-do lijsten, etc. samen met vrienden, medestudenten of collega's, die allemaal op hetzelfde moment aan hetzelfde document werken.\nEr is geen registratie vereist.</string>
+    <string name="PadTitle">EtherPad Info</string>
+    <string name="ChatTitle">XMPP Instellingen\n</string>
+    <string name="ChatInfo">Conversations is een gratis, standaard en open-source gedecentraliseerde en gefedereerde instant messaging applicatie voor chatten met contacten of binnen groepen.
+\n\nJabber ID :\n Jou Volledig Disroot email adres\n\nWachtwoord :\n Jou Disroot wachtwoord</string>
+    <string name="CalcInfo">Met EtherCalc werken we samen aan inventarissen, enquêteformulieren, lijstbeheer, brainstormsessies en meer.\nEr is geen registratie vereist.</string>
+    <string name="CalcTitle">EtherCalc Info</string>
+    <string name="BinTitle">PrivateBin Help</string>
+    <string name="BinInfo">PrivateBin is een open-source online pastebin en discussiebord. De gegevens worden gecodeerd/gedecodeerd in de browser, zodat de server geen kennis heeft van gehoste gegevens. Plak gewoon een tekst, klik op "Verzenden", stel de vervaldatum in (en andere functies) en deel de URL.\nEr is geen registratie vereist.</string>
+    <string name="UploadTitle">Upload (powered by Lufi) Info</string>
+    <string name="UploadInfo">Upload is een file hosting software die tijdelijk versleutelde bestanden opslaat, zodat u ze kunt delen met anderen via een link. Alle bestanden worden gecodeerd voordat ze uw computer verlaten, wat betekent dat de server geen kennis heeft van gehoste gegevens.\nEr is geen registratie vereist.</string>
+    <string name="SearxTitle">Searx Info</string>
+    <string name="SearxInfo">Searx is een anoniem multi zoekmachine platform, dat de resultaten van andere zoekmachines samenvoegt en geen informatie over de gebruikers opslaat.  Geen tracking, geen profilering, geen data mining door grote bedrijven.\nEr is geen registratie vereist.</string>
+    <string name="PollsTitle">Polls Help</string>
+    <string name="PollsInfo">Framadate is een online dienst om snel en eenvoudig een afspraak te plannen of een beslissing te nemen.\nEr is geen registratie vereist.</string>
+    <string name="BoardTitle">Project Management Bord Info</string>
+    <string name="BoardInfo">Taiga is een project management tool, ontwikkeld voor programmeurs, ontwerpers en startups die werken met een flexibele methodologie in gedachten. Het kan echter op vrijwel elk project of groep worden toegepast, zelfs buiten de IT-omgeving.</string>
+    <string name="UserTitle">Gebruikerswachtwoordbeheer Help</string>
+    <string name="UserInfo">Gebruik ons User Self Service Center om uw gebruikers- en wachtwoordgegevens te beheren</string>
+    <string name="StateTitle">Status Info</string>
+    <string name="StateInfo">Pagina om de huidige status van Disroot diensten te zien. Hier kunt u zien of een service een probleem heeft, of er prestatieproblemen zijn, en wanneer we onderhoud plannen in welke tijd sommige services niet beschikbaar zijn.\n\n<b>Alternatieve manieren om de status updates te krijgen:</b></string>
+    <string name="state_help">Status on XMPP</string>
+    <string name="HowToTitle">How to Info</string>
+    <string name="HowToInfo">Onze pagina met howtos en tutorials om je te helpen je weg te vinden in de verschillende Disroot diensten.</string>
+    <string name="AboutTitle">Over Info</string>
+    <string name="AboutInfo">Dit is de over-pagina van deze app</string>
+    <string name="ForumTitle">Forum Help</string>
+    <string name="ForumInfo">Discourse is een volledig open-source moderne benadering van discussiefora. Het biedt alles wat uw gemeenschap, groep of collectief nodig heeft om hun communicatieplatform te creëren.</string>
+    <string name="LogoTitle">Heb je echt gewoon de lange druk op het logo geprobeerd?</string>
+    <string name="LogoInfo">Waarom? Het is gewoon een logo.\n Wees niet te nieuwsgierig  ;-)</string>
+    <string name="LogoBtn">Disroot rules \\o/</string>
+    <string name="logo">Logo</string>
+    <string name="xmppBtn"> \ \ &#8226; Status op xmpp</string>
+    <string name="matrixBtn"> \ \ &#8226; Status op Matrix</string>
+    <string name="SocialBtn"> \ \ &#8226; Status op hubzilla/diaspora/mastodon</string>
+    <string name="NewsBtn"> \ \ &#8226; Status updates via email</string>
+    <string name="RssBtn"> \ \ &#8226; Status RSS feed</string>
+    <string name="ChooseChatTitle">Je hebt twee XMPP-clients geïnstalleerd!</string>
+    <string name="ChooseChat">Kies de client die je wenst te gebruiken voor Disroot</string>
+    <string name="Remember">Onthoud mijn keuze</string>
+    <string name="Conversations">Conversations</string>
+    <string name="PixArt">Pix-Art Messenger</string>
+    <string name="Forget">Vergeet mijn keuze</string>
+    <string name="ForgetTitle">Vergeet chat client!</string>
+    <string name="title_activity_tap">TapActivity</string>
+
+</resources>
