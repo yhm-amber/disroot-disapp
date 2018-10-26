@@ -54,7 +54,7 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Comunità Disroot (Disroot):</string>
     <string name="contributorsTitle">Contribuenti</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Amministratore Disroot\n\n<b> &#8226; antilopa:</b>\n Amministratrice Disroot\n\n<b> &#8226; Massimiliano:</b>\n Sviluppatore\n\n<b> &#8226; Fede:</b>\n Contributore di contenuti\n\n<b> &#8226; Meaz:</b>\n Contributore di contenuti\n\n<b> &#8226; maryjane:</b>\n Contributore di contenuti\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Amministratore Disroot\n\n<b> &#8226; antilopa:</b>\n Amministratrice Disroot\n\n<b> &#8226; Massimiliano:</b>\n Sviluppatore\n\n<b> &#8226; Fede:</b>\n Contributore di contenuti\n\n<b> &#8226; Meaz:</b>\n Contributore di contenuti\n\n<b> &#8226; maryjane:</b>\n Contributore di contenuti\n\n<b> &#8226; userdebug:</b>\n Contributore di contenuti\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librerie di terze parti</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>

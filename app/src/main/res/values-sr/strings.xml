@@ -90,7 +90,7 @@
     <string name="CalcInfo">Pomoću EtherCalc-a možete grupno raditi na popisnim listama, anketnim formama, upravljanju listama, kreativnim sastancima i još mnogo čemu!\nRegistracija nije potrebna.</string>
     <string name="CalcTitle">EtherCalc detalji</string>
     <string name="BinTitle">PrivateBin pomoć</string>
-    <string name="BinInfo">PrivateBin je servis otvorenog koda, a služi kao 'korpa za odlaganje i deljenje' i kao forum. Podaci su šifrovani/dešifrovani u pregledaču, što znači da server ne prepoznaje sadržaj pohranjenih datoteka. Nalepite tekst, kliknite “Pošalji”, odredite rok trajanja (i ostala obeležja) i podelite vezu.\nRegistracija nije potrebna.</string>
+    <string name="BinInfo">PrivateBin je servis otvorenog koda, a služi kao \'korpa za odlaganje i deljenje\' i kao forum. Podaci su šifrovani/dešifrovani u pregledaču, što znači da server ne prepoznaje sadržaj pohranjenih datoteka. Nalepite tekst, kliknite “Pošalji”, odredite rok trajanja (i ostala obeležja) i podelite vezu.\nRegistracija nije potrebna.</string>
     <string name="UploadTitle">Otpremi (servis pokreće Lufi) Info</string>
     <string name="UploadInfo">Upload (Otpremi) je softver za privremeno i šifrovano skladištenje datoteka, koje pomoću veze možete podeliti sa drugima. Sve datoteke šifruju se pre slanja sa vašeg računara, što znači da server ne prepoznaje sadržaj pohranjenih datoteka.\nRegistracija nije potrebna.</string>
     <string name="SearxTitle">Searx detalji</string>
