@@ -126,5 +126,6 @@
     <string name="Forget">Forget my choice</string>
     <string name="ForgetTitle">Forget chat client!</string>
     <string name="title_activity_tap">TapActivity</string>
+    <string name="action_clear_cookies">Clear cookies</string>
 
 </resources>

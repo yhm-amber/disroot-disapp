@@ -22,6 +22,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -32,11 +33,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.webkit.DownloadListener;
 import android.webkit.GeolocationPermissions;
 import android.webkit.URLUtil;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -92,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     WebChromeClient.FileChooserParams chooserParams;
 
     public static final String CONTENT_HASHTAG = "content://org.disroot.disrootapp.ui.mainactivity/";
+
+    private CookieManager cookieManager;
 
 
 
@@ -1184,14 +1190,25 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 Intent goAbout = new Intent(MainActivity.this, AboutActivity.class);
                 MainActivity.this.startActivity(goAbout);
                 return true;
-            case R.id.action_exit: {
-                moveTaskToBack(true);
-                finish();
+            case R.id.action_clear_cookies: {
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                    CookieManager.getInstance().removeAllCookies(null);
+                }else{
+                    CookieManager.getInstance().removeAllCookie();
+                }
+            }
                 return false;
+                case R.id.action_exit: {
+                    moveTaskToBack(true);
+                    finish();
+                    return false;
             }
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public CookieManager getCookieManager() {
+        return cookieManager;
     }
 
     private void setupWebView(Bundle savedInstanceState, FrameLayout customViewContainer) {
@@ -1208,9 +1225,32 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        webView.getSettings().setAllowContentAccess(true);
        // webView.loadUrl(Constants.URL_DisApp_MAIN_PAGE);
         webView.setOnLongClickListener(this);
-       // webView.setVisibility(View.GONE);;
+       // webView.setVisibility(View.GONE);
+
+        //enable cookies
+        cookieManager = CookieManager.getInstance();
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            CookieSyncManager.createInstance(webView.getContext());
+            cookieManager.setAcceptCookie(true);
+            AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+        }
+        CookieSyncManager syncManager = CookieSyncManager.createInstance(webView.getContext());
+        CookieManager cookieManager = CookieManager.getInstance();
+        String cookieString = "cookie_name=cookie_value; path=/";
+        String baseUrl="disroot.org";
+        cookieManager.setCookie(baseUrl, cookieString);
+        syncManager.sync();
+        String cookies = cookieManager.getCookie(baseUrl);
+        if (cookies != null) {
+            cookieManager.setCookie(baseUrl, cookies);
+            for (String c : cookies.split(";")) {
+
+            }
+        }
 
         //Make download possible
         webView.setDownloadListener(new DownloadListener() {
@@ -1263,7 +1303,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if(url.startsWith("https")&&url.contains("disroot")) {
+                if(url.startsWith("https")|url.startsWith("http")&&url.contains("disroot")) {
                     view.loadUrl(url);
                     return super.shouldOverrideUrlLoading(view, url);
                 }

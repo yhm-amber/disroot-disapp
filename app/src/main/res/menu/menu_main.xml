@@ -28,6 +28,10 @@
             android:id="@+id/action_reload"
             android:title="@string/action_reload" />
         <item
+        android:icon="@drawable/ic_clear_cookies"
+        android:id="@+id/action_clear_cookies"
+        android:title="@string/action_clear_cookies" />
+        <item
             android:icon="@drawable/ic_about"
             android:id="@+id/action_about"
             android:title="@string/action_about" />

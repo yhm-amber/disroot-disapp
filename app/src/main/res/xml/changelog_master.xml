@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="1.0.1" versioncode="11" >
+        <change>Added Store cookies</change>
+        <cange>Added clear cache</cange>
+    </release>
     <release version="1.0.0" versioncode="10" >
       <change>Added Serbian translation</change>
       <change>Fixed changelog</change>
