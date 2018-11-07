@@ -388,10 +388,15 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     firstStart.edit().putBoolean("firsttap", false).apply();
                     return;
                 }
-                else
-                webView.loadUrl(Constants.URL_DisApp_UPLOAD);
-                webView.setVisibility(View.VISIBLE);
-                dashboard.setVisibility(View.GONE);
+                else {
+                    Uri uri = Uri.parse(Constants.URL_DisApp_UPLOAD);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+                }
+                //workaround for crashing app
+               // webView.loadUrl(Constants.URL_DisApp_UPLOAD);
+               // webView.setVisibility(View.VISIBLE);
+               // dashboard.setVisibility(View.GONE);
             }
 
         });
@@ -1207,9 +1212,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 return super.onOptionsItemSelected(item);
         }
     }
-    public CookieManager getCookieManager() {
-        return cookieManager;
-    }
 
     private void setupWebView(Bundle savedInstanceState, FrameLayout customViewContainer) {
         disWebChromeClient = new DisWebChromeClient(webView, customViewContainer);
@@ -1303,7 +1305,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if(url.startsWith("https")|url.startsWith("http")&&url.contains("disroot")) {
+                if(url.startsWith("https")|url.startsWith("http")&&url.contains("disroot")&!url.contains("upload.disroot.org")) {
                     view.loadUrl(url);
                     return super.shouldOverrideUrlLoading(view, url);
                 }
@@ -1313,8 +1315,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     return true;
                 }
             }
-
-
         });
     }
 
