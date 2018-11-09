@@ -3,7 +3,7 @@
 [![Donate LiberaPay](https://img.shields.io/badge/donate-liberapay-orange.svg)](https://liberapay.com/Disroot)
 
 ---
-#Disroot app
+# Disroot app
 Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.  
 This app is like your Swiss Army knife to the Disroot platform, made by the community for the community.  
 If you don't have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:  
@@ -17,11 +17,14 @@ If you don't have a Disroot account you can still use this  app to access all th
 
 The app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google's Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it [here](https://f-droid.org/FDroid.apk).
 
-####Supported languages:
+#### Supported languages:
 * English
 * Spanish
 * French
 * Italian
+* Portuguese
+* Dutch
+* Serbian
 
 ---
 ### Licensing
@@ -36,7 +39,7 @@ Android 4.1 or +
 This app requires access to the Internet and to external storage to be able to upload and download files.
 
 ---
-###contributors
+### contributors
 The project is always open for contributions and accepts pull requests.
 * Massimiliano
 * muppeth
@@ -44,6 +47,7 @@ The project is always open for contributions and accepts pull requests.
 * Fede
 * Maryjane
 * meaz
+* userdebug
 
 ---
 #### Resources
