@@ -54,7 +54,7 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Community (Disroot):</string>
     <string name="contributorsTitle">Contributors</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot admin\n\n<b> &#8226; antilopa:</b>\n Disroot admin\n\n<b> &#8226; Massimiliano:</b>\n Current developer of the Disroot app\n\n<b> &#8226; Fede:</b>\n Content contributor\n\n<b> &#8226; Meaz:</b>\n Content contributor\n\n<b> &#8226; maryjane:</b>\n Content contributor\n\n<b> &#8226; userdebug:</b>\n Content contributor\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot admin\n\n<b> &#8226; antilopa:</b>\n Disroot admin\n\n<b> &#8226; Massimiliano:</b>\n Current developer of the Disroot app\n\n<b> &#8226; Fede:</b>\n Content contributor\n\n<b> &#8226; Meaz:</b>\n Content contributor\n\n<b> &#8226; maryjane:</b>\n Content contributor\n\n<b> &#8226; userdebug:</b>\n Content contributor\n\n<b> &#8226; ButterflyOfFire:</b>\n Content contributor\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Bibliotecas de Terceiros</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -65,7 +65,7 @@
     <string name="AppVersion">Versão da Aplicação: %1$s</string>
     <string name="Device">Dispositivo:</string>
     <string name="Contribute">Contribuir</string>
-    <string name="ContributeText">A aplicação Disroot segue os principios da Fundação Disroot, é desenvolvida segundo o principio de "free as in Freedom". Se quiser contribuir para o desenvolvimento desta plaicação, força! De momento somos uma equipa muito pequena, por isso agradecemos qualquer tipo de ajuda!</string>
+    <string name="ContributeText">A aplicação Disroot segue os princípios da Fundação Disroot, é desenvolvida segundo o principio de "free as in Freedom". Se quiser contribuir para o desenvolvimento desta plaicação, força! De momento somos uma equipa muito pequena, por isso agradecemos qualquer tipo de ajuda!</string>
     <string name="ContributeBtn">Obter o código fonte</string>
     <string name="Translate">Traduzir</string>
     <string name="TranslateText">A app não está disponível na sua língua? Pode resolver isso! Porque não nos ajuda traduzindo-a para a sua língua?</string>
@@ -81,7 +81,7 @@
     <string name="FirstTitle">Quase que me esquecia</string>
     <string name="FirstInfo">Podes carregar por alguns segundos em cada ícone para aparecer informação extra…</string>
     <string name="DiasporaTitle">Definições do Diaspora*</string>
-    <string name="DiasporaInfo">Rede social Distribuida e Descentralizada. Postar, partilhar, criar comunidades.\n\nUsername:\n o_seu_nome_de_utilizador_no_diaspora@pod.disroot.org\n\nPassword:\n a_sua_password_diaspora</string>
+    <string name="DiasporaInfo">Rede social Distribuída e Descentralizada. Postar, partilhar, criar comunidades.\n\nUsername:\n o_seu_nome_de_utilizador_no_diaspora@pod.disroot.org\n\nPassword:\n a_sua_password_diaspora</string>
     <string name="PadInfo">Com o Etherpad pode escrever artigos, comunicados de imprensa, listas de tarefas, etc. em conjunto com outras pessoas, amigos, colegas, todos a trabalhar no mesmo documento ao mesmo tempo.\nNão é necessário ter uma conta de utilizador para usar.</string>
     <string name="PadTitle">Sobre EtherPad</string>
     <string name="ChatTitle">Definições do XMPP\n</string>
@@ -126,5 +126,13 @@
     <string name="Forget">Forget my choise</string>
     <string name="ForgetTitle">Forget chat client!</string>
     <string name="title_activity_tap">TapActivity</string>
+    <string name="action_clear_cookies">Clear cookies</string>
+    <string name="DiaInstallTitle">Installation request</string>
+    <string name="DiasporaDialog">To continue you need to install Dandelion first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="global_cancel">Cancel</string>
+    <string name="global_install">Install</string>
+    <string name="MailDialog">To continue you need to install K9-Mail first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="CloudDialog">To continue you need to install the Nextcloud app first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="ChatDialog">To continue you need to install Conversations first.\nPlease select install to continue with the installatin on F-Droid.</string>
 
 </resources>

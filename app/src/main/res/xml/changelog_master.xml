@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="1.0.2" versioncode="12" >
+        <change>Fixed French translation</change>
+        <change>Added more clear dialogs for additional apps</change>
+    </release>
     <release version="1.0.1" versioncode="11" >
         <change>Added Store cookies</change>
-        <cange>Added clear cache</cange>
-        <cange>Workaround for app crashing when uploading in Lufi</cange>
+        <change>Added clear cache</change>
+        <change>Workaround for app crashing when uploading in Lufi</change>
     </release>
     <release version="1.0.0" versioncode="10" >
       <change>Added Serbian translation</change>

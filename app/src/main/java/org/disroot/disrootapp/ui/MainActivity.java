@@ -165,14 +165,17 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                String k9 = "com.fsck.k9";
-                Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
-                if(mail == null) {
-                    mail = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+k9));
-                }//first time tap check
+                //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
                     firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String k9 = "com.fsck.k9";
+                Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
+                if(mail == null) {
+                    showMailDialog();
+                    return;
                 }
                 else startActivity(mail);
             }
@@ -190,14 +193,17 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                String nc = "com.nextcloud.client";
-                Intent cloud = getPackageManager().getLaunchIntentForPackage(nc);
-                if(cloud == null) {
-                    cloud = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+nc));
-                }//first time tap check
+                //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
                     firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String nc = "com.nextcloud.client";
+                Intent cloud = getPackageManager().getLaunchIntentForPackage(nc);
+                if(cloud == null) {
+                    showCloudDialog();
+                    return;
                 }
                 else startActivity(cloud);
             }
@@ -214,18 +220,20 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                String Diaspora = "com.github.dfa.diaspora_android";
-                Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
-                if(pod == null) {
-                    pod = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Diaspora));
-                }//first time tap check
+                //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
                     firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String Diaspora = "com.github.dfa.diaspora_android";
+                Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
+                if(pod == null) {
+                    showDiaDialog();
+                    return;
                 }
                 else startActivity(pod);
             }
-
         });
 
         button = findViewById(R.id.ForumBtn);//ForumBtn
@@ -273,7 +281,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     return;
                 }
                 if((xmpp1 == null)&&(xmpp2 == null)) {
-                    xmpp1 = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
+                    showChatDialog();
+                    return;
                 }
                 /* if((xmpp1 == null)&&(xmpp2 != null)) { */
                 if((xmpp1 == null)&&(xmpp2 != null)) {//if(xmpp1 == null) {
@@ -309,15 +318,17 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                String Padland = "com.mikifus.padland";
-                Intent pad = getPackageManager().getLaunchIntentForPackage(Padland);
-                if(pad == null) {
-                    pad = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Padland));
-                }
                 //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
                     firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String Padland = "com.mikifus.padland";
+                Intent pad = getPackageManager().getLaunchIntentForPackage(Padland);
+                if(pad == null) {
+                    showPAdDialog();
+                    return;
                 }
                 else startActivity(pad);
             }
@@ -659,6 +670,25 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         builder.show();
     }
+    private void showMailDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.MailDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String k9 = "com.fsck.k9";
+            Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mail = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + k9));
+                startActivity(mail);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
+        builder.show();
+    }
+
     //Cloud Info
     private void showCloudInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
@@ -677,6 +707,25 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         builder.show();
     }
+    private void showCloudDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.CloudDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String nc = "com.nextcloud.client";
+            Intent cloud = getPackageManager().getLaunchIntentForPackage(nc);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                cloud = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + nc));
+                startActivity(cloud);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
+        builder.show();
+    }
+
     //Diaspora info
     private void showDiaInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
@@ -693,6 +742,24 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 dashboard.setVisibility(View.GONE);
             }
         });
+        builder.show();
+    }
+    private void showDiaDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.DiasporaDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String Diaspora = "com.github.dfa.diaspora_android";
+            Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                pod = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Diaspora));
+                startActivity(pod);
+                }
+            });
+        builder.setNegativeButton(R.string.global_cancel , null);
         builder.show();
     }
 
@@ -765,6 +832,24 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         builder.show();
     }
+    private void showChatDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.ChatDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String Conversations = "eu.siacs.conversations";
+            Intent xmpp1 = getPackageManager().getLaunchIntentForPackage(Conversations);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                xmpp1 = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Conversations));
+                startActivity(xmpp1);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
+        builder.show();
+    }
 
     private void showPadInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
@@ -781,6 +866,24 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 dashboard.setVisibility(View.GONE);
             }
         });
+        builder.show();
+    }
+    private void showPAdDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.ChatDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String Padland = "com.mikifus.padland";
+            Intent pad = getPackageManager().getLaunchIntentForPackage(Padland);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                pad = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Padland));
+                startActivity(pad);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
         builder.show();
     }
 

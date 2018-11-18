@@ -77,7 +77,7 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot">* La communauté Disroot (Disroot) :</string>
     <string name="contributorsTitle">Contributeurs</string>
-    <string name="contributors"><b> • muppeth:</b>\n Administrateur Disroot\n\n<b> • antilopa:</b>\n Administrateur Disroot\n\n<b> • Massimiliano:</b>\n Développeur actuel de l\'application Disroot\n\n<b> • Fede, Meaz, maryjane, userdebug:</b>\n Contributeurs de contenu\n\n</string>
+    <string name="contributors"><b> • muppeth:</b>\n Administrateur Disroot\n\n<b> • antilopa:</b>\n Administrateur Disroot\n\n<b> • Massimiliano:</b>\n Développeur actuel de l\'application Disroot\n\n<b> • Fede, Meaz, maryjane, userdebug, ButterflyOfFire:</b>\n Contributeurs de contenu\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librairies tierces</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Licence d\'utilisation Apache 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>Licence d\'utilisation GNU General Public v3.0</string>
@@ -156,5 +156,13 @@
     <string name="Forget">Oublier mon choix</string>
     <string name="ForgetTitle">Oublier le client de messagerie instantanée !</string>
     <string name="title_activity_tap">TapActivity</string>
+    <string name="action_clear_cookies">Clear cookies</string>
+    <string name="DiaInstallTitle">Installation request</string>
+    <string name="DiasporaDialog">To continue you need to install Dandelion first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="global_cancel">Cancel</string>
+    <string name="global_install">Install</string>
+    <string name="MailDialog">To continue you need to install K9-Mail first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="CloudDialog">To continue you need to install the Nextcloud app first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="ChatDialog">To continue you need to install Conversations first.\nPlease select install to continue with the installatin on F-Droid.</string>
 
 </resources>
