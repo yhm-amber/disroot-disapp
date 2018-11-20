@@ -157,12 +157,12 @@
     <string name="ForgetTitle">Oublier le client de messagerie instantanée !</string>
     <string name="title_activity_tap">TapActivity</string>
     <string name="action_clear_cookies">Effacer les cookies</string>
-    <string name="DiaInstallTitle">Demande d'installation</string>
-    <string name="DiasporaDialog">Pour continuer, vous devez d'abord installer Dandelion.\nVeuillez sélectionner Installer pour continuer l'installation avec F-Droid.</string>
+    <string name="DiaInstallTitle">Demande d\'installation</string>
+    <string name="DiasporaDialog">Pour continuer, vous devez d\'abord installer Dandelion.\nVeuillez sélectionner Installer pour continuer l\'installation avec F-Droid.</string>
     <string name="global_cancel">Annuler</string>
     <string name="global_install">Installer</string>
-    <string name="MailDialog">Pour continuer, vous devez d'abord installer K9-Mail.\nVeuillez sélectionner Installer pour continuer l'installation avec F-Droid.</string>
-    <string name="CloudDialog">Pour continuer, vous devez d'abord installer l'application Nextcloud.\nVeuillez sélectionner Installer pour continuer l'installation avec F-Droid.</string>
-    <string name="ChatDialog">Pour continuer, vous devez d'abord installer Conversations.\nVeuillez sélectionner Installer pour continuer l'installation avec F-Droid.</string>
+    <string name="MailDialog">Pour continuer, vous devez d\'abord installer K9-Mail.\nVeuillez sélectionner Installer pour continuer l'installation avec F-Droid.</string>
+    <string name="CloudDialog">Pour continuer, vous devez d\'abord installer l\'application Nextcloud.\nVeuillez sélectionner Installer pour continuer l'installation avec F-Droid.</string>
+    <string name="ChatDialog">Pour continuer, vous devez d\'abord installer Conversations.\nVeuillez sélectionner Installer pour continuer l'installation avec F-Droid.</string>
 
 </resources>
