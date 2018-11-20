@@ -17,7 +17,7 @@
     <string name="action_state">Stato</string>
     <string name="action_howto">Manuali</string>
 
-    <string name="action_about">Info</string>
+    <string name="action_about">Info su</string>
     <string name="action_exit">Esci</string>
     <string name="action_share">Condividi</string>
     <string name="action_reload">Ricarica</string>
@@ -29,7 +29,7 @@
     <string name="global_ok">OK</string>
     <string name="more_help">Bisogno di più aiuto?</string>
     <string name="tell_more">Dimmi di più</string>
-    <string name="title_activity_about">Info</string>
+    <string name="title_activity_about">Info su</string>
 
     <string name="MailInfoTitle">Impostazioni Mail</string>
     <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAutenticazione: Password Normale\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAutenticazione: Password Normale\n\nPOP: disroot.org\nSSL Port 995\nAutenticazione: Password Normale</string>
@@ -105,7 +105,7 @@
     <string name="state_help">Stato su XMPP</string>
     <string name="HowToTitle">Info su manuali</string>
     <string name="HowToInfo">La nostra pagina con manuali e tutorial per aiutarti a orientarti nei vari servizi Disroot.</string>
-    <string name="AboutTitle">Info</string>
+    <string name="AboutTitle">Info su</string>
     <string name="AboutInfo">Questa è la pagina Info di questa app</string>
     <string name="ForumTitle">Aiuto Forum</string>
     <string name="ForumInfo">Discourse è un approccio moderno e completamente open-source ai forum di discussione. Offre tutto ciò di cui la vostra comunità, gruppo o collettivo ha bisogno per creare la loro piattaforma di comunicazione.</string>
@@ -126,13 +126,13 @@
     <string name="Forget">Dimentica la mia scelta</string>
     <string name="ForgetTitle">Dimentica il client di chat!</string>
     <string name="title_activity_tap">TapActivity</string>
-    <string name="action_clear_cookies">Clear cookies</string>
-    <string name="DiaInstallTitle">Installation request</string>
-    <string name="DiasporaDialog">To continue you need to install Dandelion first.\n Please select install to continue with the installatin on F-Droid.</string>
-    <string name="global_cancel">Cancel</string>
-    <string name="global_install">Install</string>
-    <string name="MailDialog">To continue you need to install K9-Mail first.\nPlease select install to continue with the installatin on F-Droid.</string>
-    <string name="CloudDialog">To continue you need to install the Nextcloud app first.\nPlease select install to continue with the installatin on F-Droid.</string>
-    <string name="ChatDialog">To continue you need to install Conversations first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="action_clear_cookies">Elimina i cookie</string>
+    <string name="DiaInstallTitle">Richiesta installazione</string>
+    <string name="DiasporaDialog">Per continuare è necessario installare Dandelion.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
+    <string name="global_cancel">Annulla</string>
+    <string name="global_install">Installa</string>
+    <string name="MailDialog">Per continuare è necessario installare K9-Mail.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
+    <string name="CloudDialog">Per continuare è necessario installare la app di Nextcloud.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
+    <string name="ChatDialog">Per continuare è necessario installare Conversations.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
 
 </resources>
