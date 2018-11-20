@@ -23,25 +23,25 @@
     <string name="action_reload">Recarregar</string>
 
 
-    <string name="action_options">Actions</string>
-    <string name="activity_main_share_info">share link info</string>
-    <string name="view_loading_description">Loading…</string>
+    <string name="action_options">Ações</string>
+    <string name="activity_main_share_info">Partilhe a ingormação do link</string>
+    <string name="view_loading_description">A carregar…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">Precisa de mais ajuda?</string>
-    <string name="tell_more">Contem-me mais</string>
+    <string name="tell_more">Conte-me mais</string>
     <string name="title_activity_about">AboutActivity</string>
 
-    <string name="MailInfoTitle">Mail Settings</string>
-    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal Password\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal Password\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal Password</string>
-    <string name="CloudInfoTitle">Nextcloud Settings</string>
+    <string name="MailInfoTitle">Definições de Email</string>
+    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthenticação: Normal Password\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal Password\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal Password</string>
+    <string name="CloudInfoTitle">Definições Nextcloud</string>
     <string name="CloudInfo">Keep your data synchronized and safe. With Nextcloud you can share your files, calendars, contacts and more.\n\nHost:\n https://cloud.disroot.org\n\nUsername:\n your_disroot_username\n\nPassword:\n your_disroot_password.</string>
-    <string name="WelcomeTitle">Welcome</string>
+    <string name="WelcomeTitle">Bem Vindo</string>
     <string name="WelcomeInfo">Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.\nThis app is like your Swiss Army knife to the Disroot platform, made by the community for the community.\nIf you don\'t have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requires a Diaspora only account)\n\nThe app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google\'s Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it by tapping on the F-droid icon.\n</string>
 
-    <string name="help">Help</string>
-    <string name="license">License</string>
-    <string name="action_settings">Settings</string>
-    <string name="licenseTitle">License</string>
+    <string name="help">Ajuda</string>
+    <string name="license">Licença</string>
+    <string name="action_settings">Defenições</string>
+    <string name="licenseTitle">Licença</string>
     <string name="license_button">GNU LGPLv3.0 License</string>
     <!--Non translatable
     <string translatable="false" name="licenseText">Copyright © 2007 Free Software Foundation, Inc.\n
