@@ -28,7 +28,7 @@
     <string name="view_loading_description">Cargando…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">¿Necesitas más ayuda?</string>
-    <string name="tell_more">Tell me more</string>
+    <string name="tell_more">Cuéntame más...</string>
     <string name="title_activity_about">AboutActivity</string>
 
     <string name="MailInfoTitle">Configuración de Correo:</string>
@@ -114,26 +114,26 @@
     <string name="LogoInfo">¿Por qué? Es solo un logo.\nNo seas tan curioso… ;-)</string>
     <string name="LogoBtn">Disroot rules \\o//</string>
     <string name="logo">Logo</string>
-    <string name="xmppBtn"> \ \ &#8226; State on xmpp</string>
-    <string name="matrixBtn"> \ \ &#8226; State on Matrix</string>
-    <string name="SocialBtn"> \ \ &#8226; State on hubzilla/diaspora/mastodon</string>
-    <string name="NewsBtn"> \ \ &#8226; State updates vía email</string>
-    <string name="RssBtn"> \ \ &#8226; State RSS feed</string>
-    <string name="ChooseChatTitle">You have two XMPP clients installed!</string>
-    <string name="ChooseChat">Please choose the client you want to use for Disroot</string>
-    <string name="Remember">Remember my choice</string>
+    <string name="xmppBtn"> \ \ &#8226; Estado de xmpp</string>
+    <string name="matrixBtn"> \ \ &#8226; Estado de Matrix</string>
+    <string name="SocialBtn"> \ \ &#8226; Estado de Hubzilla/Diaspora*/Mastodon</string>
+    <string name="NewsBtn"> \ \ &#8226; Actualización de estados por email</string>
+    <string name="RssBtn"> \ \ &#8226; Feed RSS de los Estados</string>
+    <string name="ChooseChatTitle">¡Tienes dos clientes XMPP instalados!</string>
+    <string name="ChooseChat">Por favor, elige el cliente que quieres usar para Disroot</string>
+    <string name="Remember">Recordar mi elección</string>
     <string name="Conversations">Conversations</string>
     <string name="PixArt">Pix-Art Messenger</string>
-    <string name="Forget">Forget my choice</string>
-    <string name="ForgetTitle">Forget chat client!</string>
+    <string name="Forget">Olvidar mi elección</string>
+    <string name="ForgetTitle">¡Olvidar el cliente de chat!</string>
     <string name="title_activity_tap">TapActivity</string>
-    <string name="action_clear_cookies">Clear cookies</string>
-    <string name="DiaInstallTitle">Installation request</string>
-    <string name="DiasporaDialog">To continue you need to install Dandelion first.\nPlease select install to continue with the installatin on F-Droid.</string>
-    <string name="global_cancel">Cancel</string>
-    <string name="global_install">Install</string>
-    <string name="MailDialog">To continue you need to install K9-Mail first.\nPlease select install to continue with the installatin on F-Droid.</string>
-    <string name="CloudDialog">To continue you need to install the Nextcloud app first.\nPlease select install to continue with the installatin on F-Droid.</string>
-    <string name="ChatDialog">To continue you need to install Conversations first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="action_clear_cookies">Limpiar cookies</string>
+    <string name="DiaInstallTitle">Requerimiento de instalación</string>
+    <string name="DiasporaDialog">Para continuar, primero necesitas instalar Dandelion.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
+    <string name="global_cancel">Cancelar</string>
+    <string name="global_install">Instalar</string>
+    <string name="MailDialog">Para continuar, primero necesitas instalar K9-Mail.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
+    <string name="CloudDialog">Para continuar, primero necesitas instalar la app de Nextcloud.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
+    <string name="ChatDialog">Para continuar, primero necesitas instalar Conversations.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
 
 </resources>
