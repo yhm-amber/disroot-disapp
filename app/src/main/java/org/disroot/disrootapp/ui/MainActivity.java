@@ -1153,7 +1153,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         pbutton.setTextColor(Color.BLACK);
     }
 
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -1341,6 +1340,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             CookieSyncManager.createInstance(webView.getContext());
             cookieManager.setAcceptCookie(true);
+            cookieManager.setAcceptThirdPartyCookies(webView,false);
             AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         }
         CookieSyncManager syncManager = CookieSyncManager.createInstance(webView.getContext());

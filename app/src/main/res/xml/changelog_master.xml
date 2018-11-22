@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
     <release version="1.0.2" versioncode="12" >
+        <change>Third partie cookies disabled</change>
         <change>Fixed French translation</change>
         <change>Added more clear dialogs for additional apps</change>
     </release>
