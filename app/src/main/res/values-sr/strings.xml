@@ -55,7 +55,7 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot zajednica (Disroot):</string>
     <string name="contributorsTitle">Saradnici</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot administrator\n\n<b> &#8226; antilopa:</b>\n Disroot administrator\n\n<b> &#8226; Massimiliano:</b>\n programer\n\n<b> &#8226; Fede:</b>\n saradnik\n\n<b> &#8226; Meaz:</b>\n saradnik\n\n<b> &#8226; maryjane:</b>\n saradnik\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot administrator\n\n<b> &#8226; antilopa:</b>\n Disroot administrator\n\n<b> &#8226; Massimiliano:</b>\n programer\n\n<b> &#8226; Fede:</b>\n saradnik\n\n<b> &#8226; Meaz:</b>\n saradnik\n\n<b> &#8226; maryjane:</b>\n saradnik\n\n<b> &#8226; userdebug:</b>\n saradnik\n\n<b> &#8226; ButterflyOfFire:</b>\n saradnik\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Biblioteke treće strane</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -90,7 +90,7 @@
     <string name="CalcInfo">Pomoću EtherCalc-a možete grupno raditi na popisnim listama, anketnim formama, upravljanju listama, kreativnim sastancima i još mnogo čemu!\nRegistracija nije potrebna.</string>
     <string name="CalcTitle">EtherCalc detalji</string>
     <string name="BinTitle">PrivateBin pomoć</string>
-    <string name="BinInfo">PrivateBin je servis otvorenog koda, a služi kao 'korpa za odlaganje i deljenje' i kao forum. Podaci su šifrovani/dešifrovani u pregledaču, što znači da server ne prepoznaje sadržaj pohranjenih datoteka. Nalepite tekst, kliknite “Pošalji”, odredite rok trajanja (i ostala obeležja) i podelite vezu.\nRegistracija nije potrebna.</string>
+    <string name="BinInfo">PrivateBin je servis otvorenog koda, a služi kao \'korpa za odlaganje i deljenje\' i kao forum. Podaci su šifrovani/dešifrovani u pregledaču, što znači da server ne prepoznaje sadržaj pohranjenih datoteka. Nalepite tekst, kliknite “Pošalji”, odredite rok trajanja (i ostala obeležja) i podelite vezu.\nRegistracija nije potrebna.</string>
     <string name="UploadTitle">Otpremi (servis pokreće Lufi) Info</string>
     <string name="UploadInfo">Upload (Otpremi) je softver za privremeno i šifrovano skladištenje datoteka, koje pomoću veze možete podeliti sa drugima. Sve datoteke šifruju se pre slanja sa vašeg računara, što znači da server ne prepoznaje sadržaj pohranjenih datoteka.\nRegistracija nije potrebna.</string>
     <string name="SearxTitle">Searx detalji</string>
@@ -127,5 +127,13 @@
     <string name="Forget">Zaboravi moj izbor</string>
     <string name="ForgetTitle">Zaboravi program za ćaskanje!</string>
     <string name="title_activity_tap">TapActivity</string>
+    <string name="action_clear_cookies">Obriši kolačiće</string>
+    <string name="DiaInstallTitle">Potrebna instalacija</string>
+    <string name="DiasporaDialog">Za nastavak je potrebno instalirati aplikaciju Dandelion.\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="global_cancel">Otkaži</string>
+    <string name="global_install">Instaliraj</string>
+    <string name="MailDialog">Za nastavak je potrebno instalirati aplikaciju K9-Mail.\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="CloudDialog">Za nastavak je potrebno instalirati aplikaciju Nextcloud.\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="ChatDialog">Za nastavak je potrebno instalirati aplikaciju Conversations.\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
 
 </resources>
