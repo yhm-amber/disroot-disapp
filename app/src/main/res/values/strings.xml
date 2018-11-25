@@ -44,7 +44,7 @@
     <string name="licenseTitle">License</string>
     <string name="license_button">GNU LGPLv3.0 License</string>
 
-    <string translatable="false" name="licenseText">Copyright © 2007 Free Software Foundation, Inc.\n
+    <string name="licenseText" translatable="false">Copyright © 2007 Free Software Foundation, Inc.\n
         This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, version 3 of the License only.\n\n
         This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
     </string>
@@ -134,5 +134,7 @@
     <string name="MailDialog">To continue you need to install K9-Mail first.\nPlease select install to continue with the installatin on F-Droid.</string>
     <string name="CloudDialog">To continue you need to install the Nextcloud app first.\nPlease select install to continue with the installatin on F-Droid.</string>
     <string name="ChatDialog">To continue you need to install Conversations first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="title_activity_state">StateActivity</string>
+    <string name="app_state">Disroot state</string>
 
 </resources>

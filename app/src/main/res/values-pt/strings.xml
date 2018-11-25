@@ -134,5 +134,6 @@
     <string name="MailDialog">To continue you need to install K9-Mail first.\nPlease select install to continue with the installatin on F-Droid.</string>
     <string name="CloudDialog">To continue you need to install the Nextcloud app first.\nPlease select install to continue with the installatin on F-Droid.</string>
     <string name="ChatDialog">To continue you need to install Conversations first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="app_state">Disroot state</string>
 
 </resources>

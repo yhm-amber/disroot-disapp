@@ -518,6 +518,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                Intent goState = new Intent(MainActivity.this, StateActivity.class);
                 //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
@@ -525,9 +526,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     return;
                 }
                 else
-                webView.loadUrl(Constants.URL_DisApp_STATE);
-                webView.setVisibility(View.VISIBLE);
-                dashboard.setVisibility(View.GONE);
+                MainActivity.this.startActivity(goState);
+                //webView.loadUrl(Constants.URL_DisApp_STATE);
+                //webView.setVisibility(View.VISIBLE);
+                //dashboard.setVisibility(View.GONE);
             }
 
         });

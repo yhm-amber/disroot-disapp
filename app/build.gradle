@@ -44,3 +44,7 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}

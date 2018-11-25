@@ -4,20 +4,19 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_disroot"
         android:label="@string/app_name"
-        android:theme="@style/DisTheme"
         android:supportsRtl="true"
-        android:allowBackup="true"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:theme="@style/DisTheme">
         <activity
-            android:name="org.disroot.disrootapp.ui.SplashScreenActivity"
+            android:name=".ui.SplashScreenActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name">
             <intent-filter>
@@ -27,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.disroot.disrootapp.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="true"
             android:label="@string/app_name">
@@ -43,23 +42,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.disroot.disrootapp.ui.AboutActivity"
+            android:name=".ui.AboutActivity"
             android:label="@string/title_activity_about"
             android:theme="@style/DisTheme" />
-        <activity android:name="org.disroot.disrootapp.ui.WelcomeActivity" />
-
-
+        <activity android:name=".ui.WelcomeActivity" />
         <activity
             android:name="wsdfhjxc.taponium.MainActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_tap">
+            android:label="@string/title_activity_tap"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-
+        <activity
+            android:name=".ui.StateActivity"
+            android:label="@string/title_activity_state"
+            android:theme="@style/DisTheme"></activity>
     </application>
 
 </manifest>
