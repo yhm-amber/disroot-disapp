@@ -101,6 +101,7 @@ public class StateActivity extends AppCompatActivity {
                         String name = c.getString("name");
                         String description = c.getString("description");
                         String updated_at = c.getString("updated_at");
+                        String lastUpdated = "Last updated: " + updated_at;
                         String status_name = c.getString("status_name");
 
                         // tmp hash map for single service
@@ -110,7 +111,7 @@ public class StateActivity extends AppCompatActivity {
                         service.put("id", id);
                         service.put("name", name);
                         service.put("description", description);
-                        service.put("updated_at", updated_at);
+                        service.put("updated_at", lastUpdated);
                         service.put("status_name", status_name);
 
                         // adding service to service list
