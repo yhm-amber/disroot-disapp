@@ -2,15 +2,18 @@ package org.disroot.disrootapp.ui;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.disroot.disrootapp.R;
@@ -189,14 +192,34 @@ public class StateActivity extends AppCompatActivity {
             if (pDialog.isShowing())
                 pDialog.dismiss();
 
-
              //Updating parsed JSON data into ListView
-
             ListAdapter adapter = new SimpleAdapter(
                     StateActivity.this, stateList,
                     R.layout.list_item, new String[]{"name", "description", "updated_at",
                     "status_name"}, new int[]{R.id.name,
-                    R.id.description,R.id.updated_at, R.id.status_name});
+                    R.id.description,R.id.updated_at, R.id.status_name})
+
+                    //Change Color based on Status
+            {
+                @Override
+                public View getView(int position, View convertView, ViewGroup parent) {
+                    View v = super.getView(position, convertView, parent);
+                    TextView status = v.findViewById(R.id.status_name);
+                    String statusValue = status.getText().toString();
+                    switch (statusValue) {
+                        case "Operational":
+                            status.setTextColor(Color.GREEN);
+                            break;
+                        case "Major Outage":
+                            status.setTextColor(Color.RED);
+                            break;
+                        default:
+                            status.setTextColor(Color.YELLOW);
+                            break;
+                    }
+                    return v;
+                }
+            };
             lv.setAdapter(adapter);
         }
     }
