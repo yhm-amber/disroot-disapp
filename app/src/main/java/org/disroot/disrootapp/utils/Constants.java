@@ -7,6 +7,8 @@ public class Constants {
     public static final long SPLASH_SCREEN_DURATION = 3000;
     public static final long SPLASH_SCREEN_INTERVAL = 1000;
 
+
+    public static final String title_activity_state = "StateActivity";
     public static final String URL_DisApp_FORUM = "https://forum.disroot.org/";
     public static final String URL_DisApp_CALC = "https://calc.disroot.org";
     public static final String URL_DisApp_BIN = "https://bin.disroot.org";

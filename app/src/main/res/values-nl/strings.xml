@@ -135,6 +135,14 @@
     <string name="MailDialog">Om verder te gaan moet u eerst K9-Mail installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
     <string name="CloudDialog">Om verder te gaan moet u eerst Nextcloud app installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
     <string name="ChatDialog">Om verder te gaan moet u eerst Conversations installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
-    <string name="app_state">Disroot state</string>
-
+    <string name="app_state">Disroot status</string>
+    <string name="Operational">Operationeel</string>
+    <string name="MajorOutage">Ernstige storing</string>
+    <string name="EmailService">Email Service</string>
+    <string name="LastUpdated">"Laatst geupdate: \"</string>
+    <string name="WebmailService">WebMail Service</string>
+    <string name="Cloud">Cloud</string>
+    <string name="PerformanceIssues">Prestatieproblemen</string>
+    <string name="Notification">No issues</string>
+    <string name="Notificationissues">Some systems are experiencing issues</string>
 </resources>

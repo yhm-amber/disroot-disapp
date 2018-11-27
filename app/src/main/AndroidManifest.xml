@@ -59,6 +59,10 @@
         <activity
             android:name=".ui.StateActivity"
             android:label="@string/title_activity_state"
+            android:theme="@style/DisTheme" />
+        <activity
+            android:name=".ui.Tabbed_state"
+            android:label="@string/title_activity_tabbed_state"
             android:theme="@style/DisTheme"></activity>
     </application>
 

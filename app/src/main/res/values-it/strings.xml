@@ -134,6 +134,14 @@
     <string name="MailDialog">Per continuare è necessario installare K9-Mail.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
     <string name="CloudDialog">Per continuare è necessario installare la app di Nextcloud.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
     <string name="ChatDialog">Per continuare è necessario installare Conversations.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
-    <string name="app_state">Disroot state</string>
-
+    <string name="app_state">Stato Disroot</string>
+    <string name="Operational">Operazionale</string>
+    <string name="MajorOutage">Grave interruzione del servizio</string>
+    <string name="EmailService">Servizio Email</string>
+    <string name="LastUpdated">Ultimo aggiornamento: \</string>
+    <string name="WebmailService">Servizio WebMail</string>
+    <string name="Cloud">Cloud</string>
+    <string name="PerformanceIssues">Problemi di performanza</string>
+    <string name="Notification">No issues</string>
+    <string name="Notificationissues">Some systems are experiencing issues</string>
 </resources>

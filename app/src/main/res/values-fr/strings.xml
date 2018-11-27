@@ -165,5 +165,13 @@
     <string name="CloudDialog">Pour continuer, vous devez d\'abord installer l\'application Nextcloud.\nVeuillez sélectionner Installer pour continuer l\'installation avec F-Droid.</string>
     <string name="ChatDialog">Pour continuer, vous devez d\'abord installer Conversations.\nVeuillez sélectionner Installer pour continuer l\'installation avec F-Droid.</string>
     <string name="app_state">Disroot state</string>
-
+    <string name="Operational">Operational</string>
+    <string name="MajorOutage">Major Outage</string>
+    <string name="EmailService">Email Service</string>
+    <string name="LastUpdated">Last updated: \</string>
+    <string name="WebmailService">WebMail Service</string>
+    <string name="Cloud">Cloud</string>
+    <string name="PerformanceIssues">Performance Issues</string>
+    <string name="Notification">No issues</string>
+    <string name="Notificationissues">Some systems are experiencing issues</string>
 </resources>
