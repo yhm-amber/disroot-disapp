@@ -2,6 +2,8 @@
 <changelog>
     <release version="1.0.2" versioncode="12" >
         <change>State page is api based instead of webview</change>
+        <change>In State page is possible to view state messages</change>
+        <change>Fixed app crashing when launching Pix-art messenger</change>
     </release>
     <release version="1.0.2" versioncode="12" >
         <change>Third partie cookies disabled</change>

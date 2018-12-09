@@ -47,6 +47,14 @@
             android:theme="@style/DisTheme" />
         <activity android:name=".ui.WelcomeActivity" />
         <activity
+            android:name=".ui.StateActivity"
+            android:label="@string/title_activity_state"
+            android:theme="@style/DisTheme" />
+        <activity
+            android:name=".ui.StateMessagesActivity"
+            android:label="@string/title_activity_state"
+            android:theme="@style/DisTheme" />
+        <activity
             android:name="wsdfhjxc.taponium.MainActivity"
             android:label="@string/title_activity_tap"
             android:screenOrientation="portrait">
@@ -56,14 +64,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.StateActivity"
-            android:label="@string/title_activity_state"
-            android:theme="@style/DisTheme" />
-        <activity
-            android:name=".ui.Tabbed_state"
-            android:label="@string/title_activity_tabbed_state"
-            android:theme="@style/DisTheme"></activity>
     </application>
 
 </manifest>

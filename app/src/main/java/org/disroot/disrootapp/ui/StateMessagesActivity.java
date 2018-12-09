@@ -29,25 +29,23 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class StateActivity extends AppCompatActivity {
+public class StateMessagesActivity extends AppCompatActivity {
 
     Button button;
-
-    private String TAG = StateActivity.class.getSimpleName();
+    private String TAG = StateMessagesActivity.class.getSimpleName();
 
     private ProgressDialog pDialog;
     private ListView lv;
 
     // URL to get data JSON
-    static String url = "https://state.disroot.org/api/v1/components";
-    static String url1 = "https://state.disroot.org/api/v1/components?page=2";
+    static String incidenturl0 ="https://state.disroot.org/api/v1/incidents?sort=id&order=desc";
 
-    ArrayList<HashMap<String, String>> stateList;
+    ArrayList<HashMap<String, String>> messageList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_state);
+        setContentView(R.layout.activity_state_messages);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -60,16 +58,16 @@ public class StateActivity extends AppCompatActivity {
         });
 
 
-        button = findViewById(R.id.StateMessageBtn);//StateMessageBtn
+        button = findViewById(R.id.StateBtn);//StateBtn
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                Intent goState = new Intent(StateActivity.this, StateMessagesActivity.class);
-                StateActivity.this.startActivity(goState);
+                Intent goState = new Intent(StateMessagesActivity.this, StateActivity.class);
+                StateMessagesActivity.this.startActivity(goState);
             }
 
         });
 
-        stateList = new ArrayList<>();
+        messageList = new ArrayList<>();
 
         lv = findViewById(R.id.list);
 
@@ -94,8 +92,8 @@ public class StateActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_home) {
-            Intent goHome = new Intent(StateActivity.this, MainActivity.class);
-            StateActivity.this.startActivity(goHome);
+            Intent goHome = new Intent(StateMessagesActivity.this, MainActivity.class);
+            StateMessagesActivity.this.startActivity(goHome);
             return true;
         }
 
@@ -112,7 +110,7 @@ public class StateActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             // Showing progress dialog
-            pDialog = new ProgressDialog(StateActivity.this);
+            pDialog = new ProgressDialog(StateMessagesActivity.this);
             pDialog.setMessage("Loading…");
             pDialog.setCancelable(false);
             pDialog.show();
@@ -123,14 +121,13 @@ public class StateActivity extends AppCompatActivity {
             HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr0 = sh.makeServiceCall(url);
-            String jsonStr1 = sh.makeServiceCall(url1);
+            String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
 
-            Log.e(TAG, "Response from url: " + jsonStr0);
+            Log.e(TAG, "Response from url: " + incidenturl0);
 
-            if (jsonStr0 != null) {
+            if (jsonStrincidents0 != null) {//Incidaetnts page
                 try {
-                    JSONObject jsonObj = new JSONObject(jsonStr0);
+                    JSONObject jsonObj = new JSONObject(jsonStrincidents0);
 
                     // Getting JSON Array node
                     JSONArray data = jsonObj.getJSONArray("data");
@@ -141,10 +138,12 @@ public class StateActivity extends AppCompatActivity {
 
                         String id = c.getString("id");
                         String name = c.getString("name");
-                        String description = c.getString("description");
+                        String message = c.getString("message");
+                        String scheduled_at = c.getString("scheduled_at");
+                        String scheduledAt = "Scheduled at: " + scheduled_at;
                         String updated_at = c.getString("updated_at");
                         String lastUpdated = "Last Updated: " + updated_at;
-                        String status_name = c.getString("status_name");
+                        String human_status = c.getString("human_status");
 
                         // tmp hash map for single service
                         HashMap<String, String> service = new HashMap<>();
@@ -152,55 +151,13 @@ public class StateActivity extends AppCompatActivity {
                         // adding each child node to HashMap key => value
                         service.put("id", id);
                         service.put("name", name);
-                        service.put("description", description);
+                        service.put("message", message);
+                        service.put("scheduled_at", scheduledAt);
                         service.put("updated_at", lastUpdated);
-                        service.put("status_name", status_name);
+                        service.put("human_status", human_status);
 
                         // adding service to service list
-                        stateList.add(service);
-                    }
-                } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),
-                                    "Json parsing error: " + e.getMessage(),
-                                    Toast.LENGTH_LONG)
-                                    .show();
-                        }
-                    });
-                }
-            }if (jsonStr1 != null) {//next page
-                try {
-                    JSONObject jsonObj = new JSONObject(jsonStr1);
-
-                    // Getting JSON Array node
-                    JSONArray data = jsonObj.getJSONArray("data");
-
-                    // looping through All data
-                    for (int i = 0; i < data.length(); i++) {
-                        JSONObject c = data.getJSONObject(i);
-
-                        String id = c.getString("id");
-                        String name = c.getString("name");
-                        String description = c.getString("description");
-                        String updated_at = c.getString("updated_at");
-                        String lastUpdated = "Last updated: " + updated_at;
-                        String status_name = c.getString("status_name");
-
-                        // tmp hash map for single service
-                        HashMap<String, String> service = new HashMap<>();
-
-                        // adding each child node to HashMap key => value
-                        service.put("id", id);
-                        service.put("name", name);
-                        service.put("description", description);
-                        service.put("updated_at", lastUpdated);
-                        service.put("status_name", status_name);
-
-                        // adding service to service list
-                        stateList.add(service);
+                        messageList.add(service);
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -238,10 +195,9 @@ public class StateActivity extends AppCompatActivity {
 
              //Updating parsed JSON data into ListView
             ListAdapter adapter = new SimpleAdapter(
-                    StateActivity.this, stateList,
-                    R.layout.list_item, new String[]{"name", "description", "updated_at",
-                    "status_name"}, new int[]{R.id.name,
-                    R.id.description,R.id.updated_at, R.id.status_name})
+                    StateMessagesActivity.this, messageList,
+                    R.layout.list_item, new String[]{"name","message", "updated_at", "scheduled_at", "human_status"}, new int[]{R.id.name, R.id.message,
+                    R.id.updated_at, R.id.scheduled_at, R.id.human_status})
 
                     //Change Color based on Status
             {
@@ -284,21 +240,27 @@ public class StateActivity extends AppCompatActivity {
                         if (updatedValue.startsWith("Last Updated: ")){
                             updated.setText(updatedValue.replace("Last Updated: ",getText(R.string.LastUpdated)));
                         }
-                    //Status
-                    TextView status = v.findViewById(R.id.status_name);
-                    String statusValue = status.getText().toString();
-                    switch (statusValue) {
-                        case "Operational":
-                            status.setTextColor(Color.GREEN);
-                            status.setText(R.string.Operational);
+                    //Make Scheduled at translatable
+                    TextView scheduled = v.findViewById(R.id.scheduled_at);
+                    String scheduledValue = scheduled.getText().toString();
+                    if (scheduledValue.startsWith("Scheduled at: ")){
+                        scheduled.setText(scheduledValue.replace("Scheduled at: ",getText(R.string.ScheduledAt)));
+                    }
+                    //Human_status
+                    TextView humanStatus = v.findViewById(R.id.human_status);
+                    String humanStatusValue = humanStatus.getText().toString();
+                    switch (humanStatusValue) {
+                        case "Fixed":
+                        case "Scheduled":
+                            humanStatus.setTextColor(Color.GREEN);
                             break;
-                        case "Major Outage":
-                            status.setTextColor(Color.RED);
-                            status.setText(R.string.MajorOutage);
+                        case "Investigating":
+                        case "Watching":
+                            humanStatus.setTextColor(Color.YELLOW);
+
                             break;
-                        case "Performance Issues":
-                            status.setText(R.string.PerformanceIssues);
-                            status.setTextColor(Color.YELLOW);
+                        case "Identified":
+                            humanStatus.setTextColor(Color.RED);
                             break;
                     }
                     return v;

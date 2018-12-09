@@ -144,4 +144,7 @@
     <string name="PerformanceIssues">Performance Issues</string>
     <string name="Notification">No issues</string>
     <string name="Notificationissues">Some systems are experiencing issues</string>
+    <string name="state_messages_btn">Show State messages</string>
+    <string name="state_btn">Show Service State</string>
+    <string name="ScheduledAt">Scheduled at:</string>
 </resources>

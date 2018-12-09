@@ -139,13 +139,13 @@
     <string name="Operational">Operational</string>
     <string name="MajorOutage">Major Outage</string>
     <string name="EmailService">Email Service</string>
-    <string name="LastUpdated">"Last updated: "</string>
+    <string name="LastUpdated">"Last updated: \"</string>
     <string name="WebmailService">WebMail Service</string>
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Performance Issues</string>
     <string name="Notification">No issues</string>
     <string name="Notificationissues">Some systems are experiencing issues</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_tabbed_state">tabbed_state</string>
+    <string name="state_messages_btn">Show State messages</string>
+    <string name="state_btn">Show Service State</string>
+    <string name="ScheduledAt">Scheduled at: \</string>
 </resources>

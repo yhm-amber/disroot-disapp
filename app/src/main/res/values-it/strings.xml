@@ -142,6 +142,9 @@
     <string name="WebmailService">Servizio WebMail</string>
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Problemi di performanza</string>
-    <string name="Notification">No issues</string>
-    <string name="Notificationissues">Some systems are experiencing issues</string>
+    <string name="Notification">Nessun problema con i servizi</string>
+    <string name="Notificationissues">Alcuni sistemi stanno avendo dei problemi</string>
+    <string name="state_messages_btn">Mostra messaggi di stato</string>
+    <string name="state_btn">Mostra stato dei servizi</string>
+    <string name="ScheduledAt">In programma il: \</string>
 </resources>

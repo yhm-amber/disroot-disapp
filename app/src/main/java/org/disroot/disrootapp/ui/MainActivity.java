@@ -287,6 +287,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 /* if((xmpp1 == null)&&(xmpp2 != null)) { */
                 if((xmpp1 == null)&&(xmpp2 != null)) {//if(xmpp1 == null) {
                     startActivity(xmpp2);
+                    return;
                 }
                 //need to change to give user choise  || check.getBoolean("checkPix",false)
                 if((xmpp1 != null)&&(xmpp2 != null)) {

@@ -143,6 +143,9 @@
     <string name="WebmailService">WebMail Service</string>
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Prestatieproblemen</string>
-    <string name="Notification">No issues</string>
-    <string name="Notificationissues">Some systems are experiencing issues</string>
+    <string name="Notification">Geen problemen</string>
+    <string name="Notificationissues">Sommige systemen ondervinden problemen</string>
+    <string name="state_messages_btn">Toon statusberichten</string>
+    <string name="state_btn">Toon Service Status</string>
+    <string name="ScheduledAt">Gepland op: \</string>
 </resources>
