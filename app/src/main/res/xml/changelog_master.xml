@@ -3,6 +3,7 @@
     <release version="1.0.2" versioncode="12" >
         <change>State page is api based instead of webview</change>
         <change>In State page is possible to view state messages</change>
+        <change>State page is ordered by status</change>
         <change>Fixed app crashing when launching Pix-art messenger</change>
     </release>
     <release version="1.0.2" versioncode="12" >

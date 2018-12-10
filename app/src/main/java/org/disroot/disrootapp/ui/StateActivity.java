@@ -39,8 +39,8 @@ public class StateActivity extends AppCompatActivity {
     private ListView lv;
 
     // URL to get data JSON
-    static String url = "https://state.disroot.org/api/v1/components";
-    static String url1 = "https://state.disroot.org/api/v1/components?page=2";
+    static String url = "https://state.disroot.org/api/v1/components?sort=status";
+    static String url1 = "https://state.disroot.org/api/v1/components?sort=status&page=2";
 
     ArrayList<HashMap<String, String>> stateList;
 

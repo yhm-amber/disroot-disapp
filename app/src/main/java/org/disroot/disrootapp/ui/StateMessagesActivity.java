@@ -2,7 +2,9 @@ package org.disroot.disrootapp.ui;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -26,6 +28,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -36,11 +39,13 @@ public class StateMessagesActivity extends AppCompatActivity {
 
     private ProgressDialog pDialog;
     private ListView lv;
+    //SharedPreferences checkDate;
 
     // URL to get data JSON
     static String incidenturl0 ="https://state.disroot.org/api/v1/incidents?sort=id&order=desc";
 
     ArrayList<HashMap<String, String>> messageList;
+    ArrayList<HashMap<String, String>> getDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +73,11 @@ public class StateMessagesActivity extends AppCompatActivity {
         });
 
         messageList = new ArrayList<>();
+        getDate = new ArrayList<>();
 
         lv = findViewById(R.id.list);
+
+        //checkDate = getSharedPreferences("storeDate", Context.MODE_PRIVATE);
 
         new GetList().execute();
     }

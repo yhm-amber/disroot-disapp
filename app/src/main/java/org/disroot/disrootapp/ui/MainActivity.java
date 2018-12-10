@@ -1,9 +1,12 @@
 package org.disroot.disrootapp.ui;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -48,14 +52,22 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import org.disroot.disrootapp.R;
 import org.disroot.disrootapp.utils.Constants;
+import org.disroot.disrootapp.utils.HttpHandler;
 import org.disroot.disrootapp.webviews.DisWebChromeClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -99,7 +111,14 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     private CookieManager cookieManager;
 
-
+    //status report
+    private ProgressDialog pDialog;
+    private ListView lv;
+    public SharedPreferences checkDate;
+    // URL to get data JSON
+    static String incidenturl0 ="https://state.disroot.org/api/v1/incidents?sort=id&order=desc";
+    ArrayList<HashMap<String, String>> messageList;
+    ArrayList<HashMap<String, String>> getDate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -589,6 +608,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 return true;
             }
         });
+
+        //Status report
+        messageList = new ArrayList<>();
+        getDate = new ArrayList<>();
+
+        lv = findViewById(R.id.list);
+
+        checkDate = getSharedPreferences("storeDate", Context.MODE_PRIVATE);
+
+        new MainActivity.GetList().execute();
     }
 
     //Dialog windows
@@ -1734,5 +1763,78 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         intent.putExtra(Intent.EXTRA_TEXT, webView.getUrl());
         intent.setType("text/plain");
         startActivity(intent);
+    }
+
+    //status report
+    @SuppressLint("StaticFieldLeak")
+    class GetList extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            HttpHandler sh = new HttpHandler();
+
+            // Making a request to url and getting response
+            String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
+
+            Log.e(TAG, "Response from url: " + incidenturl0);
+
+            if (jsonStrincidents0 != null) {//Incidaetnts page
+                try {
+                    JSONObject jsonObj = new JSONObject(jsonStrincidents0);
+
+                    // Getting JSON Array node
+                    JSONArray data = jsonObj.getJSONArray("data");
+
+                    //Make it sotre date and show state if new date is newer than stored date
+                    int a=0;
+                    JSONObject o = data.getJSONObject(a);
+                    String callid = o.getString("id");
+                    String updated = o.getString("updated_at");
+                    // tmp hash map for single service
+                    HashMap<String, String> date = new HashMap<>();
+                    // adding each child node to HashMap key => value
+                    date.put("id", callid);
+                    date.put("updated", updated);
+                    getDate.add(date);
+                    String stateDate = date.put( "updated", updated );
+                    String dateStored= checkDate.getString( "storeDate","" );
+                    if (!stateDate.equals( dateStored ))
+                    {
+                        checkDate.edit().putString( "storeDate", stateDate).apply();
+                        Log.e(TAG, "date: " + dateStored);
+                        Log.e(TAG, "date2: " + stateDate);
+                        Intent goState = new Intent(MainActivity.this, StateMessagesActivity.class);
+                        MainActivity.this.startActivity(goState);
+                        return null;
+                    }
+                    else
+                    return null;
+
+                } catch (final JSONException e) {
+                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),
+                                    "Json parsing error: " + e.getMessage(),
+                                    Toast.LENGTH_LONG)
+                                    .show();
+                        }
+                    });
+                }
+            }else {
+                Log.e(TAG, "Couldn't get json from server.");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Couldn't get json from server. Check LogCat for possible errors!",
+                                Toast.LENGTH_LONG)
+                                .show();
+                    }
+                });
+            }
+            return null;
+        }
     }
 }
