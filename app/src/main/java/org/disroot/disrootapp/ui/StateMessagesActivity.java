@@ -36,10 +36,8 @@ public class StateMessagesActivity extends AppCompatActivity {
 
     Button button;
     private String TAG = StateMessagesActivity.class.getSimpleName();
-
     private ProgressDialog pDialog;
     private ListView lv;
-    //SharedPreferences checkDate;
 
     // URL to get data JSON
     static String incidenturl0 ="https://state.disroot.org/api/v1/incidents?sort=id&order=desc";
@@ -74,11 +72,7 @@ public class StateMessagesActivity extends AppCompatActivity {
 
         messageList = new ArrayList<>();
         getDate = new ArrayList<>();
-
         lv = findViewById(R.id.list);
-
-        //checkDate = getSharedPreferences("storeDate", Context.MODE_PRIVATE);
-
         new GetList().execute();
     }
 

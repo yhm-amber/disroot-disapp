@@ -1773,7 +1773,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
 
-            // Making a request to url and getting response
             String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
 
             Log.e(TAG, "Response from url: " + incidenturl0);
@@ -1781,23 +1780,18 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             if (jsonStrincidents0 != null) {//Incidaetnts page
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStrincidents0);
-
-                    // Getting JSON Array node
                     JSONArray data = jsonObj.getJSONArray("data");
-
-                    //Make it sotre date and show state if new date is newer than stored date
                     int a=0;
                     JSONObject o = data.getJSONObject(a);
                     String callid = o.getString("id");
                     String updated = o.getString("updated_at");
-                    // tmp hash map for single service
                     HashMap<String, String> date = new HashMap<>();
-                    // adding each child node to HashMap key => value
                     date.put("id", callid);
                     date.put("updated", updated);
                     getDate.add(date);
                     String stateDate = date.put( "updated", updated );
                     String dateStored= checkDate.getString( "storeDate","" );
+
                     if (!stateDate.equals( dateStored ))
                     {
                         checkDate.edit().putString( "storeDate", stateDate).apply();
