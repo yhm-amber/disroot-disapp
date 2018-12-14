@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +25,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -78,6 +80,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import de.cketti.library.changelog.ChangeLog;
 
@@ -617,7 +621,20 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         checkDate = getSharedPreferences("storeDate", Context.MODE_PRIVATE);
 
-        new MainActivity.GetList().execute();
+        //Check json for updates
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        new MainActivity.GetList().execute();
+                    }
+                });
+            }
+        }, 100, 100000);//100000=100sec
     }
 
     //Dialog windows
@@ -1792,16 +1809,24 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     String stateDate = date.put( "updated", updated );
                     String dateStored= checkDate.getString( "storeDate","" );
 
-                    if (!stateDate.equals( dateStored ))
+                    if (dateStored.equals( "" ))
+                    {
+                        checkDate.edit().putString( "storeDate", stateDate).apply();
+                        //return null;
+                    }
+                    else if (!stateDate.equals( dateStored )&& !stateDate.equals( "" ))
                     {
                         checkDate.edit().putString( "storeDate", stateDate).apply();
                         Log.e(TAG, "date: " + dateStored);
                         Log.e(TAG, "date2: " + stateDate);
+                        sendNotification();//Call notification
+                        //Launch State
                         Intent goState = new Intent(MainActivity.this, StateMessagesActivity.class);
                         MainActivity.this.startActivity(goState);
                         return null;
                     }
                     else
+                        Log.e(TAG, "updated json");
                     return null;
 
                 } catch (final JSONException e) {
@@ -1830,5 +1855,17 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
             return null;
         }
+    }
+
+    //Notification
+    private void sendNotification() {
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.ic_state)
+                        .setContentTitle("My notification title")
+                        .setContentText("My notification text");//try to get text from json :-)
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(001, mBuilder.build());
     }
 }
