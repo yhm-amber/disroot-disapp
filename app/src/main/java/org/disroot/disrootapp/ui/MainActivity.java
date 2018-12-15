@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,6 +15,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -1820,9 +1822,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         Log.e(TAG, "date: " + dateStored);
                         Log.e(TAG, "date2: " + stateDate);
                         sendNotification();//Call notification
-                        //Launch State
-                        Intent goState = new Intent(MainActivity.this, StateMessagesActivity.class);
-                        MainActivity.this.startActivity(goState);
                         return null;
                     }
                     else
@@ -1858,12 +1857,32 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
 
     //Notification
-    private void sendNotification() {
+    private void sendNotification() throws JSONException {
+        HttpHandler sh = new HttpHandler();
+        String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
+        JSONObject jsonObj = new JSONObject(jsonStrincidents0);
+        JSONArray data = jsonObj.getJSONArray("data");
+        int a=0;
+        JSONObject o = data.getJSONObject(a);
+        String name = o.getString( "name" );
+        String message = o.getString( "message" );
+        HashMap<String, String> date = new HashMap<>();
+        date.put("name", name);
+        date.put("message", message);
+        Log.e(TAG, "message: " + name);
+
+        Intent goState = new Intent(MainActivity.this, StateMessagesActivity.class);
+        PendingIntent launchStateMessages = PendingIntent.getActivity(MainActivity.this,0, goState, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
+                        .setAutoCancel( true )
                         .setSmallIcon(R.drawable.ic_state)
-                        .setContentTitle("My notification title")
-                        .setContentText("My notification text");//try to get text from json :-)
+                        .setContentTitle( "Message from Disroot State!" )
+                        .setContentText(name)//get text Title from json :-)
+                        .setContentInfo(message)//get text message from json :-)
+                        .setContentIntent(launchStateMessages);
+        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        mBuilder.setSound(alarmSound);
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(001, mBuilder.build());
