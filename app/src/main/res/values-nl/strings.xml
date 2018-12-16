@@ -148,4 +148,8 @@
     <string name="state_messages_btn">Toon statusberichten</string>
     <string name="state_btn">Toon Service Status</string>
     <string name="ScheduledAt">Gepland op: \</string>
+    <string name="NotificationTitle">Bericht van Disroot State!</string>
+    <string name="Scheduled">Gepland</string>
+    <string name="Investigating">Aan het onderzoeken</string>
+    <string name="Identified">Geïdentificeerd</string>
 </resources>

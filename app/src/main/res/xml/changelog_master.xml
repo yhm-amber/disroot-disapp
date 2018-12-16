@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
-    <release version="1.0.2" versioncode="12" >
+    <release version="1.1.0" versioncode="12" >
         <change>State page is api based instead of webview</change>
         <change>In State page is possible to view state messages</change>
         <change>State page is ordered by status</change>
@@ -8,6 +8,11 @@
         <change>Fixed app lanuch in state on fresh install</change>
         <change>Refresh state data to update state events</change>
         <change>Added app notification on new state events</change>
+        <change>Notifications make sound</change>
+        <change>Notification text comes from json data</change>
+        <change>Tapping on notification launches StateMessagesActivity</change>
+        <change>Made as much strings translatable as possible</change>
+        <change>A lot of smal fixes</change>
     </release>
     <release version="1.0.2" versioncode="12" >
         <change>Third partie cookies disabled</change>

@@ -148,4 +148,8 @@
     <string name="state_messages_btn">Show State messages</string>
     <string name="state_btn">Show Service State</string>
     <string name="ScheduledAt">Scheduled at: \</string>
+    <string name="NotificationTitle">Message from Disroot State!</string>
+    <string name="Scheduled">Scheduled</string>
+    <string name="Investigating">Investigating</string>
+    <string name="Identified">Identified</string>
 </resources>

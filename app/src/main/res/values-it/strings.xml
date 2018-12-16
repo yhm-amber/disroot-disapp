@@ -147,4 +147,8 @@
     <string name="state_messages_btn">Mostra messaggi di stato</string>
     <string name="state_btn">Mostra stato dei servizi</string>
     <string name="ScheduledAt">In programma il: \</string>
+    <string name="NotificationTitle">Messaggio dallo Stato di Disroot!</string>
+    <string name="Scheduled">Pianificato</string>
+    <string name="Investigating">Indagando</string>
+    <string name="Identified">Identificato</string>
 </resources>

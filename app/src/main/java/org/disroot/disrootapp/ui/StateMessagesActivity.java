@@ -2,9 +2,7 @@ package org.disroot.disrootapp.ui;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -28,7 +26,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -78,7 +75,6 @@ public class StateMessagesActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_about, menu);
         return true;
     }
@@ -86,9 +82,6 @@ public class StateMessagesActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
 
@@ -255,14 +248,16 @@ public class StateMessagesActivity extends AppCompatActivity {
                         case "Fixed":
                         case "Scheduled":
                             humanStatus.setTextColor(Color.GREEN);
+                            humanStatus.setText(R.string.Scheduled);
                             break;
                         case "Investigating":
                         case "Watching":
                             humanStatus.setTextColor(Color.YELLOW);
-
+                            humanStatus.setText(R.string.Investigating);
                             break;
                         case "Identified":
                             humanStatus.setTextColor(Color.RED);
+                            humanStatus.setText(R.string.Identified);
                             break;
                     }
                     return v;

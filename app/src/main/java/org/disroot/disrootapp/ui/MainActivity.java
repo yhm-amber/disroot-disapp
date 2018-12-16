@@ -56,12 +56,9 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -1877,7 +1874,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 new NotificationCompat.Builder(this)
                         .setAutoCancel( true )
                         .setSmallIcon(R.drawable.ic_state)
-                        .setContentTitle( "Message from Disroot State!" )
+                        .setContentTitle( getString( R.string.NotificationTitle ) )
                         .setContentText(name)//get text Title from json :-)
                         .setContentInfo(message)//get text message from json :-)
                         .setContentIntent(launchStateMessages);
