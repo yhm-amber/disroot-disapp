@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
-    <release version="1.1.0" versioncode="12" >
+    <release version="1.1.0" versioncode="13" >
         <change>State page is api based instead of webview</change>
         <change>In State page is possible to view state messages</change>
         <change>State page is ordered by status</change>
