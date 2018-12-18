@@ -507,6 +507,32 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
+        button = findViewById(R.id.NotesBtn);//NotesBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showNotesInfo();
+                return true;
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String NotesApp = "it.niedermann.owncloud.notes";
+                Intent notes = getPackageManager().getLaunchIntentForPackage(NotesApp);
+                if(notes == null) {
+                    showNotesDialog();
+                    return;
+                }
+                else startActivity(notes);
+            }
+        });
+
         button = findViewById(R.id.UserBtn);//UserBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -1040,6 +1066,43 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 dashboard.setVisibility(View.GONE);
             }
         });
+        builder.show();
+    }
+
+    //There is no extra info about Nextcoud notes yet
+    private void showNotesInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.NotesTitle);
+        builder.setMessage(getString(R.string.NotesInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        //builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+        //    @Override
+        //    public void onClick(DialogInterface dialog, int which) {
+        //        webView.loadUrl(Constants.URL_DisApp_NOTESHELP);
+        //        webView.setVisibility(View.VISIBLE);
+        //        dashboard.setVisibility(View.GONE);
+        //    }
+        //});
+        builder.show();
+    }
+    private void showNotesDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.NotesDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String NotesApp = "it.niedermann.owncloud.notes";
+            Intent notes = getPackageManager().getLaunchIntentForPackage(NotesApp);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                notes = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + NotesApp));
+                startActivity(notes);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
         builder.show();
     }
 

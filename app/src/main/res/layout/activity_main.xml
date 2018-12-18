@@ -195,12 +195,21 @@
                 android:id="@+id/group4"
                 android:layout_below="@+id/group3">
             <Button
+                android:id="@+id/NotesBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="24dp"
+                android:drawableTop="@drawable/ic_notes"
+                android:text="@string/action_notes"
+                android:textColor="#ffffff" />
+            <Button
                 android:id="@+id/UserBtn"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxWidth="24dp"
-                android:drawableTop="@drawable/ic_poll"
+                android:drawableTop="@drawable/ic_user"
                 android:text="@string/action_user"
                 android:textColor="#ffffff" />
 
@@ -224,15 +233,22 @@
                     android:text="@string/action_howto"
                     android:textColor="#ffffff" />
 
-            <Button
-                android:id="@+id/AboudBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxWidth="24dp"
-                android:drawableTop="@drawable/ic_about"
-                android:text="@string/action_about"
-                android:textColor="#ffffff" />
+                android:id="@+id/group5"
+                android:layout_below="@+id/group4"><!-- android:gravity="center_horizontal" -->
+                <Button
+                    android:id="@+id/AboudBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="24dp"
+                    android:drawableTop="@drawable/ic_about"
+                    android:text="@string/action_about"
+                    android:textColor="#ffffff" />
             </LinearLayout>
         </RelativeLayout>
         </ScrollView>
