@@ -12,6 +12,7 @@
         <change>Notification text comes from json data</change>
         <change>Tapping on notification launches StateMessagesActivity</change>
         <change>Made as much strings translatable as possible</change>
+        <change>Added Notes app</change>
         <change>A lot of smal fixes</change>
     </release>
     <release version="1.0.2" versioncode="12" >
