@@ -151,8 +151,8 @@
     <string name="Scheduled">Pianificato</string>
     <string name="Investigating">Indagando</string>
     <string name="Identified">Identificato</string>
-    <string name="NotesTitle">Nextcloud Notes Info</string>
-    <string name="NotesInfo">The notes app is a distraction free notes taking app for Nextcloud</string>
-    <string name="NotesDialog">To continue you need to install Notes first.\nPlease select install to continue with the installatin on F-Droid.</string>
-    <string name="action_notes">Notes</string>
+    <string name="NotesTitle">Info su Nextcloud Notes</string>
+    <string name="NotesInfo">L\'app notes è un\'app che prende note senza distrazioni per Nextcloud</string>
+    <string name="NotesDialog">Per continuare è necessario installare Notes.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
+    <string name="action_notes">Note</string>
 </resources>
