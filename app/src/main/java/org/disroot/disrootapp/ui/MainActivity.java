@@ -1942,7 +1942,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         .setContentInfo(message)//get text message from json :-)
                         .setContentIntent(launchStateMessages);
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        mBuilder.setSound(alarmSound);
+        mBuilder.setSound(alarmSound)
+                .setVibrate(new long[]{50,500,100,300,50,300})
+                .setLights(Color.MAGENTA, 3000, 3000);
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(001, mBuilder.build());
