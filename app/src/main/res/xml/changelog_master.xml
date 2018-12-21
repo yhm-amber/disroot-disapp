@@ -2,18 +2,13 @@
 <changelog>
     <release version="1.1.0" versioncode="13" >
         <change>State page is api based instead of webview</change>
-        <change>In State page is possible to view state messages</change>
-        <change>State page is ordered by status</change>
+        <change>In State page is possible to view state messages on separate tab</change>
+        <change>State page ordered by status</change>
         <change>Fixed app crashing when launching Pix-art messenger</change>
-        <change>Fixed app lanuch in state on fresh install</change>
-        <change>Refresh state data to update state events</change>
-        <change>Added app notification on new state events</change>
-        <change>Notifications make sound</change>
-        <change>Notification text comes from json data</change>
-        <change>Tapping on notification launches StateMessagesActivity</change>
-        <change>Made as much strings translatable as possible</change>
+        <change>Fixed app launch in state on fresh install</change>
+        <change>Added app notification on new state events with sound and vibration</change>
         <change>Added Notes app</change>
-        <change>A lot of smal fixes</change>
+        <change>A few other small fixes</change>
     </release>
     <release version="1.0.2" versioncode="12" >
         <change>Third partie cookies disabled</change>

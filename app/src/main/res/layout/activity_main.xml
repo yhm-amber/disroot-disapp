@@ -238,6 +238,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:id="@+id/group5"
                 android:layout_below="@+id/group4"><!-- android:gravity="center_horizontal" -->
                 <Button
@@ -248,6 +249,30 @@
                     android:maxWidth="24dp"
                     android:drawableTop="@drawable/ic_about"
                     android:text="@string/action_about"
+                    android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/Placeholder2"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="24dp"
+                    android:text=""
+                    android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/Placeholder3"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="24dp"
+                    android:text=""
+                    android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/Placeholder4"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="24dp"
+                    android:text=""
                     android:textColor="#ffffff" />
             </LinearLayout>
         </RelativeLayout>
