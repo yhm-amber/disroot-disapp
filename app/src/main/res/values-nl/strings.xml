@@ -54,7 +54,7 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Gemeenschap (Disroot):</string>
     <string name="contributorsTitle">Bijdragers</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot administrator\n\n<b> &#8226; antilopa:</b>\n Disroot administrator\n\n<b> &#8226; Massimiliano:</b>\n Ontwikkelaar\n\n<b> &#8226; Fede:</b>\n Inhoud bijdrager\n\n<b> &#8226; Meaz:</b>\n Inhoud bijdrager\n\n<b> &#8226; maryjane:</b>\n Inhoud bijdrager\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot administrator\n\n<b> &#8226; antilopa:</b>\n Disroot administrator\n\n<b> &#8226; Massimiliano:</b>\n Ontwikkelaar\n\n<b> &#8226; Fede:</b>\n Inhoud bijdrager\n\n<b> &#8226; Meaz:</b>\n Inhoud bijdrager\n\n<b> &#8226; maryjane:</b>\n Inhoud bijdrager\n\n<b> &#8226; userdebug:</b>\n Inhoud bijdrager\n\n<b> &#8226; ButterflyOfFire:</b>\n Inhoud bijdrager\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Third-Party Libraries</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache Licentie 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -127,5 +127,33 @@
     <string name="Forget">Vergeet mijn keuze</string>
     <string name="ForgetTitle">Vergeet chat client!</string>
     <string name="title_activity_tap">TapActivity</string>
-
+    <string name="action_clear_cookies">Verwijder cookies</string>
+    <string name="DiaInstallTitle">Installatie vereist</string>
+    <string name="DiasporaDialog">Om verder te gaan moet u eerst Dandelion installeren.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="global_cancel">Annuleren</string>
+    <string name="global_install">Installeren</string>
+    <string name="MailDialog">Om verder te gaan moet u eerst K9-Mail installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
+    <string name="CloudDialog">Om verder te gaan moet u eerst Nextcloud app installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
+    <string name="ChatDialog">Om verder te gaan moet u eerst Conversations installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
+    <string name="app_state">Disroot status</string>
+    <string name="Operational">Operationeel</string>
+    <string name="MajorOutage">Ernstige storing</string>
+    <string name="EmailService">Email Service</string>
+    <string name="LastUpdated">"Laatst geupdate: \"</string>
+    <string name="WebmailService">WebMail Service</string>
+    <string name="Cloud">Cloud</string>
+    <string name="PerformanceIssues">Prestatieproblemen</string>
+    <string name="Notification">Geen problemen</string>
+    <string name="Notificationissues">Sommige systemen ondervinden problemen</string>
+    <string name="state_messages_btn">Toon statusberichten</string>
+    <string name="state_btn">Toon Service Status</string>
+    <string name="ScheduledAt">Gepland op: \</string>
+    <string name="NotificationTitle">Bericht van Disroot State!</string>
+    <string name="Scheduled">Gepland</string>
+    <string name="Investigating">Aan het onderzoeken</string>
+    <string name="Identified">Geïdentificeerd</string>
+    <string name="NotesTitle">Nextcloud Notes Info</string>
+    <string name="NotesInfo">De notes app is een afleidingsvrije notities app voor Nextcloud.</string>
+    <string name="NotesDialog">Om verder te gaan moet u eerst Notes installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
+    <string name="action_notes">Notes</string>
 </resources>

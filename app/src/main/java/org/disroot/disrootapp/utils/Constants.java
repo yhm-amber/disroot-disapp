@@ -7,6 +7,8 @@ public class Constants {
     public static final long SPLASH_SCREEN_DURATION = 3000;
     public static final long SPLASH_SCREEN_INTERVAL = 1000;
 
+
+    public static final String title_activity_state = "StateActivity";
     public static final String URL_DisApp_FORUM = "https://forum.disroot.org/";
     public static final String URL_DisApp_CALC = "https://calc.disroot.org";
     public static final String URL_DisApp_BIN = "https://bin.disroot.org";
@@ -15,7 +17,6 @@ public class Constants {
     public static final String URL_DisApp_POLL = "https://poll.disroot.org";
     public static final String URL_DisApp_BOARD = "https://board.disroot.org";
     public static final String URL_DisApp_USER = "https://user.disroot.org";
-    public static final String URL_DisApp_STATE = "https://state.disroot.org";
     public static final String URL_DisApp_HOWTO = "https://howto.disroot.org";
     public static final String URL_DisApp_K9HELP = "https://howto.disroot.org/email/email-clients/mobile/androidk9";
     public static final String URL_DisApp_XMPPHELP = "https://howto.disroot.org/xmpp/mobile/android";

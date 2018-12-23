@@ -6,8 +6,8 @@ android {
         applicationId "org.disroot.disrootapp"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 9
-        versionName "0.9.4"
+        versionCode 13
+        versionName "1.1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -43,4 +43,8 @@ dependencies {
 }
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
 }

@@ -1,16 +1,23 @@
 package org.disroot.disrootapp.ui;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -20,8 +27,10 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -32,11 +41,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.webkit.DownloadListener;
 import android.webkit.GeolocationPermissions;
 import android.webkit.URLUtil;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -44,6 +56,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.Toast;
@@ -51,7 +64,11 @@ import android.widget.Toast;
 
 import org.disroot.disrootapp.R;
 import org.disroot.disrootapp.utils.Constants;
+import org.disroot.disrootapp.utils.HttpHandler;
 import org.disroot.disrootapp.webviews.DisWebChromeClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -62,6 +79,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import de.cketti.library.changelog.ChangeLog;
 
@@ -93,7 +112,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     public static final String CONTENT_HASHTAG = "content://org.disroot.disrootapp.ui.mainactivity/";
 
+    private CookieManager cookieManager;
 
+    //status report
+    private ProgressDialog pDialog;
+    private ListView lv;
+    public SharedPreferences checkDate;
+    // URL to get data JSON
+    static String incidenturl0 ="https://state.disroot.org/api/v1/incidents?sort=id&order=desc";
+    ArrayList<HashMap<String, String>> messageList;
+    ArrayList<HashMap<String, String>> getDate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -159,14 +187,17 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                String k9 = "com.fsck.k9";
-                Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
-                if(mail == null) {
-                    mail = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+k9));
-                }//first time tap check
+                //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
                     firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String k9 = "com.fsck.k9";
+                Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
+                if(mail == null) {
+                    showMailDialog();
+                    return;
                 }
                 else startActivity(mail);
             }
@@ -184,14 +215,17 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                String nc = "com.nextcloud.client";
-                Intent cloud = getPackageManager().getLaunchIntentForPackage(nc);
-                if(cloud == null) {
-                    cloud = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+nc));
-                }//first time tap check
+                //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
                     firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String nc = "com.nextcloud.client";
+                Intent cloud = getPackageManager().getLaunchIntentForPackage(nc);
+                if(cloud == null) {
+                    showCloudDialog();
+                    return;
                 }
                 else startActivity(cloud);
             }
@@ -208,18 +242,20 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                String Diaspora = "com.github.dfa.diaspora_android";
-                Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
-                if(pod == null) {
-                    pod = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Diaspora));
-                }//first time tap check
+                //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
                     firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String Diaspora = "com.github.dfa.diaspora_android";
+                Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
+                if(pod == null) {
+                    showDiaDialog();
+                    return;
                 }
                 else startActivity(pod);
             }
-
         });
 
         button = findViewById(R.id.ForumBtn);//ForumBtn
@@ -267,11 +303,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     return;
                 }
                 if((xmpp1 == null)&&(xmpp2 == null)) {
-                    xmpp1 = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Conversations));
+                    showChatDialog();
+                    return;
                 }
                 /* if((xmpp1 == null)&&(xmpp2 != null)) { */
                 if((xmpp1 == null)&&(xmpp2 != null)) {//if(xmpp1 == null) {
                     startActivity(xmpp2);
+                    return;
                 }
                 //need to change to give user choise  || check.getBoolean("checkPix",false)
                 if((xmpp1 != null)&&(xmpp2 != null)) {
@@ -303,15 +341,17 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                String Padland = "com.mikifus.padland";
-                Intent pad = getPackageManager().getLaunchIntentForPackage(Padland);
-                if(pad == null) {
-                    pad = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+Padland));
-                }
                 //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
                     firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String Padland = "com.mikifus.padland";
+                Intent pad = getPackageManager().getLaunchIntentForPackage(Padland);
+                if(pad == null) {
+                    showPAdDialog();
+                    return;
                 }
                 else startActivity(pad);
             }
@@ -382,10 +422,15 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     firstStart.edit().putBoolean("firsttap", false).apply();
                     return;
                 }
-                else
-                webView.loadUrl(Constants.URL_DisApp_UPLOAD);
-                webView.setVisibility(View.VISIBLE);
-                dashboard.setVisibility(View.GONE);
+                else {
+                    Uri uri = Uri.parse(Constants.URL_DisApp_UPLOAD);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+                }
+                //workaround for crashing app
+               // webView.loadUrl(Constants.URL_DisApp_UPLOAD);
+               // webView.setVisibility(View.VISIBLE);
+               // dashboard.setVisibility(View.GONE);
             }
 
         });
@@ -462,6 +507,32 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         });
 
+        button = findViewById(R.id.NotesBtn);//NotesBtn
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showNotesInfo();
+                return true;
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                //first time tap check
+                if (firstStart.getBoolean("firsttap", true)){
+                    showFirstTap();
+                    firstStart.edit().putBoolean("firsttap", false).apply();
+                    return;
+                }
+                String NotesApp = "it.niedermann.owncloud.notes";
+                Intent notes = getPackageManager().getLaunchIntentForPackage(NotesApp);
+                if(notes == null) {
+                    showNotesDialog();
+                    return;
+                }
+                else startActivity(notes);
+            }
+        });
+
         button = findViewById(R.id.UserBtn);//UserBtn
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -496,6 +567,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                Intent goState = new Intent(MainActivity.this, StateActivity.class);
                 //first time tap check
                 if (firstStart.getBoolean("firsttap", true)){
                     showFirstTap();
@@ -503,9 +575,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     return;
                 }
                 else
-                webView.loadUrl(Constants.URL_DisApp_STATE);
-                webView.setVisibility(View.VISIBLE);
-                dashboard.setVisibility(View.GONE);
+                MainActivity.this.startActivity(goState);
+                //webView.loadUrl(Constants.URL_DisApp_STATE);
+                //webView.setVisibility(View.VISIBLE);
+                //dashboard.setVisibility(View.GONE);
             }
 
         });
@@ -564,6 +637,29 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 return true;
             }
         });
+
+        //Status report
+        messageList = new ArrayList<>();
+        getDate = new ArrayList<>();
+
+        lv = findViewById(R.id.list);
+
+        checkDate = getSharedPreferences("storeDate", Context.MODE_PRIVATE);
+
+        //Check json for updates
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        new MainActivity.GetList().execute();
+                    }
+                });
+            }
+        }, 100, 100000);//100000=100sec
     }
 
     //Dialog windows
@@ -648,6 +744,25 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         builder.show();
     }
+    private void showMailDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.MailDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String k9 = "com.fsck.k9";
+            Intent mail = getPackageManager().getLaunchIntentForPackage(k9);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mail = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + k9));
+                startActivity(mail);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
+        builder.show();
+    }
+
     //Cloud Info
     private void showCloudInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
@@ -666,6 +781,25 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         builder.show();
     }
+    private void showCloudDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.CloudDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String nc = "com.nextcloud.client";
+            Intent cloud = getPackageManager().getLaunchIntentForPackage(nc);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                cloud = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + nc));
+                startActivity(cloud);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
+        builder.show();
+    }
+
     //Diaspora info
     private void showDiaInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
@@ -682,6 +816,24 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 dashboard.setVisibility(View.GONE);
             }
         });
+        builder.show();
+    }
+    private void showDiaDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.DiasporaDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String Diaspora = "com.github.dfa.diaspora_android";
+            Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                pod = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Diaspora));
+                startActivity(pod);
+                }
+            });
+        builder.setNegativeButton(R.string.global_cancel , null);
         builder.show();
     }
 
@@ -754,6 +906,24 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         builder.show();
     }
+    private void showChatDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.ChatDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String Conversations = "eu.siacs.conversations";
+            Intent xmpp1 = getPackageManager().getLaunchIntentForPackage(Conversations);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                xmpp1 = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Conversations));
+                startActivity(xmpp1);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
+        builder.show();
+    }
 
     private void showPadInfo() {
         final ScrollView dashboard = findViewById(R.id.dashboard);
@@ -770,6 +940,24 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 dashboard.setVisibility(View.GONE);
             }
         });
+        builder.show();
+    }
+    private void showPAdDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.ChatDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String Padland = "com.mikifus.padland";
+            Intent pad = getPackageManager().getLaunchIntentForPackage(Padland);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                pad = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Padland));
+                startActivity(pad);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
         builder.show();
     }
 
@@ -878,6 +1066,43 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 dashboard.setVisibility(View.GONE);
             }
         });
+        builder.show();
+    }
+
+    //There is no extra info about Nextcoud notes yet
+    private void showNotesInfo() {
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.NotesTitle);
+        builder.setMessage(getString(R.string.NotesInfo));
+        builder.setPositiveButton(R.string.global_ok, null);
+        //builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+        //    @Override
+        //    public void onClick(DialogInterface dialog, int which) {
+        //        webView.loadUrl(Constants.URL_DisApp_NOTESHELP);
+        //        webView.setVisibility(View.VISIBLE);
+        //        dashboard.setVisibility(View.GONE);
+        //    }
+        //});
+        builder.show();
+    }
+    private void showNotesDialog(){
+        final ScrollView dashboard = findViewById(R.id.dashboard);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.DiaInstallTitle);
+        builder.setMessage(getString(R.string.NotesDialog));
+        builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
+            String NotesApp = "it.niedermann.owncloud.notes";
+            Intent notes = getPackageManager().getLaunchIntentForPackage(NotesApp);
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                notes = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + NotesApp));
+                startActivity(notes);
+            }
+        });
+        builder.setNegativeButton(R.string.global_cancel , null);
         builder.show();
     }
 
@@ -1039,7 +1264,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         pbutton.setTextColor(Color.BLACK);
     }
 
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -1184,10 +1408,18 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 Intent goAbout = new Intent(MainActivity.this, AboutActivity.class);
                 MainActivity.this.startActivity(goAbout);
                 return true;
-            case R.id.action_exit: {
-                moveTaskToBack(true);
-                finish();
+            case R.id.action_clear_cookies: {
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                    CookieManager.getInstance().removeAllCookies(null);
+                }else{
+                    CookieManager.getInstance().removeAllCookie();
+                }
+            }
                 return false;
+                case R.id.action_exit: {
+                    moveTaskToBack(true);
+                    finish();
+                    return false;
             }
             default:
                 return super.onOptionsItemSelected(item);
@@ -1208,9 +1440,33 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        webView.getSettings().setAllowContentAccess(true);
        // webView.loadUrl(Constants.URL_DisApp_MAIN_PAGE);
         webView.setOnLongClickListener(this);
-       // webView.setVisibility(View.GONE);;
+       // webView.setVisibility(View.GONE);
+
+        //enable cookies
+        cookieManager = CookieManager.getInstance();
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            CookieSyncManager.createInstance(webView.getContext());
+            cookieManager.setAcceptCookie(true);
+            cookieManager.setAcceptThirdPartyCookies(webView,false);
+            AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+        }
+        CookieSyncManager syncManager = CookieSyncManager.createInstance(webView.getContext());
+        CookieManager cookieManager = CookieManager.getInstance();
+        String cookieString = "cookie_name=cookie_value; path=/";
+        String baseUrl="disroot.org";
+        cookieManager.setCookie(baseUrl, cookieString);
+        syncManager.sync();
+        String cookies = cookieManager.getCookie(baseUrl);
+        if (cookies != null) {
+            cookieManager.setCookie(baseUrl, cookies);
+            for (String c : cookies.split(";")) {
+
+            }
+        }
 
         //Make download possible
         webView.setDownloadListener(new DownloadListener() {
@@ -1263,7 +1519,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if(url.startsWith("https")&&url.contains("disroot")) {
+                if(url.startsWith("https")|url.startsWith("http")&&url.contains("disroot")&!url.contains("upload.disroot.org")) {
                     view.loadUrl(url);
                     return super.shouldOverrideUrlLoading(view, url);
                 }
@@ -1273,8 +1529,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     return true;
                 }
             }
-
-
         });
     }
 
@@ -1588,5 +1842,111 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         intent.putExtra(Intent.EXTRA_TEXT, webView.getUrl());
         intent.setType("text/plain");
         startActivity(intent);
+    }
+
+    //status report
+    @SuppressLint("StaticFieldLeak")
+    class GetList extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            HttpHandler sh = new HttpHandler();
+
+            String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
+
+            Log.e(TAG, "Response from url: " + incidenturl0);
+
+            if (jsonStrincidents0 != null) {//Incidaetnts page
+                try {
+                    JSONObject jsonObj = new JSONObject(jsonStrincidents0);
+                    JSONArray data = jsonObj.getJSONArray("data");
+                    int a=0;
+                    JSONObject o = data.getJSONObject(a);
+                    String callid = o.getString("id");
+                    String updated = o.getString("updated_at");
+                    HashMap<String, String> date = new HashMap<>();
+                    date.put("id", callid);
+                    date.put("updated", updated);
+                    getDate.add(date);
+                    String stateDate = date.put( "updated", updated );
+                    String dateStored= checkDate.getString( "storeDate","" );
+
+                    if (dateStored.equals( "" ))
+                    {
+                        checkDate.edit().putString( "storeDate", stateDate).apply();
+                        //return null;
+                    }
+                    else if (!stateDate.equals( dateStored )&& !stateDate.equals( "" ))
+                    {
+                        checkDate.edit().putString( "storeDate", stateDate).apply();
+                        Log.e(TAG, "date: " + dateStored);
+                        Log.e(TAG, "date2: " + stateDate);
+                        sendNotification();//Call notification
+                        return null;
+                    }
+                    else
+                        Log.e(TAG, "updated json");
+                    return null;
+
+                } catch (final JSONException e) {
+                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),
+                                    "Json parsing error: " + e.getMessage(),
+                                    Toast.LENGTH_LONG)
+                                    .show();
+                        }
+                    });
+                }
+            }else {
+                Log.e(TAG, "Couldn't get json from server.");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Couldn't get json from server. Check LogCat for possible errors!",
+                                Toast.LENGTH_LONG)
+                                .show();
+                    }
+                });
+            }
+            return null;
+        }
+    }
+
+    //Notification
+    private void sendNotification() throws JSONException {
+        HttpHandler sh = new HttpHandler();
+        String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
+        JSONObject jsonObj = new JSONObject(jsonStrincidents0);
+        JSONArray data = jsonObj.getJSONArray("data");
+        int a=0;
+        JSONObject o = data.getJSONObject(a);
+        String name = o.getString( "name" );
+        String message = o.getString( "message" );
+        HashMap<String, String> date = new HashMap<>();
+        date.put("name", name);
+        date.put("message", message);
+        Log.e(TAG, "message: " + name);
+
+        Intent goState = new Intent(MainActivity.this, StateMessagesActivity.class);
+        PendingIntent launchStateMessages = PendingIntent.getActivity(MainActivity.this,0, goState, PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this)
+                        .setAutoCancel( true )
+                        .setSmallIcon(R.drawable.ic_state)
+                        .setContentTitle( getString( R.string.NotificationTitle ) )
+                        .setContentText(name)//get text Title from json :-)
+                        .setContentInfo(message)//get text message from json :-)
+                        .setContentIntent(launchStateMessages);
+        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        mBuilder.setSound(alarmSound)
+                .setVibrate(new long[]{50,500,100,300,50,300})
+                .setLights(Color.MAGENTA, 3000, 3000);
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(001, mBuilder.build());
     }
 }

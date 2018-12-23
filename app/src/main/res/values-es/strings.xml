@@ -28,7 +28,7 @@
     <string name="view_loading_description">Cargando…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">¿Necesitas más ayuda?</string>
-    <string name="tell_more">Tell me more</string>
+    <string name="tell_more">Cuéntame más...</string>
     <string name="title_activity_about">AboutActivity</string>
 
     <string name="MailInfoTitle">Configuración de Correo:</string>
@@ -55,7 +55,7 @@
     <string name="disrootUrl"><a href = "https://disroot.org">https://disroot.org</a></string>
     <string name="disroot"> * Comunidad de Disroot (Disroot):</string>
     <string name="contributorsTitle">Colaboradores</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n administrador Disroot\n\n<b> &#8226; antilopa:</b>\n administradora Disroot\n\n<b> &#8226; Massimiliano:</b>\n  Desarrollador\n\n<b> &#8226; Fede:</b>\n Contribuyente de contenido\n\n<b> &#8226; Meaz:</b>\n Contribuyente de contenido\n\n<b> &#8226; maryjane:</b>\n Contribuyente de contenido\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n administrador Disroot\n\n<b> &#8226; antilopa:</b>\n administradora Disroot\n\n<b> &#8226; Massimiliano:</b>\n  Desarrollador\n\n<b> &#8226; Fede:</b>\n Contribuyente de contenido\n\n<b> &#8226; Meaz:</b>\n Contribuyente de contenido\n\n<b> &#8226; maryjane:</b>\n Contribuyente de contenido\n\n<b> &#8226; userdebug:</b>\n Contribuyente de contenido\n\n<b> &#8226; ButterflyOfFire:</b>\n Contribuyente de contenido\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librerías de Terceros</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -114,18 +114,46 @@
     <string name="LogoInfo">¿Por qué? Es solo un logo.\nNo seas tan curioso… ;-)</string>
     <string name="LogoBtn">Disroot rules \\o//</string>
     <string name="logo">Logo</string>
-    <string name="xmppBtn"> \ \ &#8226; State on xmpp</string>
-    <string name="matrixBtn"> \ \ &#8226; State on Matrix</string>
-    <string name="SocialBtn"> \ \ &#8226; State on hubzilla/diaspora/mastodon</string>
-    <string name="NewsBtn"> \ \ &#8226; State updates vía email</string>
-    <string name="RssBtn"> \ \ &#8226; State RSS feed</string>
-    <string name="ChooseChatTitle">You have two XMPP clients installed!</string>
-    <string name="ChooseChat">Please choose the client you want to use for Disroot</string>
-    <string name="Remember">Remember my choice</string>
+    <string name="xmppBtn"> \ \ &#8226; Estado de xmpp</string>
+    <string name="matrixBtn"> \ \ &#8226; Estado de Matrix</string>
+    <string name="SocialBtn"> \ \ &#8226; Estado de Hubzilla/Diaspora*/Mastodon</string>
+    <string name="NewsBtn"> \ \ &#8226; Actualización de estados por email</string>
+    <string name="RssBtn"> \ \ &#8226; Feed RSS de los Estados</string>
+    <string name="ChooseChatTitle">¡Tienes dos clientes XMPP instalados!</string>
+    <string name="ChooseChat">Por favor, elige el cliente que quieres usar para Disroot</string>
+    <string name="Remember">Recordar mi elección</string>
     <string name="Conversations">Conversations</string>
     <string name="PixArt">Pix-Art Messenger</string>
-    <string name="Forget">Forget my choice</string>
-    <string name="ForgetTitle">Forget chat client!</string>
+    <string name="Forget">Olvidar mi elección</string>
+    <string name="ForgetTitle">¡Olvidar el cliente de chat!</string>
     <string name="title_activity_tap">TapActivity</string>
-
+    <string name="action_clear_cookies">Limpiar cookies</string>
+    <string name="DiaInstallTitle">Requerimiento de instalación</string>
+    <string name="DiasporaDialog">Para continuar, primero necesitas instalar Dandelion.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
+    <string name="global_cancel">Cancelar</string>
+    <string name="global_install">Instalar</string>
+    <string name="MailDialog">Para continuar, primero necesitas instalar K9-Mail.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
+    <string name="CloudDialog">Para continuar, primero necesitas instalar la app de Nextcloud.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
+    <string name="ChatDialog">Para continuar, primero necesitas instalar Conversations.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
+    <string name="app_state">Disroot: Estado</string>
+    <string name="Operational">Operativo</string>
+    <string name="MajorOutage">Interrupción mayor</string>
+    <string name="EmailService">Servicio de correo</string>
+    <string name="LastUpdated">Última actualización: \</string>
+    <string name="WebmailService">Servicio de WebMail</string>
+    <string name="Cloud">Nube</string>
+    <string name="PerformanceIssues">Problemas de desempeño</string>
+    <string name="Notification">Sin problemas</string>
+    <string name="Notificationissues">Algunos sistemas están experimentando problemas</string>
+    <string name="state_messages_btn">Mostrar mensajes de Estado</string>
+    <string name="state_btn">Mostrar Estado del servicio</string>
+    <string name="ScheduledAt">Programado para:</string>
+    <string name="NotificationTitle">¡Mensaje de Estado de Disroot!</string>
+    <string name="Scheduled">Programado</string>
+    <string name="Investigating">Investigando</string>
+    <string name="Identified">Identificado</string>
+    <string name="NotesTitle">Notas de Nextcloud Info</string>
+    <string name="NotesInfo">La aplicación Notas es un programa de Nextcloud para tomar notas sin distracciones</string>
+    <string name="action_notes">Notes</string>
+    <string name="NotesDialog">Para continuar, primero necesitas instalar Notas.\nPor favor, selecciona Instalar para continuar con la instalación desde F-Droid.</string>
 </resources>

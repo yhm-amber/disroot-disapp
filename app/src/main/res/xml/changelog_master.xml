@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="1.1.0" versioncode="13" >
+        <change>State page is api based instead of webview</change>
+        <change>In State page is possible to view state messages on separate tab</change>
+        <change>State page ordered by status</change>
+        <change>Fixed app crashing when launching Pix-art messenger</change>
+        <change>Fixed app launch in state on fresh install</change>
+        <change>Added app notification on new state events with sound and vibration</change>
+        <change>Added Notes app</change>
+        <change>A few other small fixes</change>
+    </release>
+    <release version="1.0.2" versioncode="12" >
+        <change>Third partie cookies disabled</change>
+        <change>Fixed French translation</change>
+        <change>Added more clear dialogs for additional apps</change>
+    </release>
+    <release version="1.0.1" versioncode="11" >
+        <change>Added Store cookies</change>
+        <change>Added clear cache</change>
+        <change>Workaround for app crashing when uploading in Lufi</change>
+    </release>
+    <release version="1.0.0" versioncode="10" >
+      <change>Added Serbian translation</change>
+      <change>Fixed changelog</change>
+      <change>Pushed V1.0.0</change>
+  </release>
   <release version="0.9.4" versioncode="9" >
-      <changelog>Added Portuguese translation</changelog>
+      <change>Added Portuguese translation</change>
   </release>
   <release version="0.9.3" versioncode="8" >
-      <changelog>Fixed chatroom redirection</changelog>
-      <changelog>Added Dutch translation</changelog>
+      <change>Fixed chatroom redirection</change>
+      <change>Added Dutch translation</change>
   </release>
     <release version="0.9.2" versioncode="7" >
-        <changelog>Fixed cloud tip</changelog>
+        <change>Fixed cloud tip</change>
         <change>Fixed app crash on tapping mail icon</change>
         <change>Fixed first time asking xmpp client</change>
         <change>Italian translation added</change>
