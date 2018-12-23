@@ -129,12 +129,12 @@
     <string name="title_activity_tap">TapActivity</string>
     <string name="action_clear_cookies">Obriši kolačiće</string>
     <string name="DiaInstallTitle">Potrebna instalacija</string>
-    <string name="DiasporaDialog">Za nastavak je potrebno instalirati aplikaciju Dandelion.\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="DiasporaDialog">Za nastavak je potrebno instalirati aplikaciju Dandelion.\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
     <string name="global_cancel">Otkaži</string>
     <string name="global_install">Instaliraj</string>
-    <string name="MailDialog">Za nastavak je potrebno instalirati aplikaciju K9-Mail.\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
-    <string name="CloudDialog">Za nastavak je potrebno instalirati aplikaciju Nextcloud.\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
-    <string name="ChatDialog">Za nastavak je potrebno instalirati aplikaciju Conversations.\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="MailDialog">Za nastavak je potrebno instalirati aplikaciju K9-Mail.\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="CloudDialog">Za nastavak je potrebno instalirati aplikaciju Nextcloud.\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="ChatDialog">Za nastavak je potrebno instalirati aplikaciju Conversations.\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
     <string name="app_state">Stanje Disroot servisa</string>
     <string name="Operational">Operativni</string>
     <string name="MajorOutage">Ozbiljan zastoj</string>
@@ -154,6 +154,6 @@
     <string name="Identified">Prepoznato</string>
     <string name="NotesTitle">Nextcloud Beleške Info</string>
     <string name="NotesInfo">Ova aplikacija omogućava lako pravljenje beleški na platformi Nextcloud</string>
-    <string name="NotesDialog">Za nastavak je potrebno instalirati aplikaciju Beleške (Notes).\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="NotesDialog">Za nastavak je potrebno instalirati aplikaciju Beleške (Notes).\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
     <string name="action_notes">Beleške</string>
 </resources>
