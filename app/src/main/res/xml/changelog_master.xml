@@ -4,6 +4,7 @@
         <change>Added more info for notes app</change>
         <change>Corrected some typos</change>
         <change>Spanish, Serbian and French translation updated</change>
+        <change>Added pull to refresh page</change>
     </release>
     <release version="1.1.0" versioncode="13" >
         <change>State page is api based instead of webview</change>

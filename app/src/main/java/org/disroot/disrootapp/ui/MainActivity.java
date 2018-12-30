@@ -29,6 +29,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
@@ -174,6 +175,18 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             check.edit().putBoolean("checkConv",false).apply();
             check.edit().putBoolean("checkPix",false).apply();
         }
+
+        //pull to refresh
+        final SwipeRefreshLayout swipe = (SwipeRefreshLayout)findViewById(R.id.swipe);
+        swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+        {
+            @Override
+            public void onRefresh(){
+                swipe.setRefreshing( false );
+                String url = webView.getUrl();
+                webView.loadUrl(url);
+            }
+        });
 
         //Set buttons
         // Locate the button in activity_main.xml
