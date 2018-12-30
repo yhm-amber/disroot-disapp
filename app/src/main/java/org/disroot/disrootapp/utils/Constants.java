@@ -46,4 +46,5 @@ public class Constants {
     public static final String URL_DisApp_UPLOADHELP = "https://howto.disroot.org/en/lufi";
     public static final String URL_DisApp_POLLHELP = "https://howto.disroot.org/polls";
     public static final String URL_DisApp_BOARDHELP = "https://disroot.org/services/project-board";
+    public static final String URL_DisApp_NOTESHELP = "https://howto.disroot.org/en/nextcloud/sync-with-your-cloud/android/using-notes";
 }

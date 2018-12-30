@@ -1077,14 +1077,14 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setTitle(R.string.NotesTitle);
         builder.setMessage(getString(R.string.NotesInfo));
         builder.setPositiveButton(R.string.global_ok, null);
-        //builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
-        //    @Override
-        //    public void onClick(DialogInterface dialog, int which) {
-        //        webView.loadUrl(Constants.URL_DisApp_NOTESHELP);
-        //        webView.setVisibility(View.VISIBLE);
-        //        dashboard.setVisibility(View.GONE);
-        //    }
-        //});
+        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                webView.loadUrl(Constants.URL_DisApp_NOTESHELP);
+                webView.setVisibility(View.VISIBLE);
+                dashboard.setVisibility(View.GONE);
+            }
+        });
         builder.show();
     }
     private void showNotesDialog(){

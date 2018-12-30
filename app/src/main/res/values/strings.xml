@@ -57,9 +57,9 @@
     <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot admin\n\n<b> &#8226; antilopa:</b>\n Disroot admin\n\n<b> &#8226; Massimiliano:</b>\n Developer\n\n<b> &#8226; Fede:</b>\n Content contributor\n\n<b> &#8226; Meaz:</b>\n Content contributor\n\n<b> &#8226; maryjane:</b>\n Content contributor\n\n<b> &#8226; userdebug:</b>\n Content contributor\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Third-Party Libraries</string>
-    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
+    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckChangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
     <string name="misc">Miscellaneous</string>
-    <string name="miscDio">We used Diolinx as our starting base to create this app. Go check it out, it\'s free software as well!</string>
+    <string name="miscDio">We used Diolinux as our starting base to create this app. Go check it out, it\'s free software as well!</string>
     <string name="miscDioBtn">Tell me more</string>
     <string name="AppSection">Application</string>
     <string name="AppVersion">App Version: %1$s</string>
@@ -115,7 +115,7 @@
     <string name="logo">Logo</string>
     <string name="xmppBtn"> \ \ &#8226; State on xmpp</string>
     <string name="matrixBtn"> \ \ &#8226; State on Matrix</string>
-    <string name="SocialBtn"> \ \ &#8226; State on hubzilla/diaspora/mastodon</string>
+    <string name="SocialBtn"> \ \ &#8226; State on Hubzilla/diaspora/mastodon</string>
     <string name="NewsBtn"> \ \ &#8226; State updates via email</string>
     <string name="RssBtn"> \ \ &#8226; State RSS feed</string>
     <string name="ChooseChatTitle">You have two XMPP clients installed!</string>
@@ -128,12 +128,12 @@
     <string name="title_activity_tap">TapActivity</string>
     <string name="action_clear_cookies">Clear cookies</string>
     <string name="DiaInstallTitle">Installation request</string>
-    <string name="DiasporaDialog">To continue you need to install Dandelion first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="DiasporaDialog">To continue you need to install Dandelion first.\nPlease select install to continue with the installation on F-Droid.</string>
     <string name="global_cancel">Cancel</string>
     <string name="global_install">Install</string>
-    <string name="MailDialog">To continue you need to install K9-Mail first.\nPlease select install to continue with the installatin on F-Droid.</string>
-    <string name="CloudDialog">To continue you need to install the Nextcloud app first.\nPlease select install to continue with the installatin on F-Droid.</string>
-    <string name="ChatDialog">To continue you need to install Conversations first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="MailDialog">To continue you need to install K9-Mail first.\nPlease select install to continue with the installation on F-Droid.</string>
+    <string name="CloudDialog">To continue you need to install the Nextcloud app first.\nPlease select install to continue with the installation on F-Droid.</string>
+    <string name="ChatDialog">To continue you need to install Conversations first.\nPlease select install to continue with the installation on F-Droid.</string>
     <string name="title_activity_state" translatable="false">StateActivity</string>
     <string name="app_state">Disroot state</string>
     <string name="Operational">Operational</string>
@@ -153,7 +153,7 @@
     <string name="Investigating">Investigating</string>
     <string name="Identified">Identified</string>
     <string name="NotesTitle">Nextcloud Notes Info</string>
-    <string name="NotesInfo">The notes app is a distraction free notes taking app for Nextcloud</string>
-    <string name="NotesDialog">To continue you need to install Notes first.\nPlease select install to continue with the installatin on F-Droid.</string>
+    <string name="NotesInfo">The notes app is a distraction free notes taking app for Nextcloud.\n\nServer Address:\n https://cloud.disroot.org\n\nUsername:\n your_disroot_username\n\nPassword:\n your_disroot_password</string>
+    <string name="NotesDialog">To continue you need to install Notes first.\nPlease select install to continue with the installation on F-Droid.</string>
     <string name="action_notes">Notes</string>
 </resources>

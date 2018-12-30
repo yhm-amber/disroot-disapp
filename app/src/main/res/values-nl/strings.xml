@@ -44,10 +44,11 @@
     <string name="licenseTitle">Licentie</string>
     <string name="license_button">GNU LGPLv3.0 Licentie</string>
 
-    <string translatable="false" name="licenseText">Copyright © 2007 Free Software Foundation, Inc.\n
-        This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, version 3 of the License only.\n\n
-        This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
-    </string>
+    <!--Non translatable
+ <string translatable="false" name="licenseText">Copyright © 2007 Free Software Foundation, Inc.\n
+     This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, version 3 of the License only.\n\n
+     This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+ </string>-->
 
     <string name="maintainersTitle">Onderhouders</string>
     <string name="maintainersText">Deze app wordt momenteel ontwikkeld en onderhouden door\n\n</string>
@@ -153,7 +154,7 @@
     <string name="Investigating">Aan het onderzoeken</string>
     <string name="Identified">Geïdentificeerd</string>
     <string name="NotesTitle">Nextcloud Notes Info</string>
-    <string name="NotesInfo">De notes app is een afleidingsvrije notities app voor Nextcloud.</string>
+    <string name="NotesInfo">De notes app is een afleidingsvrije notities app voor Nextcloud.\n\nServer adres:\n https://cloud.disroot.org\n\nGebruikersnaam:\n uw_disroot_gebruikersnaam\n\nWachtwoord:\n uw_disroot_wachtwoord</string>
     <string name="NotesDialog">Om verder te gaan moet u eerst Notes installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
     <string name="action_notes">Notes</string>
 </resources>

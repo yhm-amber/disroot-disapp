@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="1.1.1" versioncode="14" >
+        <change>Added more info for notes app</change>
+        <change>Corrected some typos</change>
+        <change>Spanish, Serbian and French translation updated</change>
+    </release>
     <release version="1.1.0" versioncode="13" >
         <change>State page is api based instead of webview</change>
         <change>In State page is possible to view state messages on separate tab</change>
