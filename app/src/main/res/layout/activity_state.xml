@@ -29,20 +29,21 @@
 <android.support.v7.widget.LinearLayoutCompat
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_horizontal"
+    android:gravity="center|top"
     android:background="#203140">
     <Button
         android:id="@+id/StateBtn"
         android:shadowColor="@color/bg_primary_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="24dp"
+        android:maxWidth="120dp"
+        android:breakStrategy="simple"
+        android:minLines="3"
         android:drawableTop="@drawable/ic_state"
         android:drawableTint="@color/gray"
         android:text="@string/state_btn"
         android:layout_gravity="center"
-        android:layout_marginLeft="@android:dimen/app_icon_size"
-        android:layout_marginRight="@android:dimen/app_icon_size"
+        android:layout_marginRight="30dp"
         style="?android:attr/borderlessButtonStyle"
         android:textColor="@color/gray"/>
     <Button
@@ -50,12 +51,13 @@
         android:shadowColor="@color/bg_primary_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="24dp"
+        android:maxWidth="120dp"
+        android:breakStrategy="simple"
+        android:minLines="3"
         android:drawableTop="@drawable/ic_state"
         android:text="@string/state_messages_btn"
         android:layout_gravity="center"
-        android:layout_marginLeft="@android:dimen/app_icon_size"
-        android:layout_marginRight="@android:dimen/app_icon_size"
+        android:layout_marginLeft="30dp"
         style="?android:attr/borderlessButtonStyle"
         android:textColor="#ffffff"/>
 </android.support.v7.widget.LinearLayoutCompat>
