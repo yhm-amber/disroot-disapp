@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
@@ -1889,7 +1890,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         checkDate.edit().putString( "storeDate", stateDate).apply();
                         //return null;
                     }
-                    else if (!stateDate.equals( dateStored )&& !stateDate.equals( "" ))
+                    else if (!stateDate.equals( dateStored )&& !stateDate.equals( "" ))//dateStored
                     {
                         checkDate.edit().putString( "storeDate", stateDate).apply();
                         Log.e(TAG, "date: " + dateStored);
@@ -1949,6 +1950,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
                         .setAutoCancel( true )
+                        .setOngoing(true)
                         .setSmallIcon(R.drawable.ic_state)
                         .setContentTitle( getString( R.string.NotificationTitle ) )
                         .setContentText(name)//get text Title from json :-)
