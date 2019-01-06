@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+  <changelog>
+      <release version="1.1.2" versioncode="15" >
+          <change>Fixed layout for small screens</change>
+      </release>
     <release version="1.1.1" versioncode="14" >
         <change>Added more info for notes app</change>
         <change>Corrected some typos</change>

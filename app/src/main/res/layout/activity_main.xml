@@ -40,18 +40,20 @@
             android:id="@+id/dashboard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#203140"
             android:fillViewport="true"
             android:stackFromBottom="true"
             android:transcriptMode="alwaysScroll"
             android:visibility="visible">
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
         <RelativeLayout
             android:id="@+id/dashLayout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#203140"
-            android:gravity="center_horizontal">
-
-
+            android:background="#203140">
 
                 <ImageButton
                     android:id="@+id/logo"
@@ -275,6 +277,7 @@
                     android:textColor="#ffffff" />
             </LinearLayout>
         </RelativeLayout>
+            </HorizontalScrollView>
         </ScrollView>
     </FrameLayout>
 </LinearLayout>
