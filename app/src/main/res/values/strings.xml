@@ -156,4 +156,5 @@
     <string name="NotesInfo">The notes app is a distraction free notes taking app for Nextcloud.\n\nServer Address:\n https://cloud.disroot.org\n\nUsername:\n your_disroot_username\n\nPassword:\n your_disroot_password</string>
     <string name="NotesDialog">To continue you need to install Notes first.\nPlease select install to continue with the installation on F-Droid.</string>
     <string name="action_notes">Notes</string>
+    <string name="PadDialog">To continue you need to install Padland first.\nPlease select install to continue with the installation on F-Droid.</string>
 </resources>

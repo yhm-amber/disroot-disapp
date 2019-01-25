@@ -155,4 +155,5 @@
     <string name="NotesInfo">L\'app notes è un\'app che prende note senza distrazioni per Nextcloud.\n\nIndirizzo del server:\n https://cloud.disroot.org\n\nnnome utente:\n il_tuo_nome_utente_disroot\n\nPassword:\n la_tua_password_disroot</string>
     <string name="NotesDialog">Per continuare è necessario installare Notes.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
     <string name="action_notes">Note</string>
+    <string name="PadDialog">Per continuare è necessario installare Padland.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
 </resources>

@@ -156,4 +156,5 @@
     <string name="NotesInfo">Ova aplikacija omogućava lako pravljenje beleški na platformi Nextcloud.\n\nAdresa server:\n https://cloud.disroot.org\n\nKorisničko ime:\n vaše_disroot_korisničko ime\n\nLozinka:\n vaša_disroot_lozinka</string>
     <string name="NotesDialog">Za nastavak je potrebno instalirati aplikaciju Beleške (Notes).\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
     <string name="action_notes">Beleške</string>
+    <string name="PadDialog">Za nastavak je potrebno instalirati aplikaciju Padland.\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
 </resources>

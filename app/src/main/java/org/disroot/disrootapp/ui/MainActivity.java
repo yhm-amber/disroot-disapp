@@ -961,7 +961,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.DiaInstallTitle);
-        builder.setMessage(getString(R.string.ChatDialog));
+        builder.setMessage(getString(R.string.PadDialog));
         builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
             String Padland = "com.mikifus.padland";
             Intent pad = getPackageManager().getLaunchIntentForPackage(Padland);

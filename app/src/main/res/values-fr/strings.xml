@@ -193,4 +193,5 @@
 \n votre_mot_de_passe_disroot</string>
     <string name="NotesDialog">Pour continuer, vous devez d\'abord installer Notes.\nVeuillez sélectionner Installer pour continuer l\'installation avec F-Droid.</string>
     <string name="action_notes">Notes</string>
+    <string name="PadDialog">Pour continuer, vous devez d\'abord installer Padland.\nVeuillez sélectionner Installer pour continuer l\'installation avec F-Droid.</string>
 </resources>

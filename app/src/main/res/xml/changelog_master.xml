@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="1.1.3" versioncode="16" >
+        <change>Fixed string on Etherpad dialog</change>
+    </release>
       <release version="1.1.2" versioncode="15" >
           <change>Fixed layout for small screens</change>
       </release>
