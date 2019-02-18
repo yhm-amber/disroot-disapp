@@ -172,7 +172,7 @@ public class StateMessagesActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Check LogCat for possible errors!",
+                                "Couldn't get json from server. Is your internet connection ok?",
                                 Toast.LENGTH_LONG)
                                 .show();
                     }

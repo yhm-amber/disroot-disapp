@@ -1929,15 +1929,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 }
             }else {
                 Log.e(TAG, "Couldn't get json from server.");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Check LogCat for possible errors!",
-                                Toast.LENGTH_LONG)
-                                .show();
-                    }
-                });
             }
             return null;
         }
