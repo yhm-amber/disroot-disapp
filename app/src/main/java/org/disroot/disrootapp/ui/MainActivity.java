@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
@@ -27,7 +26,9 @@ import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -106,6 +107,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private ProgressBar progressBar;
     private int progressStatus = 0;
     private Handler handler = new Handler();
+    private Snackbar snackbarExitApp;
+    private FragmentManager fm;
 
     public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
 
@@ -188,6 +191,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 webView.loadUrl(url);
             }
         });
+
+        //Setup snackbar
+        snackbarExitApp = Snackbar
+                .make(findViewById(R.id.framelayout_container), R.string.do_you_want_to_exit, Snackbar.LENGTH_LONG)
+                .setAction(android.R.string.yes, new View.OnClickListener() {
+                    public void onClick(View view) {
+                        finish();
+                        moveTaskToBack(true);
+                    }
+                });
 
         //Set buttons
         // Locate the button in activity_main.xml
@@ -1964,4 +1977,22 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(001, mBuilder.build());
     }
+
+    //show snackbar to avoid exit on backpress
+    @Override
+    public void onBackPressed() {
+        ScrollView dashboard = findViewById(R.id.dashboard);
+        FragmentManager manager = getSupportFragmentManager();
+        if (dashboard.getVisibility() == View.GONE){
+            dashboard.setVisibility(View.VISIBLE);
+            return;
+        }
+        if (manager.getBackStackEntryCount() > 0) {
+            super.onBackPressed();
+        } else {
+                    snackbarExitApp.show();
+                }
+                return;
+            }
+
 }

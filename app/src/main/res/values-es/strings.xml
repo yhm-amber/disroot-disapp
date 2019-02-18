@@ -157,4 +157,5 @@
     <string name="action_notes">Notes</string>
     <string name="NotesDialog">Para continuar, primero necesitas instalar Notas.\nPor favor, selecciona Instalar para continuar con la instalación desde F-Droid.</string>
     <string name="PadDialog">Para continuar, primero necesitas instalar Padland.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
+    <string name="do_you_want_to_exit">do you want to exit?</string>
 </resources>
