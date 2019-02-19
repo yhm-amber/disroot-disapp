@@ -195,6 +195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         //Setup snackbar
         snackbarExitApp = Snackbar
                 .make(findViewById(R.id.framelayout_container), R.string.do_you_want_to_exit, Snackbar.LENGTH_LONG)
+                .setActionTextColor( Color.LTGRAY )
                 .setAction(android.R.string.yes, new View.OnClickListener() {
                     public void onClick(View view) {
                         finish();
