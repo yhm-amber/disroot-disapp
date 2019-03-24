@@ -960,7 +960,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setTitle(R.string.PadTitle);
         builder.setMessage(getString(R.string.PadInfo));
         builder.setPositiveButton(R.string.global_ok, null);
-        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_PADHELP);
@@ -996,7 +996,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setTitle(R.string.CalcTitle);
         builder.setMessage(getString(R.string.CalcInfo));
         builder.setPositiveButton(R.string.global_ok, null);
-        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_CALCHELP);
@@ -1086,7 +1086,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setTitle(R.string.BoardTitle);
         builder.setMessage(getString(R.string.BoardInfo));
         builder.setPositiveButton(R.string.global_ok, null);
-        builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_BOARDHELP);
