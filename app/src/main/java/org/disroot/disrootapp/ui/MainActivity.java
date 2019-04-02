@@ -66,6 +66,7 @@ import android.widget.Toast;
 
 
 import org.disroot.disrootapp.R;
+import org.disroot.disrootapp.service.CachetService;
 import org.disroot.disrootapp.utils.Constants;
 import org.disroot.disrootapp.utils.HttpHandler;
 import org.disroot.disrootapp.webviews.DisWebChromeClient;
@@ -688,6 +689,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 });
             }
         }, 100, 100000);//100000=100sec
+
+        // start CachetService
+        Intent intent = new Intent(this, CachetService.class);
+        // Put some data for use by the IntentService
+        //intent.putExtra("foo", "bar");
+        startService(intent);
+
     }
 
     //Dialog windows
