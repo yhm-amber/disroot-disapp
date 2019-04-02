@@ -690,11 +690,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
         }, 100, 100000);//100000=100sec
 
-        // start CachetService
-        Intent intent = new Intent(this, CachetService.class);
-        // Put some data for use by the IntentService
-        //intent.putExtra("foo", "bar");
-        startService(intent);
+          // start CachetService
+        //Intent intent = new Intent(this, CachetService.class);
+          // Put some data for use by the IntentService
+          //intent.putExtra("foo", "bar");
+        //startService(intent);
 
     }
 
