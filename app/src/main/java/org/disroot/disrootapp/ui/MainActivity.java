@@ -66,7 +66,7 @@ import android.widget.Toast;
 
 
 import org.disroot.disrootapp.R;
-import org.disroot.disrootapp.service.CachetService;
+//import org.disroot.disrootapp.service.CachetService;
 import org.disroot.disrootapp.utils.Constants;
 import org.disroot.disrootapp.utils.HttpHandler;
 import org.disroot.disrootapp.webviews.DisWebChromeClient;
