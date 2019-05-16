@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
@@ -1945,6 +1946,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     //Notification
     private void sendNotification() throws JSONException {
+        String CHANNEL_ID = "316865431";
+        String CHANNEL_NAME = "StateNotification";
         HttpHandler sh = new HttpHandler();
         String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
         JSONObject jsonObj = new JSONObject(jsonStrincidents0);
@@ -1960,8 +1963,22 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         Intent goState = new Intent(MainActivity.this, StateMessagesActivity.class);
         PendingIntent launchStateMessages = PendingIntent.getActivity(MainActivity.this,0, goState, PendingIntent.FLAG_UPDATE_CURRENT);
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this)
+
+        NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
+
+        inboxStyle.addLine(message);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // I would suggest that you use IMPORTANCE_DEFAULT instead of IMPORTANCE_HIGH
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+            channel.enableVibration(true);
+            channel.setLightColor(Color.MAGENTA);
+            channel.enableLights(true);
+            channel.setVibrationPattern(new long[]{50,500,100,300,50,300});
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
                         .setAutoCancel( true )
                         .setOngoing(true)
                         .setSmallIcon(R.drawable.ic_state)
@@ -1970,12 +1987,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         .setContentInfo(message)//get text message from json :-)
                         .setContentIntent(launchStateMessages);
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        mBuilder.setSound(alarmSound)
+        notificationBuilder.setSound(alarmSound)
                 .setVibrate(new long[]{50,500,100,300,50,300})
                 .setLights(Color.MAGENTA, 3000, 3000);
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(001, mBuilder.build());
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            notificationBuilder.setChannelId(CHANNEL_ID);
+        }
+
+        notificationManager.notify(CHANNEL_ID, 1, notificationBuilder.build());
     }
 
     //show snackbar to avoid exit on backpress
