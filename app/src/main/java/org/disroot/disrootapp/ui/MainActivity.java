@@ -1913,7 +1913,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         checkDate.edit().putString( "storeDate", stateDate).apply();
                         //return null;
                     }
-                    else if (!stateDate.equals( dateStored )&& !stateDate.equals( "" ))//dateStored
+                    else if (!stateDate.equals( "2" )&& !stateDate.equals( "" ))//dateStored
                     {
                         checkDate.edit().putString( "storeDate", stateDate).apply();
                         Log.e(TAG, "date: " + dateStored);
@@ -1946,7 +1946,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     //Notification
     private void sendNotification() throws JSONException {
-        String CHANNEL_ID = "316865431";
+        String CHANNEL_ID = "3168654312";
         String CHANNEL_NAME = "StateNotification";
         HttpHandler sh = new HttpHandler();
         String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
@@ -1972,7 +1972,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             // I would suggest that you use IMPORTANCE_DEFAULT instead of IMPORTANCE_HIGH
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
             channel.enableVibration(true);
-            channel.setLightColor(Color.MAGENTA);
+            channel.setLightColor(Color.rgb( 80,22,45 ));
             channel.enableLights(true);
             channel.setVibrationPattern(new long[]{50,500,100,300,50,300});
             notificationManager.createNotificationChannel(channel);
@@ -1989,7 +1989,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         notificationBuilder.setSound(alarmSound)
                 .setVibrate(new long[]{50,500,100,300,50,300})
-                .setLights(Color.MAGENTA, 3000, 3000);
+                .setLights(Color.BLUE, 3000, 3000);
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
