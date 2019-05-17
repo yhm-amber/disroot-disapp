@@ -1913,7 +1913,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         checkDate.edit().putString( "storeDate", stateDate).apply();
                         //return null;
                     }
-                    else if (!stateDate.equals( "2" )&& !stateDate.equals( "" ))//dateStored
+                    else if (!stateDate.equals( dateStored )&& !stateDate.equals( "" ))//dateStored
                     {
                         checkDate.edit().putString( "storeDate", stateDate).apply();
                         Log.e(TAG, "date: " + dateStored);
