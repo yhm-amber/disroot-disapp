@@ -32,6 +32,10 @@
         android:id="@+id/action_clear_cookies"
         android:title="@string/action_clear_cookies" />
         <item
+            android:icon="@drawable/ic_battery"
+            android:id="@+id/action_optimization"
+            android:title="@string/action_optimization" />
+        <item
             android:icon="@drawable/ic_about"
             android:id="@+id/action_about"
             android:title="@string/action_about" />

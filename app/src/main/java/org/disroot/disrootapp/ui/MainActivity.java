@@ -4,9 +4,11 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -16,7 +18,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Parcelable;
+import android.os.PowerManager;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
@@ -646,7 +650,30 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         Intent intent = new Intent( MainActivity.this, StatusService.class);
         startService(intent);
 
+
+
+        //delete after version 1.1.6
+        PackageInfo info = null;
+        try {
+            info = getPackageManager().getPackageInfo(getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            // bad times
+            Log.e("MyApplication", "couldn't get package info!");
+        }
+
+        if (info == null) {
+            // can't do anything
+            return;
+        }
+
+        if (!firstStart.getBoolean("update", false)&&info.firstInstallTime != info.lastUpdateTime) {
+            showOptimzationInfo();
+            firstStart.edit().putBoolean("update", true).apply();
+            return;
+        }
     }
+
+
 
     //Dialog windows
     private void showChoose() {
@@ -702,10 +729,41 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setCancelable(false);
         builder.setTitle(R.string.FirstTitle);
         builder.setMessage(getString(R.string.FirstInfo));
-        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setPositiveButton(R.string.global_ok,  new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showOptimzation();
+            }
+        });
         builder.show();
     }
 
+    private void showOptimzation() {
+                Intent intent = new Intent();
+                String packageName = getPackageName();
+                PowerManager pm = (PowerManager) getSystemService( Context.POWER_SERVICE);
+                if (pm.isIgnoringBatteryOptimizations(packageName))
+                    intent.setAction(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
+                else {
+                    intent.setAction(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+                    intent.setData(Uri.parse("package:" + packageName));
+                }
+                startActivity(intent);
+    }
+
+    private void showOptimzationInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.OptimizationTitle);
+        builder.setMessage(getString(R.string.OptimizationInfo));
+        builder.setPositiveButton(R.string.global_ok,  new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showOptimzation();
+            }
+        });
+        builder.show();
+    }
     @Override
     public boolean onLongClick(View view) {
         Toast.makeText(view.getContext(), R.string.activity_main_share_info, Toast.LENGTH_LONG).show();
@@ -1390,6 +1448,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 webView.loadUrl(url);
                 return true;
             }
+            case R.id.action_optimization:
+                showOptimzation();
+                return true;
             case R.id.action_about:
                 Intent goAbout = new Intent(MainActivity.this, AboutActivity.class);
                 MainActivity.this.startActivity(goAbout);
@@ -1821,7 +1882,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         }
     }
 
-    //
     public void shareCurrentPage() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setAction(Intent.ACTION_SEND);
