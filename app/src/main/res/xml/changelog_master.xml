@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
-  <release version="1.1.6" versioncode="19" >
+  <release version="1.2.0" versioncode="19" >
       <change>Notifications works as a service now</change>
       <change>Added shortcut to battery optimizations in menu</change>
       <change>Prompt for battery optimization to give user choice on first launch</change>
