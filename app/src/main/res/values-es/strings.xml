@@ -159,6 +159,6 @@
     <string name="PadDialog">Para continuar, primero necesitas instalar Padland.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
     <string name="do_you_want_to_exit">do you want to exit?</string>
     <string name="action_optimization">Battery optimization</string>
-    <string name="OptimizationTitle">Battery optimization</string>
-    <string name="OptimizationInfo">With this update the app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org</string>
+    <string name="OptimizationTitle">Battery optimization!</string>
+    <string name="OptimizationInfo">With this update the app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
 </resources>
