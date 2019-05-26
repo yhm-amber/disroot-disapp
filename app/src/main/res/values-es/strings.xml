@@ -79,7 +79,7 @@
     <string name="SpreadTheWordTxt">Comenta a tus amigos y familia sobre Disroot. O por qué no escribir en un blog sobre tu experiencia. Nos encantaría conocerla.</string>
     <string name="SpreadTheWordBtn">Compartir la aplicación</string>
     <string name="DisrootWeb">Sitio de Disroot</string>
-    <string name="FirstTitle">Un par de cosas más... </string>
+    <string name="FirstTitle">Un par de cosas más… </string>
     <string name="FirstInfo">&#8226; Haciendo una presión larga sobre cada ícono, puedes obtener información adicional… \n\n&#8226; La aplicación puede sincronizar con la página de estado de Disroot. Esto significa que recibirás actualizaciones en tiempo real sobre inconvenientes, caídas, mantenimientos programados y otros que fueran publicados a través de https://state.disroot.org\nRecomendamos apagar la optimización de batería y permitir a la aplicación de Disroot correr en segundo plano. Si no estás seguro, siempre puedes volver a cambiar la configuración desde el menu de la aplicación de Disroot.</string>
     <string name="DiasporaTitle">Configuración de Diaspora*</string>
     <string name="DiasporaInfo">Red social distribuida y descentralizada. Publica, comparte, crea comunidades.\nUsuario: tu_usuario_de_Diaspora@pod.disroot.org\nContraseña: tu_contraseña_de_diaspora</string>
@@ -158,7 +158,7 @@
     <string name="NotesDialog">Para continuar, primero necesitas instalar Notas.\nPor favor, selecciona Instalar para continuar con la instalación desde F-Droid.</string>
     <string name="PadDialog">Para continuar, primero necesitas instalar Padland.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
     <string name="do_you_want_to_exit">do you want to exit?</string>
-    <string name="action_optimization">Battery optimization</string>
-    <string name="OptimizationTitle">Battery optimization!</string>
-    <string name="OptimizationInfo">With this update the app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
+    <string name="action_optimization">Optimización de la batería</string>
+    <string name="OptimizationTitle">Optimización de la batería!</string>
+    <string name="OptimizationInfo">Con esta nueva versión la aplicación puede sincronizar con la página de estado de Disroot. Esto significa que recibirás actualizaciones en tiempo real sobre inconvenientes, caídas, mantenimientos programados y otros que fueran publicados a través de https://state.disroot.org\nRecomendamos apagar la optimización de batería y permitir a la aplicación de Disroot correr en segundo plano. Si no estás seguro, siempre puedes volver a cambiar la configuración desde el menu de la aplicación de Disroot.</string>
 </resources>
