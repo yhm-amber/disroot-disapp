@@ -79,8 +79,8 @@
     <string name="SpreadTheWordTxt">Comenta a tus amigos y familia sobre Disroot. O por qué no escribir en un blog sobre tu experiencia. Nos encantaría conocerla.</string>
     <string name="SpreadTheWordBtn">Compartir la aplicación</string>
     <string name="DisrootWeb">Sitio de Disroot</string>
-    <string name="FirstTitle">Casi lo olvido…</string><!-- need update -->
-    <string name="FirstInfo">Haciendo una presión larga sobre el ícono de cada aplicación, puedes ver información extra sobre ella.</string><!-- need update -->
+    <string name="FirstTitle">Un par de cosas más... </string>
+    <string name="FirstInfo">&#8226; Haciendo una presión larga sobre cada ícono, puedes obtener información adicional… \n\n&#8226; La aplicación puede sincronizar con la página de estado de Disroot. Esto significa que recibirás actualizaciones en tiempo real sobre inconvenientes, caídas, mantenimientos programados y otros que fueran publicados a través de https://state.disroot.org\nRecomendamos apagar la optimización de batería y permitir a la aplicación de Disroot correr en segundo plano. Si no estás seguro, siempre puedes volver a cambiar la configuración desde el menu de la aplicación de Disroot.</string>
     <string name="DiasporaTitle">Configuración de Diaspora*</string>
     <string name="DiasporaInfo">Red social distribuida y descentralizada. Publica, comparte, crea comunidades.\nUsuario: tu_usuario_de_Diaspora@pod.disroot.org\nContraseña: tu_contraseña_de_diaspora</string>
     <string name="PadInfo">EtherPad</string>
