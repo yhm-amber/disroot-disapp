@@ -65,7 +65,7 @@ public class StatusService extends Service {
             public void run() {
                 new StatusService.GetList().execute();
             }
-        }, 100, 100000);//100000=100sec
+        }, 100, 1800000);//100000=100sec
         
         
     }
