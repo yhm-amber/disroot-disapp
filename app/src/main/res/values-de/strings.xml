@@ -11,32 +11,32 @@
     <string name="action_bin">Private bin</string>
     <string name="action_upload">Upload</string>
     <string name="action_searx">Searx</string>
-    <string name="action_poll">Poll</string>
-    <string name="action_board">Board</string>
-    <string name="action_user">Password</string>
-    <string name="action_state">State</string>
-    <string name="action_howto">How to</string>
+    <string name="action_poll">Umfrage</string> //or should not be translated?
+    <string name="action_board">Board</string> // would name that KANBAN or TAIGA
+    <string name="action_user">Passwort</string>
+    <string name="action_state">Status</string>
+    <string name="action_howto">How to</string> //best trans will be tutorial, but inconsistent then
 
-    <string name="action_about">About</string>
+    <string name="action_about">Über</string>
     <string name="action_exit">Exit</string>
-    <string name="action_share">Share</string>
-    <string name="action_reload">Reload</string>
+    <string name="action_share">Teilen</string> //share with or via? or only share
+    <string name="action_reload">neu laden</string>
 
 
-    <string name="action_options">Actions</string>
-    <string name="activity_main_share_info">Share link info</string>
-    <string name="view_loading_description">Loading…</string>
+    <string name="action_options">Actions</string> //? something like functions?
+    <string name="activity_main_share_info">Teile link informationen</string> //link info or link?
+    <string name="view_loading_description">lädt…</string>
     <string name="global_ok">OK</string>
-    <string name="more_help">Need more help?</string>
-    <string name="tell_more">Tell me more</string>
-    <string name="title_activity_about">AboutActivity</string>
+    <string name="more_help">weitere Hilfe</string>
+    <string name="tell_more">weitere Infos</string>
+    <string name="title_activity_about">AboutActivity</string> //?
 
-    <string name="MailInfoTitle">Mail Settings</string>
-    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentication: Normal\nPassword\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentication: Normal\nPassword\n\nPOP: disroot.org\nSSL Port 995\nAuthentication: Normal\nPassword</string>
-    <string name="CloudInfoTitle">Nextcloud Settings</string>
-    <string name="CloudInfo">Keep your data synchronized and safe. With Nextcloud you can share your files, calendars, contacts and more.\n\nHost:\n https://cloud.disroot.org\n\nUsername:\n your_disroot_username\n\nPassword:\n your_disroot_password.</string>
+    <string name="MailInfoTitle">E-Mail Einstellungen</string>
+    <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentifizierung: normales\nPasswort\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentifizierung: normales\nPasswort\n\nPOP: disroot.org\nSSL Port 995\nAuthentifizierung: normales\nPasswort</string>
+    <string name="CloudInfoTitle">Nextcloud Einstellungen</string>
+    <string name="CloudInfo">Sichere deine Daten und synchronisiere sie. Mit Nextcloud kannst du Dateien, Kalender, Kontakte und mehr mit anderen teilen.\n\nHost:\n https://cloud.disroot.org\n\nBenutzername:\n "dein Disroot Benutzername"\n\nPasswort:\n "dein Disroot Passwort".</string>
     <string name="WelcomeTitle">Welcome</string>
-    <string name="WelcomeInfo">Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.\nThis app is like your Swiss Army knife to the Disroot platform, made by the community for the community.\nIf you don\'t have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requires a Diaspora only account)\n\nThe app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google\'s Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it by tapping on the F-droid icon.\n</string>
+    <string name="WelcomeInfo">Disroot ist eine Plattform, auf der Online-Dienste angeboten werden, die auf den Prinzipien von Freiheit, Privatsphäre, Gemeinschaft und Dezentralisierung basieren.\nDiese App ist wie ein Schweizer Taschenmesser für die Disroot-Plattform, von der Community für die Community.\nWenn du kein Disroot-Account hast, kannst du diese App trotzdem nutzen, um auf alle Disroot-Dienste zuzugreifen, die kein Konto erfordern:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (separater Diaspora Account benötigt)\n\nDie App kann Sie danach fragen weitere Apps zu installieren. Wir empfehlen F-Droid zu installieren - einen kostenlosen und quelloffenen App-Katalog - da nicht alle verwendeten Apps im Google Play Store zu finden sind und F-Droid außerdem mehr auf Datenschutz ausgerichtet ist (kein Tracking, kein Account erforderlich). Sie können F-Droid herunterladen, indem Sie auf das F-Droid-Symbol klicken.\n</string>
 
     <string name="help">Help</string>
     <string name="license">License</string>
@@ -44,10 +44,10 @@
     <string name="licenseTitle">License</string>
     <string name="license_button">GNU LGPLv3.0 License</string>
 
-    <string name="licenseText" translatable="false">Copyright © 2007 Free Software Foundation, Inc.\n
-        This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, version 3 of the License only.\n\n
-        This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
-    </string>
+
+
+
+
 
     <string name="maintainersTitle">Maintainers</string>
     <string name="maintainersText">This app is currently being developed and maintained by\n\n</string>

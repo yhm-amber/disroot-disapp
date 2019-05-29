@@ -1,35 +1,31 @@
 package org.disroot.disrootapp.ui;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Parcelable;
+import android.os.PowerManager;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -59,20 +55,15 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
 
 import org.disroot.disrootapp.R;
-//import org.disroot.disrootapp.service.CachetService;
+import org.disroot.disrootapp.StatusService;
 import org.disroot.disrootapp.utils.Constants;
-import org.disroot.disrootapp.utils.HttpHandler;
 import org.disroot.disrootapp.webviews.DisWebChromeClient;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -83,9 +74,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import de.cketti.library.changelog.ChangeLog;
 
 @SuppressWarnings("ALL")
@@ -119,15 +107,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     public static final String CONTENT_HASHTAG = "content://org.disroot.disrootapp.ui.mainactivity/";
 
     private CookieManager cookieManager;
-
-    //status report
-    private ProgressDialog pDialog;
-    private ListView lv;
-    public SharedPreferences checkDate;
-    // URL to get data JSON
-    static String incidenturl0 ="https://state.disroot.org/api/v1/incidents?sort=id&order=desc";
-    ArrayList<HashMap<String, String>> messageList;
-    ArrayList<HashMap<String, String>> getDate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -667,36 +646,34 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
         });
 
-        //Status report
-        messageList = new ArrayList<>();
-        getDate = new ArrayList<>();
+        //Status service
+        Intent intent = new Intent( MainActivity.this, StatusService.class);
+        startService(intent);
 
-        lv = findViewById(R.id.list);
 
-        checkDate = getSharedPreferences("storeDate", Context.MODE_PRIVATE);
 
-        //Check json for updates
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
+        //delete after version 1.1.6
+        PackageInfo info = null;
+        try {
+            info = getPackageManager().getPackageInfo(getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            // bad times
+            Log.e("MyApplication", "couldn't get package info!");
+        }
 
-                    @Override
-                    public void run() {
-                        new MainActivity.GetList().execute();
-                    }
-                });
-            }
-        }, 100, 100000);//100000=100sec
+        if (info == null) {
+            // can't do anything
+            return;
+        }
 
-          // start CachetService
-        //Intent intent = new Intent(this, CachetService.class);
-          // Put some data for use by the IntentService
-          //intent.putExtra("foo", "bar");
-        //startService(intent);
-
+        if (!firstStart.getBoolean("update", false)&&info.firstInstallTime != info.lastUpdateTime) {
+            showOptimzationInfo();
+            firstStart.edit().putBoolean("update", true).apply();
+            return;
+        }
     }
+
+
 
     //Dialog windows
     private void showChoose() {
@@ -752,10 +729,41 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setCancelable(false);
         builder.setTitle(R.string.FirstTitle);
         builder.setMessage(getString(R.string.FirstInfo));
-        builder.setPositiveButton(R.string.global_ok, null);
+        builder.setPositiveButton(R.string.global_ok,  new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showOptimzation();
+            }
+        });
         builder.show();
     }
 
+    private void showOptimzation() {
+                Intent intent = new Intent();
+                String packageName = getPackageName();
+                PowerManager pm = (PowerManager) getSystemService( Context.POWER_SERVICE);
+                if (pm.isIgnoringBatteryOptimizations(packageName))
+                    intent.setAction(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
+                else {
+                    intent.setAction(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+                    intent.setData(Uri.parse("package:" + packageName));
+                }
+                startActivity(intent);
+    }
+
+    private void showOptimzationInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.OptimizationTitle);
+        builder.setMessage(getString(R.string.OptimizationInfo));
+        builder.setPositiveButton(R.string.global_ok,  new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showOptimzation();
+            }
+        });
+        builder.show();
+    }
     @Override
     public boolean onLongClick(View view) {
         Toast.makeText(view.getContext(), R.string.activity_main_share_info, Toast.LENGTH_LONG).show();
@@ -1440,6 +1448,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 webView.loadUrl(url);
                 return true;
             }
+            case R.id.action_optimization:
+                showOptimzation();
+                return true;
             case R.id.action_about:
                 Intent goAbout = new Intent(MainActivity.this, AboutActivity.class);
                 MainActivity.this.startActivity(goAbout);
@@ -1871,111 +1882,12 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         }
     }
 
-    //
     public void shareCurrentPage() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setAction(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_TEXT, webView.getUrl());
         intent.setType("text/plain");
         startActivity(intent);
-    }
-
-    //status report
-    @SuppressLint("StaticFieldLeak")
-    class GetList extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-            HttpHandler sh = new HttpHandler();
-
-            String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
-
-            Log.e(TAG, "Response from url: " + incidenturl0);
-
-            if (jsonStrincidents0 != null) {//Incidaetnts page
-                try {
-                    JSONObject jsonObj = new JSONObject(jsonStrincidents0);
-                    JSONArray data = jsonObj.getJSONArray("data");
-                    int a=0;
-                    JSONObject o = data.getJSONObject(a);
-                    String callid = o.getString("id");
-                    String updated = o.getString("updated_at");
-                    HashMap<String, String> date = new HashMap<>();
-                    date.put("id", callid);
-                    date.put("updated", updated);
-                    getDate.add(date);
-                    String stateDate = date.put( "updated", updated );
-                    String dateStored= checkDate.getString( "storeDate","" );
-
-                    if (dateStored.equals( "" ))
-                    {
-                        checkDate.edit().putString( "storeDate", stateDate).apply();
-                        //return null;
-                    }
-                    else if (!stateDate.equals( dateStored )&& !stateDate.equals( "" ))//dateStored
-                    {
-                        checkDate.edit().putString( "storeDate", stateDate).apply();
-                        Log.e(TAG, "date: " + dateStored);
-                        Log.e(TAG, "date2: " + stateDate);
-                        sendNotification();//Call notification
-                        return null;
-                    }
-                    else
-                        Log.e(TAG, "updated json");
-                    return null;
-
-                } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),
-                                    "Json parsing error: " + e.getMessage(),
-                                    Toast.LENGTH_LONG)
-                                    .show();
-                        }
-                    });
-                }
-            }else {
-                Log.e(TAG, "Couldn't get json from server.");
-            }
-            return null;
-        }
-    }
-
-    //Notification
-    private void sendNotification() throws JSONException {
-        HttpHandler sh = new HttpHandler();
-        String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
-        JSONObject jsonObj = new JSONObject(jsonStrincidents0);
-        JSONArray data = jsonObj.getJSONArray("data");
-        int a=0;
-        JSONObject o = data.getJSONObject(a);
-        String name = o.getString( "name" );
-        String message = o.getString( "message" );
-        HashMap<String, String> date = new HashMap<>();
-        date.put("name", name);
-        date.put("message", message);
-        Log.e(TAG, "message: " + name);
-
-        Intent goState = new Intent(MainActivity.this, StateMessagesActivity.class);
-        PendingIntent launchStateMessages = PendingIntent.getActivity(MainActivity.this,0, goState, PendingIntent.FLAG_UPDATE_CURRENT);
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this)
-                        .setAutoCancel( true )
-                        .setOngoing(true)
-                        .setSmallIcon(R.drawable.ic_state)
-                        .setContentTitle( getString( R.string.NotificationTitle ) )
-                        .setContentText(name)//get text Title from json :-)
-                        .setContentInfo(message)//get text message from json :-)
-                        .setContentIntent(launchStateMessages);
-        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        mBuilder.setSound(alarmSound)
-                .setVibrate(new long[]{50,500,100,300,50,300})
-                .setLights(Color.MAGENTA, 3000, 3000);
-        NotificationManager mNotificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(001, mBuilder.build());
     }
 
     //show snackbar to avoid exit on backpress

@@ -79,8 +79,8 @@
     <string name="SpreadTheWordTxt">Vertel je vrienden en familie over Disroot! Waarom blogt je niet over jou ervaringen? We horen graag van je!</string>
     <string name="SpreadTheWordBtn">Deel de app</string>
     <string name="DisrootWeb">Disroot web</string>
-    <string name="FirstTitle">Ik vergat bijna</string>
-    <string name="FirstInfo">Je kan op elk pictogram lang drukken om jou extra informatie te tonen…</string>
+    <string name="FirstTitle">De laatste paar dingen!</string>
+    <string name="FirstInfo">&#8226; Je kan op elk pictogram lang drukken om jou extra informatie te tonen…&#8226; De app kan synchroniseren met de statuspagina van Disroot. Dit betekent dat u realtime updates ontvangt over issues, downtimes, gepland onderhoud en andere zaken die gepubliceerd worden via https://state.disroot.org\nWe raden aan om de batterijoptimalisatie uit te schakelen en de Disroot app op de achtergrond te laten draaien. Als u niet zeker bent, kunt u de instelling later altijd nog wijzigen vanuit het Disroot app menu.</string>
     <string name="DiasporaTitle">Diaspora* Instellingen</string>
     <string name="DiasporaInfo">Gedistribueerd en gedecentraliseerd sociaal netwerk. Plaatsen, delen, liken, gemeenschappen creëren.\n\nGebruikersnaam:\n jou_diaspora_gebruikersnaam@pod.disroot.org\n\nWachtwoord:\n jou_diaspora_wachtwoord</string>
     <string name="PadInfo">Met Etherpad schrijf artikelen, persberichten, to-do lijsten, etc. samen met vrienden, medestudenten of collega\'s, die allemaal op hetzelfde moment aan hetzelfde document werken.\nEr is geen registratie vereist.</string>
@@ -159,4 +159,7 @@
     <string name="action_notes">Notes</string>
     <string name="PadDialog">Om verder te gaan moet u eerst Padland installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
     <string name="do_you_want_to_exit">Will je de app verlaten?</string>
+    <string name="action_optimization">Batterij optimalisatie</string>
+    <string name="OptimizationTitle">Batterij optimalisatie!</string>
+    <string name="OptimizationInfo">Met deze update kan de app synchroniseren met de statuspagina van Disroot. Dit betekent dat u realtime updates ontvangt over issues, downtime, gepland onderhoud en andere zaken die gepubliceerd worden via https://state.disroot.org\nWe raden aan om de batterijoptimalisatie uit te schakelen en de Disroot app op de achtergrond te laten draaien. Als u niet zeker bent, kunt u de instelling later altijd nog wijzigen vanuit het Disroot app menu.</string>
 </resources>

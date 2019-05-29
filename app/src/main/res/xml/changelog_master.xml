@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+  <release version="1.2.0" versioncode="19" >
+      <change>Notifications works as a service now</change>
+      <change>Added shortcut to battery optimizations in menu</change>
+      <change>Prompt for battery optimization to give user choice on first launch</change>
+      <change>Launch status service on boot time when battery optimization is turned off</change>
+  </release>
+  <release version="1.1.5" versioncode="18" >
+      <change>Notifications works on Android 8 and higher now</change>
+      <change>Added Disroot purple light notification</change>
+      <change>Updated Serbian translation</change>
+  </release>
   <release version="1.1.4" versioncode="17" >
       <change>Fixed App closing when pressing go back</change>
       <change>Edited state error message</change>

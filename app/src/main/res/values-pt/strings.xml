@@ -36,11 +36,11 @@
     <string name="CloudInfoTitle">Definições Nextcloud</string>
     <string name="CloudInfo">Mantenha os seus dados sincronizados e seguros. Com o Nextcloud pode partilhar os seus ficheiros calendários, contactos e mais.\n\nHost:\n https://cloud.disroot.org\n\nNome de utilizador:\n O_seu_nome_de_utilizador_disroot\n\nPassword:\n a_sua_password_do_disroot.</string>
     <string name="WelcomeTitle">Bem Vindo</string>
-    <string name="WelcomeInfo">O Disroot é uma plataforma baseada nos princípios de liberdade, privacidade, federação e descentralização que fornece serviços online.\nEsta aplicação é como um Canivete Suiço para a plataforma Disroot, feito pela comunidade para a comunidade.\nSe não tem uma conta Disroot pode utilizar esta aplicação para aceder a todos os serviços do Disroot que não precisam de uma conta de utilizador:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requer uma conta apenas para o Diaspora)\n\nA aplicação pode pedir que instale outras aplicações adicionais. Nós recomendamos vivamente que instale o F-Droid - uma loja de aplicações livres e open source - porque nem todas as aplicações podem ser encontradas na Play Store Google  e o F-Droid é mais focado na privacidade (sem tracking, sem preciso criar conta de utilizador) pode descarregar o F-droid carregando no ícone F-droid.\n</string>
+    <string name="WelcomeInfo">O Disroot é uma plataforma baseada nos princípios de liberdade, privacidade, federação e descentralização que fornece serviços online.\nEsta aplicação é como um Canivete Suíço para a plataforma Disroot, feito pela comunidade para a comunidade.\nSe não tem uma conta Disroot pode utilizar esta aplicação para aceder a todos os serviços do Disroot que não precisam de uma conta de utilizador:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requer uma conta apenas para o Diaspora)\n\nA aplicação pode pedir que instale outras aplicações adicionais. Nós recomendamos vivamente que instale o F-Droid - uma loja de aplicações livres e open source - porque nem todas as aplicações podem ser encontradas na Play Store Google  e o F-Droid é mais focado na privacidade (sem tracking, sem preciso criar conta de utilizador) pode descarregar o F-droid carregando no ícone F-droid.\n</string>
 
     <string name="help">Ajuda</string>
     <string name="license">Licença</string>
-    <string name="action_settings">Defenições</string>
+    <string name="action_settings">Definições</string>
     <string name="licenseTitle">Licença</string>
     <string name="license_button">GNU LGPLv3.0 License</string>
     <!--Non translatable
@@ -78,8 +78,8 @@
     <string name="SpreadTheWordTxt">Conta aos teus amigos e famelga acerca do Disroot! Porque não escrever um post acerca da tua experiência com o Disroot? Adoraríamos ouvir da tua parte!</string>
     <string name="SpreadTheWordBtn">Partilhar a app</string>
     <string name="DisrootWeb">Disroot web</string>
-    <string name="FirstTitle">Quase que me esquecia</string>
-    <string name="FirstInfo">Podes carregar por alguns segundos em cada ícone para aparecer informação extra…</string>
+    <string name="FirstTitle">Quase que me esquecia</string><!-- need update -->
+    <string name="FirstInfo">Podes carregar por alguns segundos em cada ícone para aparecer informação extra…</string><!-- need update -->
     <string name="DiasporaTitle">Definições do Diaspora*</string>
     <string name="DiasporaInfo">Rede social Distribuída e Descentralizada. Postar, partilhar, criar comunidades.\n\nUsername:\n o_seu_nome_de_utilizador_no_diaspora@pod.disroot.org\n\nPassword:\n a_sua_password_diaspora</string>
     <string name="PadInfo">Com o Etherpad pode escrever artigos, comunicados de imprensa, listas de tarefas, etc. em conjunto com outras pessoas, amigos, colegas, todos a trabalhar no mesmo documento ao mesmo tempo.\nNão é necessário ter uma conta de utilizador para usar.</string>
@@ -157,4 +157,7 @@
     <string name="action_notes">Notes</string>
     <string name="PadDialog">To continue you need to install Padland first.\nPlease select install to continue with the installatin on F-Droid.</string>
     <string name="do_you_want_to_exit">do you want to exit?</string>
+    <string name="action_optimization">Battery optimization</string>
+    <string name="OptimizationTitle">Battery optimization!</string>
+    <string name="OptimizationInfo">With this update the app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
 </resources>
