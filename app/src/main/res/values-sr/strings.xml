@@ -79,8 +79,8 @@
     <string name="SpreadTheWordTxt">Obavestite prijatelje i porodicu o Disroot platformi! Zašto ne biste napisali blog o vašim iskustvima? Srdačno očekujemo vaše mišljenje!</string>
     <string name="SpreadTheWordBtn">Podelite aplikaciju</string>
     <string name="DisrootWeb">Disroot sajt</string>
-    <string name="FirstTitle">Umalo da zaboravim</string><!-- need update -->
-    <string name="FirstInfo">Duži pritisak na bilo koju ikonicu prikazaće dodatne informacije…</string><!-- need update -->
+    <string name="FirstTitle">Još nešto!</string><!-- need update -->
+    <string name="FirstInfo">&#8226; Duži pritisak na bilo koju ikonicu prikazaće dodatne informacije… \n\n&#8226; Aplikacija se može uskladiti sa statusnom stranicom Disroot sajta. To znači da ćete u realnom vremenu dobijati poruke o problemima, zastojima, zakazanom održavanju i sl. putem https://state.disroot.org\nPreporučujemo da isključite optimizaciju baterije i dozvolite aplikaciji da radi u pozadini. Ako niste sigurni, podešavanja možete izmeniti iz menija Disroot aplikacije. </string><!-- need update -->
     <string name="DiasporaTitle">Diaspora* podešavanja</string>
     <string name="DiasporaInfo">Raspodeljena i decentralizovana društvena mreža. Objavite, delite, stvarajte zajednice.\n\nKorisnik:\n vaše_diaspora_korisničko_ime@pod.disroot.org\n\nLozinka:\n vaša_diaspora_lozinka</string>
     <string name="PadInfo">Pomoću Etherpad-a pišite članke, medijske objave, podsetnike, itd. Zajedno sa prijateljima, kolegama sa fakulteta ili saradnicima, možete istovremeno raditi na određenom dokumentu.\nRegistracija nije potrebna.</string>
@@ -157,8 +157,8 @@
     <string name="NotesDialog">Za nastavak je potrebno instalirati aplikaciju Beleške (Notes).\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
     <string name="action_notes">Beleške</string>
     <string name="PadDialog">Za nastavak je potrebno instalirati aplikaciju Padland.\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
-    <string name="do_you_want_to_exit">do you want to exit?</string>
-    <string name="action_optimization">Battery optimization</string>
-    <string name="OptimizationTitle">Battery optimization!</string>
-    <string name="OptimizationInfo">With this update the app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
+    <string name="do_you_want_to_exit">Želite da izađete?</string>
+    <string name="action_optimization">Optimizacija baterije</string>
+    <string name="OptimizationTitle">Optimizacija baterije!</string>
+    <string name="OptimizationInfo">Ova verzija aplikacija donosi mogućnost sinhronizacije sa statusnom stranom Disroot sajta. To znači da ćete u realnom vremenu dobijati poruke o problemima, zastojima, zakazanom održavanju i sl. putem https://state.disroot.org\nPreporučujemo da isključite optimizaciju baterije i dozvolite aplikaciji da radi u pozadini. Ako niste sigurni, podešavanja možete izmeniti iz menija Disroot aplikacije.</string>
 </resources>
