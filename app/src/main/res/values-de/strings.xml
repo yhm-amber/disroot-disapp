@@ -23,7 +23,6 @@
     <string name="action_reload">neu laden</string>
 
 
-    <string name="action_options">Actions</string> //? something like functions?
     <string name="activity_main_share_info">Teile link informationen</string> //link info or link?
     <string name="view_loading_description">lädt…</string>
     <string name="global_ok">OK</string>
