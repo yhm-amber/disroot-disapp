@@ -5,6 +5,7 @@
       <change>Added shortcut to battery optimizations in menu</change>
       <change>Prompt for battery optimization to give user choice on first launch</change>
       <change>Launch status service on boot time when battery optimization is turned off</change>
+      <change>Added German translation</change>
   </release>
   <release version="1.1.5" versioncode="18" >
       <change>Notifications works on Android 8 and higher now</change>
