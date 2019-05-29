@@ -54,7 +54,7 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot zajednica (Disroot):</string>
     <string name="contributorsTitle">Saradnici</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot administrator\n\n<b> &#8226; antilopa:</b>\n Disroot administrator\n\n<b> &#8226; Massimiliano:</b>\n programer\n\n<b> &#8226; Fede:</b>\n saradnik\n\n<b> &#8226; Meaz:</b>\n saradnik\n\n<b> &#8226; maryjane:</b>\n saradnik\n\n<b> &#8226; userdebug:</b>\n saradnik\n\n<b> &#8226; ButterflyOfFire:</b>\n saradnik\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot administrator\n\n<b> &#8226; antilopa:</b>\n Disroot administrator\n\n<b> &#8226; Massimiliano:</b>\n programer\n\n<b> &#8226; Fede:</b>\n saradnik\n\n<b> &#8226; Meaz:</b>\n saradnik\n\n<b> &#8226; maryjane:</b>\n saradnik\n\n<b> &#8226; userdebug:</b>\n saradnik\n\n<b> &#8226; ButterflyOfFire:</b>\n saradnik\n\n<b> &#8226; jh:</b>\n saradnik\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Biblioteke treće strane</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
