@@ -96,21 +96,25 @@ public class StatusService extends Service {
                     String stateDate = date.put( "updated", updated );
                     String dateStored= checkDate.getString( "storeDate","" );
 
+                    assert dateStored != null;
                     if (dateStored.equals( "" ))
                     {
                         checkDate.edit().putString( "storeDate", stateDate).apply();
                         //return null;
                     }
-                    else if (!stateDate.equals( dateStored)&& !stateDate.equals( "" ))//dateStored
-                    {
-                        checkDate.edit().putString( "storeDate", stateDate).apply();
-                        Log.e(TAG, "date: " + dateStored);
-                        Log.e(TAG, "date2: " + stateDate);
-                        sendNotification();//Call notification
-                        return null;
+                    else {
+                        assert stateDate != null;
+                        if (!stateDate.equals( dateStored )&& !stateDate.equals( "" ))//dateStored
+                        {
+                            checkDate.edit().putString( "storeDate", stateDate).apply();
+                            Log.e(TAG, "date: " + dateStored);
+                            Log.e(TAG, "date2: " + stateDate);
+                            sendNotification();//Call notification
+                            return null;
+                        }
+                        else
+                            Log.e(TAG, "updated json(service)");
                     }
-                    else
-                        Log.e(TAG, "updated json(service)");
                     return null;
 
                 } catch (final JSONException e) {
@@ -142,6 +146,7 @@ public class StatusService extends Service {
         HashMap<String, String> date = new HashMap<>();
         date.put("name", name);
         date.put("message", message);
+        getDate.add(date);
         Log.e(TAG, "message: " + name);
 
         Intent goState = new Intent( StatusService.this, StateMessagesActivity.class);
