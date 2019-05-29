@@ -19,6 +19,10 @@ The app may require you to install additional apps. We highly recommend you inst
 * Dutch
 * Portuguese
 * Serbian
+* German
+
+<b>***New***</b>
+The app runs a background service to notify on new Disroot state messages. If you want to take full advantage of this feature, you need to disable battery optimization for the app.
 
 <b>Support the project:</b>
  ✋ Join discussion on <a href="xmpp:disroot@chat.disroot.org">xmpp:disroot@chat.disroot.org</a>
