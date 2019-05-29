@@ -13,7 +13,7 @@
     <string name="action_upload">Téléverser</string>
     <string name="action_searx">Searx</string>
     <string name="action_poll">Sondage</string>
-    <string name="action_board">Tableau de projet</string>
+    <string name="action_board">Taiga</string>
     <string name="action_user">Mot de passe</string>
     <string name="action_state">État des services</string>
     <string name="action_howto">Tutoriels</string>

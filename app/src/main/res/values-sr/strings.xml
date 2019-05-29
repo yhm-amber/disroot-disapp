@@ -12,7 +12,7 @@
     <string name="action_upload">Otpremi</string>
     <string name="action_searx">Searx</string>
     <string name="action_poll">Polls</string>
-    <string name="action_board">Upravljanje projektima</string>
+    <string name="action_board">Taiga</string>
     <string name="action_user">Lozinka</string>
     <string name="action_state">Stanje servisa</string>
     <string name="action_howto">Uputstva</string>

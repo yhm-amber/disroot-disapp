@@ -12,7 +12,7 @@
     <string name="action_upload">Upload</string>
     <string name="action_searx">Searx</string>
     <string name="action_poll">Umfrage</string> //or should not be translated?
-    <string name="action_board">Board</string> // would name that KANBAN or TAIGA
+    <string name="action_board">Taiga</string> // would name that KANBAN or TAIGA
     <string name="action_user">Passwort</string>
     <string name="action_state">Status</string>
     <string name="action_howto">How to</string> //best trans will be tutorial, but inconsistent then
