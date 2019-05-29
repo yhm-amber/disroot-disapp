@@ -12,7 +12,7 @@
     <string name="action_upload">Subida</string>
     <string name="action_searx">Búsqueda</string>
     <string name="action_poll">Encuestas</string>
-    <string name="action_board">Tablero de Proyecto</string>
+    <string name="action_board">Taiga</string>
     <string name="action_user">Contraseña</string>
     <string name="action_state">Estado</string>
     <string name="action_howto">Manuales</string>
