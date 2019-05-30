@@ -19,7 +19,7 @@ public class Constants {
     public static final String URL_DisApp_USER = "https://user.disroot.org";
     public static final String URL_DisApp_HOWTO = "https://howto.disroot.org";
     public static final String URL_DisApp_K9HELP = "https://howto.disroot.org/en/communication/email/clients/mobile/k9";
-    public static final String URL_DisApp_XMPPHELP = "https://howto.disroot.org/en/communication/chat/mobile/android/conversation";
+    public static final String URL_DisApp_XMPPHELP = "https://howto.disroot.org/en/communication/chat/mobile/android/conversations";
     public static final String URL_DisApp_SEARXHELP = "https://disroot.org/services/search";
     public static final String URL_DisApp_STATEXMPP = "xmpp:state@chat.disroot.org?join";
     public static final String URL_DisApp_STATEMATRIX = "https://matrix.to/#/#state:disroot.org";
