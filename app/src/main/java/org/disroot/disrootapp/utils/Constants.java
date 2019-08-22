@@ -18,8 +18,8 @@ public class Constants {
     public static final String URL_DisApp_BOARD = "https://board.disroot.org";
     public static final String URL_DisApp_USER = "https://user.disroot.org";
     public static final String URL_DisApp_HOWTO = "https://howto.disroot.org";
-    public static final String URL_DisApp_K9HELP = "https://howto.disroot.org/en/communication/email/clients/mobile/k9";
-    public static final String URL_DisApp_XMPPHELP = "https://howto.disroot.org/en/communication/chat/mobile/android/conversations";
+    public static final String URL_DisApp_K9HELP = "https://howto.disroot.org/en/tutorials/email/clients/mobile/k9";
+    public static final String URL_DisApp_XMPPHELP = "https://howto.disroot.org/en/tutorials/chat/mobile/android/conversations";
     public static final String URL_DisApp_SEARXHELP = "https://disroot.org/services/search";
     public static final String URL_DisApp_STATEXMPP = "xmpp:state@chat.disroot.org?join";
     public static final String URL_DisApp_STATEMATRIX = "https://matrix.to/#/#state:disroot.org";
@@ -37,14 +37,14 @@ public class Constants {
     public static final String URL_BUGS = "https://git.fosscommunity.in/disroot/disapp/issues";
     public static final String URL_XMPP = "xmpp:disroot@chat.disroot.org?join";
     public static final String URL_SUPPORT = "mailto:support@disroot.org";
-    public static final String URL_DisApp_CLOUDHELP = "https://howto.disroot.org/en/cloud/clients/mobile/android/nextcloud-app";
+    public static final String URL_DisApp_CLOUDHELP = "https://howto.disroot.org/en/tutorials/cloud/clients/mobile/android";
     public static final String URL_DisApp_DIAHELP = "https://disroot.org/services/diaspora";
-    public static final String URL_DisApp_FORUMHELP = "https://howto.disroot.org/en/communication/forum";
-    public static final String URL_DisApp_PADHELP = "https://howto.disroot.org/en/projects_office/pads/etherpad";
-    public static final String URL_DisApp_CALCHELP = "https://howto.disroot.org/en/projects_office/pads/ethercalc";
-    public static final String URL_DisApp_BINHELP = "https://howto.disroot.org/en/projects_office/bin";
-    public static final String URL_DisApp_UPLOADHELP = "https://howto.disroot.org/en/projects_office/lufi";
-    public static final String URL_DisApp_POLLHELP = "https://howto.disroot.org/en/projects_office/polls";
-    public static final String URL_DisApp_BOARDHELP = "https://howto.disroot.org/en/cloud/apps/notes/mobile";
-    public static final String URL_DisApp_NOTESHELP = "https://howto.disroot.org/en/nextcloud/sync-with-your-cloud/android/using-notes";
+    public static final String URL_DisApp_FORUMHELP = "https://howto.disroot.org/en/tutorials/forum";
+    public static final String URL_DisApp_PADHELP = "https://howto.disroot.org/en/tutorials/office/pads/padland";
+    public static final String URL_DisApp_CALCHELP = "https://howto.disroot.org/en/tutorials/office/pads/ethercalc";
+    public static final String URL_DisApp_BINHELP = "https://howto.disroot.org/en/tutorials/office/bin";
+    public static final String URL_DisApp_UPLOADHELP = "https://howto.disroot.org/en/tutorials/office/lufi";
+    public static final String URL_DisApp_POLLHELP = "https://howto.disroot.org/en/tutorials/office/polls";
+    public static final String URL_DisApp_BOARDHELP = "https://howto.disroot.org/en/tutorials/project_board;
+    public static final String URL_DisApp_NOTESHELP = "https://howto.disroot.org/en/tutorials/cloud/clients/mobile/android/using-notes";
 }
