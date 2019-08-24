@@ -45,6 +45,6 @@ public class Constants {
     public static final String URL_DisApp_BINHELP = "https://howto.disroot.org/en/tutorials/office/bin";
     public static final String URL_DisApp_UPLOADHELP = "https://howto.disroot.org/en/tutorials/office/lufi";
     public static final String URL_DisApp_POLLHELP = "https://howto.disroot.org/en/tutorials/office/polls";
-    public static final String URL_DisApp_BOARDHELP = "https://howto.disroot.org/en/tutorials/project_board;
+    public static final String URL_DisApp_BOARDHELP = "https://howto.disroot.org/en/tutorials/project_board";
     public static final String URL_DisApp_NOTESHELP = "https://howto.disroot.org/en/tutorials/cloud/clients/mobile/android/using-notes";
 }

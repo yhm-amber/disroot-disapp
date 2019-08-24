@@ -139,7 +139,7 @@
     <string name="Operational">Operationeel</string>
     <string name="MajorOutage">Ernstige storing</string>
     <string name="EmailService">Email Service</string>
-    <string name="LastUpdated">"Laatst geupdate: \"</string>
+    <string name="LastUpdated">Laatst geupdate: \"</string>
     <string name="WebmailService">WebMail Service</string>
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Prestatieproblemen</string>

@@ -138,7 +138,7 @@
     <string name="Operational">Operativni</string>
     <string name="MajorOutage">Ozbiljan zastoj</string>
     <string name="EmailService">Usluga E-pošte</string>
-    <string name="LastUpdated">Datum nadogradnje: \</string>
+    <string name="LastUpdated">Datum nadogradnje: \"</string>
     <string name="WebmailService">Usluga Web pošte</string>
     <string name="Cloud">Oblak</string>
     <string name="PerformanceIssues">Problemi sa performansama</string>

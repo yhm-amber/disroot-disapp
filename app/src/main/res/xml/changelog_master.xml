@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="1.2.1" versioncode="20" >
+        <change>Updated the need more help links to the actual How to's</change>
+        <change>Added some screenshots in F-Droid app description</change>
+        <change>Added It, Nl translations of the description in F-Droid</change>
+    </release>
   <release version="1.2.0" versioncode="19" >
       <change>Notifications works as a service now</change>
       <change>Added shortcut to battery optimizations in menu</change>

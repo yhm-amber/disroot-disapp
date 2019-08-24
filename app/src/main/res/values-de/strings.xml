@@ -177,7 +177,7 @@
     <string name="Operational">Voll betriebsfähig</string>
     <string name="MajorOutage">Schwerer Ausfall</string>
     <string name="EmailService">Email Service</string>
-    <string name="LastUpdated">"Letztes update: \"</string>
+    <string name="LastUpdated">Letztes update: \"</string>
     <string name="WebmailService">WebMail Service</string>
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Performance Probleme</string>

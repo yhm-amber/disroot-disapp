@@ -143,7 +143,7 @@ public class StateActivity extends AppCompatActivity {
                         String name = c.getString("name");
                         String description = c.getString("description");
                         String updated_at = c.getString("updated_at");
-                        String lastUpdated = "Last Updated: " + updated_at;
+                        String lastUpdated = "Last Updated: " + updated_at + '"';
                         String status_name = c.getString("status_name");
 
                         // tmp hash map for single service

@@ -167,7 +167,7 @@
     <string name="Operational">Opérationnel</string>
     <string name="MajorOutage">Panne majeure</string>
     <string name="EmailService">Service d\'email</string>
-    <string name="LastUpdated">Dernière mise à jour: \</string>
+    <string name="LastUpdated">Dernière mise à jour: \"</string>
     <string name="WebmailService">Service WebMail</string>
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Problèmes de performance</string>

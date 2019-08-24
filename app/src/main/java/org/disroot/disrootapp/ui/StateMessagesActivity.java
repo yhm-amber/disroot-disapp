@@ -135,9 +135,9 @@ public class StateMessagesActivity extends AppCompatActivity {
                         String name = c.getString("name");
                         String message = c.getString("message");
                         String scheduled_at = c.getString("scheduled_at");
-                        String scheduledAt = "Scheduled at: " + scheduled_at;
+                        String scheduledAt = "Scheduled at: " + '"' + scheduled_at + '"';
                         String updated_at = c.getString("updated_at");
-                        String lastUpdated = "Last Updated: " + updated_at;
+                        String lastUpdated = "Last Updated: " + updated_at + '"';
                         String human_status = c.getString("human_status");
 
                         // tmp hash map for single service

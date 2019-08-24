@@ -138,7 +138,7 @@
     <string name="Operational">Operativo</string>
     <string name="MajorOutage">Interrupción mayor</string>
     <string name="EmailService">Servicio de correo</string>
-    <string name="LastUpdated">Última actualización: \</string>
+    <string name="LastUpdated">Última actualización: \"</string>
     <string name="WebmailService">Servicio de WebMail</string>
     <string name="Cloud">Nube</string>
     <string name="PerformanceIssues">Problemas de desempeño</string>
