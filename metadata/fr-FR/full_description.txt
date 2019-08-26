@@ -1,0 +1,29 @@
+<b>Disroot</b> est une plateforme fournissant des services en ligne basés sur les principes de liberté, de confidentialité, de fédération et de décentralisation.
+Cette application est comme votre couteau suisse sur la plateforme Disroot, faite par la communauté pour la communauté.
+Si vous n'avez pas de compte Disroot, vous pouvez toujours utiliser cette application pour accéder à tous les services Disroot qui ne nécessitent pas de compte :
+* Etherpad
+* Ethercalc
+* Private bin
+* Upload (Téléverser)
+* Poll (Sondage)
+* Searx
+* Diaspora* (nécessite un compte Diaspora uniquement)
+
+L'application peut vous demander d'installer des applications supplémentaires. Nous vous recommandons fortement d'installer F-Droid - un magasin d'applications gratuit et open source - car toutes les applications ne peuvent pas être trouvées sur le Play Store de Google, et F-Droid est plus orienté vers la confidentialité (aucun suivi, aucun compte nécessaire) vous pouvez le télécharger[ici](https://f-droid.org/FDroid.apk).
+
+<b>Langues supportées:</b>
+* Anglais
+* Espagnol
+* Français
+* Italien
+* Néerlandais
+* Portugais
+* Serbe
+* Allemand
+
+<b>***Nouveau***</b>
+L'application exécute un service d'arrière-plan pour notifier les nouveaux messages d'état Disroot. Si vous voulez profiter pleinement de cette fonctionnalité, vous devez désactiver l'optimisation de la batterie pour l'application.
+
+<b>Soutenir le projet:</b>
+ ✋ Joignez-vous à la discussion sur <a href="xmpp:disroot@chat.disroot.org">xmpp:disroot@chat.disroot.org</a>
+ ✋ Connectez-vous à nous <a href="https://hub.disroot.org/channel/disroot</a>
