@@ -8,14 +8,14 @@
     <string name="action_chat">Chat</string>
     <string name="action_pad">Etherpad</string>
     <string name="action_calc">EtherCalc</string>
-    <string name="action_bin">Private bin</string>
-    <string name="action_upload">Subida</string>
+    <string name="action_bin">Pastebin</string>
+    <string name="action_upload">Subir</string>
     <string name="action_searx">Búsqueda</string>
     <string name="action_poll">Encuestas</string>
-    <string name="action_board">Taiga</string>
+    <string name="action_board">Tablero</string>
     <string name="action_user">Contraseña</string>
     <string name="action_state">Estado</string>
-    <string name="action_howto">Manuales</string>
+    <string name="action_howto">Guías</string>
 
     <string name="action_about">Acerca de</string>
     <string name="action_exit">Salir</string>
@@ -35,7 +35,7 @@
     <string name="CloudInfoTitle">Configuración de Nextcloud:</string>
     <string name="CloudInfo">Sincroniza y comparte tus archivos, calendarios, contactos y más.\n\nHost:\n https://cloud.disroot.org\n\nUsuario: tu_usuario_de_disroot\nContraseña:tu_contraseña_de_Disroot.</string>
     <string name="WelcomeTitle">Bienvenid@</string>
-    <string name="WelcomeInfo">Disroot es una plataforma que provee servicios en línea basados en los principios de libertad, privacidad, federación y descentralización.\nEsta aplicación es como la navaja suiza de la plataforma, hecha por la comunidad, para la comunidad.\nSi no tienes una cuenta de Disroot, igual puedes usarla para acceder a todos los servicios de Disroot que no requieran de una:\nEtherpad, Ethercalc, Private bin, Upload, Encuentas, Searx y Diaspora* (requiere tener cuenta solo de Diaspora*)\nLa aplicación podría solicitarte la instalación de otras adicionales, y no todas pueden encontrarse en la Tienda de Aplicaciones. Nosotros recomendamos instalar la tienda F-Droid. Si no la tienes, puedes descargarla tocando el logo de F-Droid.\n</string>
+    <string name="WelcomeInfo">Disroot es una plataforma que provee servicios en línea basados en los principios de libertad, privacidad, federación y descentralización.\nEsta aplicación es como la navaja suiza de la plataforma, hecha por la comunidad, para la comunidad.\nSi no tienes una cuenta de Disroot, igual puedes usarla para acceder a aquellos servicios que no requieran de una:\nEtherpad, Ethercalc, Privatebin, Upload, Encuentas, Searx y Diaspora* (requiere tener cuenta solo de Diaspora*)\nLa aplicación podría solicitarte la instalación de otras adicionales, y no todas pueden encontrarse en la Tienda de Aplicaciones. Nosotros recomendamos instalar la tienda F-Droid. Si no la tienes, puedes descargarla tocando el logo de F-Droid.\n</string>
 
 
     <string name="help">Ayuda</string>
@@ -68,7 +68,7 @@
     <string name="ContributeText">La aplicación de Disroot es un desarrollo libre, en el sentido de Libertad, basada en las ideas de la Fundación Disroot. Si quieres contruir, ¡adelante! En este momento, somos un equipo muy pequeño, así que ¡apreciamos profundamente cualquier tipo de ayuda!</string>
     <string name="ContributeBtn">Código fuente</string>
     <string name="Translate">Traducciones</string>
-    <string name="TranslateText">¿La aplicación no está disponible en tu idioma? ¡Puedes cambiar eso! Podrías ayudarnos, traduciéndola.</string>
+    <string name="TranslateText">¿La aplicación no está disponible en tu idioma? ¡Puedes cambiar eso! Podrías ayudarnos a traducirla.</string>
     <string name="TranslateBtn">Ayudar a traducir</string>
     <string name="Feedback">Comentarios</string>
     <string name="FeedbackText">La aplicación de Disroot está aún en desarrollo, así que si tienes sugerencias o cualquier comentario, por favor, infórmanos.</string>
@@ -90,23 +90,23 @@
     <string name="CalcTitle">EtherCalc: Trabaja colaborativemente en inventarios, formularios de encuestas, gestión de listas, sesiones de lluvia de ideas y más.</string>
     <string name="BinTitle">PrivateBin</string>
     <string name="BinInfo">Pastebin de código abierto en línea y tablero de discusión. La información es cifrada/descifrada en el navegador, de esa manera el servidor tiene cero conocimiento de los archivos alojados. Solo pega un texto, haz click en “Enviar”, establece la fecha de vencimiento (entre otras funcionalidades) y comparte la dirección URL.</string>
-    <string name="UploadTitle">Subida (Impulsado por Lufi)</string>
+    <string name="UploadTitle">Subir (Impulsado por Lufi)</string>
     <string name="UploadInfo">Upload es un software de hospedaje de archivos. Almacena temporalmente archivos así puedes compartirlos con otros utilizando un link. Para proteger la privacidad, todos los archivos son cifrados en el navegador mismo.</string>
     <string name="SearxTitle">Búsqueda</string>
     <string name="SearxInfo"> Searx es un motor metabuscador, que agrupa los resultados de otros motores de búsqueda sin almacenar información sobre sus usuarios.</string>
     <string name="PollsTitle">Encuestas</string>
     <string name="PollsInfo">Framadate es un servicio en línea para planificar un encuentro o tomar decisiones colectivas de manera sencilla y rápida. No es necesario registrarse.</string>
-    <string name="BoardTitle">Tablero de Gestión de Proyecto</string>
-    <string name="BoardInfo">Taiga es una herramienta de gestión de proyecto, desarrollada para programadores, diseñadores y startups cuyo funcionamiento pretende ser metodológicamente ágil. Crea un proyecto, invita a los miembros de tu grupo, planeen tareas y ponganlas en el tablero. Resuelve quién será responsable de las tareas, sigue los progresos, comenta, decide y ve tu proyecto crecer.</string>
+    <string name="BoardTitle">Tablero de Gestión de Proyectos</string>
+    <string name="BoardInfo">Taiga es una herramienta de gestión de proyectos, desarrollada para programadores, diseñadores y startups cuyo funcionamiento pretende ser metodológicamente ágil. Crea un proyecto, invita a los miembros de tu grupo, planeen tareas y ponganlas en el tablero. Resuelve quién será responsable de las tareas, sigue los progresos, comenta, decide y ve tu proyecto crecer.</string>
     <string name="UserTitle">Autoservicio de Contraseña</string>
     <string name="UserInfo">Utiliza nuestro Autoservicio de Contraseña para gestionar la información de tu usuario y contraseñas.</string>
     <string name="StateTitle">Estado: estado actual de los servicios de Disroot</string>
     <string name="StateInfo">Aquí puedes ver si alguno de los servicios tiene un problema, si hay inconvenientes de rendimiento, así como también conocer el calendario de mantenimiento en caso que algunos servicios puedan no estar disponibles.</string>
     <string name="state_help">Estado de XMPP</string>
-    <string name="HowToTitle">Página de Manuales</string>
-    <string name="HowToInfo">Nuestra página con manuales y tutoriales para ayudarte a que no te pierdas entre los varios servicios de Disroot.</string>
-    <string name="AboutTitle">Información Sobre</string>
-    <string name="AboutInfo">Esta es la página de información Sobre la aplicación</string>
+    <string name="HowToTitle">Página de Guías</string>
+    <string name="HowToInfo">Nuestra página con guías y tutoriales para ayudarte a que no te pierdas entre los varios servicios de Disroot.</string>
+    <string name="AboutTitle">Información sobre</string>
+    <string name="AboutInfo">Esta es la página de información sobre la aplicación</string>
     <string name="ForumTitle">Foro: crea tu plataforma de comunicaciones</string>
     <string name="ForumInfo">Discourse es una aproximación a los foros de discusión moderna y de código abierto. Ofrece todo lo que tu comunidad, grupo o colectivo necesita para crear su propia plataforma de comunicación, tanto pública como privada.</string>
     <string name="LogoTitle">¿En serio intentaste una presión larga en el logo?</string>
@@ -117,7 +117,7 @@
     <string name="matrixBtn"> \ \ &#8226; Estado de Matrix</string>
     <string name="SocialBtn"> \ \ &#8226; Estado de Hubzilla/Diaspora*/Mastodon</string>
     <string name="NewsBtn"> \ \ &#8226; Actualización de estados por email</string>
-    <string name="RssBtn">We recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
+    <string name="RssBtn">Recomendamos apagar la optimización de batería y permitir a la aplicación de Disroot correr en segundo plano. Si no estás seguro, siempre puedes volver a cambiar la configuración desde el menu de la aplicación de Disroot.</string>
     <string name="ChooseChatTitle">¡Tienes dos clientes XMPP instalados!</string>
     <string name="ChooseChat">Por favor, elige el cliente que quieres usar para Disroot</string>
     <string name="Remember">Recordar mi elección</string>
@@ -127,7 +127,7 @@
     <string name="ForgetTitle">¡Olvidar el cliente de chat!</string>
     <string name="title_activity_tap">TapActivity</string>
     <string name="action_clear_cookies">Limpiar cookies</string>
-    <string name="DiaInstallTitle">Requerimiento de instalación</string>
+    <string name="DiaInstallTitle">Solicitud de instalación</string>
     <string name="DiasporaDialog">Para continuar, primero necesitas instalar Dandelion.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
     <string name="global_cancel">Cancelar</string>
     <string name="global_install">Instalar</string>
