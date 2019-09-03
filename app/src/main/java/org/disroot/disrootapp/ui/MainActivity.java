@@ -666,7 +666,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             return;
         }
 
-        if (!firstStart.getBoolean("update", false)&&info.firstInstallTime != info.lastUpdateTime) {
+        if (!firstStart.getBoolean("update", false)) {
             showOptimzationInfo();
             firstStart.edit().putBoolean("update", true).apply();
             return;
