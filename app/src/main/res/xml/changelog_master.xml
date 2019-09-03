@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+  <release version="1.2.2" versioncode="21" >
+      <change>Removed battery optimization promt for updates</change>
+  </release>
     <release version="1.2.1" versioncode="20" >
         <change>Updated the need more help links to the actual How to's</change>
         <change>Added some screenshots in F-Droid app description</change>
