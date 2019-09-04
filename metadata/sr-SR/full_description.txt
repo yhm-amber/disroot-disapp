@@ -9,7 +9,7 @@ Ako nemate nalog na Disroot platformi, možete koristiti ovu aplikaciju za prist
 * Searx
 * Diaspora* (potreban zaseban Diaspora nalog)
 
-Ova aplikacija možda će zahtevati instalaciju dodatnih aplikacija. Preporučujemo da instalirate F-Droid, besplatnu prodavnicu otvorenog koda, jer pojedine aplikacije nisu dostupne na Play prodavnici, a pritom F-Droid nudi više privatnosti (nema praćenja, nije potreban nalog).[Ovde](https://f-droid.org/FDroid.apk).
+Ova aplikacija možda će zahtevati instalaciju dodatnih aplikacija. Preporučujemo da instalirate F-Droid, besplatnu prodavnicu otvorenog koda, jer pojedine aplikacije nisu dostupne na Play prodavnici, a pritom F-Droid nudi više privatnosti (nema praćenja, nije potreban nalog). <a href="https://f-droid.org/FDroid.apk">Ovde</a>.
 
 <b>Supported languages:</b>
 * English
@@ -26,4 +26,4 @@ Aplikacija pokreće pozadinski servis za obaveštavanje o stanju Disroot usluga.
 
 <b>Podržite projekat:</b>
  ✋ Pridružite se diskusiji na <a href="xmpp:disroot@chat.disroot.org">xmpp:disroot@chat.disroot.org</a>
- ✋ Povežite se s nama <a href="https://hub.disroot.org/channel/disroot</a>
+ ✋ Povežite se s nama <a href="https://hub.disroot.org/channel/disroot">https://hub.disroot.org/channel/disroot</a>

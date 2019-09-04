@@ -9,7 +9,7 @@ If you don't have a Disroot account you can still use this  app to access all th
 * Searx
 * Diaspora* (requires a Diaspora only account)
 
-The app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google's Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it [here](https://f-droid.org/FDroid.apk).
+The app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google's Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it <a href="https://f-droid.org/FDroid.apk">here</a>.
 
 <b>Supported languages:</b>
 * English
@@ -26,4 +26,4 @@ The app runs a background service to notify on new Disroot state messages. If yo
 
 <b>Support the project:</b>
  ✋ Join discussion on <a href="xmpp:disroot@chat.disroot.org">xmpp:disroot@chat.disroot.org</a>
- ✋ Connect with us <a href="https://hub.disroot.org/channel/disroot</a>
+ ✋ Connect with us <a href="https://hub.disroot.org/channel/disroot">https://hub.disroot.org/channel/disroot</a>
