@@ -9,7 +9,7 @@ Als u geen Disroot account heeft kunt u deze app nog steeds gebruiken om toegang
 * Searx
 * Diaspora* (vereist een Diaspora account)
 
-Het kan nodig zijn om extra apps te installeren. Wij raden u ten zeerste aan F-Droid te installeren - een gratis en open source app marktplaats - omdat niet alle apps kunnen worden gevonden op Google's Play Store en F-Droid is meer privacy georiënteerd (geen tracking, geen account nodig) kunt u het downloaden [hier](https://f-droid.org/FDroid.apk).
+Het kan nodig zijn om extra apps te installeren. Wij raden u ten zeerste aan F-Droid te installeren - een gratis en open source app marktplaats - omdat niet alle apps kunnen worden gevonden op Google's Play Store en F-Droid is meer privacy georiënteerd (geen tracking, geen account nodig) kunt u het downloaden <a href="https://f-droid.org/FDroid.apk">hier</a>.
 
 <b>Ondersteunde talen:</b>
 * Engels
@@ -26,4 +26,4 @@ De app draait een achtergronddienst om u op de hoogte te stellen van nieuwe Disr
 
 <b>Steun het project:</b>
  ✋ Neem deel aan de discussie op <a href="xmpp:disroot@chat.disroot.org">xmpp:disroot@chat.disroot.org</a>
- ✋ Verbind met ons <a href="https://hub.disroot.org/channel/disroot</a>
+ ✋ Verbind met ons <a href="https://hub.disroot.org/channel/disroot">https://hub.disroot.org/channel/disroot</a>
