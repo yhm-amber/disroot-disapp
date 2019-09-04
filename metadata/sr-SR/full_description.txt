@@ -1,0 +1,29 @@
+<b>Disroot</b> platforma obezbeđuje internet usluge zasnovane na principima slobode, privatnosti, federacije i decentralizacije.
+Ova aplikacija je višenamenska alatka za Disroot platformu, koju su članovi zajednice napravili za zajednicu.
+Ako nemate nalog na Disroot platformi, možete koristiti ovu aplikaciju za pristup svim Disroot uslugama za koje nije potreban nalog:
+* Etherpad
+* Ethercalc
+* Private bin
+* Upload
+* Poll
+* Searx
+* Diaspora* (potreban zaseban Diaspora nalog)
+
+Ova aplikacija možda će zahtevati instalaciju dodatnih aplikacija. Preporučujemo da instalirate F-Droid, besplatnu prodavnicu otvorenog koda, jer pojedine aplikacije nisu dostupne na Play prodavnici, a pritom F-Droid nudi više privatnosti (nema praćenja, nije potreban nalog).[Ovde](https://f-droid.org/FDroid.apk).
+
+<b>Supported languages:</b>
+* English
+* Spanish
+* French
+* Italian
+* Dutch
+* Portuguese
+* Serbian
+* German
+
+<b>***Novo***</b>
+Aplikacija pokreće pozadinski servis za obaveštavanje o stanju Disroot usluga. Ako želite to iskoristiti na pravi način, morate isključiti optimizaciju baterije za ovu aplikaciju.
+
+<b>Podržite projekat:</b>
+ ✋ Pridružite se diskusiji na <a href="xmpp:disroot@chat.disroot.org">xmpp:disroot@chat.disroot.org</a>
+ ✋ Povežite se s nama <a href="https://hub.disroot.org/channel/disroot</a>
