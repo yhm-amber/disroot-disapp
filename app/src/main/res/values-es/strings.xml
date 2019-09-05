@@ -54,12 +54,12 @@
     <string name="disrootUrl"><a href = "https://disroot.org">https://disroot.org</a></string>
     <string name="disroot"> * Comunidad de Disroot (Disroot):</string>
     <string name="contributorsTitle">Colaboradores</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n administrador Disroot\n\n<b> &#8226; antilopa:</b>\n administradora Disroot\n\n<b> &#8226; Massimiliano:</b>\n  Desarrollador\n\n<b> &#8226; Fede:</b>\n Contribuyente de contenido\n\n<b> &#8226; Meaz:</b>\n Contribuyente de contenido\n\n<b> &#8226; maryjane:</b>\n Contribuyente de contenido\n\n<b> &#8226; userdebug:</b>\n Contribuyente de contenido\n\n<b> &#8226; ButterflyOfFire:</b>\n Contribuyente de contenido\n\n<b> &#8226; jh:</b>\n Contribuyente de contenido\n\n</string>
+    <string name="contributors"><b> &#8226; muppeth:</b>\n administrador Disroot\n\n<b> &#8226; antilopa:</b>\n administradora Disroot\n\n<b> &#8226; Massimiliano:</b>\n  Desarrollador\n\n<b> &#8226; Fede:</b>\n Contribuyente de contenido\n\n<b> &#8226; Meaz:</b>\n Contribuyente de contenido\n\n<b> &#8226; maryjane:</b>\n Contribuyente de contenido\n\n<b> &#8226; userdebug:</b>\n Contribuyente de contenido\n\n<b> &#8226; ButterflyOfFire:</b>\n Contribuyente de contenido\n\n<b> &#8226; jh:</b>\n Contribuyente de contenido\n\n<b> &#8226; Shadowsword:</b>\n Contribuyente de contenido\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librerías de Terceros</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
     <string name="misc">Misceláneas</string>
-    <string name="miscDio">Utilizamos Diolinx como base para la creación de esta aplicación. Puedes checkearla, también es software libre.</string>
+    <string name="miscDio">Utilizamos Diolinx como base para la creación de esta aplicación. Puedes chequearla, también es software libre.</string>
     <string name="miscDioBtn">Más info</string>
     <string name="AppSection">Aplicación</string>
     <string name="AppVersion">Versión de la App: %1$s</string>
@@ -104,7 +104,7 @@
     <string name="StateInfo">Aquí puedes ver si alguno de los servicios tiene un problema, si hay inconvenientes de rendimiento, así como también conocer el calendario de mantenimiento en caso que algunos servicios puedan no estar disponibles.</string>
     <string name="state_help">Estado de XMPP</string>
     <string name="HowToTitle">Página de Guías</string>
-    <string name="HowToInfo">Nuestra página con guías y tutoriales para ayudarte a que no te pierdas entre los varios servicios de Disroot.</string>
+    <string name="HowToInfo">Nuestra página con guías y tutoriales para ayudarte a no perderte entre los varios servicios de Disroot.</string>
     <string name="AboutTitle">Información sobre</string>
     <string name="AboutInfo">Esta es la página de información sobre la aplicación</string>
     <string name="ForumTitle">Foro: crea tu plataforma de comunicaciones</string>
@@ -156,7 +156,7 @@
     <string name="action_notes">Notes</string>
     <string name="NotesDialog">Para continuar, primero necesitas instalar Notas.\nPor favor, selecciona Instalar para continuar con la instalación desde F-Droid.</string>
     <string name="PadDialog">Para continuar, primero necesitas instalar Padland.\nPor favor, selecciona Instalar para continuar desde F-Droid.</string>
-    <string name="do_you_want_to_exit">do you want to exit?</string>
+    <string name="do_you_want_to_exit">¿Quieres salir?</string>
     <string name="action_optimization">Optimización de la batería</string>
     <string name="OptimizationTitle">Optimización de la batería!</string>
     <string name="OptimizationInfo">Con esta nueva versión la aplicación puede sincronizar con la página de estado de Disroot. Esto significa que recibirás actualizaciones en tiempo real sobre inconvenientes, caídas, mantenimientos programados y otros que fueran publicados a través de https://state.disroot.org\nRecomendamos apagar la optimización de batería y permitir a la aplicación de Disroot correr en segundo plano. Si no estás seguro, siempre puedes volver a cambiar la configuración desde el menu de la aplicación de Disroot.</string>
