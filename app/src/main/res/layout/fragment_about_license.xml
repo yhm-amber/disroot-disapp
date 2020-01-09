@@ -176,6 +176,7 @@
                     android:layout_marginBottom="8dp"/>
 
                 <TextView
+                    android:id="@+id/ThirdParty"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

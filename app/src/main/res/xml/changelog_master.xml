@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="1.2.3" versioncode="22" >
+        <change>Cleaned up code for better maintenance</change>
+        <change>Made Third party links klickable</change>
+        <change>Made application info fully translatable</change>
+        <change>Made Device info cully translatable</change>
+    </release>
   <release version="1.2.2" versioncode="21" >
       <change>Removed battery optimization promt on updates</change>
       <change>Corrected links in description in F-droid</change>

@@ -161,4 +161,8 @@
     <string name="action_optimization">Batterij optimalisatie</string>
     <string name="OptimizationTitle">Batterij optimalisatie!</string>
     <string name="OptimizationInfo">Met deze update kan de app synchroniseren met de statuspagina van Disroot. Dit betekent dat u realtime updates ontvangt over issues, downtime, gepland onderhoud en andere zaken die gepubliceerd worden via https://state.disroot.org\nWe raden aan om de batterijoptimalisatie uit te schakelen en de Disroot app op de achtergrond te laten draaien. Als u niet zeker bent, kunt u de instelling later altijd nog wijzigen vanuit het Disroot app menu.</string>
+    <string name="id">id:</string>
+    <string name="version">App version:</string>
+    <string name="androidVersion">Android version:</string>
+    <string name="deviceName">Device name:</string>
 </resources>

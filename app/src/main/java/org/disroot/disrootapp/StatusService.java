@@ -29,7 +29,8 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static android.support.constraint.motion.MotionScene.TAG;
+import static android.support.constraint.Constraints.TAG;
+
 
 public class StatusService extends Service {
 

@@ -197,4 +197,8 @@
     <string name="action_optimization">Optimisation de la batterie</string>
     <string name="OptimizationTitle">Optimisation de la batterie!</string>
     <string name="OptimizationInfo">Avec cette mise à jour, l\'application peut se synchroniser avec la page de statut de Disroot. Cela signifie que vous recevrez des mises à jour en temps réel sur les problèmes, les temps d\'arrêt, la maintenance programmée et d\'autres informations publiées via https://state.disroot.org\nNous vous recommandons de désactiver l\'optimisation de la batterie et d\'autoriser l\'exécution de l\'application Disroot en arrière-plan. Si vous n\'êtes pas sûr, vous pouvez toujours changer le réglage à partir du menu de l\'application Disroot plus tard.</string>
+    <string name="id">id:</string>
+    <string name="version">App version:</string>
+    <string name="androidVersion">Android version:</string>
+    <string name="deviceName">Device name:</string>
 </resources>

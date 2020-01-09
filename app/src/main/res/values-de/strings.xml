@@ -199,5 +199,9 @@
     <string name="action_optimization">Energiesparfunktion</string>
     <string name="OptimizationTitle">Energiesparfunktion!</string>
     <string name="OptimizationInfo">Mit diesem Update kann sich die App mit der Status Seite von Disroot synchronisieren. Das heißt du wirst sofort über geplante Wartungsarbeiten oder Problemen mit dem Server informiert. Dich erreichen alle wichtigen Verkündungen die veröffentlicht werden auf: https://state.disroot.org\n Wir empfehlen Energiesparfunktionen abzuwählen und die Nutzung im Hintergrund zuzulassen. Wenn du dir gerade nicht sicher bist, kannst du diese Einstellungen jederzeit über das Disroot App Menu ändern.</string>
+    <string name="id">id:</string>
+    <string name="version">App version:</string>
+    <string name="androidVersion">Android version:</string>
+    <string name="deviceName">Device name:</string>
 
 </resources>

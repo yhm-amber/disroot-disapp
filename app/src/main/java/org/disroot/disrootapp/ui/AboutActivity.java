@@ -4,23 +4,22 @@ package org.disroot.disrootapp.ui;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -28,7 +27,9 @@ import android.widget.TextView;
 import org.disroot.disrootapp.R;
 import org.disroot.disrootapp.utils.Constants;
 
-import static org.disroot.disrootapp.BuildConfig.*;
+import static org.disroot.disrootapp.BuildConfig.APPLICATION_ID;
+import static org.disroot.disrootapp.BuildConfig.VERSION_CODE;
+import static org.disroot.disrootapp.BuildConfig.VERSION_NAME;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -74,14 +75,13 @@ public class AboutActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse(String.valueOf(Constants.URL_SUPPORT));
+                Uri uri = Uri.parse(Constants.URL_SUPPORT);
                 Intent support = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                 startActivity(support);
                // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                  //       .setAction("Action", null).show();
             }
         });
-
     }
 
 
@@ -152,7 +152,7 @@ public class AboutActivity extends AppCompatActivity {
                     ContributeBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
-                            Uri uri = Uri.parse(String.valueOf(Constants.URL_SOURCE));
+                            Uri uri = Uri.parse(Constants.URL_SOURCE);
                             Intent code = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                             startActivity(code);
                         }
@@ -162,7 +162,7 @@ public class AboutActivity extends AppCompatActivity {
                     TranslateBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
-                            Uri uri = Uri.parse(String.valueOf(Constants.URL_TRANSLATE));
+                            Uri uri = Uri.parse(Constants.URL_TRANSLATE);
                             Intent translate = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                             startActivity(translate);
                         }
@@ -173,7 +173,7 @@ public class AboutActivity extends AppCompatActivity {
                     FeedbackBtn1.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
-                            Uri uri = Uri.parse(String.valueOf(Constants.URL_BUGS));
+                            Uri uri = Uri.parse(Constants.URL_BUGS);
                             Intent feedback1 = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                             startActivity(feedback1);
                         }
@@ -183,7 +183,7 @@ public class AboutActivity extends AppCompatActivity {
                     FeedbackBtn2.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
-                            Uri uri = Uri.parse(String.valueOf(Constants.URL_XMPP));
+                            Uri uri = Uri.parse(Constants.URL_XMPP);
                             Intent feedback2 = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                             startActivity(feedback2);
                         }
@@ -195,7 +195,7 @@ public class AboutActivity extends AppCompatActivity {
                     fDroidBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
-                            Uri uri = Uri.parse(String.valueOf(Constants.URL_FDROID));
+                            Uri uri = Uri.parse(Constants.URL_FDROID);
                             Intent fDroid = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                             startActivity(fDroid);
                         }
@@ -205,23 +205,23 @@ public class AboutActivity extends AppCompatActivity {
                     homeBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
-                            Uri uri = Uri.parse(String.valueOf(Constants.URL_DISROOT));
+                            Uri uri = Uri.parse(Constants.URL_DISROOT);
                             Intent home = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                             startActivity(home);
                         }
                     });
                     final TextView PackageName= rootView.findViewById(R.id.PackageName);
-                    PackageName.setText("ID: " + APPLICATION_ID);
+                    PackageName.setText(getString( R.string.id ) + " "+ APPLICATION_ID);
 
                     final TextView AppVersion= rootView.findViewById(R.id.AppVersion);
-                    AppVersion.setText("Version: " + VERSION_NAME + "(" + VERSION_CODE + ")");
+                    AppVersion.setText(getString( R.string.version ) + " " + VERSION_NAME + "(" + VERSION_CODE + ")");
 
                     final TextView AndroidVersion= rootView.findViewById(R.id.AndroidVersion);
-                    AndroidVersion.setText("Android version: " + Build.VERSION.RELEASE);
+                    AndroidVersion.setText(getString( R.string.androidVersion ) + " " + Build.VERSION.RELEASE);
 
                     final TextView Device;
                     Device = rootView.findViewById(R.id.Device);
-                    Device.setText("Device name: " + Build.MANUFACTURER + Build.MODEL);
+                    Device.setText(getString( R.string.deviceName ) + " " + Build.MANUFACTURER + Build.MODEL);
                     break;
                 case 3:
                     rootView = inflater.inflate(R.layout.fragment_about_license, container, false);
@@ -231,7 +231,7 @@ public class AboutActivity extends AppCompatActivity {
                     licenseBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
-                            Uri uri = Uri.parse(String.valueOf(Constants.URL_LICENSE));
+                            Uri uri = Uri.parse(Constants.URL_LICENSE);
                             Intent license = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                             startActivity(license);
                         }
@@ -241,7 +241,7 @@ public class AboutActivity extends AppCompatActivity {
                     disrootBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
-                            Uri uri = Uri.parse(String.valueOf(Constants.URL_DISROOT));
+                            Uri uri = Uri.parse(Constants.URL_DISROOT);
                             Intent disroot = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                             startActivity(disroot);
                         }
@@ -251,11 +251,13 @@ public class AboutActivity extends AppCompatActivity {
                     dioBtn.setOnClickListener(new View.OnClickListener()
                     {
                         public void onClick(View arg0) {
-                            Uri uri = Uri.parse(String.valueOf(Constants.URL_DIO));
+                            Uri uri = Uri.parse(Constants.URL_DIO);
                             Intent dio = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
                             startActivity(dio);
                         }
                     });
+                    final TextView htmlToTextView = rootView.findViewById(R.id.ThirdParty);// textview links clickable
+                    htmlToTextView.setMovementMethod( LinkMovementMethod.getInstance());// textview links clickable
                     break;
             }
             return rootView;

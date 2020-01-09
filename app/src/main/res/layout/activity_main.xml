@@ -227,7 +227,7 @@
                 android:textColor="#ffffff" />
 
                 <Button
-                    android:id="@+id/HowtoBtn"
+                    android:id="@+id/HowToBtn"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -244,7 +244,7 @@
                 android:id="@+id/group5"
                 android:layout_below="@+id/group4"><!-- android:gravity="center_horizontal" -->
                 <Button
-                    android:id="@+id/AboudBtn"
+                    android:id="@+id/AboutBtn"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

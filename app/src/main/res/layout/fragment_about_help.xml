@@ -172,7 +172,7 @@
                     android:text="@string/SpreadTheWord"
                     android:layout_marginBottom="8dp"/>
 
-                <org.disroot.disrootapp.ui.HtmlTextView
+                <TextView
                     android:id="@+id/fragment_about__spread_the_word_text"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:layout_width="match_parent"

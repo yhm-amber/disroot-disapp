@@ -160,4 +160,8 @@
     <string name="action_optimization">Optimizacija baterije</string>
     <string name="OptimizationTitle">Optimizacija baterije!</string>
     <string name="OptimizationInfo">Ova verzija aplikacija donosi mogućnost sinhronizacije sa statusnom stranom Disroot sajta. To znači da ćete u realnom vremenu dobijati poruke o problemima, zastojima, zakazanom održavanju i sl. putem https://state.disroot.org\nPreporučujemo da isključite optimizaciju baterije i dozvolite aplikaciji da radi u pozadini. Ako niste sigurni, podešavanja možete izmeniti iz menija Disroot aplikacije.</string>
+    <string name="id">id:</string>
+    <string name="version">App version:</string>
+    <string name="androidVersion">Android version:</string>
+    <string name="deviceName">Device name:</string>
 </resources>
