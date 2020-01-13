@@ -11,7 +11,7 @@ If you don't have a Disroot account you can still use this  app to access all th
 * Ethercalc
 * Private bin
 * Upload
-* Poll
+* Polls
 * Searx
 * Diaspora* (requires a Diaspora only account)   
 

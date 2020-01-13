@@ -163,4 +163,10 @@
     <string name="version">App version:</string>
     <string name="androidVersion">Android version:</string>
     <string name="deviceName">Device name:</string>
+    <string name="edit_apps_title">Show/hide apps</string>
+    <string name="MailBtnPref">Mail</string>
+    <string name="settings">Show/Hide Icons</string>
+    <string name="CloudBtnPref">Show/hide Cloud icon</string>
+    <string name="remove">Remove this</string>
+    <string name="dashboard">Dashboard</string>
 </resources>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <include layout="@layout/item_toolbar" />
@@ -35,196 +36,194 @@
         <include layout="@layout/view_loading"/>
         </android.support.v4.widget.SwipeRefreshLayout>
 
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <ScrollView
             android:id="@+id/dashboard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#203140"
+            android:background="@color/bg_primary_blue_dark"
             android:fillViewport="true"
             android:stackFromBottom="true"
             android:transcriptMode="alwaysScroll"
-            android:visibility="visible">
+            android:visibility="visible"><!--android:background="@color/bg_primary_blue_dark" #203140 android:background="@drawable/bgimage"-->
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fillViewport="true">
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/dashLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#203140">
+            android:orientation="vertical"
+            android:layout_gravity="top|center_horizontal">
 
-                <ImageButton
-                    android:id="@+id/logo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="30dp"
+            <ImageButton
+                android:id="@+id/logo"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:contentDescription="@string/logo"
+                android:src="@drawable/ic_logo" />
+
+            <GridLayout
+                android:id="@+id/grid"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:columnCount="4"
+                android:animateLayoutChanges="true">
+
+                <Button
+                    android:id="@+id/MailBtn"
                     style="?android:attr/borderlessButtonStyle"
-                    android:src="@drawable/logo"
-                    android:contentDescription="@string/logo" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_mail"
+                    android:text="@string/action_mail"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:id="@+id/group1"
-                android:layout_below="@+id/logo">
-            <Button
-                android:id="@+id/MailBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:text="@string/action_mail"
-                android:drawableTop="@drawable/ic_mail"/>
+                <Button
+                    android:id="@+id/CloudBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_cloud"
+                    android:text="@string/action_cloud"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/CloudBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_cloud"
-                android:text="@string/action_cloud"
-                android:textColor="#ffffff" />
+                <!--end of Disroot's Dandelion
+                <Button
+                    android:id="@+id/DiasporaBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_diaspora"
+                    android:text="@string/action_diaspora"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />-->
 
-            <Button
-                android:id="@+id/DiasporaBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_diaspora"
-                android:text="@string/action_diaspora"
-                android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/ForumBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_forum"
+                    android:text="@string/action_forum"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/ForumBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_forum"
-                android:text="@string/action_forum"
-                android:textColor="#ffffff" />
-            </LinearLayout>
+                <Button
+                    android:id="@+id/ChatBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_chat"
+                    android:text="@string/action_chat"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:id="@+id/group2"
-                android:layout_below="@+id/group1">
-            <Button
-                android:id="@+id/ChatBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_chat"
-                android:text="@string/action_chat"
-                android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/PadBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_pad"
+                    android:text="@string/action_pad"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/PadBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_pad"
-                android:text="@string/action_pad"
-                android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/CalcBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_calc"
+                    android:text="@string/action_calc"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/CalcBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_calc"
-                android:text="@string/action_calc"
-                android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/BinBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_bin"
+                    android:text="@string/action_bin"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/BinBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_bin"
-                android:text="@string/action_bin"
-                android:textColor="#ffffff" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:id="@+id/group3"
-                android:layout_below="@+id/group2">
+                <Button
+                    android:id="@+id/UploadBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_upload"
+                    android:text="@string/action_upload"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/UploadBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_upload"
-                android:text="@string/action_upload"
-                android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/SearxBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_searx"
+                    android:text="@string/action_searx"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/SearxBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_searx"
-                android:text="@string/action_searx"
-                android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/PollsBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_poll"
+                    android:text="@string/action_poll"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/PollsBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_poll"
-                android:text="@string/action_poll"
-                android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/BoardBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_board"
+                    android:text="@string/action_board"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/BoardBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_board"
-                android:text="@string/action_board"
-                android:textColor="#ffffff" />
-            </LinearLayout>
+                <Button
+                    android:id="@+id/NotesBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_notes"
+                    android:text="@string/action_notes"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:id="@+id/group4"
-                android:layout_below="@+id/group3">
-            <Button
-                android:id="@+id/NotesBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_notes"
-                android:text="@string/action_notes"
-                android:textColor="#ffffff" />
-            <Button
-                android:id="@+id/UserBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_user"
-                android:text="@string/action_user"
-                android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/UserBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_user"
+                    android:text="@string/action_user"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            <Button
-                android:id="@+id/StateBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ic_state"
-                android:text="@string/action_state"
-                android:textColor="#ffffff" />
+                <Button
+                    android:id="@+id/StateBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_state"
+                    android:text="@string/action_state"
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
                 <Button
                     android:id="@+id/HowToBtn"
@@ -233,16 +232,9 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/ic_howto"
                     android:text="@string/action_howto"
-                    android:textColor="#ffffff" />
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:id="@+id/group5"
-                android:layout_below="@+id/group4"><!-- android:gravity="center_horizontal" -->
                 <Button
                     android:id="@+id/AboutBtn"
                     style="?android:attr/borderlessButtonStyle"
@@ -250,33 +242,10 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/ic_about"
                     android:text="@string/action_about"
-                    android:textColor="#ffffff" />
-                <Button
-                    android:id="@+id/Placeholder2"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxWidth="24dp"
-                    android:text=""
-                    android:textColor="#ffffff" /><!-- remove line android:maxWidth="24dp" when new button added -->
-                <Button
-                    android:id="@+id/Placeholder3"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxWidth="24dp"
-                    android:text=""
-                    android:textColor="#ffffff" />
-                <Button
-                    android:id="@+id/Placeholder4"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxWidth="24dp"
-                    android:text=""
-                    android:textColor="#ffffff" />
-            </LinearLayout>
-        </RelativeLayout>
+                    android:textColor="#ffffff"
+                    app:fontFamily="@font/open_sans_regular" />
+            </GridLayout>
+        </LinearLayout>
             </HorizontalScrollView>
         </ScrollView>
     </FrameLayout>

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="1.9.0" versioncode="23" >
+        <change>New theme and icon sets</change>
+        <change>New settings menu</change>
+        <change>Possibility to hide apps in dashboard</change>
+        <change>Better integration with Lufi</change>
+    </release>
     <release version="1.2.3" versioncode="22" >
         <change>Cleaned up code for better maintenance</change>
         <change>Made Third party links klickable</change>
         <change>Made application info fully translatable</change>
-        <change>Made Device info cully translatable</change>
+        <change>Made Device info fully translatable</change>
     </release>
   <release version="1.2.2" versioncode="21" >
       <change>Removed battery optimization promt on updates</change>

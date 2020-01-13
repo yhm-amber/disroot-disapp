@@ -6,12 +6,12 @@
     <string name="action_diaspora">Diaspora*</string>
     <string name="action_forum">Forum</string>
     <string name="action_chat">Chat</string>
-    <string name="action_pad">Etherpad</string>
-    <string name="action_calc">EtherCalc</string>
-    <string name="action_bin">Private bin</string>
+    <string name="action_pad">Pad</string>
+    <string name="action_calc">Calc</string>
+    <string name="action_bin">Paste bin</string>
     <string name="action_upload">Upload</string>
-    <string name="action_searx">Searx</string>
-    <string name="action_poll">Poll</string>
+    <string name="action_searx">Search</string>
+    <string name="action_poll">Polls</string>
     <string name="action_board">Taiga</string>
     <string name="action_user">Password</string>
     <string name="action_state">State</string>
@@ -164,4 +164,10 @@
     <string name="version">App version:</string>
     <string name="androidVersion">Android version:</string>
     <string name="deviceName">Device name:</string>
+    <string name="edit_apps_title">Show/hide apps</string>
+    <string name="MailBtnPref">Mail</string>
+    <string name="settings">Settings</string>
+    <string name="CloudBtnPref">Cloud</string>
+    <string name="remove">Remove this</string>
+    <string name="dashboard">Dashboard</string>
 </resources>

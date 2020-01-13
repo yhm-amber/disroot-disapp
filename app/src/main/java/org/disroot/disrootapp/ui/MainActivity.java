@@ -80,10 +80,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     SharedPreferences firstStart = null;//first start
     SharedPreferences check = null;
+    SharedPreferences BtnPreference;
     WebChromeClient.FileChooserParams chooserParams;
     ValueCallback<Uri[]> chooserPathUri;
     Button button;
-    private Button MailBtn,CloudBtn,DiasporaBtn,ForumBtn,ChatBtn,PadBtn,CalcBtn,BinBtn,UploadBtn,SearxBtn,PollsBtn,BoardBtn,NotesBtn,UserBtn,StateBtn,HowToBtn,AboutBtn;//all buttons
+    private Button MailBtn,CloudBtn,ForumBtn,ChatBtn,PadBtn,CalcBtn,BinBtn,UploadBtn,SearxBtn,PollsBtn,BoardBtn,NotesBtn,UserBtn,StateBtn,HowToBtn,AboutBtn;//all buttons
     private CookieManager cookieManager;
     private WebView webView;
     private DisWebChromeClient disWebChromeClient;
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;//file upload
     private static final int INPUT_FILE_REQUEST_CODE = 1;//file upload
     private static final int FILECHOOSER_RESULTCODE = 1;//file upload
-    private static final String TAG = MainActivity.class.getSimpleName();
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -120,6 +121,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         //settings
         firstStart = getSharedPreferences("org.disroot.disrootap", MODE_PRIVATE);//fisrt start
         check = getSharedPreferences("org.disroot.disrootapp", MODE_PRIVATE);
+        //buttons visiblility preference
+        BtnPreference = getSharedPreferences( "mailBtnVisibility", Context.MODE_PRIVATE );//mail
+        BtnPreference = getSharedPreferences( "cloudBtnVisibility", Context.MODE_PRIVATE );//cloud
+        BtnPreference = getSharedPreferences( "forumBtnVisibility", Context.MODE_PRIVATE );//forum
+        BtnPreference = getSharedPreferences( "chatBtnVisibility", Context.MODE_PRIVATE );//chat
 
         //Status service
         Intent intent = new Intent( MainActivity.this, StatusService.class);
@@ -187,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         // Link the button in activity_main.xml
         MailBtn = findViewById( R.id.MailBtn );
         CloudBtn = findViewById( R.id.CloudBtn );
-        DiasporaBtn = findViewById( R.id.DiasporaBtn );
+        //DiasporaBtn = findViewById( R.id.DiasporaBtn );//end of Disroot's Dandelion
         ForumBtn = findViewById( R.id.ForumBtn );
         ChatBtn = findViewById( R.id.ChatBtn );
         PadBtn = findViewById( R.id.PadBtn );
@@ -203,10 +209,28 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         HowToBtn = findViewById( R.id.HowToBtn );
         AboutBtn = findViewById( R.id.AboutBtn );
 
+        //get preferences
+        if (BtnPreference.getBoolean( "mailBtnVisibility", true)==false){
+            ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+            viewGroup.removeView(MailBtn);
+        }
+        if (BtnPreference.getBoolean( "cloudBtnVisibility", true)==false){
+            ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+            viewGroup.removeView(CloudBtn);
+        }
+        if (BtnPreference.getBoolean( "forumBtnVisibility", true)==false){
+            ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+            viewGroup.removeView(ForumBtn);
+        }
+        if (BtnPreference.getBoolean( "chatBtnVisibility", true)==false){
+            ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+            viewGroup.removeView(ChatBtn);
+        }
+
         //Set longclick buttons
         MailBtn.setOnLongClickListener( this );
         CloudBtn.setOnLongClickListener( this );
-        DiasporaBtn.setOnLongClickListener( this );
+        //DiasporaBtn.setOnLongClickListener( this );//end of Disroot's Dandelion
         ForumBtn.setOnLongClickListener( this );
         ChatBtn.setOnLongClickListener( this );
         PadBtn.setOnLongClickListener( this );
@@ -225,7 +249,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         //set clickbuttons
         MailBtn.setOnClickListener( this );
         CloudBtn.setOnClickListener( this );
-        DiasporaBtn.setOnClickListener( this );
+        //DiasporaBtn.setOnClickListener( this );//end of Disroot's Dandelion
         ForumBtn.setOnClickListener( this );
         ChatBtn.setOnClickListener( this );
         PadBtn.setOnClickListener( this );
@@ -275,14 +299,14 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     }
                     else startActivity(cloud);
                     break;
-                case R.id.DiasporaBtn:
+                /*case R.id.DiasporaBtn: //end ofDisroot's Dandelion
                         Intent pod = getPackageManager().getLaunchIntentForPackage(Diaspora);
                         if(getPackageManager().getLaunchIntentForPackage(Diaspora) == null) {
                             showDiaDialog();
                             break;
                         }
                         else startActivity(pod);
-                    break;
+                    break;*/
                 case R.id.ForumBtn:
                     webView.loadUrl(Constants.URL_DisApp_FORUM);
                     hideDashboard();
@@ -332,8 +356,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     hideDashboard();
                     break;
                 case R.id.UploadBtn:
-                    //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.URL_DisApp_UPLOAD)));
-                    //workaround for crashing app
                     webView.loadUrl(Constants.URL_DisApp_UPLOAD);
                     hideDashboard();
                     break;
@@ -388,9 +410,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             case R.id.CloudBtn:
                 showCloudInfo();
                 break;
-            case R.id.DiasporaBtn:
+            /*case R.id.DiasporaBtn://end of Disroot's Dandelion
                 showDiaInfo();
-                break;
+                break;*/
             case R.id.ForumBtn:
                 showForumInfo();
                 break;
@@ -448,7 +470,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         dashboard.setVisibility( View.GONE );
     }
 
-    //Show xmpp choice
+    //Show chat choice
     private void showChoose() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.ChooseChatTitle)
@@ -548,6 +570,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 hideDashboard();
             }
         });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.MailBtn).getParent()!=null){
+                viewGroup.removeView(MailBtn);
+                    BtnPreference.edit().putBoolean( "mailBtnVisibility", false ).apply();
+                return;}
+            }
+        });
         builder.show();
     }
     private void showMailDialog(){
@@ -581,6 +613,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 hideDashboard();
             }
         });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.CloudBtn).getParent()!=null){
+                    viewGroup.removeView(CloudBtn);
+                    BtnPreference.edit().putBoolean( "cloudBtnVisibility", false ).apply();
+                    return;}
+            }
+        });
         builder.show();
     }
     private void showCloudDialog(){
@@ -600,6 +642,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.show();
     }
 
+    /*End of Disroot's Dandelion*
     //Diaspora info
     private void showDiaInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -631,7 +674,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         });
         builder.setNegativeButton(R.string.global_cancel , null);
         builder.show();
-    }
+    }*/
 
     private void showForumInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -644,6 +687,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_FORUMHELP);
                 hideDashboard();
+            }
+        });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.ForumBtn).getParent()!=null){
+                    viewGroup.removeView(ForumBtn);
+                    BtnPreference.edit().putBoolean( "forumBtnVisibility", false ).apply();
+                    return;}
             }
         });
         builder.show();
@@ -674,7 +727,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.setCancelable(false);
         builder.setTitle(R.string.ChatTitle);
         builder.setMessage(getString(R.string.ChatInfo));
-        // ||check.getBoolean("checkPix", true)==true
         if(check.getBoolean("checkConv", true)|| check.getBoolean("checkPix",true)) {
             View view = View.inflate(this, R.layout.check_forget, null);
             final CheckBox forgetChat = (CheckBox) view.findViewById(R.id.forgetChat);
@@ -693,6 +745,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_XMPPHELP);
                 hideDashboard();
+            }
+        });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.ChatBtn).getParent()!=null){
+                    viewGroup.removeView(ChatBtn);
+                    BtnPreference.edit().putBoolean( "chatBtnVisibility", false ).apply();
+                    return;}
             }
         });
         builder.show();
@@ -1100,8 +1162,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
-
-
         // To show icons in the actionbar's overflow menu:
         // http://stackoverflow.com/questions/18374183/how-to-show-icons-in-overflow-menu-in-actionbar
         if(menu.getClass().getSimpleName().equals("MenuBuilder")) try {
@@ -1164,6 +1224,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 Intent goAbout = new Intent(MainActivity.this, AboutActivity.class);
                 MainActivity.this.startActivity(goAbout);
                 return true;
+            case R.id.action_set_icons:
+                Intent goBtnSettings = new Intent(MainActivity.this, SettingsActivity.class);
+                MainActivity.this.startActivity(goBtnSettings);
+                return true;
             case R.id.action_clear_cookies: {
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
                     CookieManager.getInstance().removeAllCookies(null);
@@ -1198,6 +1262,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         webView.getSettings().setAllowContentAccess(true);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+        webView.getSettings().setDatabaseEnabled(true);
         webView.setOnLongClickListener(this);
 
         //enable cookies
@@ -1238,15 +1305,20 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     Log.e("Permission error","You have asked for permission");
                     ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
                 }
-                final String filename= URLUtil.guessFileName(url, contentDisposition, mimetype);
-                DownloadManager.Request request = new DownloadManager.Request(
-                        Uri.parse(url));
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
-                DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                assert dm != null;
-                dm.enqueue(request);
+                if (Uri.parse( url ).toString().startsWith( "blob" )){
+                    webView.loadUrl("");
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.URL_DisApp_UPLOAD)));
+                } else {
+                    final String filename = URLUtil.guessFileName( url, contentDisposition, mimetype );
+                    DownloadManager.Request request = new DownloadManager.Request(
+                            Uri.parse( url ) );
+                    request.allowScanningByMediaScanner();
+                    request.setNotificationVisibility( DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED );
+                    request.setDestinationInExternalPublicDir( Environment.DIRECTORY_DOWNLOADS, filename );
+                    DownloadManager dm = (DownloadManager) getSystemService( DOWNLOAD_SERVICE );
+                    assert dm != null;
+                    dm.enqueue( request );
+                }
 
             }
         });
@@ -1273,7 +1345,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if(url.startsWith("https")|url.startsWith("http")&&url.contains("disroot")) {//&!url.contains("upload.disroot.org")
+                if(url.startsWith("http")&&url.contains("disroot")&&!Uri.parse( url ).toString().startsWith( "blob" )) {
                     view.loadUrl(url);
                     return super.shouldOverrideUrlLoading(view, url);
                 }

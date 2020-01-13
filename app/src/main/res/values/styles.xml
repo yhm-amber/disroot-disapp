@@ -1,9 +1,10 @@
 <resources>
 
     <style name="DisTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/bg_primary_blue</item>
-        <item name="colorPrimaryDark">@color/bg_primary_blue_dark</item>
+        <item name="colorPrimary">@color/bg_primary_blue_dark</item>
+        <item name="colorPrimaryDark">@color/bg_primary_blue</item>
         <item name="colorAccent">@color/bg_primary_blue</item>
+        <!--<item name="android:navigationBarColor">@color/bg_primary_blue_dark</item>-->
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">true</item>
