@@ -11,21 +11,25 @@
         <item name="toolbarStyle">@style/Widget.MyApp.ActionBar</item>
         <item name="android:textAllCaps">false</item>
         <item name="cardViewStyle">@style/CardView</item>
+        <item name="colorControlNormal">@color/gray</item><!--if checkbox is activated-->
+        <item name="colorControlActivated">@color/gray</item><!--if checkbox is activated-->
     </style>
 
     <style name="Widget.MyApp.ActionBar" parent="Widget.AppCompat.ActionBar">
         <item name="theme">@style/ThemeOverlay.MyApp.ActionBar</item>
-        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Dark
-        </item> <!--change theme for actionbar poupmenu-->
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Dark</item> <!--change theme for actionbar poupmenu-->
     </style>
 
     <style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColor">@color/gray</item>
         <item name="android:textColorPrimary">@android:color/white</item>
-        <item name="android:actionMenuTextColor">@android:color/white
-        </item><!--<item name="android:textSize">18sp</item>-->
+        <item name="android:actionMenuTextColor">@color/gray</item><!--<item name="android:textSize">18sp</item>-->
     </style>
 
-    <style name="DisTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="DisTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+    </style>
 
     <style name="DisTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 

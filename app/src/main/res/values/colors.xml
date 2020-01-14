@@ -2,5 +2,7 @@
 <resources>
     <color name="bg_primary_blue">#50162d</color>
     <color name="bg_primary_blue_dark">#1f5c60</color>
-    <color name="gray">#1f5c60</color><!--808080 -->
+    <color name="gray">#808080</color><!--808080 -->
+    <color name="dark_grey">#2c2c2c</color>
+    <color name="white">#ffffff</color>
 </resources>

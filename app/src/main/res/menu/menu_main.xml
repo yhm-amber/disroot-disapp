@@ -22,7 +22,7 @@
             android:icon="@drawable/ic_forget"
             android:id="@+id/action_forget"
             android:title="@string/Forget"
-            android:visible="false"/>
+            android:visible="false" />
         <item
             android:icon="@drawable/ic_reload"
             android:id="@+id/action_reload"

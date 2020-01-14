@@ -13,7 +13,7 @@
     <string name="action_searx">Searx</string>
     <string name="action_poll">Poll</string>
     <string name="action_board">Taiga</string>
-    <string name="action_user">Wachtwoord</string>
+    <string name="action_user">Account</string>
     <string name="action_state">Status</string>
     <string name="action_howto">How to</string>
 

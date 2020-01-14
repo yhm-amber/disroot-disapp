@@ -30,7 +30,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center|top"
-    android:background="#203140">
+    android:background="@color/dark_grey">
     <Button
         android:id="@+id/StateBtn"
         android:shadowColor="@color/bg_primary_blue"
@@ -67,6 +67,6 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#203140"/>
+        android:background="@color/dark_grey"/>
 
 </LinearLayout>

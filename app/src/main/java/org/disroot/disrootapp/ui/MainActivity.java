@@ -122,10 +122,15 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         firstStart = getSharedPreferences("org.disroot.disrootap", MODE_PRIVATE);//fisrt start
         check = getSharedPreferences("org.disroot.disrootapp", MODE_PRIVATE);
         //buttons visiblility preference
-        BtnPreference = getSharedPreferences( "mailBtnVisibility", Context.MODE_PRIVATE );//mail
-        BtnPreference = getSharedPreferences( "cloudBtnVisibility", Context.MODE_PRIVATE );//cloud
-        BtnPreference = getSharedPreferences( "forumBtnVisibility", Context.MODE_PRIVATE );//forum
-        BtnPreference = getSharedPreferences( "chatBtnVisibility", Context.MODE_PRIVATE );//chat
+        BtnPreference = getSharedPreferences( "MailBtn", Context.MODE_PRIVATE );//mail
+        BtnPreference = getSharedPreferences( "CloudBtn", Context.MODE_PRIVATE );//cloud
+        BtnPreference = getSharedPreferences( "ForumBtn", Context.MODE_PRIVATE );//forum
+        BtnPreference = getSharedPreferences( "ChatBtn", Context.MODE_PRIVATE );//chat
+        BtnPreference = getSharedPreferences( "PadBtn", Context.MODE_PRIVATE );//pad
+        BtnPreference = getSharedPreferences( "CalcBtn", Context.MODE_PRIVATE );//calc
+        BtnPreference = getSharedPreferences( "BinBtn", Context.MODE_PRIVATE );//bin
+        BtnPreference = getSharedPreferences( "UploadBtn", Context.MODE_PRIVATE );//upload
+        BtnPreference = getSharedPreferences( "SearxBtn", Context.MODE_PRIVATE );//search
 
         //Status service
         Intent intent = new Intent( MainActivity.this, StatusService.class);
@@ -209,23 +214,29 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         HowToBtn = findViewById( R.id.HowToBtn );
         AboutBtn = findViewById( R.id.AboutBtn );
 
+        Map<String, ?> allEntries = BtnPreference.getAll();
+        for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+            if (entry.getValue().equals( false )){
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                int[] buttonIDs = new int[] {R.id.MailBtn, R.id.CloudBtn, R.id.ForumBtn,R.id.ChatBtn,R.id.PadBtn,R.id.CalcBtn,R.id.BinBtn,R.id.UploadBtn,R.id.SearxBtn,R.id.PollsBtn,R.id.BoardBtn,R.id.NotesBtn,R.id.UserBtn,R.id.StateBtn,R.id.HowToBtn,R.id.AboutBtn};
+
+                for(int i=0; i<buttonIDs.length; i++) {
+                    Button b = (Button) findViewById(buttonIDs[i]);
+                    int resID = getResources().getIdentifier(entry.getKey(),
+                            "id", getPackageName());
+                    if(findViewById(resID)==b) {
+                        viewGroup.removeView(b);
+                    }
+
+                    Log.e("button values", entry.getKey() + ": "+resID);
+
+                }
+            }
+            Log.e("map values", entry.getKey() + ": " + entry.getValue().toString());
+        }
+
         //get preferences
-        if (BtnPreference.getBoolean( "mailBtnVisibility", true)==false){
-            ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
-            viewGroup.removeView(MailBtn);
-        }
-        if (BtnPreference.getBoolean( "cloudBtnVisibility", true)==false){
-            ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
-            viewGroup.removeView(CloudBtn);
-        }
-        if (BtnPreference.getBoolean( "forumBtnVisibility", true)==false){
-            ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
-            viewGroup.removeView(ForumBtn);
-        }
-        if (BtnPreference.getBoolean( "chatBtnVisibility", true)==false){
-            ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
-            viewGroup.removeView(ChatBtn);
-        }
+
 
         //Set longclick buttons
         MailBtn.setOnLongClickListener( this );
@@ -576,7 +587,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
                 if (findViewById( R.id.MailBtn).getParent()!=null){
                 viewGroup.removeView(MailBtn);
-                    BtnPreference.edit().putBoolean( "mailBtnVisibility", false ).apply();
+                    BtnPreference.edit().putBoolean( "MailBtn", false ).apply();
                 return;}
             }
         });
@@ -619,7 +630,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
                 if (findViewById( R.id.CloudBtn).getParent()!=null){
                     viewGroup.removeView(CloudBtn);
-                    BtnPreference.edit().putBoolean( "cloudBtnVisibility", false ).apply();
+                    BtnPreference.edit().putBoolean( "CloudBtn", false ).apply();
                     return;}
             }
         });
@@ -695,7 +706,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
                 if (findViewById( R.id.ForumBtn).getParent()!=null){
                     viewGroup.removeView(ForumBtn);
-                    BtnPreference.edit().putBoolean( "forumBtnVisibility", false ).apply();
+                    BtnPreference.edit().putBoolean( "ForumBtn", false ).apply();
                     return;}
             }
         });
@@ -753,7 +764,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
                 if (findViewById( R.id.ChatBtn).getParent()!=null){
                     viewGroup.removeView(ChatBtn);
-                    BtnPreference.edit().putBoolean( "chatBtnVisibility", false ).apply();
+                    BtnPreference.edit().putBoolean( "ChatBtn", false ).apply();
                     return;}
             }
         });
@@ -789,6 +800,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 hideDashboard();
             }
         });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.PadBtn).getParent()!=null){
+                    viewGroup.removeView(PadBtn);
+                    BtnPreference.edit().putBoolean( "PadBtn", false ).apply();
+                    return;}
+            }
+        });
         builder.show();
     }
     private void showPAdDialog(){
@@ -821,6 +842,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 hideDashboard();
             }
         });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.CalcBtn).getParent()!=null){
+                    viewGroup.removeView(CalcBtn);
+                    BtnPreference.edit().putBoolean( "CalcBtn", false ).apply();
+                    return;}
+            }
+        });
         builder.show();
     }
 
@@ -835,6 +866,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_BINHELP);
                 hideDashboard();
+            }
+        });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.BinBtn).getParent()!=null){
+                    viewGroup.removeView(BinBtn);
+                    BtnPreference.edit().putBoolean( "BinBtn", false ).apply();
+                    return;}
             }
         });
         builder.show();
@@ -854,6 +895,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 findViewById(R.id.dashboard).setVisibility(View.GONE);
             }
         });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.UploadBtn).getParent()!=null){
+                    viewGroup.removeView(UploadBtn);
+                    BtnPreference.edit().putBoolean( "UploadBtn", false ).apply();
+                    return;}
+            }
+        });
         builder.show();
     }
 
@@ -868,6 +919,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_SEARXHELP);
                 hideDashboard();
+            }
+        });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.SearxBtn).getParent()!=null){
+                    viewGroup.removeView(SearxBtn);
+                    BtnPreference.edit().putBoolean( "SearxBtn", false ).apply();
+                    return;}
             }
         });
         builder.show();

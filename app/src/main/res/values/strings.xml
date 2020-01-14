@@ -13,7 +13,7 @@
     <string name="action_searx">Search</string>
     <string name="action_poll">Polls</string>
     <string name="action_board">Taiga</string>
-    <string name="action_user">Password</string>
+    <string name="action_user">Account</string>
     <string name="action_state">State</string>
     <string name="action_howto">How to</string>
 
