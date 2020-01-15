@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     ValueCallback<Uri[]> chooserPathUri;
     Button button;
     private Button MailBtn,CloudBtn,ForumBtn,ChatBtn,PadBtn,CalcBtn,BinBtn,UploadBtn,SearxBtn,PollsBtn,BoardBtn,NotesBtn,UserBtn,StateBtn,HowToBtn,AboutBtn;//all buttons
+    private int[] buttonIDs = new int[] {R.id.MailBtn, R.id.CloudBtn, R.id.ForumBtn,R.id.ChatBtn,R.id.PadBtn,R.id.CalcBtn,R.id.BinBtn,R.id.UploadBtn,R.id.SearxBtn,R.id.PollsBtn,R.id.BoardBtn,R.id.NotesBtn,R.id.UserBtn,R.id.StateBtn,R.id.HowToBtn,R.id.AboutBtn};
     private CookieManager cookieManager;
     private WebView webView;
     private DisWebChromeClient disWebChromeClient;
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         BtnPreference = getSharedPreferences( "BinBtn", Context.MODE_PRIVATE );//bin
         BtnPreference = getSharedPreferences( "UploadBtn", Context.MODE_PRIVATE );//upload
         BtnPreference = getSharedPreferences( "SearxBtn", Context.MODE_PRIVATE );//search
+        BtnPreference = getSharedPreferences( "PollsBtn", Context.MODE_PRIVATE );//polls
 
         //Status service
         Intent intent = new Intent( MainActivity.this, StatusService.class);
@@ -218,8 +220,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
             if (entry.getValue().equals( false )){
                 ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
-                int[] buttonIDs = new int[] {R.id.MailBtn, R.id.CloudBtn, R.id.ForumBtn,R.id.ChatBtn,R.id.PadBtn,R.id.CalcBtn,R.id.BinBtn,R.id.UploadBtn,R.id.SearxBtn,R.id.PollsBtn,R.id.BoardBtn,R.id.NotesBtn,R.id.UserBtn,R.id.StateBtn,R.id.HowToBtn,R.id.AboutBtn};
-
                 for(int i=0; i<buttonIDs.length; i++) {
                     Button b = (Button) findViewById(buttonIDs[i]);
                     int resID = getResources().getIdentifier(entry.getKey(),
@@ -227,12 +227,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     if(findViewById(resID)==b) {
                         viewGroup.removeView(b);
                     }
-
-                    Log.e("button values", entry.getKey() + ": "+resID);
-
                 }
             }
-            Log.e("map values", entry.getKey() + ": " + entry.getValue().toString());
         }
 
         //get preferences
@@ -945,6 +941,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             public void onClick(DialogInterface dialog, int which) {
                 webView.loadUrl(Constants.URL_DisApp_POLLHELP);
                 hideDashboard();
+            }
+        });
+        builder.setNeutralButton( R.string.remove , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
+                if (findViewById( R.id.PollsBtn).getParent()!=null){
+                    viewGroup.removeView(PollsBtn);
+                    BtnPreference.edit().putBoolean( "PollsBtn", false ).apply();
+                    return;}
             }
         });
         builder.show();

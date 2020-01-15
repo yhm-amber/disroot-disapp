@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_searx" />
-                            <entry key="sourceFile" value="$PROJECT_DIR$/../DisIcons/v2/ic_searx.svg" />
+                            <entry key="outputName" value="ic_poll" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/../DisIcons/v2/ic_poll.svg" />
                           </map>
                         </option>
                       </PersistentState>

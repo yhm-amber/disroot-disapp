@@ -61,6 +61,7 @@ public class SettingsActivity extends AppCompatActivity {
         BtnPreference = getSharedPreferences( "BinBtn", Context.MODE_PRIVATE );//bin
         BtnPreference = getSharedPreferences( "UploadBtn", Context.MODE_PRIVATE );//upload
         BtnPreference = getSharedPreferences( "SearxBtn", Context.MODE_PRIVATE );//search
+        BtnPreference = getSharedPreferences( "PollsBtn", Context.MODE_PRIVATE );//polls
 
         //checkboxlist
         checkPrefBox();
@@ -79,6 +80,7 @@ public class SettingsActivity extends AppCompatActivity {
         final CheckBox checkBinBtn = iconSettings.findViewById( R.id.binBtnPreference );//bin
         final CheckBox checkUploadBtn = iconSettings.findViewById( R.id.uploadBtnPreference );//upload
         final CheckBox checkSearxBtn = iconSettings.findViewById( R.id.searxBtnPreference );//search
+        final CheckBox checkpollsBtn = iconSettings.findViewById( R.id.pollsBtnPreference );//polls
 
         //Set checked if visibility is true
         if (BtnPreference.getBoolean( "MailBtn", true )) checkMailBtn.setChecked( true );//mail
@@ -90,6 +92,7 @@ public class SettingsActivity extends AppCompatActivity {
         if (BtnPreference.getBoolean( "BinBtn", true )) checkBinBtn.setChecked( true );//bin
         if (BtnPreference.getBoolean( "UploadBtn", true )) checkUploadBtn.setChecked( true );//upload
         if (BtnPreference.getBoolean( "SearxBtn", true )) checkSearxBtn.setChecked( true );//search
+        if (BtnPreference.getBoolean( "pollsBtn", true )) checkSearxBtn.setChecked( true );//polls
 
         //Mail
         checkMailBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
@@ -195,6 +198,18 @@ public class SettingsActivity extends AppCompatActivity {
                     BtnPreference.edit().putBoolean( "SearxBtn", true ).apply();
                 } else {
                     BtnPreference.edit().putBoolean( "SearxBtn", false ).apply();
+                }
+            }
+        } );
+
+        //polls
+        checkpollsBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton view, boolean isChecked) {
+                if (checkpollsBtn.isChecked()) {
+                    BtnPreference.edit().putBoolean( "PollsBtn", true ).apply();
+                } else {
+                    BtnPreference.edit().putBoolean( "pollsBtn", false ).apply();
                 }
             }
         } );
