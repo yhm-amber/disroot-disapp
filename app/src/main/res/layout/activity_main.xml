@@ -61,8 +61,8 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
                 android:contentDescription="@string/logo"
                 android:src="@drawable/ic_logo" />
 
@@ -190,8 +190,19 @@
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxWidth="@dimen/extra_margin"
                     android:drawableTop="@drawable/ic_board"
                     android:text="@string/action_board"
+                    android:textColor="@color/white"
+                    app:fontFamily="@font/open_sans_regular" />
+
+                <Button
+                    android:id="@+id/CallsBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_calls"
+                    android:text="@string/action_calls"
                     android:textColor="@color/white"
                     app:fontFamily="@font/open_sans_regular" />
 
@@ -202,6 +213,16 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/ic_notes"
                     android:text="@string/action_notes"
+                    android:textColor="@color/white"
+                    app:fontFamily="@font/open_sans_regular" />
+
+                <Button
+                    android:id="@+id/GitBtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_git"
+                    android:text="@string/action_git"
                     android:textColor="@color/white"
                     app:fontFamily="@font/open_sans_regular" />
 

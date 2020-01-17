@@ -1,5 +1,8 @@
 package org.disroot.disrootapp.utils;
 
+import org.disroot.disrootapp.R;
+import org.disroot.disrootapp.ui.MainActivity;
+
 /**
  * Created by jackson on 02/11/15.
  */
@@ -47,4 +50,24 @@ public class Constants {
     public static final String URL_DisApp_POLLHELP = "https://howto.disroot.org/en/tutorials/office/polls";
     public static final String URL_DisApp_BOARDHELP = "https://howto.disroot.org/en/tutorials/project_board";
     public static final String URL_DisApp_NOTESHELP = "https://howto.disroot.org/en/tutorials/cloud/clients/mobile/android/using-notes";
+    public static final String URL_DisApp_CALLSHELP = "https://disroot.org/en/services/calls";
+    public static final String URL_DisApp_GITHELP = "https://howto.disroot.org/en/contribute/git";//need url
+
+    public static final String k9 = "com.fsck.k9";
+    public static final String nc = "com.nextcloud.client";
+    public static final String Diaspora = "com.github.dfa.diaspora_android";
+    public static final String Conversations = "eu.siacs.conversations";
+    public static final String PixArt = "de.pixart.messenger";
+    public static final String Padland = "com.mikifus.padland";
+    public static final String NotesApp = "it.niedermann.owncloud.notes";
+    public static final String CallsApp = "org.jitsi.meet";
+    public static final String GitApp = "org.mian.gitnex";
+
+    public static final int[] buttonIDs = new int[] {R.id.MailBtn, R.id.CloudBtn, R.id.ForumBtn,R.id.ChatBtn,R.id.PadBtn,R.id.CalcBtn,R.id.BinBtn,R.id.UploadBtn,R.id.SearxBtn,R.id.PollsBtn,R.id.BoardBtn,R.id.CallsBtn,R.id.NotesBtn,R.id.GitBtn,R.id.UserBtn,R.id.StateBtn,R.id.HowToBtn,R.id.AboutBtn};
+
+
+    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;//file upload
+    public static final int INPUT_FILE_REQUEST_CODE = 1;//file upload
+    public static final int FILECHOOSER_RESULTCODE = 1;//file upload
+    public static final String TAG = MainActivity.class.getSimpleName();
 }

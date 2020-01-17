@@ -12,7 +12,7 @@
     <string name="action_upload">Upload</string>
     <string name="action_searx">Search</string>
     <string name="action_poll">Polls</string>
-    <string name="action_board">Taiga</string>
+    <string name="action_board">Project board</string>
     <string name="action_user">Account</string>
     <string name="action_state">State</string>
     <string name="action_howto">How to</string>
@@ -168,6 +168,14 @@
     <string name="MailBtnPref">Mail</string>
     <string name="settings">Settings</string>
     <string name="CloudBtnPref">Cloud</string>
-    <string name="remove">Remove this</string>
+    <string name="hide">Hide app</string>
     <string name="dashboard">Dashboard</string>
+    <string name="action_calls">Calls</string>
+    <string name="CallsTitle">Calls Info</string>
+    <string name="CallsInfo">Disroot\'s Calls service is a videoconferencing software, powered by Jitsi-Meet. It provides you high quality video and audio conferences, with as many partners as you want. It also allows to stream your desktop or only some windows to other participants in the call.</string>
+    <string name="CallsDialog">To continue you need to install Jitsi-Meet first.\nPlease select install to continue with the installation on F-Droid.</string>
+    <string name="action_git">Git</string>
+    <string name="GitTitle">Gitea Info</string>
+    <string name="GitInfo">Git with a cup of tea.\n A painless, self-hosted Git service</string>
+    <string name="GitsDialog">To continue you need to install GitNex first.\nPlease select install to continue with the installation on F-Droid.</string>
 </resources>

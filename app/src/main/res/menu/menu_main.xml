@@ -40,7 +40,7 @@
             android:id="@+id/action_set_icons"
             android:title="@string/settings" />
         <item
-            android:icon="@drawable/ic_about"
+            android:icon="@drawable/ic_about_menu"
             android:id="@+id/action_about"
             android:title="@string/action_about" />
         <item

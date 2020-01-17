@@ -62,6 +62,13 @@ public class SettingsActivity extends AppCompatActivity {
         BtnPreference = getSharedPreferences( "UploadBtn", Context.MODE_PRIVATE );//upload
         BtnPreference = getSharedPreferences( "SearxBtn", Context.MODE_PRIVATE );//search
         BtnPreference = getSharedPreferences( "PollsBtn", Context.MODE_PRIVATE );//polls
+        BtnPreference = getSharedPreferences( "BoardBtn", Context.MODE_PRIVATE );//Board
+        BtnPreference = getSharedPreferences( "CallsBtn", Context.MODE_PRIVATE );//calls
+        BtnPreference = getSharedPreferences( "NotesBtn", Context.MODE_PRIVATE );//notes
+        BtnPreference = getSharedPreferences( "GitBtn", Context.MODE_PRIVATE );//git
+        BtnPreference = getSharedPreferences( "UserBtn", Context.MODE_PRIVATE );//user
+        BtnPreference = getSharedPreferences( "HowToBtn", Context.MODE_PRIVATE );//howTo
+        BtnPreference = getSharedPreferences( "AboutBtn", Context.MODE_PRIVATE );//about
 
         //checkboxlist
         checkPrefBox();
@@ -80,7 +87,14 @@ public class SettingsActivity extends AppCompatActivity {
         final CheckBox checkBinBtn = iconSettings.findViewById( R.id.binBtnPreference );//bin
         final CheckBox checkUploadBtn = iconSettings.findViewById( R.id.uploadBtnPreference );//upload
         final CheckBox checkSearxBtn = iconSettings.findViewById( R.id.searxBtnPreference );//search
-        final CheckBox checkpollsBtn = iconSettings.findViewById( R.id.pollsBtnPreference );//polls
+        final CheckBox checkPollsBtn = iconSettings.findViewById( R.id.pollsBtnPreference );//polls
+        final CheckBox checkBoardBtn = iconSettings.findViewById( R.id.boardBtnPreference );//board
+        final CheckBox checkCallsBtn = iconSettings.findViewById( R.id.callsBtnPreference );//calls
+        final CheckBox checkNotesBtn = iconSettings.findViewById( R.id.notesBtnPreference );//notes
+        final CheckBox checkGitBtn = iconSettings.findViewById( R.id.gitBtnPreference );//git
+        final CheckBox checkUserBtn = iconSettings.findViewById( R.id.userBtnPreference );//user
+        final CheckBox checkHowToBtn = iconSettings.findViewById( R.id.howToBtnPreference );//howTo
+        final CheckBox checkAboutBtn = iconSettings.findViewById( R.id.aboutBtnPreference );//about
 
         //Set checked if visibility is true
         if (BtnPreference.getBoolean( "MailBtn", true )) checkMailBtn.setChecked( true );//mail
@@ -92,7 +106,14 @@ public class SettingsActivity extends AppCompatActivity {
         if (BtnPreference.getBoolean( "BinBtn", true )) checkBinBtn.setChecked( true );//bin
         if (BtnPreference.getBoolean( "UploadBtn", true )) checkUploadBtn.setChecked( true );//upload
         if (BtnPreference.getBoolean( "SearxBtn", true )) checkSearxBtn.setChecked( true );//search
-        if (BtnPreference.getBoolean( "pollsBtn", true )) checkSearxBtn.setChecked( true );//polls
+        if (BtnPreference.getBoolean( "PollsBtn", true )) checkPollsBtn.setChecked( true );//polls
+        if (BtnPreference.getBoolean( "BoardBtn", true )) checkBoardBtn.setChecked( true );//board
+        if (BtnPreference.getBoolean( "CallsBtn", true )) checkCallsBtn.setChecked( true );//calls
+        if (BtnPreference.getBoolean( "NotesBtn", true )) checkNotesBtn.setChecked( true );//notes
+        if (BtnPreference.getBoolean( "GitBtn", true )) checkGitBtn.setChecked( true );//git
+        if (BtnPreference.getBoolean( "UserBtn", true )) checkUserBtn.setChecked( true );//user
+        if (BtnPreference.getBoolean( "HowToBtn", true )) checkHowToBtn.setChecked( true );//howTo
+        if (BtnPreference.getBoolean( "AboutBtn", true )) checkAboutBtn.setChecked( true );//about
 
         //Mail
         checkMailBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
@@ -203,17 +224,100 @@ public class SettingsActivity extends AppCompatActivity {
         } );
 
         //polls
-        checkpollsBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+        checkPollsBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton view, boolean isChecked) {
-                if (checkpollsBtn.isChecked()) {
+                if (checkPollsBtn.isChecked()) {
                     BtnPreference.edit().putBoolean( "PollsBtn", true ).apply();
                 } else {
-                    BtnPreference.edit().putBoolean( "pollsBtn", false ).apply();
+                    BtnPreference.edit().putBoolean( "PollsBtn", false ).apply();
                 }
             }
         } );
 
+        //board
+        checkBoardBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton view, boolean isChecked) {
+                if (checkBoardBtn.isChecked()) {
+                    BtnPreference.edit().putBoolean( "BoardBtn", true ).apply();
+                } else {
+                    BtnPreference.edit().putBoolean( "BoardBtn", false ).apply();
+                }
+            }
+        } );
+
+        //board
+        checkCallsBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton view, boolean isChecked) {
+                if (checkCallsBtn.isChecked()) {
+                    BtnPreference.edit().putBoolean( "CallsBtn", true ).apply();
+                } else {
+                    BtnPreference.edit().putBoolean( "CallsBtn", false ).apply();
+                }
+            }
+        } );
+
+        //notes
+        checkNotesBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton view, boolean isChecked) {
+                if (checkNotesBtn.isChecked()) {
+                    BtnPreference.edit().putBoolean( "NotesBtn", true ).apply();
+                } else {
+                    BtnPreference.edit().putBoolean( "NotesBtn", false ).apply();
+                }
+            }
+        } );
+
+        //git
+        checkGitBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton view, boolean isChecked) {
+                if (checkGitBtn.isChecked()) {
+                    BtnPreference.edit().putBoolean( "GitBtn", true ).apply();
+                } else {
+                    BtnPreference.edit().putBoolean( "GitBtn", false ).apply();
+                }
+            }
+        } );
+
+        //user
+        checkUserBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton view, boolean isChecked) {
+                if (checkUserBtn.isChecked()) {
+                    BtnPreference.edit().putBoolean( "UserBtn", true ).apply();
+                } else {
+                    BtnPreference.edit().putBoolean( "UserBtn", false ).apply();
+                }
+            }
+        } );
+
+        //howTo
+        checkHowToBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton view, boolean isChecked) {
+                if (checkHowToBtn.isChecked()) {
+                    BtnPreference.edit().putBoolean( "HowToBtn", true ).apply();
+                } else {
+                    BtnPreference.edit().putBoolean( "HowToBtn", false ).apply();
+                }
+            }
+        } );
+
+        //about
+        checkAboutBtn.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton view, boolean isChecked) {
+                if (checkAboutBtn.isChecked()) {
+                    BtnPreference.edit().putBoolean( "AboutBtn", true ).apply();
+                } else {
+                    BtnPreference.edit().putBoolean( "AboutBtn", false ).apply();
+                }
+            }
+        } );
     }
 
     @Override //make sure changes are applyed when going back
