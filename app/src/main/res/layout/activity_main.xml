@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:orientation="vertical">
 
     <include layout="@layout/item_toolbar" />
@@ -13,7 +14,7 @@
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:progressTint="@color/bg_primary_blue_dark"
+        android:progressTint="@color/dark_grey"
         android:visibility="gone"
         android:indeterminate="false"
         android:max="100"

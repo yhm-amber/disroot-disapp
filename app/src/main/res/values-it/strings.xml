@@ -165,7 +165,7 @@
     <string name="deviceName">Device name:</string>
     <string name="edit_apps_title">Show/hide apps</string>
     <string name="MailBtnPref">show/hide Mail icon</string>
-    <string name="settings">Show/Hide Icons</string>
+    <string name="settings">Impostazioni</string>
     <string name="CloudBtnPref">Show/hide Cloud icon</string>
     <string name="hide">Hide app</string>
     <string name="dashboard">Dashboard</string>

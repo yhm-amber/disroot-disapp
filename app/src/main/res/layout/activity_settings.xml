@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.SettingsActivity"
@@ -10,25 +9,7 @@
     android:background="@color/dark_grey"
     android:id="@+id/iconSettings">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/bg_primary_blue"
-        android:paddingTop="@dimen/appbar_padding_top"
-        android:theme="@style/DisTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_weight="1"
-            android:background="@color/bg_primary_blue"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:title="@string/settings">
-
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/item_toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -68,6 +49,7 @@
                 android:drawableLeft="@drawable/ic_mail" />
             <CheckBox
                 android:id="@+id/mailBtnPreference"
+                android:button="@drawable/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"/>
@@ -89,6 +71,7 @@
                 android:drawableLeft="@drawable/ic_cloud"/>
             <CheckBox
                 android:id="@+id/cloudBtnPreference"
+                android:button="@drawable/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"/>
@@ -109,6 +92,7 @@
                 android:drawableLeft="@drawable/ic_forum"/>
             <CheckBox
                 android:id="@+id/foumBtnPreference"
+                android:button="@drawable/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"/>
@@ -129,6 +113,7 @@
                 android:drawableLeft="@drawable/ic_chat"/>
             <CheckBox
                 android:id="@+id/chatBtnPreference"
+                android:button="@drawable/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"/>
@@ -148,6 +133,7 @@
                 android:drawableLeft="@drawable/ic_pad"/>
             <CheckBox
                 android:id="@+id/padBtnPreference"
+                android:button="@drawable/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"/>
@@ -167,6 +153,7 @@
                 android:drawableLeft="@drawable/ic_calc"/>
             <CheckBox
                 android:id="@+id/calcBtnPreference"
+                android:button="@drawable/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"/>
@@ -186,6 +173,7 @@
                 android:drawableLeft="@drawable/ic_bin"/>
             <CheckBox
                 android:id="@+id/binBtnPreference"
+                android:button="@drawable/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"/>
@@ -205,6 +193,7 @@
                 android:drawableLeft="@drawable/ic_upload"/>
             <CheckBox
                 android:id="@+id/uploadBtnPreference"
+                android:button="@drawable/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"/>
@@ -224,6 +213,7 @@
                     android:drawableLeft="@drawable/ic_searx"/>
                 <CheckBox
                     android:id="@+id/searxBtnPreference"
+                    android:button="@drawable/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"/>
@@ -243,6 +233,7 @@
                     android:drawableLeft="@drawable/ic_poll"/>
                 <CheckBox
                     android:id="@+id/pollsBtnPreference"
+                    android:button="@drawable/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"/>
@@ -262,6 +253,7 @@
                     android:drawableLeft="@drawable/ic_board"/>
                 <CheckBox
                     android:id="@+id/boardBtnPreference"
+                    android:button="@drawable/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"/>
@@ -281,6 +273,7 @@
                     android:drawableLeft="@drawable/ic_calls"/>
                 <CheckBox
                     android:id="@+id/callsBtnPreference"
+                    android:button="@drawable/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"/>
@@ -300,6 +293,7 @@
                     android:drawableLeft="@drawable/ic_notes"/>
                 <CheckBox
                     android:id="@+id/notesBtnPreference"
+                    android:button="@drawable/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"/>
@@ -319,6 +313,7 @@
                     android:drawableLeft="@drawable/ic_git"/>
                 <CheckBox
                     android:id="@+id/gitBtnPreference"
+                    android:button="@drawable/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"/>
@@ -338,6 +333,7 @@
                     android:drawableLeft="@drawable/ic_user"/>
                 <CheckBox
                     android:id="@+id/userBtnPreference"
+                    android:button="@drawable/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"/>
@@ -357,6 +353,7 @@
                     android:drawableLeft="@drawable/ic_howto"/>
                 <CheckBox
                     android:id="@+id/howToBtnPreference"
+                    android:button="@drawable/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"/>
@@ -376,6 +373,7 @@
                     android:drawableLeft="@drawable/ic_about"/>
                 <CheckBox
                     android:id="@+id/aboutBtnPreference"
+                    android:button="@drawable/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"/>

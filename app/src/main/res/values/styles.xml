@@ -11,8 +11,8 @@
         <item name="toolbarStyle">@style/Widget.MyApp.ActionBar</item>
         <item name="android:textAllCaps">false</item>
         <!--i<item name="cardViewStyle">@style/CardView</item>-->
-        <item name="colorControlNormal">@color/gray</item><!--if checkbox is activated-->
-        <item name="colorControlActivated">@color/gray</item><!--if checkbox is activated-->
+        <!--<item name="colorControlNormal">@color/gray</item>if checkbox is activated-->
+        <!--<item name="colorControlActivated">@color/gray</item>if checkbox is activated-->
     </style>
 
     <style name="DisTheme.Settings" parent="Theme.AppCompat.Light.NoActionBar">
@@ -22,13 +22,14 @@
         <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
     </style>
 
+
     <style name="Widget.MyApp.ActionBar" parent="Widget.AppCompat.ActionBar">
         <item name="theme">@style/ThemeOverlay.MyApp.ActionBar</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Dark</item> <!--change theme for actionbar poupmenu-->
     </style>
 
     <style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:textColor">@color/gray</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:actionMenuTextColor">@color/gray</item><!--<item name="android:textSize">18sp</item>-->
     </style>

@@ -106,6 +106,35 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         FrameLayout frameLayoutContainer = findViewById(R.id.framelayout_container);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon( R.drawable.ic_home );
+        toolbar.setNavigationOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ScrollView dashboard = findViewById(R.id.dashboard);
+                TranslateAnimation animateup = new TranslateAnimation(0,0,-2*dashboard.getHeight(),0);
+                TranslateAnimation animatedown = new TranslateAnimation(0,0,0,-dashboard.getHeight());
+                if(webView.getVisibility()==View.VISIBLE){
+                    //animation
+                    animateup.setDuration(500);
+                    animateup.setFillAfter(false);
+                    dashboard.startAnimation(animateup);
+                    dashboard.setVisibility(View.VISIBLE);
+                    webView.setVisibility(View.GONE);
+                    return;
+                }
+                if (webView.getVisibility()==View.GONE && webView.getUrl()!=null){
+                    //animation
+                    animatedown.setDuration(500);
+                    animatedown.setFillAfter(false);
+                    dashboard.startAnimation(animatedown);
+                    hideDashboard();
+                    return;
+                }
+                else
+                    return;
+            }
+        } );
+
         setupWebView(savedInstanceState, frameLayoutContainer);
         //settings
         firstStart = getSharedPreferences("org.disroot.disrootap", MODE_PRIVATE);//fisrt start
@@ -1412,7 +1441,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             case R.id.action_share:
                 shareCurrentPage();
                 return true;
-            case R.id.action_home:
+            /*case R.id.action_home:
                 if(webView.getVisibility()==View.VISIBLE){
                     //animation
                     animateup.setDuration(500);
@@ -1432,7 +1461,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     return true;
                 }
                 else
-                    return true;
+                    return true;*/
             case R.id.action_forget:
                 showForget();
 

@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
-    <item
+    <!--<item
         android:id="@+id/action_home"
         android:icon="@drawable/ic_home"
         android:title="@string/action_home"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"/>-->
     <item
         android:id="@+id/action_share"
         android:orderInCategory="1"
@@ -36,7 +36,7 @@
             android:id="@+id/action_optimization"
             android:title="@string/action_optimization" />
         <item
-            android:icon="@drawable/ic_reload"
+            android:icon="@drawable/ic_settings"
             android:id="@+id/action_set_icons"
             android:title="@string/settings" />
         <item
