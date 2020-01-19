@@ -52,7 +52,6 @@
     <string name="maintainersText">Questa app è attualmente in fase di sviluppo e manutenuta da parte di\n\n</string>
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Comunità Disroot (Disroot):</string>
-    <string name="contributorsTitle">Contribuenti</string>
     <string name="contributors"><b> &#8226; muppeth:</b>\n Amministratore Disroot\n\n<b> &#8226; antilopa:</b>\n Amministratrice Disroot\n\n<b> &#8226; Massimiliano:</b>\n Sviluppatore\n\n<b> &#8226; Fede:</b>\n Contributore di contenuti\n\n<b> &#8226; Meaz:</b>\n Contributore di contenuti\n\n<b> &#8226; maryjane:</b>\n Contributore di contenuti\n\n<b> &#8226; userdebug:</b>\n Contributore di contenuti\n\n<b> &#8226; ButterflyOfFire:</b>\n Contributore di contenuti\n\n<b> &#8226; jh:</b>\n Contributore di contenuti\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librerie di terze parti</string>
@@ -164,9 +163,7 @@
     <string name="androidVersion">Android version:</string>
     <string name="deviceName">Device name:</string>
     <string name="edit_apps_title">Show/hide apps</string>
-    <string name="MailBtnPref">show/hide Mail icon</string>
     <string name="settings">Impostazioni</string>
-    <string name="CloudBtnPref">Show/hide Cloud icon</string>
     <string name="hide">Hide app</string>
     <string name="dashboard">Dashboard</string>
     <string name="action_calls">Calls</string>
@@ -177,4 +174,8 @@
     <string name="GitTitle">Gitea Info</string>
     <string name="GitInfo">Git with a cup of tea A painless, self-hosted Git service</string>
     <string name="GitsDialog">To continue you need to install GitNex first.Please select install to continue with the installation on F-Droid.</string>
+    <string name="adminsTitle">Admins:</string>
+    <string name="devsTitle">Developers:</string>
+    <string name="translatorsTitle">Translators:</string>
+    <string name="artworksTitle">Artwork:</string>
 </resources>

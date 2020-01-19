@@ -13,7 +13,6 @@
     <string name="action_searx">Search</string>
     <string name="action_poll">Polls</string>
     <string name="action_board">Project board</string>
-    <string name="action_user">Account</string>
     <string name="action_state">State</string>
     <string name="action_howto">How to</string>
 
@@ -35,8 +34,6 @@
     <string name="CloudInfoTitle">Nextcloud Settings</string>
     <string name="CloudInfo">Keep your data synchronized and safe. With Nextcloud you can share your files, calendars, contacts and more.\n\nHost:\n https://cloud.disroot.org\n\nUsername:\n your_disroot_username\n\nPassword:\n your_disroot_password.</string>
     <string name="WelcomeTitle">Welcome</string>
-    <string name="WelcomeInfo">Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.\nThis app is like your Swiss Army knife to the Disroot platform, made by the community for the community.\nIf you don\'t have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requires a Diaspora only account)\n\nThe app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google\'s Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it by tapping on the F-droid icon.\n</string>
-
     <string name="help">Help</string>
     <string name="license">License</string>
     <string name="action_settings">Settings</string>
@@ -52,7 +49,6 @@
     <string name="maintainersText">This app is currently being developed and maintained by\n\n</string>
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Community (Disroot):</string>
-    <string name="contributorsTitle">Contributors</string>
     <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot admin\n\n<b> &#8226; antilopa:</b>\n Disroot admin\n\n<b> &#8226; Massimiliano:</b>\n Developer\n\n<b> &#8226; Fede:</b>\n Content contributor\n\n<b> &#8226; Meaz:</b>\n Content contributor\n\n<b> &#8226; maryjane:</b>\n Content contributor\n\n<b> &#8226; userdebug:</b>\n Content contributor\n\n<b> &#8226; jh:</b>\n Content contributor\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Third-Party Libraries</string>
@@ -159,15 +155,18 @@
     <string name="do_you_want_to_exit">Do you want to exit?</string>
     <string name="action_optimization">Battery optimization</string>
     <string name="OptimizationTitle">Battery optimization!</string>
-    <string name="OptimizationInfo">With this update the app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
+
+
+
+    <string name="OptimizationInfo">The Disroot app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
+    <string name="action_user">Account</string>
     <string name="id">id:</string>
     <string name="version">App version:</string>
     <string name="androidVersion">Android version:</string>
     <string name="deviceName">Device name:</string>
     <string name="edit_apps_title">Show/hide apps</string>
-    <string name="MailBtnPref">Mail</string>
     <string name="settings">Settings</string>
-    <string name="CloudBtnPref">Cloud</string>
+    <string name="WelcomeInfo">Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.\nThis app is like your Swiss Army knife to the Disroot platform, made by the community for the community.\nIf you don\'t have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Calls\n\nThe app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google\'s Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it by tapping on the F-droid icon.\n</string>
     <string name="hide">Hide app</string>
     <string name="dashboard">Dashboard</string>
     <string name="action_calls">Calls</string>
@@ -178,4 +177,8 @@
     <string name="GitTitle">Gitea Info</string>
     <string name="GitInfo">Git with a cup of tea.\n A painless, self-hosted Git service</string>
     <string name="GitsDialog">To continue you need to install GitNex first.\nPlease select install to continue with the installation on F-Droid.</string>
+    <string name="adminsTitle">Admins:</string>
+    <string name="devsTitle">Developers:</string>
+    <string name="translatorsTitle">Translators:</string>
+    <string name="artworksTitle">Artwork:</string>
 </resources>

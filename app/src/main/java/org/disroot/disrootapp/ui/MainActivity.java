@@ -1314,9 +1314,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
 
     public void shareCurrentPage() {
+        ScrollView dashboard = findViewById(R.id.dashboard);
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setAction(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_TEXT, webView.getUrl());
+        if (dashboard.getVisibility() == View.GONE) intent.putExtra( Intent.EXTRA_TEXT, webView.getUrl() );
+        else intent.putExtra( Intent.EXTRA_TEXT, Constants.URL_DisApp_DISAPP );
         intent.setType("text/plain");
         startActivity(intent);
     }

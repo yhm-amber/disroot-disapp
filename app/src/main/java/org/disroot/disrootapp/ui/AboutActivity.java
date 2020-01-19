@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,6 +27,7 @@ import android.widget.TextView;
 
 import org.disroot.disrootapp.R;
 import org.disroot.disrootapp.utils.Constants;
+import org.disroot.disrootapp.utils.Contributors;
 
 import static org.disroot.disrootapp.BuildConfig.APPLICATION_ID;
 import static org.disroot.disrootapp.BuildConfig.VERSION_CODE;
@@ -225,6 +227,44 @@ public class AboutActivity extends AppCompatActivity {
                     break;
                 case 3:
                     rootView = inflater.inflate(R.layout.fragment_about_license, container, false);
+                    //Contributors
+                    //Admins
+                    final TextView contr_text;
+                    contr_text = rootView.findViewById(R.id.admins_text);
+                    contr_text.setMovementMethod( LinkMovementMethod.getInstance());
+                    String admins="";
+                    for(String admin: Contributors.admins) {
+                        admins+="&bull; "+admin+"</a><br>";
+                        contr_text.setText( Html.fromHtml(admins));
+                    }
+                    //devs
+                    final TextView devs_text;
+                    devs_text = rootView.findViewById(R.id.devs_text);
+                    devs_text.setMovementMethod( LinkMovementMethod.getInstance());
+                    String devs="";
+                    for(String dev: Contributors.devs) {
+                        devs+="&bull; "+dev+"</a><br>";
+                        devs_text.setText( Html.fromHtml(devs));
+                    }
+                    //translators
+                    final TextView translators_text;
+                    translators_text = rootView.findViewById(R.id.translators_text);
+                    translators_text.setMovementMethod( LinkMovementMethod.getInstance());
+                    String translators="";
+                    for(String translator: Contributors.translators) {
+                        translators+="&bull; "+translator+"</a><br>";
+                        translators_text.setText( Html.fromHtml(translators));
+                    }
+                    //artworks
+                    final TextView artworks_text;
+                    artworks_text = rootView.findViewById(R.id.artworks_text);
+                    artworks_text.setMovementMethod( LinkMovementMethod.getInstance());
+                    String artworks="";
+                    for(String artwork: Contributors.artworks) {
+                        artworks+="&bull; "+artwork+"</a><br>";
+                        artworks_text.setText( Html.fromHtml(artworks));
+                    }
+
                     //Buttons
                     final Button licenseBtn;//LicenseBtn
                     licenseBtn = rootView.findViewById(R.id.license_button);

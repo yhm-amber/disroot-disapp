@@ -51,7 +51,8 @@ public class Constants {
     public static final String URL_DisApp_BOARDHELP = "https://howto.disroot.org/en/tutorials/project_board";
     public static final String URL_DisApp_NOTESHELP = "https://howto.disroot.org/en/tutorials/cloud/clients/mobile/android/using-notes";
     public static final String URL_DisApp_CALLSHELP = "https://disroot.org/en/services/calls";
-    public static final String URL_DisApp_GITHELP = "https://howto.disroot.org/en/contribute/git";//need url
+    public static final String URL_DisApp_GITHELP = "https://howto.disroot.org/en/contribute/git";
+    public static final String URL_DisApp_DISAPP = "https://f-droid.org/en/packages/org.disroot.disrootapp/";
 
     public static final String k9 = "com.fsck.k9";
     public static final String nc = "com.nextcloud.client";

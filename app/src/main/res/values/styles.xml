@@ -22,7 +22,6 @@
         <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
     </style>
 
-
     <style name="Widget.MyApp.ActionBar" parent="Widget.AppCompat.ActionBar">
         <item name="theme">@style/ThemeOverlay.MyApp.ActionBar</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Dark</item> <!--change theme for actionbar poupmenu-->

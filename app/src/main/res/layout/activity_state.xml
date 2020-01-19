@@ -3,53 +3,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.StateActivity">
 
     <include layout="@layout/item_toolbar" />
 
-<android.support.v7.widget.LinearLayoutCompat
-    android:layout_width="match_parent"
+<LinearLayout
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:gravity="center|top"
-    android:background="@color/dark_grey">
+    android:orientation="horizontal">
     <Button
         android:id="@+id/StateBtn"
-        android:shadowColor="@color/bg_primary_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="120dp"
+        android:width="128dp"
+        android:layout_gravity="fill"
         android:breakStrategy="simple"
-        android:minLines="3"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:minLines="2"
         android:drawableTop="@drawable/ic_state"
         android:drawableTint="@color/gray"
         android:text="@string/state_btn"
-        android:layout_gravity="center"
-        android:layout_marginRight="30dp"
         style="?android:attr/borderlessButtonStyle"
         android:textColor="@color/gray"/>
+
     <Button
         android:id="@+id/StateMessageBtn"
-        android:shadowColor="@color/bg_primary_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="120dp"
+        android:width="128dp"
+        android:layout_gravity="fill"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
         android:breakStrategy="simple"
-        android:minLines="3"
+        android:minLines="2"
         android:drawableTop="@drawable/ic_state"
         android:text="@string/state_messages_btn"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
         style="?android:attr/borderlessButtonStyle"
-        android:textColor="#ffffff"/>
-</android.support.v7.widget.LinearLayoutCompat>
+        android:textColor="@color/white"/>
+</LinearLayout>
 
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_grey"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

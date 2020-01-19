@@ -75,7 +75,6 @@
     <string name="maintainersText">Cette application est actuellement développée et maintenue par\n\n</string>
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot">* La communauté Disroot (Disroot) :</string>
-    <string name="contributorsTitle">Contributeurs</string>
     <string name="contributors"><b> • muppeth:</b>\n Administrateur Disroot\n\n<b> • antilopa:</b>\n Administrateur Disroot\n\n<b> • Massimiliano:</b>\n Développeur actuel de l\'application Disroot\n\n<b> • Fede, Meaz, maryjane, userdebug, ButterflyOfFire, jh:</b>\n Contributeurs de contenu\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librairies tierces</string>
@@ -202,9 +201,7 @@
     <string name="androidVersion">Android version:</string>
     <string name="deviceName">Device name:</string>
     <string name="edit_apps_title">Show/hide apps</string>
-    <string name="MailBtnPref">show/hide Mail icon</string>
     <string name="settings">Show/Hide Icons</string>
-    <string name="CloudBtnPref">Show/hide Cloud icon</string>
     <string name="hide">Hide app</string>
     <string name="dashboard">Dashboard</string>
     <string name="action_calls">Calls</string>
@@ -215,4 +212,8 @@
     <string name="GitTitle">Gitea Info</string>
     <string name="GitInfo">Git with a cup of tea A painless, self-hosted Git service</string>
     <string name="GitsDialog">To continue you need to install GitNex first.Please select install to continue with the installation on F-Droid.</string>
+    <string name="adminsTitle">Admins:</string>
+    <string name="devsTitle">Developers:</string>
+    <string name="translatorsTitle">Translators:</string>
+    <string name="artworksTitle">Artwork:</string>
 </resources>

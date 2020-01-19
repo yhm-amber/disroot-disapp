@@ -86,19 +86,60 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/contibutors"
+                    android:id="@+id/admins"
                     style="@android:style/TextAppearance.DeviceDefault.Large"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="@string/contributorsTitle" />
-
+                    android:text="@string/adminsTitle" />
                 <TextView
-                    android:id="@+id/mastext"
+                    android:id="@+id/admins_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="@string/contributors" />
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/devs"
+                    style="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/devsTitle" />
+                <TextView
+                    android:id="@+id/devs_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/translators"
+                    style="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/translatorsTitle" />
+                <TextView
+                    android:id="@+id/translators_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/artworks"
+                    style="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/artworksTitle" />
+                <TextView
+                    android:id="@+id/artworks_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <!-- License -->
