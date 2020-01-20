@@ -154,17 +154,17 @@
     <string name="action_optimization">Battery optimization</string>
     <string name="OptimizationTitle">Battery optimization!</string>
 
-    //needs update:20/10/2020
+    <!--needs update:20/10/2020-->
     <string name="action_board">Project board</string>
     <string name="action_user">Account</string>
     <string name="action_searx">Search</string>
-    <string name="OptimizationInfo">Mit diesem Update kann sich die App mit der Status Seite von Disroot synchronisieren. Das heißt du wirst sofort über geplante Wartungsarbeiten oder Problemen mit dem Server informiert. Dich erreichen alle wichtigen Verkündungen die veröffentlicht werden auf: https://state.disroot.org\n Wir empfehlen Energiesparfunktionen abzuwählen und die Nutzung im Hintergrund zuzulassen. Wenn du dir gerade nicht sicher bist, kannst du diese Einstellungen jederzeit über das Disroot App Menu ändern.</string>
+    <string name="OptimizationInfo">The Disroot app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
     <string name="id">id:</string>
     <string name="version">App version:</string>
     <string name="androidVersion">Android version:</string>
     <string name="deviceName">Device name:</string>
     <string name="edit_apps_title">Show/hide apps</string>
-    <string name="settings">Show/Hide Icons</string>
+    <string name="settings">Settings</string>
     <string name="hide">Hide app</string>
     <string name="dashboard">Dashboard</string>
     <string name="action_calls">Calls</string>

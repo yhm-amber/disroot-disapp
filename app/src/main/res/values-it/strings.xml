@@ -143,29 +143,29 @@
     <string name="action_optimization">Ottimizzazione batteria</string>
     <string name="OptimizationTitle">Ottimizzazione batteria!</string>
 
-    //needs update:20/10/2020
-    <string name="action_board">Project board</string>
+    <!--needs update:20/10/2020-->
+    <string name="action_board">Scheda progetto</string>
     <string name="action_user">Account</string>
-    <string name="action_searx">Search</string>
-    <string name="OptimizationInfo">Mit diesem Update kann sich die App mit der Status Seite von Disroot synchronisieren. Das heißt du wirst sofort über geplante Wartungsarbeiten oder Problemen mit dem Server informiert. Dich erreichen alle wichtigen Verkündungen die veröffentlicht werden auf: https://state.disroot.org\n Wir empfehlen Energiesparfunktionen abzuwählen und die Nutzung im Hintergrund zuzulassen. Wenn du dir gerade nicht sicher bist, kannst du diese Einstellungen jederzeit über das Disroot App Menu ändern.</string>
+    <string name="action_searx">Ricerca</string>
+    <string name="OptimizationInfo">L\'applicazione Disroot può sincronizzarsi con la pagina di stato di Disroot. Ciò significa che riceverete aggiornamenti in tempo reale sui problemi, i tempi di inattività, la manutenzione programmata e altre informazioni pubblicate su https://state.disroot.org\nSi consiglia di disattivare l\'ottimizzazione della batteria e di consentire all\'app Disroot di funzionare in background. Se non siete sicuri, potete sempre cambiare l\'impostazione dal menu dell\'app Disroot in un secondo momento.</string>
     <string name="id">id:</string>
-    <string name="version">App version:</string>
-    <string name="androidVersion">Android version:</string>
-    <string name="deviceName">Device name:</string>
-    <string name="edit_apps_title">Show/hide apps</string>
-    <string name="settings">Show/Hide Icons</string>
-    <string name="hide">Hide app</string>
+    <string name="version">Versione app:</string>
+    <string name="androidVersion">Versione Android:</string>
+    <string name="deviceName">Nome dispositivo:</string>
+    <string name="edit_apps_title">Mostra/nascondi applicazioni</string>
+    <string name="settings">Impostazioni</string>
+    <string name="hide">Nascondi app</string>
     <string name="dashboard">Dashboard</string>
-    <string name="action_calls">Calls</string>
-    <string name="CallsTitle">Calls Info</string>
-    <string name="CallsInfo">Disroot\'s Calls service is a videoconferencing software, powered by Jitsi-Meet. It provides you high quality video and audio conferences, with as many partners as you want. It also allows to stream your desktop or only some windows to other participants in the call.</string>
-    <string name="CallsDialog">To continue you need to install Jitsi-Meet first.\nPlease select install to continue with the installation on F-Droid.</string>
+    <string name="action_calls">Chiamate</string>
+    <string name="CallsTitle">Info Chiamate</string>
+    <string name="CallsInfo">Il servizio Disroot Chiamate è un software di videoconferenza, alimentato da Jitsi-Meet. Fornisce videoconferenze e audioconferenze di alta qualità, con tutti i partner che si desidera. Permette inoltre di trasmettere in streaming il vostro desktop o solo alcune finestre agli altri partecipanti alla chiamata.</string>
+    <string name="CallsDialog">Per continuare è necessario installare prima Jitsi-Meet.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
     <string name="action_git">Git</string>
-    <string name="GitTitle">Gitea Info</string>
-    <string name="GitInfo">Git with a cup of tea A painless, self-hosted Git service</string>
-    <string name="GitsDialog">To continue you need to install GitNex first.Please select install to continue with the installation on F-Droid.</string>
-    <string name="adminsTitle">Admins:</string>
-    <string name="devsTitle">Developers:</string>
-    <string name="translatorsTitle">Translators:</string>
+    <string name="GitTitle">Info Gitea</string>
+    <string name="GitInfo">Git con una tazza di tè.\nUn servizio Git indolore e autoospitato</string>
+    <string name="GitsDialog">Per continuare è necessario installare prima GitNex.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
+    <string name="adminsTitle">Amministratori:</string>
+    <string name="devsTitle">Sviluppatori:</string>
+    <string name="translatorsTitle">Traduttori:</string>
     <string name="artworksTitle">Artwork:</string>
 </resources>

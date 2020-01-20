@@ -11,10 +11,10 @@
     <string name="action_calc">EtherCalc</string>
     <string name="action_bin">Private bin</string>
     <string name="action_upload">Téléverser</string>
-    <string name="action_searx">Search</string>//needs update:20/10/2020
+    <string name="action_searx">Search</string><!--needs update:20/10/2020-->
     <string name="action_poll">Sondage</string>
-    <string name="action_board">Project board</string>//needs update:20/10/2020
-    <string name="action_user">Account</string>//needs update:20/10/2020
+    <string name="action_board">Project board</string><!--needs update:20/10/2020-->
+    <string name="action_user">Account</string><!--needs update:20/10/2020-->
     <string name="action_state">État des services</string>
     <string name="action_howto">Tutoriels</string>
 
@@ -194,18 +194,18 @@
     <string name="do_you_want_to_exit">Voulez-vous quitter?</string>
     <string name="action_optimization">Optimisation de la batterie</string>
     <string name="OptimizationTitle">Optimisation de la batterie!</string>
-    <string name="OptimizationInfo">Avec cette mise à jour, l\'application peut se synchroniser avec la page de statut de Disroot. Cela signifie que vous recevrez des mises à jour en temps réel sur les problèmes, les temps d\'arrêt, la maintenance programmée et d\'autres informations publiées via https://state.disroot.org\nNous vous recommandons de désactiver l\'optimisation de la batterie et d\'autoriser l\'exécution de l\'application Disroot en arrière-plan. Si vous n\'êtes pas sûr, vous pouvez toujours changer le réglage à partir du menu de l\'application Disroot plus tard.</string>
+    <string name="OptimizationInfo">L\'application Disroot peut se synchroniser avec la page de statut de Disroot. Cela signifie que vous recevrez des mises à jour en temps réel sur les problèmes, les temps d\'arrêt, la maintenance programmée et d\'autres informations publiées via https://state.disroot.org\nNous vous recommandons de désactiver l\'optimisation de la batterie et d\'autoriser l\'exécution de l\'application Disroot en arrière-plan. Si vous n\'êtes pas sûr, vous pouvez toujours changer le réglage à partir du menu de l\'application Disroot plus tard.</string><!-- needs update (tryed to fix :-)-->
     <string name="id">id:</string>
     <string name="version">Version de l\'App:</string>
     <string name="androidVersion">Vrsion d\'Android:</string>
     <string name="deviceName">Nom de l\'appareil:</string>
     <string name="edit_apps_title">Montrer/Masquer des applications</string>
-    <string name="settings">Montrer/Masquer des icônes</string>
+    <string name="settings">Settings</string><!--needs update:20/10/2020-->
     <string name="hide">Masquer l\'application</string>
     <string name="dashboard">Tableau de bord</string>
     <string name="action_calls">Calls</string>
     <string name="CallsTitle">Info sur Calls</string>
-    <string name="CallsInfo">Le service d\'appels Calls de Disroot est un logiciel de vidéoconférence, développé par Jitsi-Meet. Il vous permet de réaliser des vidéoconférences et des audioconférences de haute qualité, avec autant de partenaires que vous le souhaitez. Il permet également de diffuser votre bureau ou seulement certaines fenêtres aux autres participants à l'appel.</string>
+    <string name="CallsInfo">Le service d\'appels Calls de Disroot est un logiciel de vidéoconférence, développé par Jitsi-Meet. Il vous permet de réaliser des vidéoconférences et des audioconférences de haute qualité, avec autant de partenaires que vous le souhaitez. Il permet également de diffuser votre bureau ou seulement certaines fenêtres aux autres participants à l\'appel.</string>
     <string name="CallsDialog">Pour continuer, vous devez d\'abord installer Jitsi-Meet.\nVeuillez sélectionner Installer pour continuer l\'installation sur F-Droid.</string>
     <string name="action_git">Git</string>
     <string name="GitTitle">Info sur Gitea</string>

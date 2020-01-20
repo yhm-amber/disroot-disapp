@@ -156,29 +156,29 @@
     <string name="action_optimization">Batterij optimalisatie</string>
     <string name="OptimizationTitle">Batterij optimalisatie!</string>
 
-    //needs update:20/10/2020
-    <string name="action_board">Project board</string>
+    <!--needs update:20/10/2020-->
+    <string name="action_board">Project bord</string>
     <string name="action_user">Account</string>
-    <string name="action_searx">Search</string>
-    <string name="OptimizationInfo">Mit diesem Update kann sich die App mit der Status Seite von Disroot synchronisieren. Das heißt du wirst sofort über geplante Wartungsarbeiten oder Problemen mit dem Server informiert. Dich erreichen alle wichtigen Verkündungen die veröffentlicht werden auf: https://state.disroot.org\n Wir empfehlen Energiesparfunktionen abzuwählen und die Nutzung im Hintergrund zuzulassen. Wenn du dir gerade nicht sicher bist, kannst du diese Einstellungen jederzeit über das Disroot App Menu ändern.</string>
+    <string name="action_searx">Zoeken</string>
+    <string name="OptimizationInfo">De Disroot app kan synchroniseren met de statuspagina van Disroot. Dit betekent dat u realtime updates ontvangt over problemen, uitvaltijden, gepland onderhoud en andere zaken die worden gepubliceerd via https://state.disroot.org\nWe raden aan om de batterijoptimalisatie uit te schakelen en de Disroot app op de achtergrond te laten draaien. Als u niet zeker bent, kunt u de instelling later altijd nog wijzigen via het menu van de Disroot app.</string>
     <string name="id">id:</string>
-    <string name="version">App version:</string>
-    <string name="androidVersion">Android version:</string>
-    <string name="deviceName">Device name:</string>
-    <string name="edit_apps_title">Show/hide apps</string>
-    <string name="settings">Show/Hide Icons</string>
-    <string name="hide">Hide app</string>
+    <string name="version">App versie:</string>
+    <string name="androidVersion">Android versie:</string>
+    <string name="deviceName">Apparaatnaam:</string>
+    <string name="edit_apps_title">Toon/verberg apps</string>
+    <string name="settings">Instellingen</string>
+    <string name="hide">Verberg app</string>
     <string name="dashboard">Dashboard</string>
-    <string name="action_calls">Calls</string>
+    <string name="action_calls">Bellen</string>
     <string name="CallsTitle">Calls Info</string>
-    <string name="CallsInfo">Disroot\'s Calls service is a videoconferencing software, powered by Jitsi-Meet. It provides you high quality video and audio conferences, with as many partners as you want. It also allows to stream your desktop or only some windows to other participants in the call.</string>
-    <string name="CallsDialog">To continue you need to install Jitsi-Meet first.\nPlease select install to continue with the installation on F-Droid.</string>
+    <string name="CallsInfo">Disroot Gesprekken dienst is een videoconferentie software, aangedreven door Jitsi-Meet. Het biedt u video- en audioconferenties van hoge kwaliteit, met zoveel partners als u wilt. Het maakt het ook mogelijk om uw bureaublad te streamen of slechts enkele vensters naar andere deelnemers aan het gesprek.</string>
+    <string name="CallsDialog">Om verder te gaan moet u eerst Jitsi-Meet installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
     <string name="action_git">Git</string>
     <string name="GitTitle">Gitea Info</string>
-    <string name="GitInfo">Git with a cup of tea A painless, self-hosted Git service</string>
-    <string name="GitsDialog">To continue you need to install GitNex first.Please select install to continue with the installation on F-Droid.</string>
+    <string name="GitInfo">Git met een kopje thee\nEen pijnloze, self-hosted Git service</string>
+    <string name="GitsDialog">Om verder te gaan moet u eerst GitNex installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
     <string name="adminsTitle">Admins:</string>
-    <string name="devsTitle">Developers:</string>
-    <string name="translatorsTitle">Translators:</string>
+    <string name="devsTitle">Ontwikkelaars:</string>
+    <string name="translatorsTitle">Vertalers:</string>
     <string name="artworksTitle">Artwork:</string>
 </resources>
