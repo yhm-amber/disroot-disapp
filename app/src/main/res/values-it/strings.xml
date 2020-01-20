@@ -162,7 +162,7 @@
     <string name="CallsDialog">Per continuare è necessario installare prima Jitsi-Meet.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
     <string name="action_git">Git</string>
     <string name="GitTitle">Info Gitea</string>
-    <string name="GitInfo">Git con una tazza di tè.\nUn servizio Git indolore e autoospitato</string>
+    <string name="GitInfo">Git con una tazza di tè.\nUn servizio Git indolore e autogestito</string>
     <string name="GitsDialog">Per continuare è necessario installare prima GitNex.\nSelezionate installa per continuare con l\'installazione su F-Droid.</string>
     <string name="adminsTitle">Amministratori:</string>
     <string name="devsTitle">Sviluppatori:</string>

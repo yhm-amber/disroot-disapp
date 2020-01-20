@@ -169,8 +169,8 @@
     <string name="settings">Instellingen</string>
     <string name="hide">Verberg app</string>
     <string name="dashboard">Dashboard</string>
-    <string name="action_calls">Bellen</string>
-    <string name="CallsTitle">Calls Info</string>
+    <string name="action_calls">Gesprekken</string>
+    <string name="CallsTitle">Gesprekken Info</string>
     <string name="CallsInfo">Disroot Gesprekken dienst is een videoconferentie software, aangedreven door Jitsi-Meet. Het biedt u video- en audioconferenties van hoge kwaliteit, met zoveel partners als u wilt. Het maakt het ook mogelijk om uw bureaublad te streamen of slechts enkele vensters naar andere deelnemers aan het gesprek.</string>
     <string name="CallsDialog">Om verder te gaan moet u eerst Jitsi-Meet installeren.\nSelecteer Installeren om verder te gaan met de installatie op F-Droid.</string>
     <string name="action_git">Git</string>
