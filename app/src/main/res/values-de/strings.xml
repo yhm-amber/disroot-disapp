@@ -10,50 +10,34 @@
     <string name="action_calc">EtherCalc</string>
     <string name="action_bin">Private bin</string>
     <string name="action_upload">Upload</string>
-    <string name="action_searx">Searx</string>
     <string name="action_poll">Umfrage</string>
-    <string name="action_board">Taiga</string>
-    <string name="action_user">Passwort</string>
     <string name="action_state">Status</string>
     <string name="action_howto">How to</string> <!--best transl will be tutorial, but inconsistent then-->
-
     <string name="action_about">Über</string>
     <string name="action_exit">Exit</string>
     <string name="action_share">Teilen</string>
     <string name="action_reload">neu laden</string>
-
-
-
-    <string name="activity_main_share_info">hey, das kitzelt</string> <!--placeholder maybe some fun here?, means "hey that tickles me"-->
+    <string name="activity_main_share_info">hey, das kitzelt</string>
     <string name="view_loading_description">lädt…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">weitere Hilfe</string>
     <string name="tell_more">weitere Infos</string>
     <string name="title_activity_about">AboutActivity</string> <!--still not sure what to do. translation will be "Über Aktivität"-->
-
     <string name="MailInfoTitle">E-Mail Einstellungen</string> <!--E-mail server info for Client settings-->
     <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAuthentifizierung: normales\nPasswort\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAuthentifizierung: normales\nPasswort\n\nPOP: disroot.org\nSSL Port 995\nAuthentifizierung: normales\nPasswort</string>
     <string name="CloudInfoTitle">Nextcloud Einstellungen</string>
     <string name="CloudInfo">Sichere und synchronisiere deine Daten. Mit Nextcloud kannst du Dateien, Kalender, Kontakte und mehr mit anderen teilen.\n\nHost:\n https://cloud.disroot.org\n\nBenutzername:\n "dein Disroot Benutzername"\n\nPasswort:\n "dein Disroot Passwort".</string>
     <string name="WelcomeTitle">Willkommen</string>
     <string name="WelcomeInfo">Disroot ist eine Plattform, auf der Online-Dienste angeboten werden, die auf den Prinzipien von Freiheit, Privatsphäre, Gemeinschaft und Dezentralisierung basieren.\nDiese App ist wie ein Schweizer Taschenmesser für die Disroot-Plattform, von der Community für die Community.\nWenn du kein Disroot-Account hast, kannst du diese App trotzdem nutzen, um auf alle Disroot-Dienste zuzugreifen, die kein Konto erfordern:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (separater Diaspora Account benötigt)\n\nDiese App kann Sie danach fragen weitere Apps zu installieren. Wir empfehlen F-Droid zu installieren - einen kostenlosen und quelloffenen App-Katalog - da nicht alle verwendeten Apps im Google Play Store zu finden sind und F-Droid außerdem mehr auf Datenschutz ausgerichtet ist (kein Tracking, kein Account erforderlich). Sie können F-Droid herunterladen, indem Sie auf das F-Droid-Symbol klicken.\n</string>
-
     <string name="help">Hilfe</string>
     <string name="license">Lizenz</string>
     <string name="action_settings">Einstellungen</string>
     <string name="licenseTitle">Lizenz</string>
     <string name="license_button">GNU LGPLv3.0 Lizenz</string>
-
-
-
-
-
-
     <string name="maintainersTitle">Entwickler</string>
     <string name="maintainersText">Diese App wird zur Zeit gepflegt und entwickelt von\n\n</string>
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Community (Disroot):</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Disroot Administrator\n\n<b> &#8226; antilopa:</b>\n Disroot Administrator\n\n<b> &#8226; Massimiliano:</b>\n Entwickler\n\n<b> &#8226; Fede:</b>\n Verfasser von Inhalten\n\n<b> &#8226; Meaz:</b>\n Verfasser von Inhalten\n\n<b> &#8226; maryjane:</b>\n Verfasser von Inhalten\n\n<b> &#8226; userdebug:</b>\n Verfasser von Inhalten\n\n<b> &#8226; jh:</b>\n Verfasser von Inhalten\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Libraries von Drittanbietern</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckChangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -79,61 +63,24 @@
     <string name="DisrootWeb">Disroot web</string> //website?
     <string name="FirstTitle">Ein paar letzte Hinweise!</string>
     <string name="FirstInfo">&#8226; Wenn du lange auf ein Icon drückst, erhälst du weitere Informationen… \n\n&#8226; Diese App synchronisiert sich mit der Status Seite von Disroot. Das heißt du wirst sofort über geplante Wartungsarbeiten oder Problemen mit dem Server informiert. Dich erreichen alle wichtigen Verkündungen die veröffentlicht werden auf: https://state.disroot.org\nWir empfehlen Energiesparfunktionen abzuwählen und die Nutzung im Hintergrund zuzulassen. Wenn du dir gerade nicht sicher bist, kannst du diese Einstellungen jederzeit über das Disroot App Menu ändern.</string>
-
-
     <string name="DiasporaTitle">Diaspora* Einstellungen</string>
     <string name="DiasporaInfo">Soziales Netzwerk basierend auf einem dezentralem und verteiltem System. Poste, teile, like, gründe Communities.\n\nUsername:\n dein_diaspora_username@pod.disroot.org\n\nPasswort:\n dein_diaspora_passwort</string>
-
-    <!--
-    only ideas and remarks
-
-    <string name="DiasporaTitle">Diaspora* *Info</string>
-    <string name="DiasporaInfo">Distributed and decentralized social network. Post, share, like, create communities. needs a separate account:\n\n sign up here: \n\n link->https://pod.disroot.org/users/sign_in</string>
-    // registration closed right now so useless to state where to sign up...
-    -->
-
     <string name="PadInfo">Mit Etherpad kannst du  mit anderen zusammen in Echtzeit an einem Text-Dokument arbeiten. zB Artikel, Presse release, to-do liste, usw. mit mehreren Teilnehmern, zur gleichen Zeit, dasselbe Dokument bearbeiten.\nKeine Registrierung notwendig.</string>
     <string name="PadTitle">EtherPad Info</string>
-
     <string name="ChatTitle">XMPP Einstellungen\n</string>
     <string name="ChatInfo">Conversations ist ein Messenger für die eine sichere (E2EE mit OMEMO und PGP) und datenschutzfeundliche Kommunikation mit Kontakten und Gruppen. Er nutzt das quelloffene XMPP-Protokoll das eine dezentrale Server-Infrastruktur erlaubt.\n\nJabber ID :\n Deine Disroot email addresse\n\nPasswort :\n Dein Disroot passwort</string>
-
-    <!--
-     only ideas and remarks    ->  RIGHT NOW: "Need more help" -> Error 404 page don't exist
-
-     <string name="ChatTitle">Conversation *Info\n</string>
-     <string name="ChatInfo">Conversations is a free, standard and open-source decentralized and federated instant messaging application for chatting with contacts or within groups.\n\n*your Disroot Jabber ID :\n Your full Disroot email address\n\nPassword :\n Your Disroot password</string>
-
-    -->
-
     <string name="CalcInfo">Mit EtherCalc zusammen an Listen, Formularen, Datensätzen, etc. arbeiten.\nKeine Registrierung notwendig.</string>
     <string name="CalcTitle">EtherCalc Info</string>
-
     <string name="BinTitle">PrivateBin Help</string>
     <string name="BinInfo">PrivateBin ist ein open-source Online-Speicher-Service und Diskussionsforum. Die Daten werden im Browser verschlüsselt und entschlüsselt, so dass der Server keine Kenntnis über die hochgeladenen Daten hat. Fügen Sie einfach einen Text ein, klicken auf "Send" und teilen sie die URL. Es kann zusätzlich ein Passwort und ein Ablaufzeitpunkt gewählt werden.\nKeine Registrierung notwendig.</string>
-    <!--
-       only ideas and remarks
-
-    <string name="BinTitle">PrivateBin *Info</string>
-    <string name="BinInfo">PrivateBin is an open-source online pastebin and discussion board. Data is encrypted/decrypted in the browser so that the server has zero knowledge of hosted data. Just paste a text, click “Send”, set expiration (and other features) and share the URL.\nNo registration is required.</string>
-    -->
-
     <string name="UploadTitle">Upload (powered by Lufi) Info</string>
     <string name="UploadInfo">Upload ist eine Datei-Hosting-Software, die temporär verschlüsselte Dateien speichert, damit Sie sie mit anderen über einen Link teilen können. Alle Dateien sind verschlüsselt, bevor sie Ihr Gerät verlassen, was bedeutet, dass der Server keine Kenntnis von hochgeladen Daten hat..\nKeine Registrierung notwendig.</string>
     <string name="SearxTitle">Searx Info</string>
     <string name="SearxInfo">Searx ist eine anonyme Multi-Suchmaschinen-Plattform, die die Ergebnisse anderer Suchmaschinen abruft, ohne Informationen über den Benutzer zu speichern.  Kein Tracking, Profiling oder Data Mining durch große Unternehmen. \nKeine Registrierung notwendig.</string>
     <string name="PollsTitle">Umfrage Hilfe</string>
     <string name="PollsInfo">Framadate ist ein Online-Service für schnelle Umfragen und Terminplanungen der hilft schnell und einfach gemeinsame Entscheidungen zu fällen.\nKeine Registrierung notwendig.</string>
-
-    <!--
-    same like Taiga shouldn't we name it Framadate and explain here what it is?
-    <string name="PollsTitle">*Framadate Info</string>
-    <string name="PollsInfo">Framadate is an online service for planning an appointment or making a decision quickly and easily.\nNo registration is required.</string>
-    -->
-
     <string name="BoardTitle">Taiga Info</string>
     <string name="BoardInfo">Taiga ist ein Projektmanagement-Tool, das für Programmierer, Designer und Start-ups entwickelt wurde, die mit agilen Methodiken arbeiten. Es kann jedoch auf praktisch jedes Projekt angewendet werden, auch außerhalb des IT-Bereichs.</string>
-
     <string name="UserTitle">User Passwort Verwaltung Hilfe</string> <!-- *Info  -->
     <string name="UserInfo">Nutze unsere User Service Center, um deinen Account zu verwalten und dein Passwort zu ändern.</string>
     <string name="StateTitle">Status Info</string>
@@ -143,7 +90,6 @@
     <string name="HowToInfo">Unsere Seite mit Howtos und Tutorials, die Ihnen helfen, sich mit den verschiedenen Disroot-Diensten zurechtzufinden.</string>
     <string name="AboutTitle">Über Info</string>
     <string name="AboutInfo">Informationen zu dieser App</string>
-
     <string name="ForumTitle">Forum Hilfe</string>  <!-- *Info *you can login with you disroot email adress or user name * this is more a link to distalk then to discourse-->
     <string name="ForumInfo">Discourse ist ein open-source Ansatz für Diskussions-Foren. Es bietet alles, was Ihre Community, Gruppe oder Ihr Kollektiv braucht, um ihre Kommunikationsplattform zu erstellen.</string>
     <string name="LogoTitle">Haben Sie wirklich lange auf das Logo gedrückt?</string> <!-- yeigh easter eggs -->
@@ -197,6 +143,11 @@
     <string name="do_you_want_to_exit">Möchen Sie das Programm wirklich verlassen?</string> <!-- exit what? that sounds so 90s, lol do you really want to exit  hahahaha, so long ago i read this last time-->
     <string name="action_optimization">Energiesparfunktion</string>
     <string name="OptimizationTitle">Energiesparfunktion!</string>
+
+    //needs update:20/10/2020
+    <string name="action_board">Project board</string>
+    <string name="action_user">Account</string>
+    <string name="action_searx">Search</string>
     <string name="OptimizationInfo">Mit diesem Update kann sich die App mit der Status Seite von Disroot synchronisieren. Das heißt du wirst sofort über geplante Wartungsarbeiten oder Problemen mit dem Server informiert. Dich erreichen alle wichtigen Verkündungen die veröffentlicht werden auf: https://state.disroot.org\n Wir empfehlen Energiesparfunktionen abzuwählen und die Nutzung im Hintergrund zuzulassen. Wenn du dir gerade nicht sicher bist, kannst du diese Einstellungen jederzeit über das Disroot App Menu ändern.</string>
     <string name="id">id:</string>
     <string name="version">App version:</string>

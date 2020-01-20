@@ -10,49 +10,34 @@
     <string name="action_calc">EtherCalc</string>
     <string name="action_bin">Private bin</string>
     <string name="action_upload">Upload</string>
-    <string name="action_searx">Searx</string>
     <string name="action_poll">Poll</string>
-    <string name="action_board">Taiga</string>
-    <string name="action_user">Account</string>
     <string name="action_state">Stato</string>
     <string name="action_howto">Manuali</string>
-
     <string name="action_about">Info su</string>
     <string name="action_exit">Esci</string>
     <string name="action_share">Condividi</string>
     <string name="action_reload">Ricarica</string>
-
-
     <string name="activity_main_share_info">Ehi, mi fa il solletico!</string>
     <string name="view_loading_description">Caricamento…</string>
     <string name="global_ok">OK</string>
     <string name="more_help">Bisogno di più aiuto?</string>
     <string name="tell_more">Dimmi di più</string>
     <string name="title_activity_about">Info su</string>
-
     <string name="MailInfoTitle">Impostazioni Mail</string>
     <string name="MailInfo">IMAP: disroot.org\nSSL Port 993\nAutenticazione: Password Normale\n\nSMTP: disroot.org\nSTARTTLS Port 587\nAutenticazione: Password Normale\n\nPOP: disroot.org\nSSL Port 995\nAutenticazione: Password Normale</string>
     <string name="CloudInfoTitle">Impostazioni Nextcloud</string>
     <string name="CloudInfo">Tieni i tuoi dati sincronizzati e al sicuro. Con Nextcloud puoi condividere file, calendari, contatti e altro ancora.\n\nHost:\n https://cloud.disroot.org\n\nnnome utente:\n il_tuo_nome_utente_disroot\n\nPassword:\n la_tua_password_disroot</string>
     <string name="WelcomeTitle">Benvenuto</string>
     <string name="WelcomeInfo">Disroot è una piattaforma che fornisce servizi online basati su principi di libertà, privacy, federazione e decentralizzazione.\nQuesta applicazione è come il tuo coltellino svizzero per la piattaforma Disroot, fatta dalla comunità per la comunità.\nSe non hai un account Disroot puoi comunque utilizzare questa app per accedere a tutti i servizi Disroot che non richiedono un account:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (richiede un conto solo per Diaspora)\n\nLa app potrebbe richiedere l\'installazione di applicazioni aggiuntive. Si consiglia vivamente di installare F-Droid - una app sotre gratuita e open source - in quanto non tutte le applicazioni possono essere trovate su Google Play Store e F-Droid è più orientato alla privacy (nessun tracking, nessun account necessario) è possibile scaricarlo toccando l\'icona F-Droid.\n</string>
-
     <string name="help">Aiuto</string>
     <string name="license">Licenza</string>
     <string name="action_settings">Impostazioni</string>
     <string name="licenseTitle">Licenza</string>
     <string name="license_button">Licenze GNU LGPLv3.0</string>
-    <!--Non translatable
-    <string translatable="false" name="licenseText">Copyright © 2007 Free Software Foundation, Inc.\n
-        This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, version 3 of the License only.\n\n
-        This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
-    </string>-->
-
     <string name="maintainersTitle">Manutentori</string>
     <string name="maintainersText">Questa app è attualmente in fase di sviluppo e manutenuta da parte di\n\n</string>
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Comunità Disroot (Disroot):</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n Amministratore Disroot\n\n<b> &#8226; antilopa:</b>\n Amministratrice Disroot\n\n<b> &#8226; Massimiliano:</b>\n Sviluppatore\n\n<b> &#8226; Fede:</b>\n Contributore di contenuti\n\n<b> &#8226; Meaz:</b>\n Contributore di contenuti\n\n<b> &#8226; maryjane:</b>\n Contributore di contenuti\n\n<b> &#8226; userdebug:</b>\n Contributore di contenuti\n\n<b> &#8226; ButterflyOfFire:</b>\n Contributore di contenuti\n\n<b> &#8226; jh:</b>\n Contributore di contenuti\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librerie di terze parti</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -157,19 +142,24 @@
     <string name="do_you_want_to_exit">Vuoi veramente uscire?</string>
     <string name="action_optimization">Ottimizzazione batteria</string>
     <string name="OptimizationTitle">Ottimizzazione batteria!</string>
-    <string name="OptimizationInfo">Con questo aggiornamento l\'applicazione può sincronizzarsi con la pagina di stato di Disroot. Questo significa che riceverai in tempo reale gli aggiornamenti sui problemi, i tempi di inattività, la manutenzione programmata e altri aggiornamenti pubblicati su https://state.disroot.org\nSi consiglia di disattivare l\'ottimizzazione della batteria e consentire all\'applicazione Disroot di funzionare in background. Se non si è sicuri, è sempre possibile modificare le impostazioni dal menu dell\'applicazione Disroot in un secondo momento.</string>
+
+    //needs update:20/10/2020
+    <string name="action_board">Project board</string>
+    <string name="action_user">Account</string>
+    <string name="action_searx">Search</string>
+    <string name="OptimizationInfo">Mit diesem Update kann sich die App mit der Status Seite von Disroot synchronisieren. Das heißt du wirst sofort über geplante Wartungsarbeiten oder Problemen mit dem Server informiert. Dich erreichen alle wichtigen Verkündungen die veröffentlicht werden auf: https://state.disroot.org\n Wir empfehlen Energiesparfunktionen abzuwählen und die Nutzung im Hintergrund zuzulassen. Wenn du dir gerade nicht sicher bist, kannst du diese Einstellungen jederzeit über das Disroot App Menu ändern.</string>
     <string name="id">id:</string>
     <string name="version">App version:</string>
     <string name="androidVersion">Android version:</string>
     <string name="deviceName">Device name:</string>
     <string name="edit_apps_title">Show/hide apps</string>
-    <string name="settings">Impostazioni</string>
+    <string name="settings">Show/Hide Icons</string>
     <string name="hide">Hide app</string>
     <string name="dashboard">Dashboard</string>
     <string name="action_calls">Calls</string>
     <string name="CallsTitle">Calls Info</string>
     <string name="CallsInfo">Disroot\'s Calls service is a videoconferencing software, powered by Jitsi-Meet. It provides you high quality video and audio conferences, with as many partners as you want. It also allows to stream your desktop or only some windows to other participants in the call.</string>
-    <string name="CallsDialog">To continue you need to install Jitsi-Meet first.\\nPlease select install to continue with the installation on F-Droid.</string>
+    <string name="CallsDialog">To continue you need to install Jitsi-Meet first.\nPlease select install to continue with the installation on F-Droid.</string>
     <string name="action_git">Git</string>
     <string name="GitTitle">Gitea Info</string>
     <string name="GitInfo">Git with a cup of tea A painless, self-hosted Git service</string>

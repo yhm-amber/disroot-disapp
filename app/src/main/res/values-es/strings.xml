@@ -10,10 +10,7 @@
     <string name="action_calc">EtherCalc</string>
     <string name="action_bin">Pastebin</string>
     <string name="action_upload">Subir</string>
-    <string name="action_searx">Búsqueda</string>
     <string name="action_poll">Encuestas</string>
-    <string name="action_board">Tablero</string>
-    <string name="action_user">Contraseña</string>
     <string name="action_state">Estado</string>
     <string name="action_howto">Guías</string>
 
@@ -53,7 +50,6 @@
     <string name="maintainersText">Actualmente, esta aplicación está siendo desarrollada y mantenida por\n\n</string>
     <string name="disrootUrl"><a href = "https://disroot.org">https://disroot.org</a></string>
     <string name="disroot"> * Comunidad de Disroot (Disroot):</string>
-    <string name="contributors"><b> &#8226; muppeth:</b>\n administrador Disroot\n\n<b> &#8226; antilopa:</b>\n administradora Disroot\n\n<b> &#8226; Massimiliano:</b>\n  Desarrollador\n\n<b> &#8226; Fede:</b>\n Contribuyente de contenido\n\n<b> &#8226; Meaz:</b>\n Contribuyente de contenido\n\n<b> &#8226; maryjane:</b>\n Contribuyente de contenido\n\n<b> &#8226; userdebug:</b>\n Contribuyente de contenido\n\n<b> &#8226; ButterflyOfFire:</b>\n Contribuyente de contenido\n\n<b> &#8226; jh:</b>\n Contribuyente de contenido\n\n<b> &#8226; Shadowsword:</b>\n Contribuyente de contenido\n\n</string>
     <string name="fDroid">F-Droid</string>
     <string name="thirdparty">Librerías de Terceros</string>
     <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
@@ -158,7 +154,12 @@
     <string name="do_you_want_to_exit">¿Quieres salir?</string>
     <string name="action_optimization">Optimización de la batería</string>
     <string name="OptimizationTitle">Optimización de la batería!</string>
-    <string name="OptimizationInfo">Con esta nueva versión la aplicación puede sincronizar con la página de estado de Disroot. Esto significa que recibirás actualizaciones en tiempo real sobre inconvenientes, caídas, mantenimientos programados y otros que fueran publicados a través de https://state.disroot.org\nRecomendamos apagar la optimización de batería y permitir a la aplicación de Disroot correr en segundo plano. Si no estás seguro, siempre puedes volver a cambiar la configuración desde el menu de la aplicación de Disroot.</string>
+
+    //needs update:20/10/2020
+    <string name="action_board">Project board</string>
+    <string name="action_user">Account</string>
+    <string name="action_searx">Search</string>
+    <string name="OptimizationInfo">Mit diesem Update kann sich die App mit der Status Seite von Disroot synchronisieren. Das heißt du wirst sofort über geplante Wartungsarbeiten oder Problemen mit dem Server informiert. Dich erreichen alle wichtigen Verkündungen die veröffentlicht werden auf: https://state.disroot.org\n Wir empfehlen Energiesparfunktionen abzuwählen und die Nutzung im Hintergrund zuzulassen. Wenn du dir gerade nicht sicher bist, kannst du diese Einstellungen jederzeit über das Disroot App Menu ändern.</string>
     <string name="id">id:</string>
     <string name="version">App version:</string>
     <string name="androidVersion">Android version:</string>

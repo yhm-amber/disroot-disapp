@@ -7,7 +7,7 @@ Si vous n'avez pas de compte Disroot, vous pouvez toujours utiliser cette applic
 * Upload (Téléverser)
 * Poll (Sondage)
 * Searx
-* Diaspora* (nécessite un compte Diaspora uniquement)
+* Calls
 
 L'application peut vous demander d'installer des applications supplémentaires. Nous vous recommandons fortement d'installer F-Droid - un magasin d'applications gratuit et open source - car toutes les applications ne peuvent pas être trouvées sur le Play Store de Google, et F-Droid est plus orienté vers la confidentialité (aucun suivi, aucun compte nécessaire) vous pouvez le télécharger <a href="https://f-droid.org/FDroid.apk">ici</a>.
 
@@ -21,7 +21,7 @@ L'application peut vous demander d'installer des applications supplémentaires. 
 * Serbe
 * Allemand
 
-<b>***Nouveau***</b>
+<b>Note!</b>
 L'application exécute un service d'arrière-plan pour notifier les nouveaux messages d'état Disroot. Si vous voulez profiter pleinement de cette fonctionnalité, vous devez désactiver l'optimisation de la batterie pour l'application.
 
 <b>Soutenir le projet:</b>

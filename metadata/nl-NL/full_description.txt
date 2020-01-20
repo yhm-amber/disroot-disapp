@@ -7,7 +7,7 @@ Als u geen Disroot account heeft kunt u deze app nog steeds gebruiken om toegang
 * Upload
 * Poll
 * Searx
-* Diaspora* (vereist een Diaspora account)
+* Calls
 
 Het kan nodig zijn om extra apps te installeren. Wij raden u ten zeerste aan F-Droid te installeren - een gratis en open source app marktplaats - omdat niet alle apps kunnen worden gevonden op Google's Play Store en F-Droid is meer privacy georiënteerd (geen tracking, geen account nodig) kunt u het downloaden <a href="https://f-droid.org/FDroid.apk">hier</a>.
 
@@ -21,7 +21,7 @@ Het kan nodig zijn om extra apps te installeren. Wij raden u ten zeerste aan F-D
 * Servisch
 * Duits
 
-<b>***Nieuw***</b>
+<b>Opmerking!</b>
 De app draait een achtergronddienst om u op de hoogte te stellen van nieuwe Disroot status berichten. Als u volledig gebruik wilt maken van deze functie, moet u de batterijoptimalisatie voor de app uitschakelen.
 
 <b>Steun het project:</b>
