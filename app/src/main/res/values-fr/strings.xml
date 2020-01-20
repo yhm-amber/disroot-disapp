@@ -200,7 +200,7 @@
     <string name="androidVersion">Vrsion d\'Android:</string>
     <string name="deviceName">Nom de l\'appareil:</string>
     <string name="edit_apps_title">Montrer/Masquer des applications</string>
-    <string name="settings">Settings</string><!--needs update:20/10/2020-->
+    <string name="settings">Paramètres</string>
     <string name="hide">Masquer l\'application</string>
     <string name="dashboard">Tableau de bord</string>
     <string name="action_calls">Calls</string>
