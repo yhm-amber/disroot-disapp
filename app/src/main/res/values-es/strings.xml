@@ -30,9 +30,9 @@
     <string name="MailInfoTitle">Configuración de Correo:</string>
     <string name="MailInfo">IMAP: disroot.org\nSSL Puerto: 993\nAutenticación: Contraseña normal\nSMTP: disroot.org\nSTARTTLS Puerto: 587\nAuthentication: Contraseña normal\nPOP: disroot.org\nSSL Puerto: 995\nAutenticación: Contraseña normal</string>
     <string name="CloudInfoTitle">Configuración de Nextcloud:</string>
-    <string name="CloudInfo">Sincroniza y comparte tus archivos, calendarios, contactos y más.\n\nHost:\n https://cloud.disroot.org\n\nUsuario: tu_usuario_de_disroot\nContraseña:tu_contraseña_de_Disroot.</string>
-    <string name="WelcomeTitle">Bienvenid@</string>
-    <string name="WelcomeInfo">Disroot es una plataforma que provee servicios en línea basados en los principios de libertad, privacidad, federación y descentralización.\nEsta aplicación es como la navaja suiza de la plataforma, hecha por la comunidad, para la comunidad.\nSi no tienes una cuenta de Disroot, igual puedes usarla para acceder a aquellos servicios que no requieran de una:\nEtherpad, Ethercalc, Privatebin, Upload, Encuentas, Searx y Diaspora* (requiere tener cuenta solo de Diaspora*)\nLa aplicación podría solicitarte la instalación de otras adicionales, y no todas pueden encontrarse en la Tienda de Aplicaciones. Nosotros recomendamos instalar la tienda F-Droid. Si no la tienes, puedes descargarla tocando el logo de F-Droid.\n</string>
+    <string name="CloudInfo">Sincroniza y comparte tus archivos, calendarios, contactos y más.\n\nHost:\n https://cloud.disroot.org\n\nUsuarix: tu_usuarix_de_disroot\nContraseña:tu_contraseña_de_Disroot.</string>
+    <string name="WelcomeTitle">Bienvenidx</string>
+    <string name="WelcomeInfo">Disroot es una plataforma que provee servicios en línea basados en los principios de libertad, privacidad, federación y descentralización.\nEsta aplicación es como la navaja suiza de la plataforma, hecha por la comunidad, para la comunidad.\nSi no tienes una cuenta de Disroot, igual puedes usarla para acceder a aquellos servicios que no requieran de una:\nEtherpad, Ethercalc, Privatebin, Upload, Encuentas, Searx y Diaspora* (requiere tener cuenta solo de Diaspora*)\nLa aplicación podría solicitarte la instalación de otras adicionales, y no todas pueden encontrarse en la Tienda de Aplicaciones. Nosotros recomendamos instalar F-Droid. Si no la tienes, puedes descargarla tocando el logo de F-Droid.\n</string>
 
 
     <string name="help">Ayuda</string>
@@ -60,7 +60,7 @@
     <string name="AppVersion">Versión de la App: %1$s</string>
     <string name="Device">Dispositivo:</string>
     <string name="Contribute">Contribuir</string>
-    <string name="ContributeText">La aplicación de Disroot es un desarrollo libre, en el sentido de Libertad, basada en las ideas de la Fundación Disroot. Si quieres contruir, ¡adelante! En este momento, somos un equipo muy pequeño, así que ¡apreciamos profundamente cualquier tipo de ayuda!</string>
+    <string name="ContributeText">La aplicación de Disroot es un desarrollo libre, en el sentido de Libertad, basada en las ideas de la Fundación Disroot. Si quieres contribuir, ¡adelante! En este momento, somos un equipo muy pequeño, así que ¡apreciamos profundamente cualquier tipo de ayuda!</string>
     <string name="ContributeBtn">Código fuente</string>
     <string name="Translate">Traducciones</string>
     <string name="TranslateText">¿La aplicación no está disponible en tu idioma? ¡Puedes cambiar eso! Podrías ayudarnos a traducirla.</string>
@@ -70,15 +70,15 @@
     <string name="FeedbackBtn1">Reporte de Fallos</string>
     <string name="FeedbackBtn2">Chatea con nosotros</string>
     <string name="SpreadTheWord">¡Difunde la palabra!</string>
-    <string name="SpreadTheWordTxt">Comenta a tus amigos y familia sobre Disroot. O por qué no escribir en un blog sobre tu experiencia. Nos encantaría conocerla.</string>
+    <string name="SpreadTheWordTxt">Comenta a tus amigxs y familia sobre Disroot. O por qué no escribir en un blog sobre tu experiencia. Nos encantaría conocerla.</string>
     <string name="SpreadTheWordBtn">Compartir la aplicación</string>
     <string name="DisrootWeb">Sitio de Disroot</string>
     <string name="FirstTitle">Un par de cosas más… </string>
     <string name="FirstInfo">&#8226; Haciendo una presión larga sobre cada ícono, puedes obtener información adicional… \n\n&#8226; La aplicación puede sincronizar con la página de estado de Disroot. Esto significa que recibirás actualizaciones en tiempo real sobre inconvenientes, caídas, mantenimientos programados y otros que fueran publicados a través de https://state.disroot.org\nRecomendamos apagar la optimización de batería y permitir a la aplicación de Disroot correr en segundo plano. Si no estás seguro, siempre puedes volver a cambiar la configuración desde el menu de la aplicación de Disroot.</string>
     <string name="DiasporaTitle">Configuración de Diaspora*</string>
-    <string name="DiasporaInfo">Red social distribuida y descentralizada. Publica, comparte, crea comunidades.\nUsuario: tu_usuario_de_Diaspora@pod.disroot.org\nContraseña: tu_contraseña_de_diaspora</string>
+    <string name="DiasporaInfo">Red social distribuida y descentralizada. Publica, comparte, crea comunidades.\nUsuarix: tu_usuarix_de_Diaspora@pod.disroot.org\nContraseña: tu_contraseña_de_diaspora</string>
     <string name="PadInfo">EtherPad</string>
-    <string name="PadTitle">Etherpad:\nEscribe artículos, anuncios de prensa, listas de pendientes, etc., junto a amigos, compañeros de estudios o colegas, todos trabajando en el mismo documento al mismo tiempo.</string>
+    <string name="PadTitle">Etherpad:\nEscribe artículos, anuncios de prensa, listas de pendientes, etc., junto a amigxs, compañerxs de estudios o colegas, todxs trabajando en el mismo documento al mismo tiempo.</string>
     <string name="ChatTitle">Configuración de XMPP\n</string>
     <string name="ChatInfo">Mensajería instantánea descentralizada y federada.\nID de Jabber: tu_correo@disroot.org\nContraseña: tu_contraseña_de_Disroot</string>
     <string name="CalcInfo">EtherCalc</string>
@@ -92,9 +92,9 @@
     <string name="PollsTitle">Encuestas</string>
     <string name="PollsInfo">Framadate es un servicio en línea para planificar un encuentro o tomar decisiones colectivas de manera sencilla y rápida. No es necesario registrarse.</string>
     <string name="BoardTitle">Tablero de Gestión de Proyectos</string>
-    <string name="BoardInfo">Taiga es una herramienta de gestión de proyectos, desarrollada para programadores, diseñadores y startups cuyo funcionamiento pretende ser metodológicamente ágil. Crea un proyecto, invita a los miembros de tu grupo, planeen tareas y ponganlas en el tablero. Resuelve quién será responsable de las tareas, sigue los progresos, comenta, decide y ve tu proyecto crecer.</string>
+    <string name="BoardInfo">Taiga es una herramienta de gestión de proyectos, desarrollada para programadorxs, diseñadorxs y startups cuyo funcionamiento pretende ser metodológicamente ágil. Crea un proyecto, invita a lxs miembros de tu grupo, planeen tareas y ponganlas en el tablero. Resuelve quién será responsable de las tareas, sigue los progresos, comenta, decide y ve tu proyecto crecer.</string>
     <string name="UserTitle">Autoservicio de Contraseña</string>
-    <string name="UserInfo">Utiliza nuestro Autoservicio de Contraseña para gestionar la información de tu usuario y contraseñas.</string>
+    <string name="UserInfo">Utiliza nuestro Autoservicio de Contraseña para gestionar la información de tu usuarix y contraseñas.</string>
     <string name="StateTitle">Estado: estado actual de los servicios de Disroot</string>
     <string name="StateInfo">Aquí puedes ver si alguno de los servicios tiene un problema, si hay inconvenientes de rendimiento, así como también conocer el calendario de mantenimiento en caso que algunos servicios puedan no estar disponibles.</string>
     <string name="state_help">Estado de XMPP</string>
@@ -156,28 +156,28 @@
     <string name="OptimizationTitle">Optimización de la batería!</string>
 
     <!--needs update:20/10/2020-->
-    <string name="action_board">Project board</string>
-    <string name="action_user">Account</string>
-    <string name="action_searx">Search</string>
-    <string name="OptimizationInfo">The Disroot app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
+    <string name="action_board">Tablero</string>
+    <string name="action_user">Cuenta</string>
+    <string name="action_searx">Buscar</string>
+    <string name="OptimizationInfo">La aplicación de Disroot puede sincronizar con la página de estado de Disroot. Esto significa que recibirás actualizaciones en tiempo real sobre problemas, caídas, mantenimientos programados y otros publicados via https://state.disroot.org\nSugerimos apagar la optimización de batería y permitir a la aplicación de Disroot correr en segundo plano. Si no estás segurx, siempre puedes cambiar la configuración desde el menú de la aplicación.</string>
     <string name="id">id:</string>
-    <string name="version">App version:</string>
-    <string name="androidVersion">Android version:</string>
-    <string name="deviceName">Device name:</string>
-    <string name="edit_apps_title">Show/hide apps</string>
-    <string name="settings">Settings</string>
-    <string name="hide">Hide app</string>
-    <string name="dashboard">Dashboard</string>
-    <string name="action_calls">Calls</string>
-    <string name="CallsTitle">Calls Info</string>
-    <string name="CallsInfo">Disroot\'s Calls service is a videoconferencing software, powered by Jitsi-Meet. It provides you high quality video and audio conferences, with as many partners as you want. It also allows to stream your desktop or only some windows to other participants in the call.</string>
-    <string name="CallsDialog">To continue you need to install Jitsi-Meet first.\nPlease select install to continue with the installation on F-Droid.</string>
+    <string name="version">Versión de la app:</string>
+    <string name="androidVersion">Versión de Android:</string>
+    <string name="deviceName">Nombre del dispositivo:</string>
+    <string name="edit_apps_title">Ver/Ocultar apps</string>
+    <string name="settings">Configuración</string>
+    <string name="hide">Ocultar app</string>
+    <string name="dashboard">Panel</string>
+    <string name="action_calls">Llamadas</string>
+    <string name="CallsTitle">Info Llamadas</string>
+    <string name="CallsInfo">El servicio de Llamadas de Disroot es un programa de video-conferencias, desarrollado por Jitsi-Meet. Proporciona conferencias con alta calidad de audio y video con tantas personas como quieras. También te permite transmitir tu escritorio o algunas ventanas a otrxs participantes de la llamada.</string>
+    <string name="CallsDialog">Para continuar, necesitas instalar Jitsi-Meet primero.\nPor favor, selecciona Instalar para hacerlo desde F-Droid.</string>
     <string name="action_git">Git</string>
-    <string name="GitTitle">Gitea Info</string>
-    <string name="GitInfo">Git with a cup of tea A painless, self-hosted Git service</string>
-    <string name="GitsDialog">To continue you need to install GitNex first.Please select install to continue with the installation on F-Droid.</string>
+    <string name="GitTitle">Info Gitea</string>
+    <string name="GitInfo">Un servicio auto-alojado de Git</string>
+    <string name="GitsDialog">Para continuar, necesitas instalar GitNex primero.\nPor favor, selecciona Instalar para hacerlo desde F-Droid.</string>
     <string name="adminsTitle">Admins:</string>
-    <string name="devsTitle">Developers:</string>
-    <string name="translatorsTitle">Translators:</string>
-    <string name="artworksTitle">Artwork:</string>
+    <string name="devsTitle">Desalloradorxs:</string>
+    <string name="translatorsTitle">Traductorxs:</string>
+    <string name="artworksTitle">Arte:</string>
 </resources>
