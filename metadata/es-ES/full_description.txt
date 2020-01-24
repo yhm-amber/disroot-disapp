@@ -1,6 +1,6 @@
 <b>Disroot</b> es una plataforma que provee servicios en línea, basada en los principios de libertad, privacidad, federación y descentralización.
-Esta aplicación es como la navaja suiza de la plataforma Disroot, hecha por la comunidad para la comunidad.
-Si no tienes una cuenta de Disroot todavía puedes utilizar esta app para acceder a todos los servicios que no la requieren:
+Esta aplicación es como la navaja suiza de la plataforma <b>Disroot</b>, hecha por la comunidad para la comunidad.
+Si no tienes una cuenta de <b>Disroot</b> igual puedes utilizar esta aplicación para acceder a todos los servicios que no la requieren:
 * Etherpad
 * Ethercalc
 * Private bin
@@ -22,7 +22,7 @@ La aplicación puede requerir la instalación de programas adicionales. Recomend
 * Alemán
 
 <b>***Novedad***</b>
-La aplicación correo un servicio en segundo plano para notificar sobre nuevos mensajes de estado de Disroot. Si quieres sacar el máximo provecho de esta característica, necesitas deshabilitar la optimización de batería para la app.
+La aplicación corre un servicio en segundo plano para notificar sobre nuevos mensajes de estado de <b>Disroot</b>. Si quieres sacar el máximo provecho de esta característica, necesitas deshabilitar la optimización de batería para la aplicación.
 
 <b>Apoya al proyecto:</b>
  ✋ Únete a la discusión en <a href="xmpp:disroot@chat.disroot.org">xmpp:disroot@chat.disroot.org</a>
