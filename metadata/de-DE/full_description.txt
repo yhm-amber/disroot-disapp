@@ -7,7 +7,7 @@ Auch wenn Du keinen Disroot-Account hast, kannst Du diese App benutzen, um auf a
 * Upload
 * Poll
 * Searx
-* Diaspora* (benötigt einen Diaspora*-Account)
+* Calls
 
 Möglicherweise ist es erforderlich, zusätzliche Apps für die einzelnen Funktionen zu installieren. Wir empfehlen Dir unbedingt, F-Droid zu installieren - ein Marktplatz für freie und quelloffene Apps - da nicht alle Apps im Google-Playstore zu finden sind und F-Droid Deine Privatsphäre respektiert (kein Tracking, kein Account notwendig). Du kannst F-Droid <a href="https://f-droid.org/FDroid.apk">hier</a> herunterladen.
 
