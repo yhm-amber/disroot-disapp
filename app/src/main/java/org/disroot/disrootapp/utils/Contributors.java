@@ -16,7 +16,8 @@ public class Contributors {
             "Meaz",
             "maryjane",
             "userdebug",
-            "jh"
+            "jh",
+            "shadowsword"
     };
     public static final String[] artworks= {
             "<a href='https://hub.disroot.org/channel/antilopa'>Antilopa"
