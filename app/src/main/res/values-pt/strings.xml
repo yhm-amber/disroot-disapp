@@ -59,7 +59,7 @@
     <string name="AppVersion">Versão da Aplicação: %1$s</string>
     <string name="Device">Dispositivo:</string>
     <string name="Contribute">Contribuir</string>
-    <string name="ContributeText">A aplicação Disroot segue os princípios da Fundação Disroot, é desenvolvida segundo o principio de "free as in Freedom". Se quiser contribuir para o desenvolvimento desta plaicação, força! De momento somos uma equipa muito pequena, por isso agradecemos qualquer tipo de ajuda!</string>
+    <string name="ContributeText">A aplicação Disroot segue os princípios da Fundação Disroot, é desenvolvida segundo o princípio de "free as in Freedom". Se quiser contribuir para o desenvolvimento desta aplicação, força! De momento somos uma equipa muito pequena, por isso agradecemos qualquer tipo de ajuda!</string>
     <string name="ContributeBtn">Obter o código fonte</string>
     <string name="Translate">Traduzir</string>
     <string name="TranslateText">A app não está disponível na sua língua? Pode resolver isso! Porque não nos ajuda traduzindo-a para a sua língua?</string>
@@ -158,7 +158,7 @@
     <string name="action_board">Project board</string>
     <string name="action_user">Conta</string>
     <string name="action_searx">Pesquisa</string>
-    <string name="OptimizationInfo">Esta aplicação consegue sincronizar com a status page do Disroot. Isso significa que recebes atualizações e informações em tempo real acerca de: problemas com o serviço, atualizações de software, quando um serviço é colocado em manutenção, que são publicadas em https://state.disroot.org\nNós recomendamos desacivar a optimização de bateria e permitir esta applicação funcionar em background. Se tiveres dúvidas acerca disto podes sempre alterar as permissões mais tarde a partir do menu da aplicação.</string>
+    <string name="OptimizationInfo">Esta aplicação consegue sincronizar com a status page do Disroot. Isso significa que recebes atualizações e informações em tempo real acerca de: problemas com o serviço, atualizações de software, quando um serviço é colocado em manutenção, que são publicadas em https://state.disroot.org\nNós recomendamos desativar a otimização de bateria e permitir esta aplicação funcionar em background. Se tiveres dúvidas acerca disto podes sempre alterar as permissões mais tarde a partir do menu da aplicação.</string>
     <string name="id">id:</string>
     <string name="version">Versão da aplicação:</string>
     <string name="androidVersion">Versão do Android:</string>
