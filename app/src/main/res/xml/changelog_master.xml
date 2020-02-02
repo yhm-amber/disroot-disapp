@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
-    <release version="1.9.0" versioncode="23" >
+    <release version="2.0.0" versioncode="23" >
         <change>New theme and icon sets</change>
         <change>New settings menu</change>
         <change>Possibility to hide apps in dashboard</change>
         <change>Better integration with Lufi</change>
+        <change>All languages updated</change>
     </release>
     <release version="1.2.3" versioncode="22" >
         <change>Cleaned up code for better maintenance</change>

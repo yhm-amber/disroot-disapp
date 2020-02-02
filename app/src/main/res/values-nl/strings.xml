@@ -155,8 +155,6 @@
     <string name="do_you_want_to_exit">Will je de app verlaten?</string>
     <string name="action_optimization">Batterij optimalisatie</string>
     <string name="OptimizationTitle">Batterij optimalisatie!</string>
-
-    <!--needs update:20/10/2020-->
     <string name="action_board">Project bord</string>
     <string name="action_user">Account</string>
     <string name="action_searx">Zoeken</string>

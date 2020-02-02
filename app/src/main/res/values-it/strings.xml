@@ -142,8 +142,6 @@
     <string name="do_you_want_to_exit">Vuoi veramente uscire?</string>
     <string name="action_optimization">Ottimizzazione batteria</string>
     <string name="OptimizationTitle">Ottimizzazione batteria!</string>
-
-    <!--needs update:20/10/2020-->
     <string name="action_board">Scheda progetto</string>
     <string name="action_user">Account</string>
     <string name="action_searx">Ricerca</string>

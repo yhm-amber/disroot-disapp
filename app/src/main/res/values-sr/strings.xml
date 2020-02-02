@@ -154,8 +154,6 @@
     <string name="do_you_want_to_exit">Želite da izađete?</string>
     <string name="action_optimization">Optimizacija baterije</string>
     <string name="OptimizationTitle">Optimizacija baterije!</string>
-
-    <!--needs update:20/10/2020-->
     <string name="action_board">Projektna tabla</string>
     <string name="action_user">Nalog</string>
     <string name="action_searx">Pretraga</string>
@@ -171,11 +169,11 @@
     <string name="action_calls">Pozivi</string>
     <string name="CallsTitle">Info o pozivima</string>
     <string name="CallsInfo">Disroot\'s Calls usluga jeste softver za video-konferencije, koju pokreće Jitsi-Meet. Omogućava video i audio konferencije visokog kvaliteta, za neograničeni broj korisnika. Takođe omogućava video-striming vaše radne površine ili pojedinačnih prozora učesnicima razgovora.</string>
-    <string name="CallsDialog">Za nastavak je potrebno instalirati Jitsi-Meet.\nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="CallsDialog">Za nastavak je potrebno instalirati Jitsi-Meet.\nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
     <string name="action_git">Git</string>
     <string name="GitTitle">Gitea Info</string>
     <string name="GitInfo">Git uz šoljicu čaja. Jednostavan, samostalni Git servis</string>
-    <string name="GitsDialog">Za nastavak je potrebno instalirati GitNex. \nIzaberite 'instaliraj' i preuzmite aplikaciju pomoću F-Droid-a.</string>
+    <string name="GitsDialog">Za nastavak je potrebno instalirati GitNex. \nIzaberite \'instaliraj\' i preuzmite aplikaciju pomoću F-Droid-a.</string>
     <string name="adminsTitle">Administratori:</string>
     <string name="devsTitle">Programeri:</string>
     <string name="translatorsTitle">Prevodioci:</string>

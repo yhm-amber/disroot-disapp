@@ -154,8 +154,6 @@
     <string name="do_you_want_to_exit">¿Quieres salir?</string>
     <string name="action_optimization">Optimización de la batería</string>
     <string name="OptimizationTitle">Optimización de la batería!</string>
-
-    <!--needs update:20/10/2020-->
     <string name="action_board">Tablero</string>
     <string name="action_user">Cuenta</string>
     <string name="action_searx">Buscar</string>

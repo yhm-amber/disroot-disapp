@@ -153,8 +153,6 @@
     <string name="do_you_want_to_exit">Queres sair da aplicação?</string>
     <string name="action_optimization">Otimização da bateria</string>
     <string name="OptimizationTitle">Otimização da bateria!</string>
-
-    <!--needs update:20/10/2020-->
     <string name="action_board">Project board</string>
     <string name="action_user">Conta</string>
     <string name="action_searx">Pesquisa</string>
