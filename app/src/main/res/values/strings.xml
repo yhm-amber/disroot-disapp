@@ -151,7 +151,7 @@
 
 
 
-    <string name="OptimizationInfo">The Disroot app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenace and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
+    <string name="OptimizationInfo">The Disroot app can sync with the status page of Disroot. This means you will receive realtime updates on issues, downtimes, scheduled maintenance and others published via https://state.disroot.org\nWe recommend to turn off battery optimization and allow Disroot app to run in background. If you\'re not sure, you can always change the setting from the menu of the Disroot app later.</string>
     <string name="action_user">Account</string>
     <string name="id">id:</string>
     <string name="version">App version:</string>
