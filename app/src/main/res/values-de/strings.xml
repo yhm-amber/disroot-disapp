@@ -169,5 +169,6 @@
     <string name="devsTitle">Entwickler:</string>
     <string name="translatorsTitle">Übersetzer:</string>
     <string name="artworksTitle">Künstlerische Gestaltung:</string>
+    <string name="Fixed">Behoben</string>
 
 </resources>

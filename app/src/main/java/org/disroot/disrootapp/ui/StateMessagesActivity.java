@@ -246,16 +246,26 @@ public class StateMessagesActivity extends AppCompatActivity {
                     String humanStatusValue = humanStatus.getText().toString();
                     switch (humanStatusValue) {
                         case "Fixed":
-                        case "Scheduled":
                             humanStatus.setTextColor(Color.GREEN);
+                            humanStatus.setText(R.string.Fixed);
+                            scheduled.setVisibility(View.GONE  );
+                            break;
+                        case "Scheduled":
+                            humanStatus.setTextColor(Color.YELLOW);
                             humanStatus.setText(R.string.Scheduled);
+                            scheduled.setVisibility(View.VISIBLE  );
                             break;
                         case "Investigating":
+                            humanStatus.setTextColor(Color.RED);
+                            scheduled.setVisibility(View.GONE  );
+                            break;
                         case "Watching":
+                            scheduled.setVisibility(View.GONE  );
                             humanStatus.setTextColor(Color.YELLOW);
                             humanStatus.setText(R.string.Investigating);
                             break;
                         case "Identified":
+                            scheduled.setVisibility(View.GONE  );
                             humanStatus.setTextColor(Color.RED);
                             humanStatus.setText(R.string.Identified);
                             break;

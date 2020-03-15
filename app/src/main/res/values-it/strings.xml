@@ -166,4 +166,5 @@
     <string name="devsTitle">Sviluppatori:</string>
     <string name="translatorsTitle">Traduttori:</string>
     <string name="artworksTitle">Artwork:</string>
+    <string name="Fixed">Risolto</string>
 </resources>
