@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
   <release version="2.0.1" versioncode="24" >
-      <change>Filtered scheduled_at to be shown only on planned issue</change>
+      <change>Scheduled at: to be shown only on planned issues</change>
   </release>
     <release version="2.0.0" versioncode="23" >
         <change>New theme and icon sets</change>
