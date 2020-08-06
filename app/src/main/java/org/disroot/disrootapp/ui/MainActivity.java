@@ -1,6 +1,7 @@
 package org.disroot.disrootapp.ui;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
@@ -12,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -61,7 +63,11 @@ import android.widget.Toast;
 import org.disroot.disrootapp.R;
 import org.disroot.disrootapp.StatusService;
 import org.disroot.disrootapp.utils.Constants;
+import org.disroot.disrootapp.utils.HttpHandler;
 import org.disroot.disrootapp.webviews.DisWebChromeClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -75,6 +81,8 @@ import java.util.Map;
 
 import de.cketti.library.changelog.ChangeLog;
 
+import static android.support.constraint.Constraints.TAG;
+
 @SuppressWarnings("ALL")
 public class MainActivity extends AppCompatActivity implements View.OnLongClickListener,View.OnClickListener {
 
@@ -85,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     ValueCallback<Uri[]> chooserPathUri;
     Button button;
     private Button MailBtn,CloudBtn,ForumBtn,ChatBtn,PadBtn,CalcBtn,BinBtn,UploadBtn,SearxBtn,PollsBtn,BoardBtn,CallsBtn,NotesBtn,GitBtn,UserBtn,StateBtn,HowToBtn,AboutBtn;//all buttons
+    private String email,cloud,forum,etherpad,ethercalc,bin,upload,searx,polls,taiga,user,xmpp,notes,git,cryptpad;
     private CookieManager cookieManager;
     private WebView webView;
     private DisWebChromeClient disWebChromeClient;
@@ -98,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private String mCameraPhotoPath;
     private String loadUrl;
     private int progressStatus = 0;
+    ArrayList componentList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -134,6 +144,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     return;
             }
         } );
+        componentList = new ArrayList<>();
+        new GetList().execute();
 
         setupWebView(savedInstanceState, frameLayoutContainer);
         //settings
@@ -416,13 +428,13 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     else startActivity(board);
                     break;
                 case R.id.NotesBtn:
-                        Intent notes = getPackageManager().getLaunchIntentForPackage(Constants.NotesApp);
-                        if(notes == null) {
-                            showNotesDialog();
-                            break;
-                        }
-                        else startActivity(notes);
+                    Intent notes = getPackageManager().getLaunchIntentForPackage(Constants.NotesApp);
+                    if(notes == null) {
+                        showNotesDialog();
                         break;
+                    }
+                    else startActivity(notes);
+                    break;
                 case R.id.GitBtn:
                     Intent git = getPackageManager().getLaunchIntentForPackage(Constants.GitApp);
                     if(git == null) {
@@ -619,7 +631,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.MailInfoTitle);
-        builder.setMessage(getString(R.string.MailInfo));
+        builder.setMessage(email + "\n\n" + getString(R.string.MailInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -633,9 +645,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             public void onClick(DialogInterface dialog, int which) {
                 ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
                 if (findViewById( R.id.MailBtn).getParent()!=null){
-                viewGroup.removeView(MailBtn);
+                    viewGroup.removeView(MailBtn);
                     BtnPreference.edit().putBoolean( "MailBtn", false ).apply();
-                return;}
+                    return;}
             }
         });
         builder.show();
@@ -662,7 +674,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.CloudInfoTitle);
-        builder.setMessage(getString(R.string.CloudInfo));
+        builder.setMessage(cloud + "\n\n" + getString(R.string.CloudInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -738,7 +750,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.ForumTitle);
-        builder.setMessage(getString(R.string.ForumInfo));
+        builder.setMessage(forum + "\n\n"+ getString(R.string.ForumInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -784,7 +796,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.ChatTitle);
-        builder.setMessage(getString(R.string.ChatInfo));
+        builder.setMessage(xmpp +"\n\n"+ getString(R.string.ChatInfo));
         if(check.getBoolean("checkConv", true)|| check.getBoolean("checkPix",true)) {
             View view = View.inflate(this, R.layout.check_forget, null);
             final CheckBox forgetChat = (CheckBox) view.findViewById(R.id.forgetChat);
@@ -838,7 +850,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.PadTitle);
-        builder.setMessage(getString(R.string.PadInfo));
+        builder.setMessage(etherpad +"\n\n"+ getString(R.string.PadInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -880,7 +892,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.CalcTitle);
-        builder.setMessage(getString(R.string.CalcInfo));
+        builder.setMessage(ethercalc +"\n\n"+ getString(R.string.CalcInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -906,7 +918,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.BinTitle);
-        builder.setMessage(getString(R.string.BinInfo));
+        builder.setMessage(bin +"\n\n"+ getString(R.string.BinInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -932,7 +944,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.UploadTitle);
-        builder.setMessage(getString(R.string.UploadInfo));
+        builder.setMessage(upload +"\n\n"+ getString(R.string.UploadInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -959,7 +971,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.SearxTitle);
-        builder.setMessage(getString(R.string.SearxInfo));
+        builder.setMessage(searx +"\n\n"+ getString(R.string.SearxInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
             @Override
@@ -985,7 +997,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.PollsTitle);
-        builder.setMessage(getString(R.string.PollsInfo));
+        builder.setMessage(polls +"\n\n"+ getString(R.string.PollsInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -1011,7 +1023,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.BoardTitle);
-        builder.setMessage(getString(R.string.BoardInfo));
+        builder.setMessage(taiga +"\n\n"+ getString(R.string.BoardInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
@@ -1062,7 +1074,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.DiaInstallTitle);
-        builder.setMessage(getString(R.string.CallsDialog));
+        builder.setMessage(taiga +"\n\n"+ getString(R.string.CallsDialog));
         builder.setPositiveButton(R.string.global_install, new DialogInterface.OnClickListener() {
             Intent calls = getPackageManager().getLaunchIntentForPackage(Constants.CallsApp);
             @Override
@@ -1080,7 +1092,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.NotesTitle);
-        builder.setMessage(getString(R.string.NotesInfo));
+        builder.setMessage(notes +"\n\n"+ getString(R.string.NotesInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
             @Override
@@ -1122,7 +1134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setTitle(R.string.GitTitle);
-        builder.setMessage(getString(R.string.GitInfo));
+        builder.setMessage(git +"\n\n"+ getString(R.string.GitInfo));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.tell_more, new DialogInterface.OnClickListener() {
             @Override
@@ -1165,7 +1177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false)
                 .setTitle(R.string.UserTitle)
-                .setMessage(getString(R.string.UserInfo))
+                .setMessage(user +"\n\n"+ getString(R.string.UserInfo))
                 .setPositiveButton(R.string.global_ok, null);
         builder.setNeutralButton( R.string.hide, new DialogInterface.OnClickListener() {
             @Override
@@ -1907,5 +1919,193 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                                     String capture) {
             openFileChooser(uploadMsg, acceptType);
         }
+    }
+
+
+
+
+
+
+    //components
+    @SuppressLint("StaticFieldLeak")
+    class GetList extends AsyncTask<Void, Void, Void> {
+        protected Void doInBackground(Void... arg0) {
+            HttpHandler sh = new HttpHandler();
+
+            String jsonStringcomponents = sh.makeServiceCall( Constants.components );
+
+            Log.e( TAG, "Response from url(Service): " + Constants.components );
+
+            if (jsonStringcomponents != null) {//components page
+                try {
+                    JSONObject jsonObj = new JSONObject(jsonStringcomponents);
+
+                    // Getting JSON Array node
+                    JSONArray data = jsonObj.getJSONArray("data");
+
+                    // looping through All data
+                    for (int i = 0; i < data.length(); i++) {
+                        JSONObject c = data.getJSONObject(i);
+
+                        String id = c.getString("id");
+                        String name = c.getString("name");
+                        String description = c.getString("description");
+
+                        // tmp hash map for single service
+                        HashMap<String, String> serviceDetails = new HashMap<>();
+
+                        // adding each child node to HashMap key => value
+                        serviceDetails.put("id", id);
+                        serviceDetails.put("name", name);
+                        serviceDetails.put("description", description);
+
+                        // adding service to service list
+                        componentList.add(serviceDetails);
+                    }
+                } catch (final JSONException e) {
+                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),
+                                    "Json parsing error: " + e.getMessage(),
+                                    Toast.LENGTH_LONG)
+                                    .show();
+                        }
+                    });
+                }
+            }else {
+                Log.e(TAG, "Couldn't get json from server.");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Couldn't get json from server. Is your internet connection ok?",
+                                Toast.LENGTH_LONG)
+                                .show();
+                    }
+                });
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute( result );
+            // Dismiss the progress dialog
+            for (int a =0; a<componentList.size();a++)
+            {
+                HashMap<String, String> hashmap= (HashMap<String, String>) componentList.get(a);
+                String hash = hashmap.get("name");
+                switch (hash) {
+                    case "Email Service":
+                        email = hashmap.get("description");
+                        getEmail(email);
+                        break;
+                    case "Cloud":
+                        cloud = hashmap.get("description");
+                        getCloud(cloud);
+                        break;
+                    case "Forum":
+                        forum = hashmap.get("description");
+                        getForum(forum);
+                        break;
+                    case "Etherpad":
+                        etherpad = hashmap.get("description");
+                        getEtherpad(etherpad);
+                        break;
+                    case "Ethercalc":
+                        ethercalc = hashmap.get("description");
+                        getEthercalc(ethercalc);
+                        break;
+                    case "Bin":
+                        bin = hashmap.get("description");
+                        getBin(bin);
+                        break;
+                    case "Upload":
+                        upload = hashmap.get("description");
+                        getUpload(upload);
+                        break;
+                    case "Searx":
+                        searx = hashmap.get("description");
+                        getSearx(searx);
+                        break;
+                    case "Polls":
+                        polls = hashmap.get("description");
+                        getPolls(polls);
+                        break;
+                    case "Taiga":
+                        taiga = hashmap.get("description");
+                        getTaiga(taiga);
+                        break;
+                    case "User Password management":
+                        user = hashmap.get("description");
+                        getUser(user);
+                        break;
+                    case "XMPP":
+                        xmpp = hashmap.get("description");
+                        getXmpp(xmpp);
+                        break;
+                    case "Nextcloud Notes":
+                        notes = hashmap.get("description");
+                        getNotes(notes);
+                        break;
+                    case "Git Service":
+                        git = hashmap.get("description");
+                        getGit(git);
+                        break;
+                    case "Cryptpad":
+                        cryptpad = hashmap.get("description");
+                        getCryptpad(cryptpad);
+                        break;
+                }
+            }
+        }
+    }
+
+    private void getEmail(String string){
+        email = string;
+    }
+    private void getCloud(String string){
+        cloud = string;
+    }
+    private void getForum(String string){
+        forum = string;
+    }
+    private void getEtherpad(String string){
+        etherpad = string;
+    }
+    private void getEthercalc(String string){
+        ethercalc = string;
+    }
+    private void getBin(String string){
+        bin = string;
+    }
+    private void getUpload(String string){
+        upload = string;
+    }
+    private void getSearx(String string){
+        searx = string;
+    }
+    private void getPolls(String string){
+        polls = string;
+    }
+    private void getTaiga(String string){
+        taiga = string;
+    }
+    private void getUser(String string){
+        user = string;
+    }
+    private void getXmpp(String string){
+        xmpp = string;
+    }
+    private void getNotes(String string){
+        notes = string;
+    }
+    private void getGit(String string){
+        git = string;
+    }
+    private void getCryptpad(String string){
+        cryptpad = string;
     }
 }

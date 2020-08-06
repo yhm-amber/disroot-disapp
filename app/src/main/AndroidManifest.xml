@@ -54,7 +54,31 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="*.disroot.org"
+                    android:host="disroot.org"
+                    android:scheme="https" />
+                <data
+                    android:host="upload.disroot.org"
+                    android:scheme="https" />
+                <data
+                    android:host="forum.disroot.org"
+                    android:scheme="https" />
+                <data
+                    android:host="calc.disroot.org"
+                    android:scheme="https" />
+                <data
+                    android:host="bin.disroot.org"
+                    android:scheme="https" />
+                <data
+                    android:host="poll.disroot.org"
+                    android:scheme="https" />
+                <data
+                    android:host="upload.disroot.org"
+                    android:scheme="https" />
+                <data
+                    android:host="board.disroot.org"
+                    android:scheme="https" />
+                <data
+                    android:host="searx.disroot.org"
                     android:scheme="https" />
             </intent-filter>
         </activity>
