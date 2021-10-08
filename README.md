@@ -1,21 +1,21 @@
-[![Chat - xmpp](https://img.shields.io/badge/chat-on%20xmpp-blue.svg)](xmpp:disroot@chat.disroot.org?join)
+[![XMPP Chat](https://img.shields.io/badge/chat-on%20xmpp-blue.svg)](xmpp:disroot@chat.disroot.org?join)
 [![Donate](https://img.shields.io/badge/donate-appreciation-orange.svg)](https://disroot.org/en/donate)
 [![Donate LiberaPay](https://img.shields.io/badge/donate-liberapay-orange.svg)](https://liberapay.com/Disroot)
 
 ---
 # Disroot app
-Disroot is a platform providing online services based on principles of freedom, privacy, federation and decentralization.  
-This app is like your Swiss Army knife to the Disroot platform, made by the community for the community.  
-If you don't have a Disroot account you can still use this  app to access all the Disroot services that do not require an account:  
+**Disroot** provides a number of online services, most of which are linked to the user account and can be used through a native mobile client (e.g., you can access and use email from several email apps). But there are also some services that do not require login or do not yet have a specifically designed application.
+
+**DisApp** works as a kind of digital Swiss army knife: all services are accessible from it, offering to install additional software (in case there is none already installed or configured) and providing a better experience for those which do not have a specific app through the **Android WebView** (the component that allows accessing web content within an application).
+
+It also can be used to access all the **Disroot** services that do not require an account:
 * Etherpad
 * Ethercalc
+* Calls
 * Private bin
 * Upload
 * Polls
 * Searx
-* Diaspora* (requires a Diaspora only account)   
-
-The app may require you to install additional apps. We highly recommend you install F-Droid - a free and open source app marketplace - as not all apps can be found on Google's Play Store and F-Droid is more privacy oriented (no tracking, no account needed) you can download it [here](https://f-droid.org/FDroid.apk).
 
 #### Supported languages:
 * English
@@ -26,11 +26,13 @@ The app may require you to install additional apps. We highly recommend you inst
 * Dutch
 * Serbian
 
+The app may requires to install additional apps. We highly recommend to install them from [**F-Droid**](https://f-droid.org/), a free and open source app store. It can be downloaded from [here](https://f-droid.org/FDroid.apk).
+
 ---
 ### Licensing
-Licence GPLv3-only (see licence on source above)
+[License GPLv3-only](https://git.disroot.org/Disroot/disapp/src/branch/master/LICENCE.txt)
 
-#### Device Requirements
+### Device Requirements
 Android 4.1 or +
 6 MB free on Smartphone
 
@@ -39,21 +41,21 @@ Android 4.1 or +
 This app requires access to the Internet and to external storage to be able to upload and download files.
 
 ---
-### contributors
+### Contributors
 The project is always open for contributions and accepts pull requests.
 * Massimiliano
-* muppeth
-* antilopa
+* Muppeth
+* Antilopa
 * Fede
 * Maryjane
-* meaz
-* userdebug
+* Meaz
+* Userdebug
 
 ---
-#### Resources
-* Project: [Issues level/beginner](https://git.fosscommunity.in/disroot/disapp/issues) | [License](https://git.fosscommunity.in/disroot/disapp/blob/master/LICENCE.txt)
-* Disroot: [Web](https://disroot.org) | [git](https://git.fosscommunity.in/disroot) | [Hubzilla Channel](https://hub.disroot.org/channel/disroot)
-* F-droid: Not there yet.
+### Resources
+* DisApp: [Bugs & Issues](https://git.disroot.org/Disroot/disapp/issues)
+* Disroot Project: [Web](https://disroot.org) | [Git](https://git.disroot.org/Disroot) | [Hubzilla Channel](https://hub.disroot.org/channel/disroot)
+* F-Droid: [Disroot App](https://f-droid.org/en/packages/org.disroot.disrootapp/)
 
 ---
 ### Screenshots
@@ -61,4 +63,4 @@ The project is always open for contributions and accepts pull requests.
 
 ---
 ### Maintainers
-- Disroot ([git](https://git.fosscommunity.in/disroot), [Web](https://disroot.org), [Hubzilla](https://hub.disroot.org/channel/disroot))
+- [Disroot.org](https://git.disroot.org/Disroot/disapp)
