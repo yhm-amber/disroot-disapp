@@ -35,6 +35,8 @@ ehthumbs.db
 Thumbs.db
 
 # User-specific configurations
+.idea/
+.idea/caches/
 .idea/libraries/
 .idea/workspace.xml
 .idea/tasks.xml

@@ -2,7 +2,7 @@
 <changelog>
   <release version="2.0.3" versioncode="26" >
       <change>Changed to new git repo</change>
-      <change>Updated Contant variables with new git URL</change>
+      <change>Updated Constant variables with new git URL</change>
   </release>
   <release version="2.0.2" versioncode="25" >
       <change>prevent deck url's to be opened in this app, but open deck app instead</change>
