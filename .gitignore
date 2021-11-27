@@ -37,6 +37,7 @@ Thumbs.db
 # User-specific configurations
 .idea/
 .idea/caches/
+.idea/caches/build_file_checksums.ser
 .idea/libraries/
 .idea/workspace.xml
 .idea/tasks.xml
