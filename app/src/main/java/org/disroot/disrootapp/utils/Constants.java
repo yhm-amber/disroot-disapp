@@ -35,9 +35,9 @@ public class Constants {
     public static final String URL_DISROOT = "https://disroot.org";
     public static final String URL_FDROID = "https://f-droid.org/FDroid.apk";
     public static final String URL_DIO = "https://github.com/renancunha33/DiolinuxApp";
-    public static final String URL_TRANSLATE = "https://git.fosscommunity.in/disroot/disapp";
-    public static final String URL_SOURCE = "https://git.fosscommunity.in/disroot/disapp";
-    public static final String URL_BUGS = "https://git.fosscommunity.in/disroot/disapp/issues";
+    public static final String URL_TRANSLATE = "https://git.disroot.org/Disroot/disapp";
+    public static final String URL_SOURCE = "https://git.disroot.org/Disroot/disapp";
+    public static final String URL_BUGS = "https://git.disroot.org/Disroot/disapp/issues";
     public static final String URL_XMPP = "xmpp:disroot@chat.disroot.org?join";
     public static final String URL_SUPPORT = "mailto:support@disroot.org";
     public static final String URL_DisApp_CLOUDHELP = "https://howto.disroot.org/en/tutorials/cloud/clients/mobile/android";
