@@ -4,7 +4,7 @@
         <change>Migration to new cState "https://status.disroot.org"</change>
         <change>Updated SDK and gradle</change>
     </release>
-  <release version="2.0.4" versioncode="27" >
+  <release version="2.0.3" versioncode="26" >
       <change>Changed to new git repo</change>
       <change>Updated Constant variables with new git URL</change>
   </release>
