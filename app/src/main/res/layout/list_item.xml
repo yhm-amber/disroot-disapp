@@ -23,7 +23,7 @@
         android:textColor="#ffffff" />
 
     <TextView
-        android:id="@+id/updated_at"
+        android:id="@+id/lastMod"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
@@ -43,13 +43,13 @@
         android:textColor="#ffffff" />
 
     <TextView
-        android:id="@+id/scheduled_at"
+        android:id="@+id/resolved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff" />
 
     <TextView
-        android:id="@+id/human_status"
+        android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffffff" />

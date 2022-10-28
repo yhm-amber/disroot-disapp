@@ -37,7 +37,7 @@ public class StatusService extends Service {
     //status report
     public SharedPreferences checkDate;
     // URL to get data JSON
-    static String incidenturl0 ="https://state.disroot.org/api/v1/incidents?sort=id&order=desc";
+    static String incidenturl0 ="https://status.disroot.org/issues/index.json";
     ArrayList<HashMap<String, String>> messageList;
     ArrayList<HashMap<String, String>> getDate;
 
@@ -85,13 +85,13 @@ public class StatusService extends Service {
             if (jsonStrincidents0 != null) {//Incidaetnts page
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStrincidents0);
-                    JSONArray data = jsonObj.getJSONArray("data");
+                    JSONArray data = jsonObj.getJSONArray("pages");
                     int a=0;
                     JSONObject o = data.getJSONObject(a);
-                    String callid = o.getString("id");
-                    String updated = o.getString("updated_at");
+                    String title = o.getString("title");
+                    String updated = o.getString("lastMod");
                     HashMap<String, String> date = new HashMap<>();
-                    date.put("id", callid);
+                    date.put("title", title);
                     date.put("updated", updated);
                     getDate.add(date);
                     String stateDate = date.put( "updated", updated );
@@ -100,7 +100,7 @@ public class StatusService extends Service {
                     assert dateStored != null;
                     if (dateStored.equals( "" ))
                     {
-                        checkDate.edit().putString( "storeDate", stateDate).apply();
+                        checkDate.edit().putString( "storeDate", "stateDate").apply();
                         //return null;
                     }
                     else {
@@ -114,7 +114,7 @@ public class StatusService extends Service {
                             return null;
                         }
                         else
-                            Log.e(TAG, "updated json(service)");
+                            Log.e(TAG, dateStored+"updated json(service)"+stateDate);
                     }
                     return null;
 
@@ -139,24 +139,24 @@ public class StatusService extends Service {
         HttpHandler sh = new HttpHandler();
         String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
         JSONObject jsonObj = new JSONObject(jsonStrincidents0);
-        JSONArray data = jsonObj.getJSONArray("data");
+        JSONArray data = jsonObj.getJSONArray("pages");
         int a=0;
         JSONObject o = data.getJSONObject(a);
-        String name = o.getString( "name" );
-        String message = o.getString( "message" );
+        String title = o.getString( "title" );
+        String permalink = o.getString( "permalink" );
         HashMap<String, String> date = new HashMap<>();
-        date.put("name", name);
-        date.put("message", message);
+        date.put("title", title);
+        date.put("permalink", permalink);
         getDate.add(date);
-        Log.e(TAG, "message: " + name);
+        Log.e(TAG, "message: " + title+" link "+permalink);
 
         Intent goState = new Intent( StatusService.this, StateMessagesActivity.class);
-        PendingIntent launchStateMessages = PendingIntent.getActivity(StatusService.this,0, goState, PendingIntent.FLAG_UPDATE_CURRENT);
+        @SuppressLint("UnspecifiedImmutableFlag") PendingIntent launchStateMessages = PendingIntent.getActivity(StatusService.this,0, goState, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationManager notificationManager = (NotificationManager) this.getSystemService( Context.NOTIFICATION_SERVICE);
         NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
 
-        inboxStyle.addLine(message);
+        inboxStyle.addLine(permalink);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // I would suggest that you use IMPORTANCE_DEFAULT instead of IMPORTANCE_HIGH
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
@@ -172,8 +172,8 @@ public class StatusService extends Service {
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_state)
                 .setContentTitle( getString( R.string.NotificationTitle ) )
-                .setContentText(name)//get text Title from json :-)
-                .setContentInfo(message)//get text message from json :-)
+                .setContentText(title)//get text Title from json :-)
+                .setContentInfo(permalink)//get text message from json :-)
                 .setContentIntent(launchStateMessages);
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         notificationBuilder.setSound(alarmSound)

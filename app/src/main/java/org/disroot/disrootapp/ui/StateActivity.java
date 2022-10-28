@@ -39,8 +39,8 @@ public class StateActivity extends AppCompatActivity {
     private ListView lv;
 
     // URL to get data JSON
-    static String url = "https://state.disroot.org/api/v1/components?sort=status";
-    static String url1 = "https://state.disroot.org/api/v1/components?sort=status&page=2";
+    static String url = "https://status.disroot.org/index.json";
+    //static String url1 = "https://state.disroot.org/api/v1/components?sort=status&page=2";
 
     ArrayList<HashMap<String, String>> stateList;
 
@@ -124,7 +124,7 @@ public class StateActivity extends AppCompatActivity {
 
             // Making a request to url and getting response
             String jsonStr0 = sh.makeServiceCall(url);
-            String jsonStr1 = sh.makeServiceCall(url1);
+            //String jsonStr1 = sh.makeServiceCall(url1);
 
             Log.e(TAG, "Response from url: " + jsonStr0);
 
@@ -133,28 +133,29 @@ public class StateActivity extends AppCompatActivity {
                     JSONObject jsonObj = new JSONObject(jsonStr0);
 
                     // Getting JSON Array node
-                    JSONArray data = jsonObj.getJSONArray("data");
+                    JSONArray data = jsonObj.getJSONArray("systems");
 
                     // looping through All data
                     for (int i = 0; i < data.length(); i++) {
                         JSONObject c = data.getJSONObject(i);
+                        HashMap<String, String> service = new HashMap<>();
+                        if (c.has("description")&&!c.isNull("description")){
+                            String description = c.getString("description");
+                            service.put("description", description);
+                        }
+                        else {
+                            service.put("description", "No Description");
+                        }
 
-                        String id = c.getString("id");
                         String name = c.getString("name");
-                        String description = c.getString("description");
-                        String updated_at = c.getString("updated_at");
-                        String lastUpdated = "Last Updated: " + updated_at + '"';
-                        String status_name = c.getString("status_name");
+                        String category = c.getString("category");
+                        String status = c.getString("status");
 
                         // tmp hash map for single service
-                        HashMap<String, String> service = new HashMap<>();
-
                         // adding each child node to HashMap key => value
-                        service.put("id", id);
                         service.put("name", name);
-                        service.put("description", description);
-                        service.put("updated_at", lastUpdated);
-                        service.put("status_name", status_name);
+                        service.put("category", category);
+                        service.put("status", status);
 
                         // adding service to service list
                         stateList.add(service);
@@ -171,7 +172,7 @@ public class StateActivity extends AppCompatActivity {
                         }
                     });
                 }
-            }if (jsonStr1 != null) {//next page
+            }/*if (jsonStr1 != null) {//next page
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr1);
 
@@ -214,7 +215,7 @@ public class StateActivity extends AppCompatActivity {
                         }
                     });
                 }
-            }else {
+            }*/else {
                 Log.e(TAG, "Couldn't get json from server.");
                 runOnUiThread(new Runnable() {
                     @Override
@@ -238,68 +239,32 @@ public class StateActivity extends AppCompatActivity {
 
              //Updating parsed JSON data into ListView
             ListAdapter adapter = new SimpleAdapter(
-                    StateActivity.this, stateList,
-                    R.layout.list_item, new String[]{"name", "description", "updated_at",
-                    "status_name"}, new int[]{R.id.name,
-                    R.id.description,R.id.updated_at, R.id.status_name})
+                    StateActivity.this, stateList, R.layout.list_item,
+                    new String[]{"name", "description", "category","status"},
+                    new int[]{R.id.name,R.id.description,R.id.lastMod, R.id.status_name})
 
                     //Change Color based on Status
             {
                 @Override
                 public View getView(int position, View convertView, ViewGroup parent) {
                     View v = super.getView(position, convertView, parent);
-                    //Name Email
-                    TextView nameMail = v.findViewById(R.id.name);
-                    String nameMailValue = nameMail.getText().toString();
-                    switch (nameMailValue) {
-                        case "Email Service":
-                            nameMail.setText(R.string.EmailService);
-                            break;
-                        default:
-                            break;
-                    }
-                    //Name WebMail
-                    TextView nameWebmail = v.findViewById(R.id.name);
-                    String nameWebmailValue = nameWebmail.getText().toString();
-                    switch (nameWebmailValue) {
-                        case "WebMail Service":
-                            nameWebmail.setText(R.string.WebmailService);
-                            break;
-                        default:
-                            break;
-                    }
-                    //Name Cloud
-                    TextView nameCloud = v.findViewById(R.id.name);
-                    String nameCloudValue = nameCloud.getText().toString();
-                    switch (nameCloudValue) {
-                        case "WebMail Service":
-                            nameCloud.setText(R.string.Cloud);
-                            break;
-                        default:
-                            break;
-                    }
-                    //Make Last updated translatable
-                    TextView updated = v.findViewById(R.id.updated_at);
-                    String updatedValue = updated.getText().toString();
-                        if (updatedValue.startsWith("Last Updated: ")){
-                            updated.setText(updatedValue.replace("Last Updated: ",getText(R.string.LastUpdated)));
-                        }
+
                     //Status
                     TextView status = v.findViewById(R.id.status_name);
                     String statusValue = status.getText().toString();
                     switch (statusValue) {
-                        case "Operational":
+                        case "ok":
                             status.setTextColor(Color.GREEN);
                             status.setText(R.string.Operational);
                             break;
-                        case "Major Outage":
+                        case "down":
                             status.setTextColor(Color.RED);
-                            status.setText(R.string.MajorOutage);
+                            status.setText(R.string.down);
                             break;
-                        case "Performance Issues":
-                            status.setText(R.string.PerformanceIssues);
-                            status.setTextColor(Color.YELLOW);
+                        default:
+                            status.setTextColor(Color.RED);
                             break;
+
                     }
                     return v;
                 }

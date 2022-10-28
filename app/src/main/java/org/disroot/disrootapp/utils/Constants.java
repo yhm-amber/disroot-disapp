@@ -71,5 +71,5 @@ public class Constants {
     public static final int INPUT_FILE_REQUEST_CODE = 1;//file upload
     public static final int FILECHOOSER_RESULTCODE = 1;//file upload
     public static final String TAG = MainActivity.class.getSimpleName();
-    public static final String components = "https://state.disroot.org/api/v1/components?per_page=40";
+    public static final String components = "https://status.disroot.org/index.json";
 }

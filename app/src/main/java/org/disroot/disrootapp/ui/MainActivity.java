@@ -1941,23 +1941,30 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     JSONObject jsonObj = new JSONObject(jsonStringcomponents);
 
                     // Getting JSON Array node
-                    JSONArray data = jsonObj.getJSONArray("data");
+                    JSONArray data = jsonObj.getJSONArray("systems");
 
                     // looping through All data
                     for (int i = 0; i < data.length(); i++) {
                         JSONObject c = data.getJSONObject(i);
-
-                        String id = c.getString("id");
-                        String name = c.getString("name");
-                        String description = c.getString("description");
-
-                        // tmp hash map for single service
                         HashMap<String, String> serviceDetails = new HashMap<>();
 
+                        //String id = c.getString("id");
+                        String name = c.getString("name");
+                        //String description = c.getString("description");
+
+                        // tmp hash map for single service
+
                         // adding each child node to HashMap key => value
-                        serviceDetails.put("id", id);
+                        //serviceDetails.put("id", id);
                         serviceDetails.put("name", name);
-                        serviceDetails.put("description", description);
+                        if (c.has("description")&&!c.isNull("description")){
+                            String description = c.getString("description");
+                            serviceDetails.put("description", description);
+                        }
+                        else {
+                            serviceDetails.put("description", "No Description");
+                        }
+                        //serviceDetails.put("description", description);
 
                         // adding service to service list
                         componentList.add(serviceDetails);
@@ -1998,7 +2005,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 HashMap<String, String> hashmap= (HashMap<String, String>) componentList.get(a);
                 String hash = hashmap.get("name");
                 switch (hash) {
-                    case "Email Service":
+                    case "Notes":
+                        notes = hashmap.get("notes");
+                        getNotes(notes);
+                        break;
+                    case "Mail Server":
                         email = hashmap.get("description");
                         getEmail(email);
                         break;
@@ -2010,13 +2021,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         forum = hashmap.get("description");
                         getForum(forum);
                         break;
-                    case "Etherpad":
+                    case "Pad":
                         etherpad = hashmap.get("description");
                         getEtherpad(etherpad);
-                        break;
-                    case "Ethercalc":
-                        ethercalc = hashmap.get("description");
-                        getEthercalc(ethercalc);
                         break;
                     case "Bin":
                         bin = hashmap.get("description");
@@ -2030,11 +2037,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         searx = hashmap.get("description");
                         getSearx(searx);
                         break;
-                    case "Polls":
-                        polls = hashmap.get("description");
-                        getPolls(polls);
-                        break;
-                    case "Taiga":
+                    case "Project board":
                         taiga = hashmap.get("description");
                         getTaiga(taiga);
                         break;
@@ -2042,15 +2045,11 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                         user = hashmap.get("description");
                         getUser(user);
                         break;
-                    case "XMPP":
+                    case "XMPP Chat server":
                         xmpp = hashmap.get("description");
                         getXmpp(xmpp);
                         break;
-                    case "Nextcloud Notes":
-                        notes = hashmap.get("description");
-                        getNotes(notes);
-                        break;
-                    case "Git Service":
+                    case "Git":
                         git = hashmap.get("description");
                         getGit(git);
                         break;

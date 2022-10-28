@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -37,7 +38,7 @@ public class StateMessagesActivity extends AppCompatActivity {
     private ListView lv;
 
     // URL to get data JSON
-    static String incidenturl0 ="https://state.disroot.org/api/v1/incidents?sort=id&order=desc";
+    static String incidenturl0 ="https://status.disroot.org/issues/index.json";
 
     ArrayList<HashMap<String, String>> messageList;
     ArrayList<HashMap<String, String>> getDate;
@@ -125,31 +126,27 @@ public class StateMessagesActivity extends AppCompatActivity {
                     JSONObject jsonObj = new JSONObject(jsonStrincidents0);
 
                     // Getting JSON Array node
-                    JSONArray data = jsonObj.getJSONArray("data");
+                    JSONArray data = jsonObj.getJSONArray("pages");
 
                     // looping through All data
                     for (int i = 0; i < data.length(); i++) {
                         JSONObject c = data.getJSONObject(i);
 
-                        String id = c.getString("id");
-                        String name = c.getString("name");
-                        String message = c.getString("message");
-                        String scheduled_at = c.getString("scheduled_at");
-                        String scheduledAt = "Scheduled at: " + '"' + scheduled_at + '"';
-                        String updated_at = c.getString("updated_at");
-                        String lastUpdated = "Last Updated: " + updated_at + '"';
-                        String human_status = c.getString("human_status");
+                        //String id = c.getString("id");
+                        String title = c.getString("title");
+                        String link = c.getString("permalink");
+                        Boolean resolved = c.getBoolean( "resolved" );
+                        String lastMod = c.getString("lastMod");
+                        String lastUpdated = "Last Updated: " + lastMod + '"';
 
                         // tmp hash map for single service
                         HashMap<String, String> service = new HashMap<>();
 
                         // adding each child node to HashMap key => value
-                        service.put("id", id);
-                        service.put("name", name);
-                        service.put("message", message);
-                        service.put("scheduled_at", scheduledAt);
-                        service.put("updated_at", lastUpdated);
-                        service.put("human_status", human_status);
+                        service.put("title", title);
+                        service.put("moreInfo", link);
+                        service.put("resolved", resolved.toString());
+                        service.put("lastMod", lastUpdated);
 
                         // adding service to service list
                         messageList.add(service);
@@ -191,83 +188,55 @@ public class StateMessagesActivity extends AppCompatActivity {
              //Updating parsed JSON data into ListView
             ListAdapter adapter = new SimpleAdapter(
                     StateMessagesActivity.this, messageList,
-                    R.layout.list_item, new String[]{"name","message", "updated_at", "scheduled_at", "human_status"}, new int[]{R.id.name, R.id.message,
-                    R.id.updated_at, R.id.scheduled_at, R.id.human_status})
-
-                    //Change Color based on Status
+                    R.layout.list_item, new String[]{"title","moreInfo", "lastMod", "resolved", "status"}, new int[]{R.id.name, R.id.message,
+                    R.id.lastMod, R.id.resolved, R.id.status})
             {
+
+
                 @Override
                 public View getView(int position, View convertView, ViewGroup parent) {
                     View v = super.getView(position, convertView, parent);
-                    //Name Email
-                    TextView nameMail = v.findViewById(R.id.name);
-                    String nameMailValue = nameMail.getText().toString();
-                    switch (nameMailValue) {
-                        case "Email Service":
-                            nameMail.setText(R.string.EmailService);
-                            break;
-                        default:
-                            break;
-                    }
-                    //Name WebMail
-                    TextView nameWebmail = v.findViewById(R.id.name);
-                    String nameWebmailValue = nameWebmail.getText().toString();
-                    switch (nameWebmailValue) {
-                        case "WebMail Service":
-                            nameWebmail.setText(R.string.WebmailService);
-                            break;
-                        default:
-                            break;
-                    }
-                    //Name Cloud
-                    TextView nameCloud = v.findViewById(R.id.name);
-                    String nameCloudValue = nameCloud.getText().toString();
-                    switch (nameCloudValue) {
-                        case "WebMail Service":
-                            nameCloud.setText(R.string.Cloud);
-                            break;
-                        default:
-                            break;
-                    }
+
+
+
+                    //Make links work
+                    TextView link = v.findViewById( R.id.message );
+                    String linkValue = link.getText().toString();
+                    link.setText( R.string.more_info);
+                    v.setOnClickListener(new View.OnClickListener() {
+
+                        public void onClick(View arg0) {
+
+                            Uri uri = Uri.parse( linkValue);
+                            Intent statusLink = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                            startActivity(statusLink);
+                        }
+
+                    });
+
                     //Make Last updated translatable
-                    TextView updated = v.findViewById(R.id.updated_at);
+                    TextView updated = v.findViewById(R.id.lastMod );
                     String updatedValue = updated.getText().toString();
                         if (updatedValue.startsWith("Last Updated: ")){
                             updated.setText(updatedValue.replace("Last Updated: ",getText(R.string.LastUpdated)));
                         }
                     //Make Scheduled at translatable
-                    TextView scheduled = v.findViewById(R.id.scheduled_at);
-                    String scheduledValue = scheduled.getText().toString();
-                    if (scheduledValue.startsWith("Scheduled at: ")){
-                        scheduled.setText(scheduledValue.replace("Scheduled at: ",getText(R.string.ScheduledAt)));
-                    }
+                    TextView resolved = v.findViewById(R.id.resolved );
+                    String resolvedValue = resolved.getText().toString();
                     //Human_status
-                    TextView humanStatus = v.findViewById(R.id.human_status);
+                    TextView humanStatus = v.findViewById(R.id.status );
                     String humanStatusValue = humanStatus.getText().toString();
-                    switch (humanStatusValue) {
-                        case "Fixed":
+                    Log.e("status", "status: "+humanStatusValue);
+                    switch (resolvedValue) {
+                        case "true":
                             humanStatus.setTextColor(Color.GREEN);
                             humanStatus.setText(R.string.Fixed);
-                            scheduled.setVisibility(View.GONE  );
+                            resolved.setVisibility(View.GONE  );
                             break;
-                        case "Scheduled":
-                            humanStatus.setTextColor(Color.YELLOW);
-                            humanStatus.setText(R.string.Scheduled);
-                            scheduled.setVisibility(View.VISIBLE  );
-                            break;
-                        case "Investigating":
+                        case "false":
                             humanStatus.setTextColor(Color.RED);
-                            scheduled.setVisibility(View.GONE  );
-                            break;
-                        case "Watching":
-                            scheduled.setVisibility(View.GONE  );
-                            humanStatus.setTextColor(Color.YELLOW);
-                            humanStatus.setText(R.string.Investigating);
-                            break;
-                        case "Identified":
-                            scheduled.setVisibility(View.GONE  );
-                            humanStatus.setTextColor(Color.RED);
-                            humanStatus.setText(R.string.Identified);
+                            humanStatus.setText(R.string.down);
+                            resolved.setVisibility(View.GONE  );
                             break;
                     }
                     return v;
