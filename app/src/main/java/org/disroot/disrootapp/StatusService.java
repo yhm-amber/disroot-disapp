@@ -37,7 +37,7 @@ public class StatusService extends Service {
     //status report
     public SharedPreferences checkDate;
     // URL to get data JSON
-    static String incidenturl0 ="https://status.disroot.org/issues/index.json";
+    static String incidentUrl0 ="https://status.disroot.org/issues/index.json";
     ArrayList<HashMap<String, String>> messageList;
     ArrayList<HashMap<String, String>> getDate;
 
@@ -78,13 +78,13 @@ public class StatusService extends Service {
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
 
-            String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
+            String jsonStringIdents0 = sh.makeServiceCall( incidentUrl0 );
 
-            Log.e(TAG, "Response from url(Service): " + incidenturl0);
+            Log.e(TAG, "Response from url(Service): " + incidentUrl0 );
 
-            if (jsonStrincidents0 != null) {//Incidaetnts page
+            if (jsonStringIdents0 != null) {//Incidents page
                 try {
-                    JSONObject jsonObj = new JSONObject(jsonStrincidents0);
+                    JSONObject jsonObj = new JSONObject(jsonStringIdents0);
                     JSONArray data = jsonObj.getJSONArray("pages");
                     int a=0;
                     JSONObject o = data.getJSONObject(a);
@@ -114,7 +114,7 @@ public class StatusService extends Service {
                             return null;
                         }
                         else
-                            Log.e(TAG, dateStored+"updated json(service)"+stateDate);
+                            Log.e(TAG, stateDate+"updated json(service)"+dateStored);
                     }
                     return null;
 
@@ -137,8 +137,8 @@ public class StatusService extends Service {
         String CHANNEL_ID = "3168654312";
         String CHANNEL_NAME = "StateNotification";
         HttpHandler sh = new HttpHandler();
-        String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
-        JSONObject jsonObj = new JSONObject(jsonStrincidents0);
+        String jsonStringIdents0 = sh.makeServiceCall( incidentUrl0 );
+        JSONObject jsonObj = new JSONObject(jsonStringIdents0);
         JSONArray data = jsonObj.getJSONArray("pages");
         int a=0;
         JSONObject o = data.getJSONObject(a);

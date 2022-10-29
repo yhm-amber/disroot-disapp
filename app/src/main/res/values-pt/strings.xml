@@ -7,10 +7,9 @@
     <string name="action_forum">Fórum</string>
     <string name="action_chat">Chat</string>
     <string name="action_pad">Etherpad</string>
-    <string name="action_calc">EtherCalc</string>
+    <string name="action_cryptpad">Cryptpad</string>
     <string name="action_bin">Private bin</string>
     <string name="action_upload">Upload</string>
-    <string name="action_poll">Poll</string>
     <string name="action_state">State</string>
     <string name="action_howto">How to</string>
 
@@ -32,7 +31,7 @@
     <string name="CloudInfoTitle">Definições Nextcloud</string>
     <string name="CloudInfo">Mantenha os seus dados sincronizados e seguros. Com o Nextcloud pode partilhar os seus ficheiros calendários, contactos e mais.\n\nHost:\n https://cloud.disroot.org\n\nNome de utilizador:\n O_seu_nome_de_utilizador_disroot\n\nPassword:\n a_sua_password_do_disroot.</string>
     <string name="WelcomeTitle">Bem Vindo</string>
-    <string name="WelcomeInfo">O Disroot é uma plataforma baseada nos princípios de liberdade, privacidade, federação e descentralização que fornece serviços online.\nEsta aplicação é como um Canivete Suíço para a plataforma Disroot, feito pela comunidade para a comunidade.\nSe não tem uma conta Disroot pode utilizar esta aplicação para aceder a todos os serviços do Disroot que não precisam de uma conta de utilizador:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requer uma conta apenas para o Diaspora)\n\nA aplicação pode pedir que instale outras aplicações adicionais. Nós recomendamos vivamente que instale o F-Droid - uma loja de aplicações livres e open source - porque nem todas as aplicações podem ser encontradas na Play Store Google  e o F-Droid é mais focado na privacidade (sem tracking, sem preciso criar conta de utilizador) pode descarregar o F-droid carregando no ícone F-droid.\n</string>
+    <string name="WelcomeInfo">O Disroot é uma plataforma baseada nos princípios de liberdade, privacidade, federação e descentralização que fornece serviços online.\nEsta aplicação é como um Canivete Suíço para a plataforma Disroot, feito pela comunidade para a comunidade.\nSe não tem uma conta Disroot pode utilizar esta aplicação para aceder a todos os serviços do Disroot que não precisam de uma conta de utilizador:\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (requer uma conta apenas para o Diaspora)\n\nA aplicação pode pedir que instale outras aplicações adicionais. Nós recomendamos vivamente que instale o F-Droid - uma loja de aplicações livres e open source - porque nem todas as aplicações podem ser encontradas na Play Store Google  e o F-Droid é mais focado na privacidade (sem tracking, sem preciso criar conta de utilizador) pode descarregar o F-droid carregando no ícone F-droid.\n</string>
 
     <string name="help">Ajuda</string>
     <string name="license">Licença</string>
@@ -50,8 +49,8 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Community (Disroot):</string>
     <string name="fDroid">F-Droid</string>
-    <string name="thirdparty">Bibliotecas de Terceiros</string>
-    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
+    <string name="thirdParty">Bibliotecas de Terceiros</string>
+    <string name="thirdPartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
     <string name="misc">Miscellaneous</string>
     <string name="miscDio">Nós usamos o Diolinx como a base para criar esta aplicação. Pode dar uma olhadela, também é Software Livre!</string>
     <string name="miscDioBtn">Contem-me mais</string>
@@ -80,8 +79,8 @@
     <string name="PadTitle">Sobre EtherPad</string>
     <string name="ChatTitle">Definições do XMPP\n</string>
     <string name="ChatInfo">O Conversations uma aplicação de mensagens instantâneas descentralizada e federada, livre, standard e open-source para conversar com os seus contactos ou com grupos.\n\nJabber ID :\n O seu endereço de email do Disroot completo\n\nPassword :\n A sua password do Disroot</string>
-    <string name="CalcInfo">Com o EtherCalc pode trabalhar colaborativamente com outros em inventrários, questionários, gestão de listas, sessões de brainstorming e mais!\nNão é necessário ter uma conta de utilizador para usar.</string>
-    <string name="CalcTitle">Sobre EtherCalc</string>
+    <string name="CryptpadInfo">Uma alternativa privada por projecto às ferramentas de escritório populares.\nNão é necessário ter uma conta de utilizador para usar.</string>
+    <string name="CryptpadTitle">Sobre Cryptpad</string>
     <string name="BinTitle">Sobre PrivateBin</string>
     <string name="BinInfo">PrivateBin é um pastebin open-souce e fórum de discussão. Os dados são encriptados e desencriptados no browser para que o servidor não possa aceder aos dados. Basta colar um texto e carregar em “Send”, definir data de expiração (e outras configurações) e partilhar o link URL.\nNão é necessário ter uma conta de utilizador para usar.</string>
     <string name="UploadTitle">Sobre Upload (Lufi)</string>
@@ -137,7 +136,7 @@
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Problemas de performance</string>
     <string name="Notification">Sem problemas</string>
-    <string name="Notificationissues">Alguns serviços estão com problemas</string>
+    <string name="NotificationIssues">Alguns serviços estão com problemas</string>
     <string name="state_messages_btn">Mostrar mensagens de State</string>
     <string name="state_btn">Mostrar estado dos serviços</string>
     <string name="ScheduledAt">Agendado para:</string>
@@ -178,4 +177,7 @@
     <string name="translatorsTitle">Tradutores:</string>
     <string name="artworksTitle">Desenho:</string>
     <string name="Fixed">Resolvido</string>
+
+    <string name="down">Down</string>
+    <string name="more_info">Tap for more info</string>
 </resources>

@@ -7,10 +7,9 @@
     <string name="action_forum">Forum</string>
     <string name="action_chat">Chat</string>
     <string name="action_pad">Etherpad</string>
-    <string name="action_calc">EtherCalc</string>
+    <string name="action_cryptpad">Cryptpad</string>
     <string name="action_bin">Private bin</string>
     <string name="action_upload">Upload</string>
-    <string name="action_poll">Umfrage</string>
     <string name="action_state">Status</string>
     <string name="action_howto">How to</string> <!--best transl will be tutorial, but inconsistent then-->
     <string name="action_about">Über</string>
@@ -28,7 +27,7 @@
     <string name="CloudInfoTitle">Nextcloud Einstellungen</string>
     <string name="CloudInfo">Sichere und synchronisiere Deine Daten. Mit Nextcloud kannst du Dateien, Kalender, Kontakte und mehr mit Anderen teilen.\n\nHost:\n https://cloud.disroot.org\n\nBenutzername:\n "dein Disroot Benutzername"\n\nPasswort:\n "dein Disroot Passwort".</string>
     <string name="WelcomeTitle">Willkommen</string>
-    <string name="WelcomeInfo">Disroot ist eine Plattform, auf der Online-Dienste angeboten werden, die auf den Prinzipien von Freiheit, Privatsphäre, Gemeinschaft und Dezentralisierung basieren.\nDiese App ist wie ein Schweizer Taschenmesser für die Disroot-Plattform, von der Community für die Community.\nAuch wenn du keinen Disroot-Account hast, kannst Du diese App trotzdem nutzen, um auf alle Disroot-Dienste zuzugreifen, die kein Benutzerkonto erfordern:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (separater Diaspora Account benötigt)\n\nDiese App wird Dich eventuell darum bitten, weitere Apps zu installieren. Wir empfehlen F-Droid zu installieren - einen kostenlosen und quelloffenen App-Katalog - da nicht alle verwendeten Apps im Google Play Store zu finden sind und F-Droid außerdem mehr auf Datenschutz ausgerichtet ist (kein Tracking, kein Account erforderlich). Du kannst F-Droid herunterladen, indem Du auf das F-Droid-Symbol klickst.\n</string>
+    <string name="WelcomeInfo">Disroot ist eine Plattform, auf der Online-Dienste angeboten werden, die auf den Prinzipien von Freiheit, Privatsphäre, Gemeinschaft und Dezentralisierung basieren.\nDiese App ist wie ein Schweizer Taschenmesser für die Disroot-Plattform, von der Community für die Community.\nAuch wenn du keinen Disroot-Account hast, kannst Du diese App trotzdem nutzen, um auf alle Disroot-Dienste zuzugreifen, die kein Benutzerkonto erfordern:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (separater Diaspora Account benötigt)\n\nDiese App wird Dich eventuell darum bitten, weitere Apps zu installieren. Wir empfehlen F-Droid zu installieren - einen kostenlosen und quelloffenen App-Katalog - da nicht alle verwendeten Apps im Google Play Store zu finden sind und F-Droid außerdem mehr auf Datenschutz ausgerichtet ist (kein Tracking, kein Account erforderlich). Du kannst F-Droid herunterladen, indem Du auf das F-Droid-Symbol klickst.\n</string>
     <string name="help">Hilfe</string>
     <string name="license">Lizenz</string>
     <string name="action_settings">Einstellungen</string>
@@ -39,8 +38,8 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Community (Disroot):</string>
     <string name="fDroid">F-Droid</string>
-    <string name="thirdparty">Libraries von Drittanbietern</string>
-    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckChangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
+    <string name="thirdParty">Libraries von Drittanbietern</string>
+    <string name="thirdPartyText"><a href="https://github.com/cketti/ckChangeLog">ckChangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
     <string name="misc">sonstiges</string>
     <string name="miscDio">Wir haben Diolinux als Grundlage benutzt, um diese App zu entwickeln. Probier es selbst aus, es ist freie, quelloffene Software!</string>
     <string name="miscDioBtn">Weitere Informationen</string>
@@ -69,8 +68,8 @@
     <string name="PadTitle">EtherPad Info</string>
     <string name="ChatTitle">XMPP Einstellungen\n</string>
     <string name="ChatInfo">Conversations ist ein Messenger für die eine sichere (E2EE mit OMEMO und PGP) und datenschutzfeundliche Kommunikation mit Kontakten und Gruppen. Er nutzt das quelloffene XMPP-Protokoll das eine dezentrale Server-Infrastruktur erlaubt.\n\nJabber ID :\n Deine_Disroot_email_addresse\n\nPasswort :\n Dein_Disroot_passwort</string>
-    <string name="CalcInfo">Mit EtherCalc zusammen an Listen, Formularen, Datensätzen, etc. arbeiten.\nKeine Registrierung notwendig.</string>
-    <string name="CalcTitle">EtherCalc Info</string>
+    <string name="CryptpadInfo">Eine privat gestaltete Alternative zu den gängigen Office-Tools.\nKeine Registrierung notwendig.</string>
+    <string name="CryptpadTitle">Cryptpad Info</string>
     <string name="BinTitle">PrivateBin Help</string>
     <string name="BinInfo">PrivateBin ist ein quelloffener Online-Speicher-Service mit Diskussionsforum. Die Daten werden im Browser verschlüsselt und entschlüsselt, so dass der Server keine Kenntnis über die hochgeladenen Daten hat. Füge einfach einen Text ein, klicke auf "Senden" und teile die URL. Es können zusätzlich ein Passwort und ein Ablaufzeitpunkt gewählt werden.\nKeine Registrierung notwendig.</string>
     <string name="UploadTitle">Upload (powered by Lufi) Info</string>
@@ -127,7 +126,7 @@
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Performance Probleme</string>
     <string name="Notification">Keine Probleme</string>
-    <string name="Notificationissues">Bei einigen Systemen treten Probleme auf</string>
+    <string name="NotificationIssues">Bei einigen Systemen treten Probleme auf</string>
     <string name="state_messages_btn">Zeige Status-Nachrichten</string>
     <string name="state_btn">Zeige Service-Status</string>
     <string name="ScheduledAt">Geplant am: \</string>
@@ -170,5 +169,7 @@
     <string name="translatorsTitle">Übersetzer:</string>
     <string name="artworksTitle">Künstlerische Gestaltung:</string>
     <string name="Fixed">Behoben</string>
+    <string name="down">Down</string>
+    <string name="more_info">Tap for more info</string>
 
 </resources>

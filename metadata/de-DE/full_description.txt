@@ -2,7 +2,7 @@
 Diese App ist Dein Schweizer Taschenmesser für die Disroot-Plattform, von der Gemeinschaft für die Gemeinschaft.
 Auch wenn Du keinen Disroot-Account hast, kannst Du diese App benutzen, um auf alle Disroot-Dienste zuzugreifen, die keinen Account benötigen:
 * Etherpad
-* Ethercalc
+* Cryptpad
 * Private bin
 * Upload
 * Poll

@@ -7,10 +7,9 @@
     <string name="action_forum">Forum</string>
     <string name="action_chat">Chat</string>
     <string name="action_pad">Etherpad</string>
-    <string name="action_calc">EtherCalc</string>
+    <string name="action_cryptpad">Cryptpad</string>
     <string name="action_bin">Private bin</string>
     <string name="action_upload">Upload</string>
-    <string name="action_poll">Poll</string>
     <string name="action_state">Status</string>
     <string name="action_howto">How to</string>
 
@@ -32,7 +31,7 @@
     <string name="CloudInfoTitle">Nextcloud Instellingen</string>
     <string name="CloudInfo">Houd uw gegevens gesynchroniseerd en veilig. Met Nextcloud kunt u uw bestanden, kalenders, contactpersonen en meer delen.\n\nHost:\n https://cloud.disroot.org\n\nGebruikersnaam:\n uw_disroot_gebruikersnaam\n\nWachtwoord:\n uw_disroot_wachtwoord.</string>
     <string name="WelcomeTitle">Welkom</string>
-    <string name="WelcomeInfo">Disroot is een platform dat online diensten aanbiedt op basis van de principes van vrijheid, privacy, federatie en decentralisatie.\n Deze app is als een Zwitsers mes voor het Disroot platform, gemaakt door de gemeenschap voor de gemeenschap.\nAls je geen Disroot account hebt kun je deze app nog steeds gebruiken om toegang te krijgen tot alle Disroot diensten dat geen account vereist:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (vereist een Diaspora elleen account)\n\nDe app kan vereisen dat u extra apps installeert. We raden u ten zeerste aan om F-Droid - een gratis en open source app marktplaats te installeren, omdat niet alle apps te vinden zijn in de Play Store van Google en F-Droid meer privacy georiënteerd is (geen tracking, geen account nodig), u kunt het downloaden door op het F-droid icoontje te tikken.\n</string>
+    <string name="WelcomeInfo">Disroot is een platform dat online diensten aanbiedt op basis van de principes van vrijheid, privacy, federatie en decentralisatie.\n Deze app is als een Zwitsers mes voor het Disroot platform, gemaakt door de gemeenschap voor de gemeenschap.\nAls je geen Disroot account hebt kun je deze app nog steeds gebruiken om toegang te krijgen tot alle Disroot diensten dat geen account vereist:\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (vereist een Diaspora elleen account)\n\nDe app kan vereisen dat u extra apps installeert. We raden u ten zeerste aan om F-Droid - een gratis en open source app marktplaats te installeren, omdat niet alle apps te vinden zijn in de Play Store van Google en F-Droid meer privacy georiënteerd is (geen tracking, geen account nodig), u kunt het downloaden door op het F-droid icoontje te tikken.\n</string>
 
     <string name="help">Help</string>
     <string name="license">Licentie</string>
@@ -51,8 +50,8 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot Gemeenschap (Disroot):</string>
     <string name="fDroid">F-Droid</string>
-    <string name="thirdparty">Third-Party Libraries</string>
-    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache Licentie 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
+    <string name="thirdParty">Third-Party Libraries</string>
+    <string name="thirdPartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache Licentie 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
     <string name="misc">Diversen</string>
     <string name="miscDio">We hebben Diolinx als uitgangspunt gebruikt om deze app te maken. Ga eens kijken, het is ook vrije software!</string>
     <string name="miscDioBtn">Vertel me meer</string>
@@ -82,8 +81,8 @@
     <string name="ChatTitle">XMPP Instellingen\n</string>
     <string name="ChatInfo">Conversations is een gratis, standaard en open-source gedecentraliseerde en gefedereerde instant messaging applicatie voor chatten met contacten of binnen groepen.
 \n\nJabber ID :\n Jou Volledig Disroot email adres\n\nWachtwoord :\n Jou Disroot wachtwoord</string>
-    <string name="CalcInfo">Met EtherCalc werken we samen aan inventarissen, enquêteformulieren, lijstbeheer, brainstormsessies en meer.\nEr is geen registratie vereist.</string>
-    <string name="CalcTitle">EtherCalc Info</string>
+    <string name="CryptpadInfo">Een privé-alternatief voor populaire kantoortools.\nEr is geen registratie vereist.</string>
+    <string name="CryptpadTitle">Cryptpad Info</string>
     <string name="BinTitle">PrivateBin Help</string>
     <string name="BinInfo">PrivateBin is een open-source online pastebin en discussiebord. De gegevens worden gecodeerd/gedecodeerd in de browser, zodat de server geen kennis heeft van gehoste gegevens. Plak gewoon een tekst, klik op "Verzenden", stel de vervaldatum in (en andere functies) en deel de URL.\nEr is geen registratie vereist.</string>
     <string name="UploadTitle">Upload (powered by Lufi) Info</string>
@@ -139,7 +138,7 @@
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Prestatieproblemen</string>
     <string name="Notification">Geen problemen</string>
-    <string name="Notificationissues">Sommige systemen ondervinden problemen</string>
+    <string name="NotificationIssues">Sommige systemen ondervinden problemen</string>
     <string name="state_messages_btn">Toon statusberichten</string>
     <string name="state_btn">Toon Service Status</string>
     <string name="ScheduledAt">Gepland op: \</string>
@@ -180,4 +179,7 @@
     <string name="translatorsTitle">Vertalers:</string>
     <string name="artworksTitle">Artwork:</string>
     <string name="Fixed">Opgelost</string>
+
+    <string name="down">Down</string>
+    <string name="more_info">Tap for more info</string>
 </resources>

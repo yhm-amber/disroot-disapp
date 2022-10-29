@@ -7,11 +7,10 @@
     <string name="action_forum">Fórum</string>
     <string name="action_chat">Chat</string>
     <string name="action_pad">Pad</string>
-    <string name="action_calc">Calc</string>
+    <string name="action_cryptpad">Cryptpad</string>
     <string name="action_bin">Paste bin</string>
     <string name="action_upload">Upload</string>
     <string name="action_searx">Pesquisa</string>
-    <string name="action_poll">Sondagens</string>
     <string name="action_board">Quadro de projetos</string>
     <string name="action_state">Status</string>
     <string name="action_howto">Tutorial</string>
@@ -44,8 +43,8 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Comunidade Disrootu (Disroot):</string>
     <string name="fDroid">F-Droid</string>
-    <string name="thirdparty">Bibliotecas de Terceiros</string>
-    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckHistórico de modificações: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
+    <string name="thirdParty">Bibliotecas de Terceiros</string>
+    <string name="thirdPartyText"><a href="https://github.com/cketti/ckChangeLog">ckHistórico de modificações: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
     <string name="misc">Diversos</string>
     <string name="miscDio">Usamos o Diolinx como a base para criar este aplicativo. Pode dar uma olhada é de Software Livre!</string>
     <string name="miscDioBtn">Quero saber mais</string>
@@ -74,8 +73,8 @@
     <string name="PadTitle">Sobre EtherPad</string>
     <string name="ChatTitle">Configurações de XMPP\n</string>
     <string name="ChatInfo">Conversations é um aplicativo de mensagens instantâneas de código livre, padrão, descentralizado e federado para conversar com seus contactos ou com grupos.\n\nID do Jabber :\n Seu endereço de email do Disroot completo\n\nSenha :\n A sua senha do Disroot</string>
-    <string name="CalcInfo">Com o EtherCalc pode trabalhar colaborativamente com outros em inventrários, questionários, gestão de listas, sessões de brainstorming e mais!\nNão é necessário ter uma conta para usar.</string>
-    <string name="CalcTitle">Sobre EtherCalc</string>
+    <string name="CryptpadInfo">Uma alternativa privada por projecto às ferramentas de escritório populares.\nNão é necessário ter uma conta para usar.</string>
+    <string name="CryptpadTitle">Sobre Cryptpad</string>
     <string name="BinTitle">Sobre PrivateBin</string>
     <string name="BinInfo">PrivateBin é uma ferramenta de código livre pastebin e fórum de discussão. Os dados são criptografados/descriptografados no navegador para que o servidor não possa aceder aos seus dados. Basta colar um texto e clicar no “Enviar”, definir data de expiração (e outros ajustes) e compartilhar o link URL.\nNão é necessário ter uma conta para usar.</string>
     <string name="UploadTitle">Sobre Upload (desenvolvido por Lufi)</string>
@@ -132,7 +131,7 @@
     <string name="Cloud">Nuvem</string>
     <string name="PerformanceIssues">Problemas de desempenho</string>
     <string name="Notification">Tudo certo</string>
-    <string name="Notificationissues">Alguns sistemas estão enfrentando problemas</string>
+    <string name="NotificationIssues">Alguns sistemas estão enfrentando problemas</string>
     <string name="state_messages_btn">Mostrar mensagens de Status</string>
     <string name="state_btn">Mostrar Status de Serviço</string>
     <string name="ScheduledAt">Programado em: \</string>
@@ -159,7 +158,7 @@
     <string name="deviceName">Nome do dispositivo:</string>
     <string name="edit_apps_title">Mostrar/ocultar apps</string>
     <string name="settings">Configurações</string>
-    <string name="WelcomeInfo">Disroot é uma plataforma que fornece serviços on-line baseados em princípios de liberdade, privacidade, federação e descentralização.\nEste App é como seu canivete suíço para a plataforma Disroot, feito pela comunidade para a comunidade.\nSe você não tiver uma conta do Disroot mesmo assim pode usar este App e acessar todos os serviços do Disroot que não requerem uma conta:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Sondagens\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Chamadas\n\nnO App pode exigir que você instale aplicativos adicionais. Recomendamos fortemente que você instale o F-Droid - uma loja de aplicativos gratuitos e de código livre - nem todos os aplicativos daí podem ser encontrados na Loja de Google Play e além disso o F-Droid é mais orientado para a privacidade (sem rastreamento, sem necessidade de conta) você pode fazer o download, tocando no ícone do F-droid.\n</string>
+    <string name="WelcomeInfo">Disroot é uma plataforma que fornece serviços on-line baseados em princípios de liberdade, privacidade, federação e descentralização.\nEste App é como seu canivete suíço para a plataforma Disroot, feito pela comunidade para a comunidade.\nSe você não tiver uma conta do Disroot mesmo assim pode usar este App e acessar todos os serviços do Disroot que não requerem uma conta:\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Sondagens\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Chamadas\n\nnO App pode exigir que você instale aplicativos adicionais. Recomendamos fortemente que você instale o F-Droid - uma loja de aplicativos gratuitos e de código livre - nem todos os aplicativos daí podem ser encontrados na Loja de Google Play e além disso o F-Droid é mais orientado para a privacidade (sem rastreamento, sem necessidade de conta) você pode fazer o download, tocando no ícone do F-droid.\n</string>
     <string name="hide">Ocultar app</string>
     <string name="dashboard">Painel de controle</string>
     <string name="action_calls">Chamadas</string>
@@ -175,4 +174,7 @@
     <string name="translatorsTitle">Tradutores:</string>
     <string name="artworksTitle">Arte:</string>
     <string name="Fixed">Resolvido</string>
+
+    <string name="down">Down</string>
+    <string name="more_info">Tap for more info</string>
 </resources>

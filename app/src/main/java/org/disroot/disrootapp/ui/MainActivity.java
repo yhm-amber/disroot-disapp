@@ -92,8 +92,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     WebChromeClient.FileChooserParams chooserParams;
     ValueCallback<Uri[]> chooserPathUri;
     Button button;
-    private Button MailBtn,CloudBtn,ForumBtn,ChatBtn,PadBtn,CalcBtn,BinBtn,UploadBtn,SearxBtn,PollsBtn,BoardBtn,CallsBtn,NotesBtn,GitBtn,UserBtn,StateBtn,HowToBtn,AboutBtn;//all buttons
-    private String email,cloud,forum,etherpad,ethercalc,bin,upload,searx,polls,taiga,user,xmpp,notes,git,cryptpad;
+    private Button MailBtn,CloudBtn,ForumBtn,ChatBtn,PadBtn, CryptpadBtn,BinBtn,UploadBtn,SearxBtn,BoardBtn,CallsBtn,NotesBtn,GitBtn,UserBtn,StateBtn,HowToBtn,AboutBtn;//all buttons
+    private String email,cloud,forum,etherpad,bin,upload,searx,taiga,user,xmpp,notes,git,cryptpad;
     private CookieManager cookieManager;
     private WebView webView;
     private DisWebChromeClient disWebChromeClient;
@@ -157,11 +157,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         BtnPreference = getSharedPreferences( "ForumBtn", Context.MODE_PRIVATE );//forum
         BtnPreference = getSharedPreferences( "ChatBtn", Context.MODE_PRIVATE );//chat
         BtnPreference = getSharedPreferences( "PadBtn", Context.MODE_PRIVATE );//pad
-        BtnPreference = getSharedPreferences( "CalcBtn", Context.MODE_PRIVATE );//calc
+        BtnPreference = getSharedPreferences( "CryptpadBtn", Context.MODE_PRIVATE );//cryptpad
         BtnPreference = getSharedPreferences( "BinBtn", Context.MODE_PRIVATE );//bin
         BtnPreference = getSharedPreferences( "UploadBtn", Context.MODE_PRIVATE );//upload
         BtnPreference = getSharedPreferences( "SearxBtn", Context.MODE_PRIVATE );//search
-        BtnPreference = getSharedPreferences( "PollsBtn", Context.MODE_PRIVATE );//polls
         BtnPreference = getSharedPreferences( "BoardBtn", Context.MODE_PRIVATE );//board
         BtnPreference = getSharedPreferences( "CallsBtn", Context.MODE_PRIVATE );//calls
         BtnPreference = getSharedPreferences( "NotesBtn", Context.MODE_PRIVATE );//notes
@@ -239,11 +238,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         ForumBtn = findViewById( R.id.ForumBtn );
         ChatBtn = findViewById( R.id.ChatBtn );
         PadBtn = findViewById( R.id.PadBtn );
-        CalcBtn = findViewById( R.id.CalcBtn );
+        CryptpadBtn = findViewById( R.id.CryptpadBtn );
         BinBtn = findViewById( R.id.BinBtn );
         UploadBtn = findViewById( R.id.UploadBtn );
         SearxBtn = findViewById( R.id.SearxBtn );
-        PollsBtn = findViewById( R.id.PollsBtn );
         BoardBtn = findViewById( R.id.BoardBtn );
         CallsBtn = findViewById( R.id.CallsBtn );
         NotesBtn = findViewById( R.id.NotesBtn );
@@ -278,11 +276,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         ForumBtn.setOnLongClickListener( this );
         ChatBtn.setOnLongClickListener( this );
         PadBtn.setOnLongClickListener( this );
-        CalcBtn.setOnLongClickListener( this );
+        CryptpadBtn.setOnLongClickListener( this );
         BinBtn.setOnLongClickListener( this );
         UploadBtn.setOnLongClickListener( this );
         SearxBtn.setOnLongClickListener( this );
-        PollsBtn.setOnLongClickListener( this );
         BoardBtn.setOnLongClickListener( this );
         CallsBtn.setOnLongClickListener( this );
         NotesBtn.setOnLongClickListener( this );
@@ -299,11 +296,10 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         ForumBtn.setOnClickListener( this );
         ChatBtn.setOnClickListener( this );
         PadBtn.setOnClickListener( this );
-        CalcBtn.setOnClickListener( this );
+        CryptpadBtn.setOnClickListener( this );
         BinBtn.setOnClickListener( this );
         UploadBtn.setOnClickListener( this );
         SearxBtn.setOnClickListener( this );
-        PollsBtn.setOnClickListener( this );
         BoardBtn.setOnClickListener( this );
         CallsBtn.setOnClickListener( this );
         NotesBtn.setOnClickListener( this );
@@ -395,8 +391,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     }
                     else startActivity(pad);
                     break;
-                case R.id.CalcBtn:
-                    webView.loadUrl(Constants.URL_DisApp_CALC);
+                case R.id.CryptpadBtn:
+                    webView.loadUrl(Constants.URL_DisApp_CRYPTPAD );
                     hideDashboard();
                     break;
                 case R.id.BinBtn:
@@ -409,10 +405,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                     break;
                 case R.id.SearxBtn:
                     webView.loadUrl(Constants.URL_DisApp_SEARX);
-                    hideDashboard();
-                    break;
-                case R.id.PollsBtn:
-                    webView.loadUrl(Constants.URL_DisApp_POLL);
                     hideDashboard();
                     break;
                 case R.id.BoardBtn:
@@ -486,8 +478,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             case R.id.PadBtn:
                 showPadInfo();
                 break;
-            case R.id.CalcBtn:
-                showCalcInfo();
+            case R.id.CryptpadBtn:
+                showCryptpadInfo();
                 break;
             case R.id.BinBtn:
                 showBinInfo();
@@ -497,9 +489,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 break;
             case R.id.SearxBtn:
                 showSearxInfo();
-                break;
-            case R.id.PollsBtn:
-                showPollsInfo();
                 break;
             case R.id.BoardBtn:
                 showBoardInfo();
@@ -888,16 +877,16 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         builder.show();
     }
 
-    private void showCalcInfo() {
+    private void showCryptpadInfo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
-        builder.setTitle(R.string.CalcTitle);
-        builder.setMessage(ethercalc +"\n\n"+ getString(R.string.CalcInfo));
+        builder.setTitle(R.string.CryptpadTitle );
+        builder.setMessage(cryptpad +"\n\n"+ getString(R.string.CryptpadInfo ));
         builder.setPositiveButton(R.string.global_ok, null);
         builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                webView.loadUrl(Constants.URL_DisApp_CALCHELP);
+                webView.loadUrl(Constants.URL_DisApp_CRYPTPADHELP );
                 hideDashboard();
             }
         });
@@ -905,9 +894,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
-                if (findViewById( R.id.CalcBtn).getParent()!=null){
-                    viewGroup.removeView(CalcBtn);
-                    BtnPreference.edit().putBoolean( "CalcBtn", false ).apply();
+                if (findViewById( R.id.CryptpadBtn ).getParent()!=null){
+                    viewGroup.removeView( CryptpadBtn );
+                    BtnPreference.edit().putBoolean( "CryptpadBtn", false ).apply();
                     return;}
             }
         });
@@ -987,32 +976,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
                 if (findViewById( R.id.SearxBtn).getParent()!=null){
                     viewGroup.removeView(SearxBtn);
                     BtnPreference.edit().putBoolean( "SearxBtn", false ).apply();
-                    return;}
-            }
-        });
-        builder.show();
-    }
-
-    private void showPollsInfo() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setCancelable(false);
-        builder.setTitle(R.string.PollsTitle);
-        builder.setMessage(polls +"\n\n"+ getString(R.string.PollsInfo));
-        builder.setPositiveButton(R.string.global_ok, null);
-        builder.setNegativeButton(R.string.more_help, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                webView.loadUrl(Constants.URL_DisApp_POLLHELP);
-                hideDashboard();
-            }
-        });
-        builder.setNeutralButton( R.string.hide, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                ViewGroup viewGroup =((ViewGroup)findViewById( R.id.StateBtn ).getParent());
-                if (findViewById( R.id.PollsBtn).getParent()!=null){
-                    viewGroup.removeView(PollsBtn);
-                    BtnPreference.edit().putBoolean( "PollsBtn", false ).apply();
                     return;}
             }
         });
@@ -2004,57 +1967,64 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             {
                 HashMap<String, String> hashmap= (HashMap<String, String>) componentList.get(a);
                 String hash = hashmap.get("name");
+                String description = "";
+                if (hashmap.get("description")!=null &&!hashmap.isEmpty()){//.has("description")&&!hasmap.isNull("description")
+                    description = hashmap.get("description");
+                }
+                else {
+                    description ="No Description";
+                }
                 switch (hash) {
                     case "Notes":
-                        notes = hashmap.get("notes");
+                        notes = description;
                         getNotes(notes);
                         break;
                     case "Mail Server":
-                        email = hashmap.get("description");
+                        email = description;
                         getEmail(email);
                         break;
                     case "Cloud":
-                        cloud = hashmap.get("description");
+                        cloud = description;
                         getCloud(cloud);
                         break;
                     case "Forum":
-                        forum = hashmap.get("description");
+                        forum = description;
                         getForum(forum);
                         break;
                     case "Pad":
-                        etherpad = hashmap.get("description");
+                        etherpad = description;
                         getEtherpad(etherpad);
                         break;
                     case "Bin":
-                        bin = hashmap.get("description");
+                        bin = description;
                         getBin(bin);
                         break;
                     case "Upload":
-                        upload = hashmap.get("description");
+                        upload = description;
                         getUpload(upload);
                         break;
                     case "Searx":
-                        searx = hashmap.get("description");
+                        searx = description;
                         getSearx(searx);
                         break;
                     case "Project board":
-                        taiga = hashmap.get("description");
+                        taiga = description;
                         getTaiga(taiga);
                         break;
                     case "User Password management":
-                        user = hashmap.get("description");
+                        user = description;
                         getUser(user);
                         break;
                     case "XMPP Chat server":
-                        xmpp = hashmap.get("description");
+                        xmpp = description;
                         getXmpp(xmpp);
                         break;
                     case "Git":
-                        git = hashmap.get("description");
+                        git = description;
                         getGit(git);
                         break;
                     case "Cryptpad":
-                        cryptpad = hashmap.get("description");
+                        cryptpad = description;
                         getCryptpad(cryptpad);
                         break;
                 }
@@ -2074,9 +2044,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private void getEtherpad(String string){
         etherpad = string;
     }
-    private void getEthercalc(String string){
-        ethercalc = string;
-    }
     private void getBin(String string){
         bin = string;
     }
@@ -2085,9 +2052,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     }
     private void getSearx(String string){
         searx = string;
-    }
-    private void getPolls(String string){
-        polls = string;
     }
     private void getTaiga(String string){
         taiga = string;

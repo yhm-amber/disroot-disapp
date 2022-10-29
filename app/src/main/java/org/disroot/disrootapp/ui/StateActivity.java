@@ -33,14 +33,13 @@ public class StateActivity extends AppCompatActivity {
 
     Button button;
 
-    private String TAG = StateActivity.class.getSimpleName();
+    private final String TAG = StateActivity.class.getSimpleName();
 
     private ProgressDialog pDialog;
     private ListView lv;
 
     // URL to get data JSON
     static String url = "https://status.disroot.org/index.json";
-    //static String url1 = "https://state.disroot.org/api/v1/components?sort=status&page=2";
 
     ArrayList<HashMap<String, String>> stateList;
 
@@ -52,22 +51,13 @@ public class StateActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
+        toolbar.setNavigationOnClickListener( v -> onBackPressed() );
 
         button = findViewById(R.id.StateMessageBtn);//StateMessageBtn
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Intent goState = new Intent(StateActivity.this, StateMessagesActivity.class);
-                StateActivity.this.startActivity(goState);
-            }
-
-        });
+        button.setOnClickListener( arg0 -> {
+            Intent goState = new Intent(StateActivity.this, StateMessagesActivity.class);
+            StateActivity.this.startActivity(goState);
+        } );
 
         stateList = new ArrayList<>();
 
@@ -124,7 +114,6 @@ public class StateActivity extends AppCompatActivity {
 
             // Making a request to url and getting response
             String jsonStr0 = sh.makeServiceCall(url);
-            //String jsonStr1 = sh.makeServiceCall(url1);
 
             Log.e(TAG, "Response from url: " + jsonStr0);
 
@@ -162,70 +151,18 @@ public class StateActivity extends AppCompatActivity {
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),
-                                    "Json parsing error: " + e.getMessage(),
-                                    Toast.LENGTH_LONG)
-                                    .show();
-                        }
-                    });
+                    runOnUiThread( () -> Toast.makeText(getApplicationContext(),
+                            "Json parsing error: " + e.getMessage(),
+                            Toast.LENGTH_LONG)
+                            .show() );
                 }
-            }/*if (jsonStr1 != null) {//next page
-                try {
-                    JSONObject jsonObj = new JSONObject(jsonStr1);
-
-                    // Getting JSON Array node
-                    JSONArray data = jsonObj.getJSONArray("data");
-
-                    // looping through All data
-                    for (int i = 0; i < data.length(); i++) {
-                        JSONObject c = data.getJSONObject(i);
-
-                        String id = c.getString("id");
-                        String name = c.getString("name");
-                        String description = c.getString("description");
-                        String updated_at = c.getString("updated_at");
-                        String lastUpdated = "Last updated: " + updated_at;
-                        String status_name = c.getString("status_name");
-
-                        // tmp hash map for single service
-                        HashMap<String, String> service = new HashMap<>();
-
-                        // adding each child node to HashMap key => value
-                        service.put("id", id);
-                        service.put("name", name);
-                        service.put("description", description);
-                        service.put("updated_at", lastUpdated);
-                        service.put("status_name", status_name);
-
-                        // adding service to service list
-                        stateList.add(service);
-                    }
-                } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),
-                                    "Json parsing error: " + e.getMessage(),
-                                    Toast.LENGTH_LONG)
-                                    .show();
-                        }
-                    });
-                }
-            }*/else {
+            }
+            else {
                 Log.e(TAG, "Couldn't get json from server.");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Is your internet connection ok?",
-                                Toast.LENGTH_LONG)
-                                .show();
-                    }
-                });
+                runOnUiThread( () -> Toast.makeText(getApplicationContext(),
+                        "Couldn't get json from server. Is your internet connection ok?",
+                        Toast.LENGTH_LONG)
+                        .show() );
             }
             return null;
         }
@@ -239,18 +176,18 @@ public class StateActivity extends AppCompatActivity {
 
              //Updating parsed JSON data into ListView
             ListAdapter adapter = new SimpleAdapter(
-                    StateActivity.this, stateList, R.layout.list_item,
+                    StateActivity.this, stateList, R.layout.list_services,
                     new String[]{"name", "description", "category","status"},
-                    new int[]{R.id.name,R.id.description,R.id.lastMod, R.id.status_name})
+                    new int[]{R.id.name,R.id.description,R.id.category, R.id.status})
 
-                    //Change Color based on Status
+            //Change Color based on Status
             {
                 @Override
                 public View getView(int position, View convertView, ViewGroup parent) {
                     View v = super.getView(position, convertView, parent);
 
                     //Status
-                    TextView status = v.findViewById(R.id.status_name);
+                    TextView status = v.findViewById(R.id.status);
                     String statusValue = status.getText().toString();
                     switch (statusValue) {
                         case "ok":

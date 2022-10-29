@@ -10,7 +10,7 @@
 
 It also can be used to access all the **Disroot** services that do not require an account:
 * Etherpad
-* Ethercalc
+* Cryptpad
 * Calls
 * Private bin
 * Upload

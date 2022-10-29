@@ -137,12 +137,12 @@
                     app:fontFamily="@font/open_sans_regular" />
 
                 <Button
-                    android:id="@+id/CalcBtn"
+                    android:id="@+id/CryptpadBtn"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableTop="@drawable/ic_calc"
-                    android:text="@string/action_calc"
+                    android:drawableTop="@drawable/ic_cryptpad"
+                    android:text="@string/action_cryptpad"
                     android:textColor="@color/white"
                     app:fontFamily="@font/open_sans_regular" />
 
@@ -173,16 +173,6 @@
                     android:layout_height="wrap_content"
                     android:drawableTop="@drawable/ic_searx"
                     android:text="@string/action_searx"
-                    android:textColor="@color/white"
-                    app:fontFamily="@font/open_sans_regular" />
-
-                <Button
-                    android:id="@+id/PollsBtn"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableTop="@drawable/ic_poll"
-                    android:text="@string/action_poll"
                     android:textColor="@color/white"
                     app:fontFamily="@font/open_sans_regular" />
 

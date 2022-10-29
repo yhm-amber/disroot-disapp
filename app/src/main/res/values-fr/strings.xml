@@ -8,11 +8,10 @@
     <string name="action_forum">Forum</string>
     <string name="action_chat">Chat</string>
     <string name="action_pad">Etherpad</string>
-    <string name="action_calc">EtherCalc</string>
+    <string name="action_cryptpad">Cryptpad</string>
     <string name="action_bin">Private bin</string>
     <string name="action_upload">Téléverser</string>
     <string name="action_searx">Search</string><!--needs update:20/10/2020-->
-    <string name="action_poll">Sondage</string>
     <string name="action_board">Project board</string><!--needs update:20/10/2020-->
     <string name="action_user">Account</string><!--needs update:20/10/2020-->
     <string name="action_state">État des services</string>
@@ -58,7 +57,7 @@
 \nMot de passe :
 \n votre_mot_de_passe_disroot.</string>
     <string name="WelcomeTitle">Bienvenue</string>
-    <string name="WelcomeInfo">Disroot est une plate-forme fournissant des services en ligne basés sur les principes de liberté, de confidentialité, de fédération et de décentralisation.\nCette application est comme votre couteau suisse vers la plate-forme Disroot, faite par la communauté pour la communauté. Si vous n\'avez pas un compte Disroot vous pouvez toujours utiliser cette application pour accéder aux services Disroot qui n\'en nécessitent pas:\n \ \ \ • Etherpad\n \ \ \ • Ethercalc\n \ \ \ • Private bin\n \ \ \ • Téléverser\n \ \ \ • Sondage\n \ \ \ • Searx\n \ \ \ • Diaspora* (nécessite un compte Diaspora)\n\nL\'application peut vous demander d\'installer des applications supplémentaires. Nous vous recommandons fortement d\'installer F-Droid - un catalogue d\'applications gratuit et open source - car toutes les applications ne se trouvent pas sur le Play Store de Google et F-Droid est plus orienté vers la confidentialité (pas de suivi, pas besoin de compte) vous pouvez le télécharger en tapant sur l\'icône F-droid.\n</string>
+    <string name="WelcomeInfo">Disroot est une plate-forme fournissant des services en ligne basés sur les principes de liberté, de confidentialité, de fédération et de décentralisation.\nCette application est comme votre couteau suisse vers la plate-forme Disroot, faite par la communauté pour la communauté. Si vous n\'avez pas un compte Disroot vous pouvez toujours utiliser cette application pour accéder aux services Disroot qui n\'en nécessitent pas:\n \ \ \ • Etherpad\n \ \ \ • Cryptpad\n \ \ \ • Private bin\n \ \ \ • Téléverser\n \ \ \ • Sondage\n \ \ \ • Searx\n \ \ \ • Diaspora* (nécessite un compte Diaspora)\n\nL\'application peut vous demander d\'installer des applications supplémentaires. Nous vous recommandons fortement d\'installer F-Droid - un catalogue d\'applications gratuit et open source - car toutes les applications ne se trouvent pas sur le Play Store de Google et F-Droid est plus orienté vers la confidentialité (pas de suivi, pas besoin de compte) vous pouvez le télécharger en tapant sur l\'icône F-droid.\n</string>
 
     <string name="help">Aide</string>
     <string name="license">Licence d\'utilisation</string>
@@ -76,8 +75,8 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot">* La communauté Disroot (Disroot) :</string>
     <string name="fDroid">F-Droid</string>
-    <string name="thirdparty">Librairies tierces</string>
-    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Licence d\'utilisation Apache 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>Licence d\'utilisation GNU General Public v3.0</string>
+    <string name="thirdParty">Librairies tierces</string>
+    <string name="thirdPartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Licence d\'utilisation Apache 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>Licence d\'utilisation GNU General Public v3.0</string>
     <string name="misc">Divers</string>
     <string name="miscDio">Nous avons utilisé Diolinx comme base de départ pour créer cette application. Allez voir, c\'est également un logiciel libre !</string>
     <string name="miscDioBtn">En savoir plus</string>
@@ -112,8 +111,8 @@
     <string name="PadTitle">Info EtherPad</string>
     <string name="ChatTitle">Paramètres XMPP\n</string>
     <string name="ChatInfo">Conversations est une application de messagerie instantanée décentralisée et fédérée, gratuite, standard et open-source, pour chatter avec des contacts ou au sein de groupes.\n\nJabber ID :\n Votre adresse email Disroot complète\n\nMot de passe :\n votre mot de passe Disroot</string>
-    <string name="CalcInfo">Avec EtherCalc, travaillez ensemble sur des inventaires, des formulaires d\'enquête, des listes, des sessions de brainstorming et plus encore !\nAucune inscription n\'est requise.</string>
-    <string name="CalcTitle">Info EtherCalc</string>
+    <string name="CryptpadInfo">Une alternative privée aux outils de bureautique populaires.\nAucune inscription n\'est requise.</string>
+    <string name="CryptpadTitle">Info Cryptpad</string>
     <string name="BinTitle">Aide PrivateBin</string>
     <string name="BinInfo">PrivateBin est un pastebin et un forum de discussion en ligne open-source. Les données sont chiffrées et déchiffrées dans le navigateur afin que le serveur n\'ait aucune connaissance des données hébergées. Il suffit de coller un texte, de cliquer sur "Envoyer", de définir l\'expiration (et d\'autres fonctionnalités) et de partager l\'URL.\nAucune inscription n\'est requise.</string>
     <string name="UploadTitle">Info Téléverser (propulsé par Lufi)</string>
@@ -170,7 +169,7 @@
     <string name="Cloud">Cloud</string>
     <string name="PerformanceIssues">Problèmes de performance</string>
     <string name="Notification">Aucun problème</string>
-    <string name="Notificationissues">Certains systèmes connaissent des problèmes</string>
+    <string name="NotificationIssues">Certains systèmes connaissent des problèmes</string>
     <string name="state_messages_btn">Afficher les messages d\'état</string>
     <string name="state_btn">Afficher l\'état de service</string>
     <string name="ScheduledAt">Programmé le :</string>
@@ -216,4 +215,7 @@
     <string name="translatorsTitle">Traducteurs:</string>
     <string name="artworksTitle">Illustrations:</string>
     <string name="Fixed">Résolu</string>
+
+    <string name="down">Down</string>
+    <string name="more_info">Tap for more info</string>
 </resources>

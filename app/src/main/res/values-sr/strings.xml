@@ -7,10 +7,9 @@
     <string name="action_forum">Forum</string>
     <string name="action_chat">Ćaskanje</string>
     <string name="action_pad">Etherpad</string>
-    <string name="action_calc">EtherCalc</string>
+    <string name="action_cryptpad">Cryptpad</string>
     <string name="action_bin">PrivateBin</string>
     <string name="action_upload">Otpremi</string>
-    <string name="action_poll">Polls</string>
     <string name="action_state">Stanje servisa</string>
     <string name="action_howto">Uputstva</string>
 
@@ -32,7 +31,7 @@
     <string name="CloudInfoTitle">Nextcloud podešavanja</string>
     <string name="CloudInfo">Sinhronizujte i osigurajte vaše podatke. Pomoću Nextcloud usluge možete deliti vaše datoteke, kalendare, kontakte i još mnogo toga.\n\nServer:\n https://cloud.disroot.org\n\nKorisničko ime:\n vaše_disroot_korisničko ime\n\nLozinka:\n vaša_disroot_lozinka.</string>
     <string name="WelcomeTitle">Dobro došli</string>
-    <string name="WelcomeInfo">Disroot platforma obezbeđuje internet usluge zasnovane na principima slobode, privatnosti, federacije i decentralizacije.\nOva aplikacija je višenamenska alatka za Disroot platformu, koju su članovi zajednice napravili za zajednicu.\nAko nemate nalog na Disroot platformi, možete koristiti ovu aplikaciju za pristup svim Disroot uslugama za koje nije potreban nalog:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Ethercalc\n \ \ \ &#8226; PrivateBin\n \ \ \ &#8226; Otpremi\n \ \ \ &#8226; Polls\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (potreban zaseban Diaspora nalog)\n\nOva aplikacija možda će zahtevati instalaciju dodatnih aplikacija. Preporučujemo da instalirate F-Droid, besplatnu prodavnicu otvorenog koda, jer pojedine aplikacije nisu dostupne na Play prodavnici, a pritom F-Droid nudi više privatnosti (nema praćenja, nije potreban nalog). Aplikaciju možete preuzeti dodirom na F-droid ikonicu.\n</string>
+    <string name="WelcomeInfo">Disroot platforma obezbeđuje internet usluge zasnovane na principima slobode, privatnosti, federacije i decentralizacije.\nOva aplikacija je višenamenska alatka za Disroot platformu, koju su članovi zajednice napravili za zajednicu.\nAko nemate nalog na Disroot platformi, možete koristiti ovu aplikaciju za pristup svim Disroot uslugama za koje nije potreban nalog:\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; PrivateBin\n \ \ \ &#8226; Otpremi\n \ \ \ &#8226; Polls\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (potreban zaseban Diaspora nalog)\n\nOva aplikacija možda će zahtevati instalaciju dodatnih aplikacija. Preporučujemo da instalirate F-Droid, besplatnu prodavnicu otvorenog koda, jer pojedine aplikacije nisu dostupne na Play prodavnici, a pritom F-Droid nudi više privatnosti (nema praćenja, nije potreban nalog). Aplikaciju možete preuzeti dodirom na F-droid ikonicu.\n</string>
 
     <string name="help">Pomoć</string>
     <string name="license">Licenca</string>
@@ -51,8 +50,8 @@
     <string name="disrootUrl">https://disroot.org</string>
     <string name="disroot"> * Disroot zajednica (Disroot):</string>
     <string name="fDroid">F-Droid</string>
-    <string name="thirdparty">Biblioteke treće strane</string>
-    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
+    <string name="thirdParty">Biblioteke treće strane</string>
+    <string name="thirdPartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
     <string name="misc">Ostalo</string>
     <string name="miscDio">Iskoristili smo Diolinx kao osnovu naše aplikacije. Proverite, to je takođe besplatan softver!</string>
     <string name="miscDioBtn">Detaljnije</string>
@@ -81,8 +80,8 @@
     <string name="PadTitle">EtherPad detalji</string>
     <string name="ChatTitle">XMPP podešavanja\n</string>
     <string name="ChatInfo">Conversations je besplatna, otvorenog koda, decentralizovana i federativna aplikacija za brzo slanje poruka i ćaskanje sa pojedincima ili grupama.\n\nJabber ID :\n Vaša puna Disroot imejl adresa\n\nLozinka :\n Vaša Disroot lozinka</string>
-    <string name="CalcInfo">Pomoću EtherCalc-a možete grupno raditi na popisnim listama, anketnim formama, upravljanju listama, kreativnim sastancima i još mnogo čemu!\nRegistracija nije potrebna.</string>
-    <string name="CalcTitle">EtherCalc detalji</string>
+    <string name="CryptpadInfo">Pomoću Cryptpad-a možete grupno raditi na popisnim listama, anketnim formama, upravljanju listama, kreativnim sastancima i još mnogo čemu!\nRegistracija nije potrebna.</string>
+    <string name="CryptpadTitle">Cryptpad detalji</string>
     <string name="BinTitle">PrivateBin pomoć</string>
     <string name="BinInfo">PrivateBin je servis otvorenog koda, a služi kao \'korpa za odlaganje i deljenje\' i kao forum. Podaci se šifruju/dešifruju u pregledaču, što znači da server ne prepoznaje sadržaj pohranjenih datoteka. Nalepite tekst, kliknite “Pošalji”, odredite rok trajanja (i ostala obeležja) i podelite vezu.\nRegistracija nije potrebna.</string>
     <string name="UploadTitle">Otpremi (servis pokreće Lufi) Info</string>
@@ -138,7 +137,7 @@
     <string name="Cloud">Oblak</string>
     <string name="PerformanceIssues">Problemi sa performansama</string>
     <string name="Notification">Nema problema</string>
-    <string name="Notificationissues">Problemi u radu pojedinih servisa</string>
+    <string name="NotificationIssues">Problemi u radu pojedinih servisa</string>
     <string name="state_messages_btn">Prikaži poruke o stanju servisa</string>
     <string name="state_btn">Prikaži stanje servisa</string>
     <string name="ScheduledAt">Zakazano za:</string>
@@ -179,4 +178,7 @@
     <string name="translatorsTitle">Prevodioci:</string>
     <string name="artworksTitle">Crteži:</string>
     <string name="Fixed">Fixed</string>
+
+    <string name="down">Down</string>
+    <string name="more_info">Tap for more info</string>
 </resources>

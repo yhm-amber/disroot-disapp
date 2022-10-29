@@ -1,6 +1,7 @@
 package org.disroot.disrootapp.ui;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -43,12 +44,7 @@ public class AboutActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        toolbar.setNavigationOnClickListener( v -> onBackPressed() );
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         /*
@@ -59,7 +55,7 @@ public class AboutActivity extends AppCompatActivity {
       may be best to switch to a
       {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter( getSupportFragmentManager() );
 
         // Set up the ViewPager with the sections adapter.
         /*
@@ -74,16 +70,11 @@ public class AboutActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Uri uri = Uri.parse(Constants.URL_SUPPORT);
-                Intent support = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                startActivity(support);
-               // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                 //       .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener( view -> {
+            Uri uri = Uri.parse(Constants.URL_SUPPORT);
+            Intent support = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+            startActivity(support);
+        } );
     }
 
 
@@ -137,6 +128,7 @@ public class AboutActivity extends AppCompatActivity {
             return fragment;
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -151,67 +143,49 @@ public class AboutActivity extends AppCompatActivity {
 
 
                     final Button ContributeBtn = rootView.findViewById(R.id.ContributeBtn);//ContributeBtn
-                    ContributeBtn.setOnClickListener(new View.OnClickListener()
-                    {
-                        public void onClick(View arg0) {
-                            Uri uri = Uri.parse(Constants.URL_SOURCE);
-                            Intent code = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(code);
-                        }
-                    });
+                    ContributeBtn.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse(Constants.URL_SOURCE);
+                        Intent code = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(code);
+                    } );
 
                     final Button TranslateBtn = rootView.findViewById(R.id.TranslateBtn);//TranslateBtn
-                    TranslateBtn.setOnClickListener(new View.OnClickListener()
-                    {
-                        public void onClick(View arg0) {
-                            Uri uri = Uri.parse(Constants.URL_TRANSLATE);
-                            Intent translate = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(translate);
-                        }
-                    });
+                    TranslateBtn.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse(Constants.URL_TRANSLATE);
+                        Intent translate = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(translate);
+                    } );
 
                     final Button FeedbackBtn1;//FeedbackBtn1
                     FeedbackBtn1 = rootView.findViewById(R.id.FeedbackBtn1);
-                    FeedbackBtn1.setOnClickListener(new View.OnClickListener()
-                    {
-                        public void onClick(View arg0) {
-                            Uri uri = Uri.parse(Constants.URL_BUGS);
-                            Intent feedback1 = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(feedback1);
-                        }
-                    });
+                    FeedbackBtn1.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse(Constants.URL_BUGS);
+                        Intent feedback1 = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(feedback1);
+                    } );
 
                     final Button FeedbackBtn2 = rootView.findViewById(R.id.FeedbackBtn2);//FeedbackBtn2
-                    FeedbackBtn2.setOnClickListener(new View.OnClickListener()
-                    {
-                        public void onClick(View arg0) {
-                            Uri uri = Uri.parse(Constants.URL_XMPP);
-                            Intent feedback2 = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(feedback2);
-                        }
-                    });
+                    FeedbackBtn2.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse(Constants.URL_XMPP);
+                        Intent feedback2 = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(feedback2);
+                    } );
                     break;
                 case 2:
                     rootView = inflater.inflate(R.layout.fragment_about_about, container, false);
                     final ImageButton fDroidBtn = rootView.findViewById(R.id.fDroidBtn);//fDroidBtn
-                    fDroidBtn.setOnClickListener(new View.OnClickListener()
-                    {
-                        public void onClick(View arg0) {
-                            Uri uri = Uri.parse(Constants.URL_FDROID);
-                            Intent fDroid = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(fDroid);
-                        }
-                    });
+                    fDroidBtn.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse(Constants.URL_FDROID);
+                        Intent fDroid = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(fDroid);
+                    } );
                     final ImageButton homeBtn;//DisrootBtn
                     homeBtn = rootView.findViewById(R.id.homeBtn);
-                    homeBtn.setOnClickListener(new View.OnClickListener()
-                    {
-                        public void onClick(View arg0) {
-                            Uri uri = Uri.parse(Constants.URL_DISROOT);
-                            Intent home = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(home);
-                        }
-                    });
+                    homeBtn.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse(Constants.URL_DISROOT);
+                        Intent home = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(home);
+                    } );
                     final TextView PackageName= rootView.findViewById(R.id.PackageName);
                     PackageName.setText(getString( R.string.id ) + " "+ APPLICATION_ID);
 
@@ -229,13 +203,13 @@ public class AboutActivity extends AppCompatActivity {
                     rootView = inflater.inflate(R.layout.fragment_about_license, container, false);
                     //Contributors
                     //Admins
-                    final TextView contr_text;
-                    contr_text = rootView.findViewById(R.id.admins_text);
-                    contr_text.setMovementMethod( LinkMovementMethod.getInstance());
+                    final TextView contributors_text;
+                    contributors_text = rootView.findViewById(R.id.admins_text);
+                    contributors_text.setMovementMethod( LinkMovementMethod.getInstance());
                     String admins="";
                     for(String admin: Contributors.admins) {
                         admins+="&bull; "+admin+"</a><br>";
-                        contr_text.setText( Html.fromHtml(admins));
+                        contributors_text.setText( Html.fromHtml(admins));
                     }
                     //devs
                     final TextView devs_text;
@@ -268,34 +242,25 @@ public class AboutActivity extends AppCompatActivity {
                     //Buttons
                     final Button licenseBtn;//LicenseBtn
                     licenseBtn = rootView.findViewById(R.id.license_button);
-                    licenseBtn.setOnClickListener(new View.OnClickListener()
-                    {
-                        public void onClick(View arg0) {
-                            Uri uri = Uri.parse(Constants.URL_LICENSE);
-                            Intent license = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(license);
-                        }
-                    });
+                    licenseBtn.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse(Constants.URL_LICENSE);
+                        Intent license = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(license);
+                    } );
                     final TextView disrootBtn;//DisrootBtn
                     disrootBtn = rootView.findViewById(R.id.disrootUrl);
-                    disrootBtn.setOnClickListener(new View.OnClickListener()
-                    {
-                        public void onClick(View arg0) {
-                            Uri uri = Uri.parse(Constants.URL_DISROOT);
-                            Intent disroot = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(disroot);
-                        }
-                    });
-                    final TextView dioBtn;//DiotBtn
+                    disrootBtn.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse(Constants.URL_DISROOT);
+                        Intent disroot = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(disroot);
+                    } );
+                    final TextView dioBtn;//DioBtn
                     dioBtn = rootView.findViewById(R.id.dioBtn);
-                    dioBtn.setOnClickListener(new View.OnClickListener()
-                    {
-                        public void onClick(View arg0) {
-                            Uri uri = Uri.parse(Constants.URL_DIO);
-                            Intent dio = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(dio);
-                        }
-                    });
+                    dioBtn.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse(Constants.URL_DIO);
+                        Intent dio = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(dio);
+                    } );
                     final TextView htmlToTextView = rootView.findViewById(R.id.ThirdParty);// textview links clickable
                     htmlToTextView.setMovementMethod( LinkMovementMethod.getInstance());// textview links clickable
                     break;
@@ -308,7 +273,7 @@ public class AboutActivity extends AppCompatActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public static class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         final FragmentManager fm;
 

@@ -2,7 +2,7 @@
 Ova aplikacija je višenamenska alatka za Disroot platformu, koju su članovi zajednice napravili za zajednicu.
 Ako nemate nalog na Disroot platformi, možete koristiti ovu aplikaciju za pristup svim Disroot uslugama za koje nije potreban nalog:
 * Etherpad
-* Ethercalc
+* Cryptpad
 * Private bin
 * Upload
 * Poll

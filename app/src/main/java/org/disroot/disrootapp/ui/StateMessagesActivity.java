@@ -33,12 +33,12 @@ import java.util.HashMap;
 public class StateMessagesActivity extends AppCompatActivity {
 
     Button button;
-    private String TAG = StateMessagesActivity.class.getSimpleName();
+    private final String TAG = StateMessagesActivity.class.getSimpleName();
     private ProgressDialog pDialog;
     private ListView lv;
 
     // URL to get data JSON
-    static String incidenturl0 ="https://status.disroot.org/issues/index.json";
+    static String incidentUrl0 ="https://status.disroot.org/issues/index.json";
 
     ArrayList<HashMap<String, String>> messageList;
     ArrayList<HashMap<String, String>> getDate;
@@ -51,22 +51,13 @@ public class StateMessagesActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
+        toolbar.setNavigationOnClickListener( v -> onBackPressed() );
 
         button = findViewById(R.id.StateBtn);//StateBtn
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Intent goState = new Intent(StateMessagesActivity.this, StateActivity.class);
-                StateMessagesActivity.this.startActivity(goState);
-            }
-
-        });
+        button.setOnClickListener( arg0 -> {
+            Intent goState = new Intent(StateMessagesActivity.this, StateActivity.class);
+            StateMessagesActivity.this.startActivity(goState);
+        } );
 
         messageList = new ArrayList<>();
         getDate = new ArrayList<>();
@@ -117,13 +108,13 @@ public class StateMessagesActivity extends AppCompatActivity {
             HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStrincidents0 = sh.makeServiceCall(incidenturl0);
+            String jsonStringIdents0 = sh.makeServiceCall( incidentUrl0 );
 
-            Log.e(TAG, "Response from url: " + incidenturl0);
+            Log.e(TAG, "Response from url: " + incidentUrl0 );
 
-            if (jsonStrincidents0 != null) {//Incidaetnts page
+            if (jsonStringIdents0 != null) {//Incidents page
                 try {
-                    JSONObject jsonObj = new JSONObject(jsonStrincidents0);
+                    JSONObject jsonObj = new JSONObject( jsonStringIdents0 );
 
                     // Getting JSON Array node
                     JSONArray data = jsonObj.getJSONArray("pages");
@@ -132,10 +123,9 @@ public class StateMessagesActivity extends AppCompatActivity {
                     for (int i = 0; i < data.length(); i++) {
                         JSONObject c = data.getJSONObject(i);
 
-                        //String id = c.getString("id");
                         String title = c.getString("title");
                         String link = c.getString("permalink");
-                        Boolean resolved = c.getBoolean( "resolved" );
+                        boolean resolved = c.getBoolean( "resolved" );
                         String lastMod = c.getString("lastMod");
                         String lastUpdated = "Last Updated: " + lastMod + '"';
 
@@ -145,7 +135,7 @@ public class StateMessagesActivity extends AppCompatActivity {
                         // adding each child node to HashMap key => value
                         service.put("title", title);
                         service.put("moreInfo", link);
-                        service.put("resolved", resolved.toString());
+                        service.put("resolved", Boolean.toString( resolved ) );
                         service.put("lastMod", lastUpdated);
 
                         // adding service to service list
@@ -153,27 +143,17 @@ public class StateMessagesActivity extends AppCompatActivity {
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),
-                                    "Json parsing error: " + e.getMessage(),
-                                    Toast.LENGTH_LONG)
-                                    .show();
-                        }
-                    });
+                    runOnUiThread( () -> Toast.makeText(getApplicationContext(),
+                            "Json parsing error: " + e.getMessage(),
+                            Toast.LENGTH_LONG)
+                            .show() );
                 }
             }else {
                 Log.e(TAG, "Couldn't get json from server.");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Is your internet connection ok?",
-                                Toast.LENGTH_LONG)
-                                .show();
-                    }
-                });
+                runOnUiThread( () -> Toast.makeText(getApplicationContext(),
+                        "Couldn't get json from server. Is your internet connection ok?",
+                        Toast.LENGTH_LONG)
+                        .show() );
             }
             return null;
         }
@@ -188,8 +168,8 @@ public class StateMessagesActivity extends AppCompatActivity {
              //Updating parsed JSON data into ListView
             ListAdapter adapter = new SimpleAdapter(
                     StateMessagesActivity.this, messageList,
-                    R.layout.list_item, new String[]{"title","moreInfo", "lastMod", "resolved", "status"}, new int[]{R.id.name, R.id.message,
-                    R.id.lastMod, R.id.resolved, R.id.status})
+                    R.layout.list_service_messages, new String[]{"title","moreInfo", "lastMod", "resolved", "status"}, new int[]{R.id.name, R.id.description,
+                    R.id.category, R.id.resolved, R.id.status})
             {
 
 
@@ -200,22 +180,17 @@ public class StateMessagesActivity extends AppCompatActivity {
 
 
                     //Make links work
-                    TextView link = v.findViewById( R.id.message );
+                    TextView link = v.findViewById( R.id.description );
                     String linkValue = link.getText().toString();
                     link.setText( R.string.more_info);
-                    v.setOnClickListener(new View.OnClickListener() {
-
-                        public void onClick(View arg0) {
-
-                            Uri uri = Uri.parse( linkValue);
-                            Intent statusLink = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
-                            startActivity(statusLink);
-                        }
-
-                    });
+                    v.setOnClickListener( arg0 -> {
+                        Uri uri = Uri.parse( linkValue);
+                        Intent statusLink = new Intent(Intent.ACTION_VIEW, Uri.parse(String.valueOf(uri)));
+                        startActivity(statusLink);
+                    } );
 
                     //Make Last updated translatable
-                    TextView updated = v.findViewById(R.id.lastMod );
+                    TextView updated = v.findViewById(R.id.category );
                     String updatedValue = updated.getText().toString();
                         if (updatedValue.startsWith("Last Updated: ")){
                             updated.setText(updatedValue.replace("Last Updated: ",getText(R.string.LastUpdated)));
@@ -224,18 +199,17 @@ public class StateMessagesActivity extends AppCompatActivity {
                     TextView resolved = v.findViewById(R.id.resolved );
                     String resolvedValue = resolved.getText().toString();
                     //Human_status
-                    TextView humanStatus = v.findViewById(R.id.status );
-                    String humanStatusValue = humanStatus.getText().toString();
-                    Log.e("status", "status: "+humanStatusValue);
+                    TextView status = v.findViewById(R.id.status );
+                    Log.e("status", "status: "+resolvedValue);
                     switch (resolvedValue) {
                         case "true":
-                            humanStatus.setTextColor(Color.GREEN);
-                            humanStatus.setText(R.string.Fixed);
+                            status.setTextColor(Color.GREEN);
+                            status.setText(R.string.Fixed);
                             resolved.setVisibility(View.GONE  );
                             break;
                         case "false":
-                            humanStatus.setTextColor(Color.RED);
-                            humanStatus.setText(R.string.down);
+                            status.setTextColor(Color.RED);
+                            status.setText(R.string.down);
                             resolved.setVisibility(View.GONE  );
                             break;
                     }

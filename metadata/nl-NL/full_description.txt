@@ -2,7 +2,7 @@
 Deze app is als uw Zwitsers legermes voor het Disroot-platform, gemaakt door de gemeenschap voor de gemeenschap.
 Als u geen Disroot account heeft kunt u deze app nog steeds gebruiken om toegang te krijgen tot alle Disroot diensten die geen account nodig hebben:
 * Etherpad
-* Ethercalc
+* Cryptpad
 * Private bin
 * Upload
 * Poll

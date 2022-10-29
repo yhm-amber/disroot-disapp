@@ -64,13 +64,10 @@
                     android:host="forum.disroot.org"
                     android:scheme="https" />
                 <data
-                    android:host="calc.disroot.org"
+                    android:host="cryptpad.disroot.org"
                     android:scheme="https" />
                 <data
                     android:host="bin.disroot.org"
-                    android:scheme="https" />
-                <data
-                    android:host="poll.disroot.org"
                     android:scheme="https" />
                 <data
                     android:host="upload.disroot.org"

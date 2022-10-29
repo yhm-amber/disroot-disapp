@@ -2,7 +2,7 @@
 Esta aplicación es como la navaja suiza de la plataforma <b>Disroot</b>, hecha por la comunidad para la comunidad.
 Si no tienes una cuenta de <b>Disroot</b> igual puedes utilizar esta aplicación para acceder a todos los servicios que no la requieren:
 * Etherpad
-* Ethercalc
+* Cryptpad
 * Private bin
 * Subir archivos
 * Encuestas

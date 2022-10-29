@@ -7,10 +7,9 @@
     <string name="action_forum">Foro</string>
     <string name="action_chat">Chat</string>
     <string name="action_pad">Etherpad</string>
-    <string name="action_calc">EtherCalc</string>
+    <string name="action_cryptpad">Cryptpad</string>
     <string name="action_bin">Pastebin</string>
     <string name="action_upload">Subir</string>
-    <string name="action_poll">Encuestas</string>
     <string name="action_state">Estado</string>
     <string name="action_howto">Guías</string>
 
@@ -32,7 +31,7 @@
     <string name="CloudInfoTitle">Configuración de Nextcloud:</string>
     <string name="CloudInfo">Sincroniza y comparte tus archivos, calendarios, contactos y más.\n\nHost:\n https://cloud.disroot.org\n\nUsuarix: tu_usuarix_de_disroot\nContraseña:tu_contraseña_de_Disroot.</string>
     <string name="WelcomeTitle">Bienvenidx</string>
-    <string name="WelcomeInfo">Disroot es una plataforma que provee servicios en línea basados en los principios de libertad, privacidad, federación y descentralización.\nEsta aplicación es como la navaja suiza de la plataforma, hecha por la comunidad, para la comunidad.\nSi no tienes una cuenta de Disroot, igual puedes usarla para acceder a aquellos servicios que no requieran de una:\nEtherpad, Ethercalc, Privatebin, Upload, Encuentas, Searx y Diaspora* (requiere tener cuenta solo de Diaspora*)\nLa aplicación podría solicitarte la instalación de otras adicionales, y no todas pueden encontrarse en la Tienda de Aplicaciones. Nosotros recomendamos instalar F-Droid. Si no la tienes, puedes descargarla tocando el logo de F-Droid.\n</string>
+    <string name="WelcomeInfo">Disroot es una plataforma que provee servicios en línea basados en los principios de libertad, privacidad, federación y descentralización.\nEsta aplicación es como la navaja suiza de la plataforma, hecha por la comunidad, para la comunidad.\nSi no tienes una cuenta de Disroot, igual puedes usarla para acceder a aquellos servicios que no requieran de una:\nEtherpad, Cryptpad, Privatebin, Upload, Encuentas, Searx y Diaspora* (requiere tener cuenta solo de Diaspora*)\nLa aplicación podría solicitarte la instalación de otras adicionales, y no todas pueden encontrarse en la Tienda de Aplicaciones. Nosotros recomendamos instalar F-Droid. Si no la tienes, puedes descargarla tocando el logo de F-Droid.\n</string>
 
 
     <string name="help">Ayuda</string>
@@ -51,8 +50,8 @@
     <string name="disrootUrl"><a href = "https://disroot.org">https://disroot.org</a></string>
     <string name="disroot"> * Comunidad de Disroot (Disroot):</string>
     <string name="fDroid">F-Droid</string>
-    <string name="thirdparty">Librerías de Terceros</string>
-    <string name="thirdpartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
+    <string name="thirdParty">Librerías de Terceros</string>
+    <string name="thirdPartyText"><a href="https://github.com/cketti/ckChangeLog">ckCangelog: </a>Apache License 2.0\n\n<a href="https://github.com/wsdfhjxc/taponium/">Taponium: </a>GNU General Public License v3.0</string>
     <string name="misc">Misceláneas</string>
     <string name="miscDio">Utilizamos Diolinx como base para la creación de esta aplicación. Puedes chequearla, también es software libre.</string>
     <string name="miscDioBtn">Más info</string>
@@ -81,8 +80,8 @@
     <string name="PadTitle">Etherpad:\nEscribe artículos, anuncios de prensa, listas de pendientes, etc., junto a amigxs, compañerxs de estudios o colegas, todxs trabajando en el mismo documento al mismo tiempo.</string>
     <string name="ChatTitle">Configuración de XMPP\n</string>
     <string name="ChatInfo">Mensajería instantánea descentralizada y federada.\nID de Jabber: tu_correo@disroot.org\nContraseña: tu_contraseña_de_Disroot</string>
-    <string name="CalcInfo">EtherCalc</string>
-    <string name="CalcTitle">EtherCalc: Trabaja colaborativemente en inventarios, formularios de encuestas, gestión de listas, sesiones de lluvia de ideas y más.</string>
+    <string name="CryptpadInfo">Cryptpad</string>
+    <string name="CryptpadTitle">Cryptpad: TUna alternativa privada al diseño de las herramientas ofimáticas más populares.\n No es necesario registrarse.</string>
     <string name="BinTitle">PrivateBin</string>
     <string name="BinInfo">Pastebin de código abierto en línea y tablero de discusión. La información es cifrada/descifrada en el navegador, de esa manera el servidor tiene cero conocimiento de los archivos alojados. Solo pega un texto, haz click en “Enviar”, establece la fecha de vencimiento (entre otras funcionalidades) y comparte la dirección URL.</string>
     <string name="UploadTitle">Subir (Impulsado por Lufi)</string>
@@ -138,7 +137,7 @@
     <string name="Cloud">Nube</string>
     <string name="PerformanceIssues">Problemas de desempeño</string>
     <string name="Notification">Sin problemas</string>
-    <string name="Notificationissues">Algunos sistemas están experimentando problemas</string>
+    <string name="NotificationIssues">Algunos sistemas están experimentando problemas</string>
     <string name="state_messages_btn">Mostrar mensajes de Estado</string>
     <string name="state_btn">Mostrar Estado del servicio</string>
     <string name="ScheduledAt">Programado para:</string>
@@ -179,4 +178,7 @@
     <string name="translatorsTitle">Traductorxs:</string>
     <string name="artworksTitle">Arte:</string>
     <string name="Fixed">Arreglado</string>
+
+    <string name="down">Down</string>
+    <string name="more_info">Tap for more info</string>
 </resources>

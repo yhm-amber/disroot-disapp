@@ -2,7 +2,7 @@
 Questa applicazione è come il tuo coltellino svizzero per la piattaforma Disroot, realizzata dalla comunità per la comunità.
 Se non si dispone di un account Disroot è comunque possibile utilizzare questa applicazione per accedere a tutti i servizi Disroot che non richiedono un account:
 * Etherpad
-* Ethercalc
+* Cryptpad
 * Private bin
 * Upload
 * Poll
