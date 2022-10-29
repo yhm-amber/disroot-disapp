@@ -5,7 +5,6 @@ Ako nemate nalog na Disroot platformi, možete koristiti ovu aplikaciju za prist
 * Cryptpad
 * Private bin
 * Upload
-* Poll
 * Searx
 * Diaspora* (potreban zaseban Diaspora nalog)
 

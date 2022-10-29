@@ -119,8 +119,6 @@
     <string name="UploadInfo">Téléverser est un logiciel d\'hébergement de fichiers qui stocke temporairement des fichiers chiffrés pour que vous puissiez les partager avec d\'autres en utilisant un lien. Tous les fichiers sont chiffrés avant qu\'ils ne quittent votre ordinateur, ce qui signifie que le serveur n\'a aucune connaissance des données hébergées.</string>
     <string name="SearxTitle">Info Searx</string>
     <string name="SearxInfo"> Searx est une plateforme anonyme multi moteurs de recherche, agrégeant les résultats d\'autres moteurs de recherche tout en ne stockant pas d\'informations sur ses utilisateurs.  Pas de suivi, pas de profilage, pas d\'exploration de données par les grandes entreprises.\nAucune inscription n\'est requise.</string>
-    <string name="PollsTitle">Aide Sondages</string>
-    <string name="PollsInfo">Framadate est un service en ligne pour planifier un rendez-vous ou prendre une décision rapidement et facilement.\nAucune inscription n\'est requise.</string>
     <string name="BoardTitle">Info sur le tableau de gestion de projets</string>
     <string name="BoardInfo">Taiga est un outil de gestion de projet, développé pour les programmeurs, les concepteurs et les startups travaillant avec une méthodologie de gestion agile à l\'esprit. Il peut cependant s\'appliquer à pratiquement n\'importe quel projet ou groupe, même en dehors du domaine informatique.</string>
     <string name="UserTitle">Aide à la gestion des mots de passe des utilisateurs</string>

@@ -88,8 +88,6 @@
     <string name="UploadInfo">Upload es un software de hospedaje de archivos. Almacena temporalmente archivos así puedes compartirlos con otros utilizando un link. Para proteger la privacidad, todos los archivos son cifrados en el navegador mismo.</string>
     <string name="SearxTitle">Búsqueda</string>
     <string name="SearxInfo"> Searx es un motor metabuscador, que agrupa los resultados de otros motores de búsqueda sin almacenar información sobre sus usuarios.</string>
-    <string name="PollsTitle">Encuestas</string>
-    <string name="PollsInfo">Framadate es un servicio en línea para planificar un encuentro o tomar decisiones colectivas de manera sencilla y rápida. No es necesario registrarse.</string>
     <string name="BoardTitle">Tablero de Gestión de Proyectos</string>
     <string name="BoardInfo">Taiga es una herramienta de gestión de proyectos, desarrollada para programadorxs, diseñadorxs y startups cuyo funcionamiento pretende ser metodológicamente ágil. Crea un proyecto, invita a lxs miembros de tu grupo, planeen tareas y ponganlas en el tablero. Resuelve quién será responsable de las tareas, sigue los progresos, comenta, decide y ve tu proyecto crecer.</string>
     <string name="UserTitle">Autoservicio de Contraseña</string>

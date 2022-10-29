@@ -5,7 +5,6 @@ Auch wenn Du keinen Disroot-Account hast, kannst Du diese App benutzen, um auf a
 * Cryptpad
 * Private bin
 * Upload
-* Poll
 * Searx
 * Calls
 

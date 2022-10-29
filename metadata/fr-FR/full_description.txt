@@ -5,7 +5,6 @@ Si vous n'avez pas de compte Disroot, vous pouvez toujours utiliser cette applic
 * Cryptpad
 * Private bin
 * Upload (Téléverser)
-* Poll (Sondage)
 * Searx
 * Calls
 

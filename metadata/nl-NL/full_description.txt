@@ -5,7 +5,6 @@ Als u geen Disroot account heeft kunt u deze app nog steeds gebruiken om toegang
 * Cryptpad
 * Private bin
 * Upload
-* Poll
 * Searx
 * Calls
 

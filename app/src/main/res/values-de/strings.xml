@@ -27,7 +27,7 @@
     <string name="CloudInfoTitle">Nextcloud Einstellungen</string>
     <string name="CloudInfo">Sichere und synchronisiere Deine Daten. Mit Nextcloud kannst du Dateien, Kalender, Kontakte und mehr mit Anderen teilen.\n\nHost:\n https://cloud.disroot.org\n\nBenutzername:\n "dein Disroot Benutzername"\n\nPasswort:\n "dein Disroot Passwort".</string>
     <string name="WelcomeTitle">Willkommen</string>
-    <string name="WelcomeInfo">Disroot ist eine Plattform, auf der Online-Dienste angeboten werden, die auf den Prinzipien von Freiheit, Privatsphäre, Gemeinschaft und Dezentralisierung basieren.\nDiese App ist wie ein Schweizer Taschenmesser für die Disroot-Plattform, von der Community für die Community.\nAuch wenn du keinen Disroot-Account hast, kannst Du diese App trotzdem nutzen, um auf alle Disroot-Dienste zuzugreifen, die kein Benutzerkonto erfordern:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Poll\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (separater Diaspora Account benötigt)\n\nDiese App wird Dich eventuell darum bitten, weitere Apps zu installieren. Wir empfehlen F-Droid zu installieren - einen kostenlosen und quelloffenen App-Katalog - da nicht alle verwendeten Apps im Google Play Store zu finden sind und F-Droid außerdem mehr auf Datenschutz ausgerichtet ist (kein Tracking, kein Account erforderlich). Du kannst F-Droid herunterladen, indem Du auf das F-Droid-Symbol klickst.\n</string>
+    <string name="WelcomeInfo">Disroot ist eine Plattform, auf der Online-Dienste angeboten werden, die auf den Prinzipien von Freiheit, Privatsphäre, Gemeinschaft und Dezentralisierung basieren.\nDiese App ist wie ein Schweizer Taschenmesser für die Disroot-Plattform, von der Community für die Community.\nAuch wenn du keinen Disroot-Account hast, kannst Du diese App trotzdem nutzen, um auf alle Disroot-Dienste zuzugreifen, die kein Benutzerkonto erfordern:\n \ \ \ &#8226; Etherpad\n \ \ \ &#8226; Cryptpad\n \ \ \ &#8226; Private bin\n \ \ \ &#8226; Upload\n \ \ \ &#8226; Searx\n \ \ \ &#8226; Diaspora* (separater Diaspora Account benötigt)\n\nDiese App wird Dich eventuell darum bitten, weitere Apps zu installieren. Wir empfehlen F-Droid zu installieren - einen kostenlosen und quelloffenen App-Katalog - da nicht alle verwendeten Apps im Google Play Store zu finden sind und F-Droid außerdem mehr auf Datenschutz ausgerichtet ist (kein Tracking, kein Account erforderlich). Du kannst F-Droid herunterladen, indem Du auf das F-Droid-Symbol klickst.\n</string>
     <string name="help">Hilfe</string>
     <string name="license">Lizenz</string>
     <string name="action_settings">Einstellungen</string>
@@ -75,9 +75,7 @@
     <string name="UploadTitle">Upload (powered by Lufi) Info</string>
     <string name="UploadInfo">Upload ist eine Datei-Hosting-Software, die temporär verschlüsselte Dateien speichert, damit Du sie mit anderen über einen Link teilen kannst. Alle Dateien sind verschlüsselt, bevor sie Dein Gerät verlassen, was bedeutet, dass der Server keine Kenntnis von hochgeladen Daten hat.\nKeine Registrierung notwendig.</string>
     <string name="SearxTitle">Searx Info</string>
-    <string name="SearxInfo">Searx ist eine anonyme Multi-Suchmaschinen-Plattform, die die Ergebnisse anderer Suchmaschinen abruft, ohne Informationen über den Benutzer zu speichern. Kein Tracking, Profiling oder Data Mining durch große Unternehmen. \nKeine Registrierung notwendig.</string>
-    <string name="PollsTitle">Umfrage Info</string>
-    <string name="PollsInfo">Framadate ist ein Online-Service für schnelle Umfragen und Terminplanungen. Der Service hilft Dir, schnell und einfach gemeinsame Entscheidungen zu fällen.\nKeine Registrierung notwendig.</string>
+    <string name="SearxInfo">Searx ist eine anonyme Multi-Suchmaschinen-Plattform, die Ergebnisse anderer Suchmaschinen abruft, ohne Informationen über den Benutzer zu speichern. Kein Tracking, Profiling oder Data Mining durch große Unternehmen. \nKeine Registrierung notwendig.</string>
     <string name="BoardTitle">Taiga Info</string>
     <string name="BoardInfo">Taiga ist ein Projektmanagement-Werkzeug, das für Programmierer, Designer und Start-ups entwickelt wurde, die mit agilen Methodiken arbeiten. Es kann jedoch auf praktisch jedes Projekt angewendet werden, auch außerhalb des IT-Bereichs.</string>
     <string name="UserTitle">Nutzer-Passwortverwaltung Hilfe</string> <!-- *Info  -->
@@ -135,7 +133,7 @@
     <string name="Investigating">Prüfen</string>
     <string name="Identified">Identifiziert</string>
     <string name="NotesTitle">Nextcloud Notes Info</string>
-    <string name="NotesInfo">Notes ist eine schlichte und übersichtliche Notiz App die über Nextcloud synchronisiert werden kann.\n\nServer Addresse:\n https://cloud.disroot.org\n\nUsername:\n dein_disroot_username\n\nPasswort:\n dein_disroot_passwort</string>
+    <string name="NotesInfo">Notes ist eine schlichte und übersichtliche Notiz App die über Nextcloud synchronisiert werden kann.\n\nServer Adresse:\n https://cloud.disroot.org\n\nUsername:\n dein_disroot_username\n\nPasswort:\n dein_disroot_passwort</string>
     <string name="NotesDialog">Um fortzufahren, müssen Sie zunächst Nextcloud Notes installieren.\nBitte wählen Sie installieren, um mit der Installation in F-Droid fortzufahren.</string>
     <string name="action_notes">Notes</string>
     <string name="PadDialog">Um fortzufahren, müssen Sie zunächst Padland installieren.\nBitte wählen Sie installieren, um mit der Installation in F-Droid fortzufahren.</string>

@@ -81,8 +81,6 @@
     <string name="UploadInfo">Upload é um software para compartilhar os arquivos que temporariamente armazena eles criptografados para que você os possa compartilhar com outras pessoas via link. Todos os arquivos são criptografados antes de ser enviados do seu computador, o que significa que o servidor não sabe que dados estão armazenados.\nNão é necessário ter uma conta para usar.</string>
     <string name="SearxTitle">Sobre Searx</string>
     <string name="SearxInfo">Searx é uma plataforma de busca múltipla, que agrega resultados de pesquisa de várias plataformas de busca e não armazena informação sobre seus usuários. Sem rastreamento, profiling ou coleta de dados.\nNão é necessário ter uma conta para usar.</string>
-    <string name="PollsTitle">Sobre Sondagens</string>
-    <string name="PollsInfo">Framadate é um serviço online para planear ou marcar reuniões ou tomar decisões rapidamente de um modo fácil.\nNão é necessário ter uma conta para usar.</string>
     <string name="BoardTitle">Sobre Programa de gestão de projetos</string>
     <string name="BoardInfo">O Taiga é uma ferramenta de gestão de projetos, criada para desenvolvedores, designers e startups que usam a metodologia de trabalho agile. No entanto pode ser usado por virtualmente qualquer tipo de projeto ou grupo, mesmo fora do mundo das tecnologias de informação.</string>
     <string name="UserTitle">Sobre Gerenciador das senhas do usuário</string>

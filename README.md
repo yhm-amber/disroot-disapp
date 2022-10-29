@@ -14,7 +14,6 @@ It also can be used to access all the **Disroot** services that do not require a
 * Calls
 * Private bin
 * Upload
-* Polls
 * Searx
 
 #### Supported languages:
