@@ -40,11 +40,11 @@ public class Constants {
     public static final String URL_DisApp_CLOUDHELP = "https://howto.disroot.org/en/tutorials/cloud/clients/mobile/android";
     public static final String URL_DisApp_FORUMHELP = "https://howto.disroot.org/en/tutorials/forum";
     public static final String URL_DisApp_PADHELP = "https://howto.disroot.org/en/tutorials/office/pads/padland";
-    public static final String URL_DisApp_CRYPTPADHELP = "https://howto.disroot.org/it/tutorials/office/cryptpad";
+    public static final String URL_DisApp_CRYPTPADHELP = "https://howto.disroot.org/en/tutorials/office/cryptpad";
     public static final String URL_DisApp_BINHELP = "https://howto.disroot.org/en/tutorials/office/bin";
     public static final String URL_DisApp_UPLOADHELP = "https://howto.disroot.org/en/tutorials/office/lufi";
     public static final String URL_DisApp_BOARDHELP = "https://howto.disroot.org/en/tutorials/project_board";
-    public static final String URL_DisApp_NOTESHELP = "https://howto.disroot.org/en/tutorials/cloud/clients/mobile/android/using-notes";
+    public static final String URL_DisApp_NOTESHELP = "https://howto.disroot.org/en/tutorials/cloud/apps/notes";
     public static final String URL_DisApp_CALLSHELP = "https://disroot.org/en/services/calls";
     public static final String URL_DisApp_GITHELP = "https://howto.disroot.org/en/contribute/git";
     public static final String URL_DisApp_DISAPP = "https://f-droid.org/en/packages/org.disroot.disrootapp/";
