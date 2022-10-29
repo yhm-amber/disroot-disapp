@@ -3,7 +3,7 @@
     <release version="2.0.5" versioncode="28" >
         <change>Solved installed apps check for Android 11 and higher</change>
     </release>
-    <release version="2.0.5" versioncode="28" >
+    <release version="2.0.4" versioncode="27" >
         <change>Migration to new cState "https://status.disroot.org"</change>
         <change>Added Cryptpad and removed obsolete Calc + Polls</change>
         <change>correction "need more help" link for notes</change>
