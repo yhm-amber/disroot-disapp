@@ -126,6 +126,7 @@ public class StateMessagesActivity extends AppCompatActivity {
                         String title = c.getString("title");
                         String link = c.getString("permalink");
                         boolean resolved = c.getBoolean( "resolved" );
+                        boolean informational = c.getBoolean( "informational" );
                         String lastMod = c.getString("lastMod");
                         String lastUpdated = "Last Updated: " + lastMod + '"';
 
@@ -135,7 +136,8 @@ public class StateMessagesActivity extends AppCompatActivity {
                         // adding each child node to HashMap key => value
                         service.put("title", title);
                         service.put("moreInfo", link);
-                        service.put("resolved", Boolean.toString( resolved ) );
+                        if (informational == true) service.put("resolved", "informational" );
+                        else service.put("resolved", Boolean.toString( resolved ) );
                         service.put("lastMod", lastUpdated);
 
                         // adding service to service list
@@ -205,6 +207,11 @@ public class StateMessagesActivity extends AppCompatActivity {
                         case "true":
                             status.setTextColor(Color.GREEN);
                             status.setText(R.string.Fixed);
+                            resolved.setVisibility(View.GONE  );
+                            break;
+                        case "informational":
+                            status.setTextColor(Color.YELLOW);
+                            status.setText(R.string.info);
                             resolved.setVisibility(View.GONE  );
                             break;
                         case "false":

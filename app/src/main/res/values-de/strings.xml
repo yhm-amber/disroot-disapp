@@ -169,5 +169,6 @@
     <string name="Fixed">Behoben</string>
     <string name="down">Down</string>
     <string name="more_info">Tap for more info</string>
+    <string name="info">info</string>
 
 </resources>
